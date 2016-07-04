@@ -21,6 +21,12 @@ Moved to settings_.
 Basic Commands
 --------------
 
+Setting Up Your Development environment with Docker Compose
+^^^^^^^^^^^^^^^^^^^^^
+* Once docker compose is installed: 
+    $ sudo docker-compose -f dev.yml up
+
+
 Setting Up Your Users
 ^^^^^^^^^^^^^^^^^^^^^
 
