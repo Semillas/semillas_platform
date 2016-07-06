@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     # custom users app
     'semillas_backend.users.apps.UsersConfig',
+    'landing',
     # Your stuff: custom apps go here
 )
 
