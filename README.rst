@@ -23,7 +23,15 @@ Basic Commands
 
 Setting Up Your Development environment with Docker Compose
 ^^^^^^^^^^^^^^^^^^^^^
-* Once docker compose is installed: 
+* Install Docker Engine:
+  For example, in Ubuntu I installed it following this:
+  https://docs.docker.com/engine/installation/linux/ubuntulinux/
+
+* Install Docker Compose: 
+  Using this instructions for Ubuntu:
+  https://docs.docker.com/compose/install/
+
+* Once docker compose is installed and docker engine service is running: 
     $ sudo docker-compose -f dev.yml up
 
 
