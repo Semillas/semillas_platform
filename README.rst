@@ -3,6 +3,8 @@ semillas_backend
 
 Social Curency
 
+This repo is the code of http://semillasocial.org
+
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
      :alt: Built with Cookiecutter Django
@@ -94,29 +96,16 @@ With MailHog running, to view messages that are sent by your application, open y
 Sentry
 ^^^^^^
 
-Sentry is an error logging aggregator service. You can sign up for a free account at  https://getsentry.com/signup/?code=cookiecutter  or download and host it yourself.
-The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
-
-You must set the DSN url in production.
-
+https://app.getsentry.com/app53149897herokucom/
 
 
 
 Deployment
 ----------
 
+Whenever master branch is updated with a new commit or merge. A deploy will be triggered. 
 
-
-Heroku
-^^^^^^
-
-.. image:: https://www.herokucdn.com/deploy/button.png
-    :target: https://heroku.com/deploy
-
-See detailed `cookiecutter-django Heroku documentation`_.
-
-.. _`cookiecutter-django Heroku documentation`: http://cookiecutter-django.readthedocs.io/en/latest/deployment-on-heroku.html
-
+Check it on www.semillasocial.org
 
 
 
