@@ -1,1 +1,1 @@
-web NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program gunicorn mysite.wsgi
+web: NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program gunicorn config.wsgi:application
