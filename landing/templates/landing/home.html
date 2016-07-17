@@ -1,82 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load i18n %}
 
-    <h1>El proyecto</h1>
-
-
-    <p>Es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal. 
-    </p>
-    <p>Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros, ya sean niños, mayores, jóvenes, asalariados, parados, amas de casa, etc.
-    </p>
-    <h3>Objetivo</h3>
-    <p>El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se suele contemplar. Empleo remunerado de todas las personas que sostienen la sociedad.
-    </p>
-    <p>Según <a href="http://www.vivirsinempleo.org">Gisbert</a>, consideramos dos economías:
-    </p>
-    <h3><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 360.40px;"><img alt="" src="static/images/economies_comparison_es.png" style="width: 624.00px; height: 360.40px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></h3>
-    <p>Ambas son muy necesarias para el funcionamiento correcto de la sociedad. Todo el trabajo altruista de la segunda permite que la primera tenga tengo un valor de cambio tan alto en el mercado. 
-    </p>
-    <p>La monetaria está; depredando a la paraeconómica en la búsqueda por el pleno empleo y el constante crecimiento económico. Además de estar depredando nuestros ritmos naturales y nuestros ecosistemas.
-    </p>
-    <p>La paraeconómica, muy dañada, primero, con la migración del campo a la ciudad. La incorporación de la mujer al mercado laboral (algo indudablemente muy bueno para la igualdad de género), y unidades familiares cada vez más frágiles (ejemplo: un padre soltero con dos hijas). Afectando a todas estas economías de ayuda mutua, economías de cuidados y economías de reutilización de bienes. 
-    </p>
-    <p>Este proyecto pretende ser un puente entre ambas economías. En ningún caso desafiar a la moneda de curso legal. Sino permitir a mucha gente obtener bienes de forma accesible. 
-    </p>
-    <p>Existen muchos proyectos de divisas sociales en marcha. Semillas es una tecnología abierta y confiable, al servicio de lo humano y la naturaleza, como herramienta de cambio social. 
-    </p>
-    <p>Buscamos voluntarios de todo tipo: divulgadores, técnicos informáticos, economistas, abogados, traductores, amigos que nos traigan frutos secos y semillas.
-    </p>
-    <h3>A quién está enfocado:</h3>
+    <h1>{% trans "El proyecto" %}</h1>
+    <p>{% trans "Es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal. " %}</p>
+    <p>{% trans "Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros, ya sean niños, mayores, jóvenes, asalariados, parados, amas de casa, etc." %}</p>
+    <h3>{% trans "Objetivo" %}</h3>
+    <p>{% trans "El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se suele contemplar. Empleo remunerado de todas las personas que sostienen la sociedad." %}</p>
+    <p>{% trans "Según" %} <a href="http://www.vivirsinempleo.org">Gisbert</a>, {% trans "consideramos dos economías:" %}</p>
+    <h3><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 360.40px;"><img alt="" src="static/images/economies_comparison_es.png" style="width: 624.00px; height: 360.40px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">" %}</h3>
+    <p>{% trans "Ambas son muy necesarias para el funcionamiento correcto de la sociedad. Todo el trabajo altruista de la segunda permite que la primera tenga tengo un valor de cambio tan alto en el mercado. " %}</p>
+    <p>{% trans "La monetaria está; depredando a la paraeconómica en la búsqueda por el pleno empleo y el constante crecimiento económico. Además de estar depredando nuestros ritmos naturales y nuestros ecosistemas." %}</p>
+    <p>{% trans "La paraeconómica, muy dañada, primero, con la migración del campo a la ciudad. La incorporación de la mujer al mercado laboral (algo indudablemente muy bueno para la igualdad de género), y unidades familiares cada vez más frágiles (ejemplo: un padre soltero con dos hijas). Afectando a todas estas economías de ayuda mutua, economías de cuidados y economías de reutilización de bienes. " %}</p>
+    <p>{% trans "Este proyecto pretende ser un puente entre ambas economías. En ningún caso desafiar a la moneda de curso legal. Sino permitir a mucha gente obtener bienes de forma accesible. " %}</p>
+    <p>{% trans "Existen muchos proyectos de divisas sociales en marcha. Semillas es una tecnología abierta y confiable, al servicio de lo humano y la naturaleza, como herramienta de cambio social. " %}</p>
+    <p>{% trans "Buscamos voluntarios de todo tipo: divulgadores, técnicos informáticos, economistas, abogados, traductores, amigos que nos traigan frutos secos y semillas." %}</p>
+    <h3>{% trans "A quién está enfocado:" %}</h3>
     <ul>
-        <li>Trabajos fuera del PIB
-        </li>
-        <li>Economía de cuidados
-        </li>
-        <li>Acompañamiento de ancianos
-        </li>
-        <li>Gente que quiere empezar a dedicarse a algo que le gusta hacer. Ganando experiencia y sustento.
-        </li>
-        <li>Aquellos que han quedado excluidos del mercado laboral. Simplemente porque la moneda de curso legal tiene un valor muy alto y no todo el mundo puede ganarla y a la vez tener la vida que necesita tener.
-        </li>
-        <li>Comunidades de la <a href="https://www.google.com/url?q=https://es.wikipedia.org/wiki/Comunidad_de_transici%25C3%25B3n&amp;sa=D&amp;ust=1467827780124000&amp;usg=AFQjCNFFOZTZ8dxRkAbuDL450WKzD_U8rg">transición</a>que quieran cambiar la realidad que vivimos.
-        </li>
-        <li>Productores y artesanos que quieran vender sus maravillosos productos por otro canal
-        </li>
-        <li>Monedas sociales, redes de trueque o bancos de tiempo existentes que quieran fusionarse y empezar a usar esta herramienta.
-        </li>
+        <li>{% trans "Trabajos fuera del PIB" %}</li>
+        <li>{% trans "Economía de cuidados" %}</li>
+        <li>{% trans "Acompañamiento de ancianos" %}</li>
+        <li>{% trans "Gente que quiere empezar a dedicarse a algo que le gusta hacer. Ganando experiencia y sustento." %}</li>
+        <li>{% trans "Aquellos que han quedado excluidos del mercado laboral. Simplemente porque la moneda de curso legal tiene un valor muy alto y no todo el mundo puede ganarla y a la vez tener la vida que necesita tener." %}</li>
+        <li>{% trans "Comunidades de la <a href='https://es.wikipedia.org/wiki/Comunidad_de_transicion'>transición</a> que quieran cambiar la realidad que vivimos." %}</li>
+        <li>{% trans "Productores y artesanos que quieran vender sus maravillosos productos por otro canal" %}</li>
+        <li>{% trans "Monedas sociales, redes de trueque o bancos de tiempo existentes que quieran fusionarse y empezar a usar esta herramienta." %}</li>
     </ul>
-    <h3>Como funciona:</h3>
-    <p>A nivel de funcionalidad y diseño, pretende ser una copia de la exitosa start-up española: Wallapop. 
-    </p>
-    <h4>Local y Global </h4>
-    <p>Como en Wallapop, el orden de las ofertas será por proximidad para favorecer el mercado local. 
-    </p>
-    <p>Sin embargo, queremos dar una posibilidad tecnológica para poder obtener, a cambio de tus semillas, clases de inglés al otro lado del océano.
-    </p>
-    <h4>La creación de semillas: </h4>
-    <p>La inyección de moneda en el sistema sería: 
-    </p>
-    <p>Registro con verificación de SMS: 10 semillas
-    </p>
-    <p>Publicación del primer servicio: 5 semillas
-    </p>
-    <p>Primera venta o primer servicio ofrecido: 15 semillas
-    </p>
-    <p>Cualquier donación en euros para desarrollar y fomentar la plataforma tendrá una recompensa en el mismo número de semillas. 1 Euro - 1 Semilla. 
-    </p>
-    <h4>Conversión de semillas a euros</h4>
-    <p>No se permite tal opción. Quedaría una relación clara y directa de 1-1 de Semillas/Euros. Y la plataforma sería una forma de realizar intercambios evadiendo al fisco. 
-    </p>
-    <h3>Quienes Somos: </h3>
-    <p>Semilla social pretende constituirse como ONG. 
-    </p>
-    <p>Tanto el servidor como los clientes pretenden ser de código abierto, alojados en <a href="https://github.com/Semillas">Github</a>. 
-    </p>
-    <p>Buscamos voluntarios y desarrolladores de toda índole.
-    </p>
-    <h3>Estado del proyecto:</h3>
-    <p>Esto que ves es todo lo que hay.
-    </p>
+    <h3>{% trans "Como funciona:" %}</h3>
+    <p>{% trans "A nivel de funcionalidad y diseño, pretende ser una copia de la exitosa start-up española: Wallapop. " %}</p>
+    <h4>{% trans "Local y Global " %}</h4>
+    <p>{% trans "Como en Wallapop, el orden de las ofertas será por proximidad para favorecer el mercado local. " %}</p>
+    <p>{% trans "Sin embargo, queremos dar una posibilidad tecnológica para poder obtener, a cambio de tus semillas, clases de inglés al otro lado del océano." %}</p>
+    <h4>{% trans "La creación de semillas: " %}</h4>
+    <p>{% trans "La inyección de moneda en el sistema sería: " %}</p>
+    <p>{% trans "Registro con verificación de SMS: 10 semillas" %}</p>
+    <p>{% trans "Publicación del primer servicio: 5 semillas" %}</p>
+    <p>{% trans "Primera venta o primer servicio ofrecido: 15 semillas" %}</p>
+    <p>{% trans "Cualquier donación en euros para desarrollar y fomentar la plataforma tendrá una recompensa en el mismo número de semillas. 1 Euro - 1 Semilla. " %}</p>
+    <h4>{% trans "Conversión de semillas a euros" %}</h4>
+    <p>{% trans "No se permite tal opción. Quedaría una relación clara y directa de 1-1 de Semillas/Euros. Y la plataforma sería una forma de realizar intercambios evadiendo al fisco. " %}</p>
+    <h3>{% trans "Quienes Somos: " %}</h3>
+    <p>{% trans "Semilla social pretende constituirse como ONG. " %}</p>
+    <p>{% trans "Tanto el servidor como los clientes pretenden ser de código abierto, alojados en" %} <a href="https://github.com/Semillas">Github</a>.</p>
+    <p>{% trans "Buscamos voluntarios y desarrolladores de toda índole." %}</p>
+    <h3>{% trans "Estado del proyecto:" %}</h3>
+    <p>{% trans "Esto que ves es todo lo que hay." %}</p>
 {% endblock content %}
 
