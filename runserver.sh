@@ -1,1 +1,1 @@
-sudo docker-compose -f dev.yml up
+docker-compose -f dev.yml up

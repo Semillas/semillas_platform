@@ -62,6 +62,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 # MIGRATIONS CONFIGURATION
@@ -237,3 +238,15 @@ ADMIN_URL = r'^admin/'
 
 
 # Your common stuff: Below this line define 3rd party library settings
+
+from django.utils.translation import ugettext_lazy as _
+
+LANGUAGES = [
+  ('es', _('Spanish')),
+  ('en', _('English')),
+]
+
+LOCALE_PATHS = (
+    'locale',
+)
+
