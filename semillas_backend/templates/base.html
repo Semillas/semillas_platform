@@ -49,6 +49,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'landing:people' %}">Quiénes Somos</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'landing:contact' %}">Contacto</a>
+              </li>
             </ul>
 
             <ul class="nav navbar-nav pull-xs-right">
@@ -107,11 +110,9 @@
       <!-- place project specific Javascript in this file -->
       
       <script src="{% static 'js/project.js' %}"></script>
-      
 
     {% endblock javascript %}
     <div class="container-fluid">
-
     <div class="footer wrapper pie">
     <nav class="navbar navbar redondeo" role="navigation">
       <div class="container-fluid">
@@ -136,13 +137,11 @@
                 <img label="ImagenJS" id="minicono" src="{% static "images/JSIcon.jpeg" %}" class="redondeo" alt="JSIcon"/>
               </a>
             </div> <br>
-            <small class="blanco"> El contenido es copyleft | Semillas 2016 - ∞
-            </small>
+            <small class="blanco"> El contenido es copyleft | Semillas 2016 - ∞ </small>
             </center>
         </div>
       </div>
     </nav>
-
    </div>
  </div>
   </body>
