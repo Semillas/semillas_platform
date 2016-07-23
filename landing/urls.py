@@ -15,4 +15,10 @@ urlpatterns = [
         view=TemplateView.as_view(template_name='landing/people.html'),
         name='people'
     ),
+    url(
+        regex=r'^contact/$',
+        view=TemplateView.as_view(template_name='pages/contact.html'),
+        name='contact'
+    ),
+    
 ]
