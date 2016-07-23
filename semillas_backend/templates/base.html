@@ -1,10 +1,11 @@
-{% load staticfiles i18n %}
+<!DOCTYPE html>
+
+  {% load staticfiles i18n %}
 <!--TODO: this magic needs to be installed with pip...
   {-!-% load bootstrap3 %}
   {!% bootstrap_css %}
   {!% bootstrap_javascript %}
   {!% bootstrap_messages %} -->
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -22,6 +23,7 @@
 
     {% block css %}
     <!-- Latest compiled and minified CSS -->
+    <!--link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 
     <!-- Your stuff: Third-party css libraries go here -->
@@ -76,9 +78,9 @@
         </div>
       </nav>
     </div>
-
+    <br>
     <div class="container">
-
+      <br>
       {% if messages %}
           {% for message in messages %}
               <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
@@ -107,7 +109,6 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 
       <!-- Your stuff: Third-party javascript libraries go here -->
-
       <!-- place project specific Javascript in this file -->
       
       <script src="{% static 'js/project.js' %}"></script>
