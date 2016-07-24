@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-17 18:30+0000\n"
+"POT-Creation-Date: 2016-07-24 16:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,186 +62,222 @@ msgstr ""
 msgid "consideramos dos economías:"
 msgstr ""
 
-#: landing/templates/landing/home.html:13
+#: landing/templates/landing/home.html:21
 msgid ""
 "Ambas son muy necesarias para el funcionamiento correcto de la sociedad. "
-"Todo el trabajo altruista de la segunda permite que la primera tenga tengo "
-"un valor de cambio tan alto en el mercado. "
+"Todo el trabajo altruista de la segunda permite que la primera tenga un "
+"valor de cambio tan alto en el mercado. "
 msgstr ""
 
-#: landing/templates/landing/home.html:14
+#: landing/templates/landing/home.html:22
 msgid ""
 "La monetaria está depredando a la paraeconómica en la búsqueda por el pleno "
 "empleo y el constante crecimiento económico. Además de estar depredando "
 "nuestros ritmos naturales y nuestros ecosistemas."
 msgstr ""
 
-#: landing/templates/landing/home.html:15
+#: landing/templates/landing/home.html:23
 msgid ""
 "La paraeconómica, muy dañada, primero, con la migración del campo a la "
 "ciudad. La incorporación de la mujer al mercado laboral (algo indudablemente "
 "muy bueno para la igualdad de género), y unidades familiares cada vez más "
 "frágiles (ejemplo: un padre soltero con dos hijas). Afectando a todas estas "
 "economías de ayuda mutua, economías de cuidados y economías de reutilización "
-"de bienes. "
+"de bienes."
 msgstr ""
 
-#: landing/templates/landing/home.html:16
+#: landing/templates/landing/home.html:24
 msgid ""
 "Este proyecto pretende ser un puente entre ambas economías. En ningún caso "
 "desafiar a la moneda de curso legal. Sino permitir a mucha gente obtener "
 "bienes de forma accesible. "
 msgstr ""
 
-#: landing/templates/landing/home.html:17
+#: landing/templates/landing/home.html:25
 msgid ""
 "Existen muchos proyectos de divisas sociales en marcha. Semillas es una "
-"tecnología abierta y confiable, al servicio de lo humano y la naturaleza, "
+"tecnología abierta y confiable al servicio de lo humano y la naturaleza, "
 "como herramienta de cambio social. "
 msgstr ""
 
-#: landing/templates/landing/home.html:18
+#: landing/templates/landing/home.html:26
 msgid ""
 "Buscamos voluntarios de todo tipo: divulgadores, técnicos informáticos, "
 "economistas, abogados, traductores, amigos que nos traigan frutos secos y "
 "semillas."
 msgstr ""
 
-#: landing/templates/landing/home.html:19
+#: landing/templates/landing/home.html:27
 msgid "A quién está enfocado:"
 msgstr ""
 
-#: landing/templates/landing/home.html:21
+#: landing/templates/landing/home.html:29
 msgid "Trabajos fuera del PIB"
 msgstr ""
 
-#: landing/templates/landing/home.html:22
+#: landing/templates/landing/home.html:30
 msgid "Economía de cuidados"
 msgstr ""
 
-#: landing/templates/landing/home.html:23
+#: landing/templates/landing/home.html:31
 msgid "Acompañamiento de ancianos"
 msgstr ""
 
-#: landing/templates/landing/home.html:24
+#: landing/templates/landing/home.html:32
 msgid ""
 "Gente que quiere empezar a dedicarse a algo que le gusta hacer. Ganando "
 "experiencia y sustento."
 msgstr ""
 
-#: landing/templates/landing/home.html:25
+#: landing/templates/landing/home.html:33
 msgid ""
 "Aquellos que han quedado excluidos del mercado laboral. Simplemente porque "
 "la moneda de curso legal tiene un valor muy alto y no todo el mundo puede "
 "ganarla y a la vez tener la vida que necesita tener."
 msgstr ""
 
-#: landing/templates/landing/home.html:26
+#: landing/templates/landing/home.html:34
 msgid ""
 "Comunidades de la <a href='https://es.wikipedia.org/wiki/"
 "Comunidad_de_transicion'>transición</a> que quieran cambiar la realidad que "
 "vivimos."
 msgstr ""
 
-#: landing/templates/landing/home.html:27
+#: landing/templates/landing/home.html:35
 msgid ""
 "Productores y artesanos que quieran vender sus maravillosos productos por "
 "otro canal"
 msgstr ""
 
-#: landing/templates/landing/home.html:28
+#: landing/templates/landing/home.html:36
 msgid ""
 "Monedas sociales, redes de trueque o bancos de tiempo existentes que quieran "
 "fusionarse y empezar a usar esta herramienta."
 msgstr ""
 
-#: landing/templates/landing/home.html:30
-msgid "Como funciona:"
+#: landing/templates/landing/home.html:38
+msgid "Cómo funciona:"
 msgstr ""
 
-#: landing/templates/landing/home.html:31
+#: landing/templates/landing/home.html:39
 msgid ""
 "A nivel de funcionalidad y diseño, pretende ser una copia de la exitosa "
 "start-up española: Wallapop. "
 msgstr ""
 
-#: landing/templates/landing/home.html:32
+#: landing/templates/landing/home.html:40
 msgid "Local y Global "
 msgstr ""
 
-#: landing/templates/landing/home.html:33
+#: landing/templates/landing/home.html:41
 msgid ""
 "Como en Wallapop, el orden de las ofertas será por proximidad para favorecer "
 "el mercado local. "
 msgstr ""
 
-#: landing/templates/landing/home.html:34
+#: landing/templates/landing/home.html:42
 msgid ""
 "Sin embargo, queremos dar una posibilidad tecnológica para poder obtener, a "
 "cambio de tus semillas, clases de inglés al otro lado del océano."
 msgstr ""
 
-#: landing/templates/landing/home.html:35
+#: landing/templates/landing/home.html:43
 msgid "La creación de semillas: "
 msgstr ""
 
-#: landing/templates/landing/home.html:36
+#: landing/templates/landing/home.html:44
 msgid "La inyección de moneda en el sistema sería: "
 msgstr ""
 
-#: landing/templates/landing/home.html:37
+#: landing/templates/landing/home.html:45
 msgid "Registro con verificación de SMS: 10 semillas"
 msgstr ""
 
-#: landing/templates/landing/home.html:38
+#: landing/templates/landing/home.html:46
 msgid "Publicación del primer servicio: 5 semillas"
 msgstr ""
 
-#: landing/templates/landing/home.html:39
+#: landing/templates/landing/home.html:47
 msgid "Primera venta o primer servicio ofrecido: 15 semillas"
 msgstr ""
 
-#: landing/templates/landing/home.html:40
+#: landing/templates/landing/home.html:48
 msgid ""
 "Cualquier donación en euros para desarrollar y fomentar la plataforma tendrá "
 "una recompensa en el mismo número de semillas. 1 Euro - 1 Semilla. "
 msgstr ""
 
-#: landing/templates/landing/home.html:41
+#: landing/templates/landing/home.html:49
 msgid "Conversión de semillas a euros"
 msgstr ""
 
-#: landing/templates/landing/home.html:42
+#: landing/templates/landing/home.html:50
 msgid ""
 "No se permite tal opción. Quedaría una relación clara y directa de 1-1 de "
 "Semillas/Euros. Y la plataforma sería una forma de realizar intercambios "
 "evadiendo al fisco. "
 msgstr ""
 
-#: landing/templates/landing/home.html:43
-msgid "Quienes Somos: "
+#: landing/templates/landing/home.html:51
+msgid "Quiénes Somos: "
 msgstr ""
 
-#: landing/templates/landing/home.html:44
+#: landing/templates/landing/home.html:52
 msgid "Semilla social pretende constituirse como ONG. "
 msgstr ""
 
-#: landing/templates/landing/home.html:45
+#: landing/templates/landing/home.html:53
 msgid ""
 "Tanto el servidor como los clientes pretenden ser de código abierto, "
 "alojados en"
 msgstr ""
 
-#: landing/templates/landing/home.html:46
+#: landing/templates/landing/home.html:54
 msgid "Buscamos voluntarios y desarrolladores de toda índole."
 msgstr ""
 
-#: landing/templates/landing/home.html:47
+#: landing/templates/landing/home.html:55
 msgid "Estado del proyecto:"
 msgstr ""
 
-#: landing/templates/landing/home.html:48
+#: landing/templates/landing/home.html:56
 msgid "Esto que ves es todo lo que hay."
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:12
+msgid ""
+"Desarrollador Back-end. Interesado en economía, política, educación y "
+"tecnología."
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:53
+msgid "Historia:"
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:53
+msgid "cómo surgió"
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:57
+msgid ""
+"Semilla social pretende constituírse como ONG. Este proyecto nace como open "
+"source y sin ánimo de lucro."
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:64
+msgid ""
+"\n"
+"         Pensamos que otra forma de economía es posible. Pensamos que toda "
+"persona\n"
+"         puede ofrecer algo y que eso debería ser suficiente para cubrir los "
+"mínimos de una vida digna.\n"
+"         Diseñamos esta plataforma para ofrecer un medio, un soporte para un "
+"fin. \n"
+"         Somos un grupo de hacktivistas, no hacemos esto por dinero. \n"
+"         Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, "
+"diseño, \n"
+"         frontend...\n"
+"      "
 msgstr ""
 
 #: semillas_backend/templates/account/account_inactive.html:5
@@ -337,7 +373,7 @@ msgstr ""
 #: semillas_backend/templates/account/login.html:7
 #: semillas_backend/templates/account/login.html:11
 #: semillas_backend/templates/account/login.html:44
-#: semillas_backend/templates/base.html:64
+#: semillas_backend/templates/base.html:72
 msgid "Sign In"
 msgstr ""
 
@@ -445,7 +481,7 @@ msgstr ""
 
 #: semillas_backend/templates/account/signup.html:9
 #: semillas_backend/templates/account/signup.html:19
-#: semillas_backend/templates/base.html:61
+#: semillas_backend/templates/base.html:69
 msgid "Sign Up"
 msgstr ""
 
@@ -499,11 +535,15 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
-#: semillas_backend/templates/base.html:54
+#: semillas_backend/templates/base.html:52
+msgid "Quiénes Somos"
+msgstr ""
+
+#: semillas_backend/templates/base.html:62
 msgid "My Profile"
 msgstr ""
 
-#: semillas_backend/templates/base.html:57
+#: semillas_backend/templates/base.html:65
 msgid "Sign out"
 msgstr ""
 
