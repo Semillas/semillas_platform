@@ -5,6 +5,7 @@
          <text>Contacto</text>
         </h2>
         <hr>
+        <div class="content">
          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
             {% if form.errors or form.non_field_errors %}
               <div class="text-danger" role="alert">
@@ -35,13 +36,11 @@
                 <button type="submit" value="Enviar" class="btn btn-info btn-md" id="idBotonEnviar">
                 <i class="glyphicon glyphicon-envelope"></i> Enviar</button>
                 <button type="submit" value="Cancelar" class="btn btn-warning btn-md" id="BotonCancelar" name="cancel"> <i class="glyphicon glyphicon-ban-circle"></i> Cancelar</button>
-              </div>
             </form>
-         
-         <br>
-         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <!--br> <br><br><img src="{-TODO-% static "name.jpg" %-TODO-}" style="width: 280px; height: 280px;" alt="imagen_circulo" class="img-circle img-responsive center-block"-->
+            </div>
          </div>
-<br>
+         <br>
+        
+<br><br><br><br><br>
 {% endblock %}
 

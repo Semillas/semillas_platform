@@ -12,7 +12,7 @@ urlpatterns = [
     # url pattern for the userlistview
     url(
         regex=r'^people/$',
-        view=TemplateView.as_view(template_name='landing/people.html'),
+        view=TemplateView.as_view(template_name='pages/whoWeAre.html'),
         name='people'
     ),
     url(
