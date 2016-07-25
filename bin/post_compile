@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
  echo "-----> In post-compile hook"
+ exit 1
  set -eo pipefail
  # The post_compile hook is run by heroku-buildpack-python
  indent() {
