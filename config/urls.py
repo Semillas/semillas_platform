@@ -9,6 +9,8 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+
     url(r'^$', TemplateView.as_view(template_name='landing/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 

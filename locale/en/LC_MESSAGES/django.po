@@ -196,7 +196,7 @@ msgstr ""
 
 #: landing/templates/landing/home.html:46
 msgid "Publicación del primer servicio: 5 semillas"
-msgstr ""
+msgstr "Publishing of first service or good for sell: 5 Seeds"
 
 #: landing/templates/landing/home.html:47
 msgid "Primera venta o primer servicio ofrecido: 15 semillas"
