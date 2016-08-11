@@ -3,14 +3,16 @@
 {% load staticfiles %}
 {% load i18n %}
         <h2>
-         <text><i class="fa fa-pencil fa-3" aria-hidden="true"></i> Contacto</text>
+         <text><i class="fa fa-pencil fa-3" aria-hidden="true"></i>
+             {% trans "Contacto" %}
+         </text>
         </h2>
         <hr>
         <div class="content">
          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
          <p>
             {% trans "Puedes contactarnos en" %}
-            <u><a class="mailto" href="mailto:info.semillasocial@gmail.com"> info.semillasocial@gmail.com</a></u>.
+            <u><a class="mailto" href="mailto:info.semillasocial@gmail.com"> info.semillasocial@gmail.com</a></u>
          </p>
          <p>
             {% trans "También puedes conocernos en " %} <a href="{% url 'landing:people' %}">este link</a>.
