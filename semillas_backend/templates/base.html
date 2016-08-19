@@ -10,7 +10,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
+
+    <script src="https://use.fontawesome.com/5ca06a28bc.js"></script>
+
+    <!--link rel="stylesheet" href="http://netdna.bootstrapcdn
+    .com/font-awesome/4.0.3/css/font-awesome.css"/-->
     <title>{% block title %}Semillas{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -28,7 +32,7 @@
 
 
     <!-- Your stuff: Third-party css libraries go here -->
-    
+
     <!-- This file store project specific CSS -->
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
@@ -124,46 +128,76 @@
 
       <!-- Your stuff: Third-party javascript libraries go here -->
       <!-- place project specific Javascript in this file -->
-      
+
       <script src="{% static 'js/project.js' %}"></script>
 
     {% endblock javascript %}
     <!-- Up button v1 TODO-->
     <div class="container">
-      <div class="col-xs-10 col-sm-7 col-md-9 col-lg-9"> 
+      <div class="col-xs-10 col-sm-7 col-md-9 col-lg-9">
       </div>
       <div class="col-xs-2 col-sm-5 col-md-3 col-lg-3 pull-right redondeo menos" align="right">
         <a href="#top"><text class="hidden-xs">Subir</text>
         <i class="fa fa-caret-square-o-up"></i></a>
-     </div> 
+     </div>
     </div>
     <br>
     <!-- footer -->
-    <footer class="footer">
-      <div class="container text-muted">
+    <div class="container text-muted">
+    <footer class="footer clearfix">
             <center>
               <small class="blanco">Hecho con:</small>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a href="http://www.python.org" target=_blank> 
-                <img label="imagenPyton" id="minicono" src="{% static "images/PythonIcon.png" %}" class="redondeo" alt="PythonIcon"/>
+                <a href="https://www.docker.com/" target=_blank>
+                <img label="DockerIcon" id="minicono" src="{% static "images/DockerIcon.png" %}" class="redondeo" alt="DockerIcon"/>
               </a>
-              <a href="http://www.djangoproject.com" target=_blank> 
-                <img label="imagenDjango" id="minicono" src="{% static "images/DjangoIcon.png" %}" class="redondeo" alt="DjangoIcon"/>
+              <a href="https://github.com/Semillas" target=_blank>
+                <img label="gitHubIcon" id="minicono" src="{% static "images/gitHubIcon.ico" %}" class="redondeo" alt="gitHubIcon"/>
               </a>
-              <a href="http://www.getbootstrap.com" target=_blank> 
-                <img label="ImagenBootstrap" id="minicono" src="{% static "images/BootstrapIcon.png" %}" class="redondeo" alt="BootstrapIcon"/>
+              <a href="https://www.python.org" target=_blank>
+                <img label="PythonIcon" id="minicono" src="{% static "images/PythonIcon.png" %}" class="redondeo" alt="PythonIcon"/>
               </a>
-              <a href="http://www.w3.org/TR/html5/" target=_blank> 
-                <img label="imagenW3" id="minicono" src="{% static "images/HTMLicon.png" %}" class="redondeo" alt="HTMLIcon"/>
+              <a href="https://www.djangoproject.com" target=_blank>
+                <img label="DjangoIcon" id="minicono" src="{% static "images/DjangoIcon.png" %}" class="redondeo" alt="DjangoIcon"/>
               </a>
-              <a href="http://en.wikipedia.org/wiki/JavaScript" target=_blank> 
-                <img label="ImagenJS" id="minicono" src="{% static "images/JSIcon.jpeg" %}" class="redondeo" alt="JSIcon"/>
+              <a href="https://www.getbootstrap.com" target=_blank>
+                <img label="BootstrapIcon" id="minicono" src="{% static "images/BootstrapIcon.png" %}" class="BootstrapIcon" alt="BootstrapIcon"/>
               </a>
-              </div> <br>
-              <small class="blanco"> El contenido es copyleft | Semillas 2016 - </small> ∞ 
+              <a href="https://www.w3.org/TR/html5/" target=_blank>
+                <img label="wwwIcon" id="minicono" src="{% static "images/HTMLicon.png" %}" class="redondeo" alt="wwwIcon"/>
+              </a>
+              <a href="https://en.wikipedia.org/wiki/JavaScript" target=_blank>
+                <img label="JSicon" id="minicono" src="{% static "images/JSIcon.jpeg" %}" class="redondeo" alt="JSicon "/>
+              </a>
+               <br>
+              <small class="blanco"> El contenido es copyleft | Semillas 2016 - </small> ∞
+              <small>
+              <ul class="list-inline">
+                   <li class="list-inline-item">
+                    <a href="{% url 'landing:FAQ' %}">FAQ</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="footer-list-link"
+                       href="{% url 'landing:about' %}">Acerca de</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="footer-list-link"
+                       href="{% url 'landing:terms' %}">Términos</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="footer-list-link"
+                       href="{% url 'landing:privacy' %}">Privacidad</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="footer-list-link"
+                       href="{% url 'landing:license' %}">Licencia</a>
+                  </li>
+            </ul>
+            </small>
+            </div>
             </center>
-      </div>
-  </footer>
+        </footer>
+     </div>
   </body>
 </html>
- 
+
