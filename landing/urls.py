@@ -42,7 +42,7 @@ urlpatterns = [
     ),
     url(
         regex=r'^contact/$',
-        view=TemplateView.as_view(template_name='pages/contact.html'),
+        view=TemplateView.as_view(template_name='landing/contact.html'),
         name='contact'
     ),
     url(
