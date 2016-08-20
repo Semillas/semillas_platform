@@ -29,7 +29,7 @@
         <img src="" class="img-thumbnail img-fluid center-block" style="width:280px; height: 280px;" alt="">
       <div class="caption  text-xs-center">
         <h4>- ????? -</h4>
-        <p>Necesitamos gente, ¿quieres participar en el proyecto? <br>
+        <p>{% trans "Necesitamos gente, ¿quieres participar en el proyecto?" %} <br>
         </p>
       </div>
     </div>
@@ -71,5 +71,5 @@
 {% endblock %}
 {% block footer %} 
   <li><a href="{% url 'info' %}">Info</a> </li>
-  <li class="active">¿Quiénes somos?</li>
+  <li class="active">{%trans "Quiénes somos" %}</li>
 {% endblock %}
