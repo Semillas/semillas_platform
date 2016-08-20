@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 17:08+0000\n"
+"POT-Creation-Date: 2016-08-20 20:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,6 +52,26 @@ msgstr ""
 #: landing/templates/landing/terms.html:34
 #: landing/templates/landing/terms.html:43
 msgid "Sección aún por hacerse...."
+msgstr ""
+
+#: landing/templates/landing/contact.html:7
+msgid "Contacto"
+msgstr ""
+
+#: landing/templates/landing/contact.html:14
+msgid "Puedes contactarnos en"
+msgstr ""
+
+#: landing/templates/landing/contact.html:18
+msgid "También puedes conocernos en "
+msgstr ""
+
+#: landing/templates/landing/contact.html:18
+msgid "este link"
+msgstr ""
+
+#: landing/templates/landing/development.html:7
+msgid "Version 0.1"
 msgstr ""
 
 #: landing/templates/landing/home.html:9
@@ -273,17 +293,17 @@ msgid "Esto que ves es todo lo que hay."
 msgstr ""
 
 #: landing/templates/landing/license.html:8
-#: semillas_backend/templates/base.html:203
+#: semillas_backend/templates/base.html:207
 msgid "Licencia"
 msgstr ""
 
 #: landing/templates/landing/privacy.html:8
-#: semillas_backend/templates/base.html:199
+#: semillas_backend/templates/base.html:203
 msgid "Privacidad"
 msgstr ""
 
 #: landing/templates/landing/terms.html:8
-#: semillas_backend/templates/base.html:195
+#: semillas_backend/templates/base.html:199
 msgid "Términos"
 msgstr ""
 
@@ -430,7 +450,7 @@ msgstr ""
 #: semillas_backend/templates/account/login.html:7
 #: semillas_backend/templates/account/login.html:11
 #: semillas_backend/templates/account/login.html:44
-#: semillas_backend/templates/base.html:77
+#: semillas_backend/templates/base.html:81
 msgid "Sign In"
 msgstr ""
 
@@ -538,7 +558,7 @@ msgstr ""
 
 #: semillas_backend/templates/account/signup.html:9
 #: semillas_backend/templates/account/signup.html:19
-#: semillas_backend/templates/base.html:74
+#: semillas_backend/templates/base.html:78
 msgid "Sign Up"
 msgstr ""
 
@@ -597,39 +617,31 @@ msgid "Quiénes Somos"
 msgstr ""
 
 #: semillas_backend/templates/base.html:60
+msgid "Software"
+msgstr ""
+
+#: semillas_backend/templates/base.html:64
 msgid " Contacto"
 msgstr ""
 
-#: semillas_backend/templates/base.html:67
+#: semillas_backend/templates/base.html:71
 msgid "My Profile"
 msgstr ""
 
-#: semillas_backend/templates/base.html:70
+#: semillas_backend/templates/base.html:74
 msgid "Sign out"
 msgstr ""
 
-#: semillas_backend/templates/base.html:143
+#: semillas_backend/templates/base.html:147
 msgid "Subir"
 msgstr ""
 
-#: semillas_backend/templates/base.html:152
+#: semillas_backend/templates/base.html:156
 msgid "Hecho con:"
 msgstr ""
 
-#: semillas_backend/templates/base.html:191
+#: semillas_backend/templates/base.html:195
 msgid "Acerca de"
-msgstr ""
-
-#: semillas_backend/templates/pages/contact.html:7
-msgid "Contacto"
-msgstr ""
-
-#: semillas_backend/templates/pages/contact.html:14
-msgid "Puedes contactarnos en"
-msgstr ""
-
-#: semillas_backend/templates/pages/contact.html:18
-msgid "También puedes conocernos en "
 msgstr ""
 
 #: semillas_backend/users/models.py:16
