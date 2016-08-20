@@ -45,6 +45,9 @@ urlpatterns = [
         view=TemplateView.as_view(template_name='pages/contact.html'),
         name='contact'
     ),
-
-
+    url(
+        regex=r'^development/$',
+        view=TemplateView.as_view(template_name='landing/development.html'),
+        name='development'
+    ),
 ]
