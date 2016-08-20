@@ -60,7 +60,7 @@
               <a class="nav-link" href="{% url 'landing:contact' %}"><i class="fa fa-envelope" aria-hidden="true"></i> {% trans " Contacto" %}</a>
               </li>
             </ul>
-
+<!--
             <ul class="nav navbar-nav pull-xs-right">
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
@@ -78,7 +78,7 @@
                 </li>
               {% endif %}
             </ul>
-
+-->
             <div class="nav navbar-nav pull-xs-right col-ls-2">
                 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                     <input name="next" type="hidden" value="{{ redirect_to }}" />
