@@ -46,6 +46,8 @@ django-redis==4.4.3
 redis>=2.10.0
 
 
+# Geo
+geoip2==2.4.0
 
 
 

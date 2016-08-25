@@ -250,3 +250,6 @@ LOCALE_PATHS = (
     'locale',
 )
 
+
+GEOIP_PATH = '/app/GeoLiteCity.dat'
+

@@ -7,6 +7,11 @@ RUN cd ~ && wget http://download.osgeo.org/geos/geos-3.4.2.tar.bz2
 RUN cd ~ && tar xjf geos-3.4.2.tar.bz2
 RUN cd ~/geos-3.4.2 && ./configure && make && make install
 
+RUN cd /tmp/ \
+    && wget -q -O GeoLite2-City.mmdb.gz "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz" \
+    && gunzip GeoLite2-City.mmdb.gz \ 
+    && find . -type f -name "*.mmdb" | xargs -I dbfile mv dbfile app
+
 # Requirements have to be pulled and installed here, otherwise caching won't work
 COPY ./requirements /requirements
 RUN pip install -r /requirements/local.txt
