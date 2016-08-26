@@ -251,5 +251,5 @@ LOCALE_PATHS = (
 )
 
 
-GEOIP_PATH = '/app/GeoLiteCity.dat'
+GEOIP_PATH = '/opt/maxmind/'
 
