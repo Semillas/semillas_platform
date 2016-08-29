@@ -105,6 +105,7 @@ DATABASES = {
     'default': env.db('DATABASE_URL', default='postgres:///semillas_backend'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 
 # GENERAL CONFIGURATION
