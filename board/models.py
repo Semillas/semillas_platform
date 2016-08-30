@@ -17,10 +17,15 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now_created=True)
     text = models.TextField(max_length=2000)
     date_range = models.DateTimeField()
-    pic = models.ImageField()
     # TODO: gps intentional: map = models.¿?
     # TODO: seeds ammount
-    user = models.ForeignKey(User)
+    # TODO: photomanager album 1-N relationship
+    pic = models.ImageField()
+    # TODO: https://github.com/zsiciarz/django-pgallery/blob/master/pgallery/models.py#L90
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
 
     def __str__(self):
         return self.username
