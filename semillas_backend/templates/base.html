@@ -64,7 +64,6 @@
               <a class="nav-link" href="{% url 'landing:contact' %}"><i class="fa fa-envelope" aria-hidden="true"></i> {% trans " Contacto" %}</a>
               </li>
             </ul>
-<!--
             <ul class="nav navbar-nav pull-xs-right">
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
@@ -82,28 +81,33 @@
                 </li>
               {% endif %}
             </ul>
--->
-            <div class="nav navbar-nav pull-xs-right col-ls-2">
-                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}" />
-                    <select name="language" class="form-control" onchange="form.submit()" >
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
-                        {% for language in languages %}
-                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                                {{ language.name_local }} ({{ language.code }})
-                            </option>
-                        {% endfor %}
-                    </select>
-                </form>
-            </div>
-
           </div>
       </nav>
     </div>
   </div>
-    <br>
+  <br>
+  {% get_current_language as LANGUAGE_CODE %}
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+  <div class="container">
+      <form class="form-inline" action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
+        <div class="form-group">
+        {% for language in languages %}
+          {% if LANGUAGE_CODE == language.code %}
+            {% if LANGUAGE_CODE != "es" %}
+              <button  type="submit" value="es" name="language"
+              class="btn btn-secondary"> cambiar a Castellano</button>
+            {% else %}
+              <button type="submit" value="en" name="language"
+              class="btn btn-secondary">{{ en }}change to English</button>
+            {% endif %}
+              
+          {% endif %}
+        {% endfor %}
+        </div>
+      </form>
+  </div><!--container-->
+
     <div class="container">
       <br>
       {% if messages %}
