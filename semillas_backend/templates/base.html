@@ -46,7 +46,6 @@
           <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
             &#9776;
           </button>
-
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -92,12 +91,11 @@
                   {% for language in languages %}
                     {% if LANGUAGE_CODE == language.code %}
                     <li class="nav-item">
-                      <button  type="submit" value="es" name="language"
-                        class="btn btn-link"><i class="fa fa-flag-o" aria-hidden="true"></i>
+                      <button  type="submit" class="btn btn-link"
                       {% if LANGUAGE_CODE != "es" %}
-                         Cambiar a Castellano
+                         value="es" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i> Cambiar a Castellano
                       {% else %}
-                         Change to English
+                        value="en" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i>  Change to English
                       {% endif %}
                     {% endif %}
                     </button>
@@ -106,13 +104,11 @@
                   </ul>
                 </div>
               </form>
-          </div><!--container-->
+          </div><!--container language-->
       </nav>
     </div>
-  </div>
+  </div><!--container navbar-->
   <br>
-  
-
     <div class="container">
       <br>
       {% if messages %}
