@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-  {% load staticfiles i18n %}
+{% load staticfiles i18n %}
 <!--TODO: this magic needs to be installed with pip...
   {-!-% load bootstrap3 %}
   {!% bootstrap_css %}
@@ -83,28 +82,20 @@
           {% get_current_language as LANGUAGE_CODE %}
           {% get_available_languages as LANGUAGES %}
           {% get_language_info_list for LANGUAGES as languages %}
-            <div class="container">
-              <form class="navbar-form form-inline" action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
+              <form class="form-inline" action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                <div class="form-group">
-                  <ul class="nav navbar-nav">
                   {% for language in languages %}
                     {% if LANGUAGE_CODE == language.code %}
-                    <li class="nav-item">
-                      <button  type="submit" class="btn btn-link"
-                      {% if LANGUAGE_CODE != "es" %}
+                        <button  type="submit" class="btn btn-link"
+                        {% if LANGUAGE_CODE != "es" %}
                          value="es" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i> Cambiar a Castellano
-                      {% else %}
-                        value="en" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i>  Change to English
+                        {% else %}
+                         value="en" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i>  Change to English
+                        {% endif %}
+                        </button>
                       {% endif %}
-                    {% endif %}
-                    </button>
-                    </li>
                   {% endfor %}
-                  </ul>
-                </div>
               </form>
-          </div><!--container language-->
       </nav>
     </div>
   </div><!--container navbar-->
@@ -184,9 +175,9 @@
                <br>
                <br>
               
-<small class="blanco">
+              <small class="blanco">
               <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.
-          </small>
+              </small>
                <br>
               <small class="blanco"> Semillas 2016 - </small> ∞
 <!--              
