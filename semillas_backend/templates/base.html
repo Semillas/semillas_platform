@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-  {% load staticfiles i18n %}
+{% load staticfiles i18n %}
 <!--TODO: this magic needs to be installed with pip...
   {-!-% load bootstrap3 %}
   {!% bootstrap_css %}
@@ -46,7 +45,6 @@
           <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
             &#9776;
           </button>
-
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -59,12 +57,10 @@
               <li class="nav-item">
               <a class="nav-link" href="{% url 'landing:development' %}"><i class="fa fa-mobile" aria-hidden="true"></i> {% trans "Software" %}</a>
               </li>
- 
               <li class="nav-item">
               <a class="nav-link" href="{% url 'landing:contact' %}"><i class="fa fa-envelope" aria-hidden="true"></i> {% trans " Contacto" %}</a>
               </li>
             </ul>
-<!--
             <ul class="nav navbar-nav pull-xs-right">
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
@@ -82,28 +78,28 @@
                 </li>
               {% endif %}
             </ul>
--->
-            <div class="nav navbar-nav pull-xs-right col-ls-2">
-                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}" />
-                    <select name="language" class="form-control" onchange="form.submit()" >
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
-                        {% for language in languages %}
-                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                                {{ language.name_local }} ({{ language.code }})
-                            </option>
-                        {% endfor %}
-                    </select>
-                </form>
-            </div>
-
           </div>
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+              <form class="form-inline" action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                  {% for language in languages %}
+                    {% if LANGUAGE_CODE == language.code %}
+                        <button  type="submit" class="btn btn-link"
+                        {% if LANGUAGE_CODE != "es" %}
+                         value="es" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i> Cambiar a Castellano
+                        {% else %}
+                         value="en" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i>  Change to English
+                        {% endif %}
+                        </button>
+                      {% endif %}
+                  {% endfor %}
+              </form>
       </nav>
     </div>
-  </div>
-    <br>
+  </div><!--container navbar-->
+  <br>
     <div class="container">
       <br>
       {% if messages %}
@@ -179,9 +175,9 @@
                <br>
                <br>
               
-<small class="blanco">
+              <small class="blanco">
               <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.
-          </small>
+              </small>
                <br>
               <small class="blanco"> Semillas 2016 - </small> ∞
 <!--              
