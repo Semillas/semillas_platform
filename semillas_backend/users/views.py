@@ -7,9 +7,11 @@ from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from rest_framework import generics
+from rest_framework import permissions
 
 from .models import User
 from .serializers import UserSerializer
+
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -54,6 +56,7 @@ class UserListView(LoginRequiredMixin, ListView):
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 class UserDetail(generics.RetrieveUpdateAPIView):
@@ -61,3 +64,4 @@ class UserDetail(generics.RetrieveUpdateAPIView):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
