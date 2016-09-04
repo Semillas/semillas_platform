@@ -39,6 +39,7 @@ THIRD_PARTY_APPS = (
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'rest_framework',
 )
 
 # Apps specific for this project go here.
@@ -254,3 +255,7 @@ LOCALE_PATHS = (
 
 GEOIP_PATH = '/opt/maxmind/'
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning'
+}

@@ -9,6 +9,13 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
+
+    # API
+    url(r'^api/v1/user/', include('semillas_backend.users.api_urls', namespace='api_users')),
+    #url(r'^api/v1/post', include('post.urls.py', namespace='post')),
+
+
+
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
     url(r'^$', TemplateView.as_view(template_name='landing/home.html'), name='home'),
