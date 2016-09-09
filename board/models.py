@@ -37,8 +37,8 @@ class Service(models.Model):
 
     pic = models.ImageField(upload_to=None,
                             height_field=None,
-                            width_field=
-                            None, max_length=100,
+                            width_field=None,
+                            max_length=100,
                             help_text="Upload a picture.")
     #  TODO: https://github.com/zsiciarz/django-pgallery/blob/master/pgallery
     # /models.py#L90   <- a cool image manager django app
