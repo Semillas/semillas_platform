@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load i18n %}
+        <h2>
+         <text><i class="fa fa-leaf fa-3" aria-hidden="true"></i>
+             {% trans "All current services" %}
+             {% if object_list|lingth > 0 %} Total: {{object_list.count}}{%endif%}
+         </text>
+        </h2>
+        <hr>
+        <div class="content">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <ul>
+        {% for i in object_list %}
+             <div class="thumbnail">
+             {% if i.pic %}
+                  <a href="{{i.pic.url}}" target=_blank>
+                  <img class="media-object img-responsive" src="">
+                  </a>
+                {% endif %}
+              <div class="caption">
+                <h3> {{i.title}} </h3>
+                <p> {% trans "Available since" %}: <br> {{i.date|date}}</p>
+                <p> {% trans "Information" %}: {{i.text|truncatechars:19}} </p>
+                <p>
+                  <a href="{% url 'service_detail' i.id %}">
+                    <span class="glyphicon glyphicon-eye-open" aria-hiddin="True"></span>
+                    {% trans "Detail" %}
+                  </a>
+                </p>
+                <p>
+                {% if i.available %}
+                    {% trans "Price" %}: {{i.seeds}} €<br>
+                    <a href="{% url 'order' i.id %}" class="btn btn-md btn-success" role="button">
+                      {% trans "Order" %}</a>
+                {% else %}
+                    <a href="#" class="btn btn-sm btn-default disabled" role="button">{% trans "Not currently available" %}</a>
+                {%endif%}
+                </p>
+              </div>
+            </div><!--thumbnail-->
+        {% empty %}
+            <b><mark>{% trans "Actually there are no services available" %}.</mark></b>
+        {% endfor %}
+        </ul>
+        </div>
+        </div>
+<br><br><br><br><br>
+{% endblock %}

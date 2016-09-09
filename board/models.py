@@ -25,7 +25,9 @@ class Service(models.Model):
     start_hour = models.TimeField(blank=True,
                                   help_text="If you start serving from an "
                                             "hour")
-    end_hour = models.TimeField(help_text="The finishing hour of the service.")
+    end_hour = models.TimeField(blank=True,
+                                help_text="The finishing hour of the service.")
+    available = models.BooleanField(default=False)  # user easily can disable it
     url = models.URLField(verbose_name="your website",
                           help_text="Your website.",
                           default=None, blank=True)

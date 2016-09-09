@@ -6,7 +6,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    # URL pattern for the ServiceListView
     url(
         regex=r'^$',
         view=views.ServiceListView.as_view(),
@@ -22,7 +21,7 @@ urlpatterns = [
 
     # URL pattern for the ServiceDetailView
     url(
-        regex=r'^(?P<Servicename>[\w.@+-]+)/$',
+        regex=r'^(?P<title>[\w.@+-]+)/$',
         view=views.ServiceDetailView.as_view(),
         name='detail'
     ),
