@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import User
+from .models import Service
 
 
 
-class UserSerializer(serializers.ModelSerializer):
+class ServiceSerializer(serializers.ModelSerializer):
     """ Usage:
         from rest_framework.renderers import JSONRenderer
         from semillas_backend.users.serializers import UserSerializer
@@ -11,5 +11,5 @@ class UserSerializer(serializers.ModelSerializer):
         JSONRenderer().render(UserSerializer(user_instance).data)
     """
     class Meta:
-        model = User 
-        fields = ('id', 'name', 'picture')
+        model = Service
+        fields = ('id', 'title', 'date')

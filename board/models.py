@@ -13,7 +13,8 @@ class Service(models.Model):
     Represents an advert of a user on the platform. Its intended to be
     exchangeable for seeds and mainly geolocated oriented (TODOs!)
     """
-
+    title = models.TextField(max_length=100,
+                             help_text="A title for what you offer.")
     date = models.DateTimeField(auto_now_add=True,
                                 help_text="Date of the post.")
     text = models.TextField(max_length=2000,
