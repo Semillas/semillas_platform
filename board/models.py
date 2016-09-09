@@ -14,18 +14,29 @@ class Service(models.Model):
     exchangeable for seeds and mainly geolocated oriented (TODOs!)
     """
 
-    date = models.DateTimeField(auto_now_add=True)  # posting date
-    text = models.TextField(max_length=2000)  # description of the service
-    period = models.DurationField(blank=False)
-    start_hour = models.TimeField(blank=True,)  # is offered
-    end_hour = models.TimeField()  # might be optional
-
+    date = models.DateTimeField(auto_now_add=True,
+                                help_text="Date of the post.")
+    text = models.TextField(max_length=2000,
+                            help_text="A description of the service.")
+    period = models.DurationField(blank=False,
+                                  help_text="If your service is in a period "
+                                            "of time.")
+    start_hour = models.TimeField(blank=True,
+                                  help_text="If you start serving from an "
+                                            "hour")
+    end_hour = models.TimeField(help_text="The finishing hour of the service.")
+    url = models.URLField(verbose_name="your website",
+                          help_text="Your website.",
+                          default=None, blank=True)
     # TODO: gps intentional: map = models.¿?
     # TODO: seeds ammount - bucket
     # TODO: photomanager album 1-N relationship
 
-    pic = models.ImageField(upload_to=None, height_field=None, width_field=
-                            None, max_length=100, **options)
+    pic = models.ImageField(upload_to=None,
+                            height_field=None,
+                            width_field=
+                            None, max_length=100,
+                            help_text="Upload a picture.")
     #  TODO: https://github.com/zsiciarz/django-pgallery/blob/master/pgallery
     # /models.py#L90   <- a cool image manager django app
 
