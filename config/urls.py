@@ -12,7 +12,7 @@ urlpatterns = [
 
     # API
     url(r'^api/v1/user/', include('semillas_backend.users.api_urls', namespace='api_users')),
-    #url(r'^api/v1/post', include('post.urls.py', namespace='post')),
+    url(r'^api/v1/service/', include('board.api_urls', namespace='api_service')),
 
 
 
