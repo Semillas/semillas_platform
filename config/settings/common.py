@@ -48,6 +48,7 @@ LOCAL_APPS = (
     'semillas_backend.users.apps.UsersConfig',
     'landing',
     'board',
+    'webapp',
     # Your stuff: custom apps go here
 )
 
