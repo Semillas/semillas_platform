@@ -57,11 +57,9 @@
               <li class="nav-item">
               <a class="nav-link" href="{% url 'landing:development' %}"><i class="fa fa-mobile" aria-hidden="true"></i> {% trans "Software" %}</a>
               </li>
-              <!-- Removing contact until it gets translated
               <li class="nav-item">
               <a class="nav-link" href="{% url 'landing:contact' %}"><i class="fa fa-envelope" aria-hidden="true"></i> {% trans "Contacto" %}</a>
               </li>
-              -->
             </ul>
             <ul class="nav navbar-nav pull-xs-right">
               {% if request.user.is_authenticated %}

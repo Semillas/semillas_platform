@@ -58,19 +58,19 @@ msgstr ""
 #: landing/templates/landing/contact.html:7
 #: semillas_backend/templates/base.html:62
 msgid "Contacto"
-msgstr ""
+msgstr "Contact"
 
 #: landing/templates/landing/contact.html:14
 msgid "Puedes contactarnos en"
-msgstr ""
+msgstr "You can contact us at"
 
 #: landing/templates/landing/contact.html:18
 msgid "También puedes conocernos en "
-msgstr ""
+msgstr "Also meet as "
 
 #: landing/templates/landing/contact.html:18
 msgid "este link"
-msgstr ""
+msgstr "here"
 
 #: landing/templates/landing/development.html:7
 msgid "Version 0.1"
@@ -366,16 +366,12 @@ msgstr ""
 "technology."
 
 #: landing/templates/landing/who_we_are.html:22
-#, fuzzy
-#| msgid ""
-#| "Desarrollador Back-end. Interesado en economía, política, educación y "
-#| "tecnología."
 msgid ""
 "Desarrollador full stack. Interesado en el software libre, Linux y nuevas "
 "tecnologías."
 msgstr ""
-"Back-end developer. Interests are economy; politics; education and "
-"technology."
+"Full Stack developer. Interested in Open Source Software, linux and "
+"new technologies."
 
 #: landing/templates/landing/who_we_are.html:32
 msgid "Necesitamos gente, ¿Quieres participar en el proyecto?"
@@ -702,15 +698,15 @@ msgstr ""
 
 #: semillas_backend/templates/base.html:145
 msgid "Subir"
-msgstr ""
+msgstr "Up"
 
 #: semillas_backend/templates/base.html:154
 msgid "Hecho con:"
-msgstr ""
+msgstr "Powered by"
 
 #: semillas_backend/templates/base.html:193
 msgid "Acerca de"
-msgstr ""
+msgstr "About"
 
 #: semillas_backend/users/models.py:17
 msgid "Name of User"
