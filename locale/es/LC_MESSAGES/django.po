@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 20:57+0000\n"
+"POT-Creation-Date: 2016-09-12 21:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ismael <ismael.deesteban@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/semilla-social/teams/65146/"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings/common.py:245
+#: config/settings/common.py:247
 msgid "Spanish"
 msgstr "Español"
 
-#: config/settings/common.py:246
+#: config/settings/common.py:248
 msgid "English"
 msgstr "Inglés"
 
@@ -56,6 +56,7 @@ msgid "Sección aún por hacerse...."
 msgstr ""
 
 #: landing/templates/landing/contact.html:7
+#: semillas_backend/templates/base.html:62
 msgid "Contacto"
 msgstr ""
 
@@ -294,17 +295,17 @@ msgid "Esto que ves es todo lo que hay."
 msgstr ""
 
 #: landing/templates/landing/license.html:8
-#: semillas_backend/templates/base.html:207
+#: semillas_backend/templates/base.html:205
 msgid "Licencia"
 msgstr ""
 
 #: landing/templates/landing/privacy.html:8
-#: semillas_backend/templates/base.html:203
+#: semillas_backend/templates/base.html:201
 msgid "Privacidad"
 msgstr ""
 
 #: landing/templates/landing/terms.html:8
-#: semillas_backend/templates/base.html:199
+#: semillas_backend/templates/base.html:197
 msgid "Términos"
 msgstr ""
 
@@ -453,7 +454,7 @@ msgstr ""
 #: semillas_backend/templates/account/login.html:7
 #: semillas_backend/templates/account/login.html:11
 #: semillas_backend/templates/account/login.html:44
-#: semillas_backend/templates/base.html:81
+#: semillas_backend/templates/base.html:79
 msgid "Sign In"
 msgstr ""
 
@@ -561,7 +562,7 @@ msgstr "Unirse"
 
 #: semillas_backend/templates/account/signup.html:9
 #: semillas_backend/templates/account/signup.html:19
-#: semillas_backend/templates/base.html:78
+#: semillas_backend/templates/base.html:76
 msgid "Sign Up"
 msgstr "Unirse"
 
@@ -617,38 +618,34 @@ msgstr ""
 "<strong>Nota:</strong> todavía puedes <a href=\"%(email_url)s\">cambiar tu "
 "dirección de correo</a>."
 
-#: semillas_backend/templates/base.html:57
+#: semillas_backend/templates/base.html:55
 msgid "Quiénes Somos"
 msgstr ""
 
-#: semillas_backend/templates/base.html:60
+#: semillas_backend/templates/base.html:58
 msgid "Software"
 msgstr ""
 
-#: semillas_backend/templates/base.html:64
-msgid " Contacto"
-msgstr ""
-
-#: semillas_backend/templates/base.html:71
+#: semillas_backend/templates/base.html:69
 msgid "My Profile"
 msgstr "Mi Perfil"
 
-#: semillas_backend/templates/base.html:74
+#: semillas_backend/templates/base.html:72
 msgid "Sign out"
 msgstr "Salir"
 
-#: semillas_backend/templates/base.html:147
+#: semillas_backend/templates/base.html:145
 msgid "Subir"
 msgstr ""
 
-#: semillas_backend/templates/base.html:156
+#: semillas_backend/templates/base.html:154
 msgid "Hecho con:"
 msgstr ""
 
-#: semillas_backend/templates/base.html:195
+#: semillas_backend/templates/base.html:193
 msgid "Acerca de"
 msgstr ""
 
-#: semillas_backend/users/models.py:16
+#: semillas_backend/users/models.py:17
 msgid "Name of User"
 msgstr "Nombre del Usuario"
