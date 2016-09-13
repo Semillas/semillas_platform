@@ -66,7 +66,7 @@ msgstr "You can contact us at"
 
 #: landing/templates/landing/contact.html:18
 msgid "También puedes conocernos en "
-msgstr "Also meet as "
+msgstr "Also meet us "
 
 #: landing/templates/landing/contact.html:18
 msgid "este link"
