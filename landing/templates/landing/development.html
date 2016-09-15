@@ -2,17 +2,20 @@
 {% block content %}
 {% load staticfiles %}
 {% load i18n %}
-
-
-    <h1>{% trans "Version 0.1" %}</h1>
-    <p>
-      Product requirement document for the first version of Semillas: 
-
-    <a href="https://docs.google.com/document/d/1S0ZCtLXP4x_1L_MLkHynEIOlutPAkWuRLcyUvIBbBlc/edit?usp=sharing"> Semillas PRD 0.1 </a>
-    </p>
-    <p>
-        Also here is the <a href="https://github.com/Semillas">Github Account</a>
-    </p>
-
-
+<h2>
+         <text>
+            <i class="fa fa-code-fork" aria-hidden="true"></i>
+             {% trans "Version 0.1" %}
+         </text>
+    </h2>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <p>
+            Product requirement document for the first version of Semillas:
+            <a href="https://docs.google.com/document/d/1S0ZCtLXP4x_1L_MLkHynEIOlutPAkWuRLcyUvIBbBlc/edit?usp=sharing"> Semillas PRD 0.1 </a>
+            </p>
+        <p>Also here is the <a href="https://github.com/Semillas">Github Account</a></p>
+        </div>
+    </div>
 {% endblock %}
