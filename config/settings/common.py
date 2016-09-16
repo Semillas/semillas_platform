@@ -50,6 +50,8 @@ LOCAL_APPS = (
     'landing',
     'board',
     'swagger',
+    'webapp',
+    # Your stuff: custom apps go here
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
