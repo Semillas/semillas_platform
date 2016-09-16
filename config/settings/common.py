@@ -222,6 +222,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'semillas_backend.users.adapters.AccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'semillas_backend.users.adapters.SocialAccountAdapter'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Custom user app defaults
 # Select the correct user model
