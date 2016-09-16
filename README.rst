@@ -29,11 +29,11 @@ Setting Up Your Development environment with Docker Compose
   For example, in Ubuntu I installed it following this:
   https://docs.docker.com/engine/installation/linux/ubuntulinux/
 
-* Install Docker Compose: 
+* Install Docker Compose:
   Using this instructions for Ubuntu:
   https://docs.docker.com/compose/install/
 
-* Once docker compose is installed and docker engine service is running: 
+* Once docker compose is installed and docker engine service is running:
     $ sudo docker-compose -f dev.yml up
 
 
@@ -95,26 +95,17 @@ With MailHog running, to view messages that are sent by your application, open y
 
 Sentry
 ^^^^^^
-
-https://app.getsentry.com/app53149897herokucom/
+https://sentry.io/semillas
 
 
 
 Deployment
 ----------
 
-Whenever master branch is updated with a new commit or merge. A deploy will be triggered. 
+Whenever master branch is updated with a new commit or merge. A deploy will be triggered.
 
 Check it on www.semillasocial.org
 
 
-
-
-Docker
-^^^^^^
-
-See detailed `cookiecutter-django Docker documentation`_.
-
-.. _`cookiecutter-django Docker documentation`: http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html
-
+Whatever is pushed to 'dev' branch it will automatically be deployed to http://alpha.semillasocial.org
 

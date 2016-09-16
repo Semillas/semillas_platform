@@ -40,6 +40,7 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
+    'rest_framework_swagger', # Rest-api web documentation
 )
 
 # Apps specific for this project go here.
@@ -47,7 +48,8 @@ LOCAL_APPS = (
     # custom users app
     'semillas_backend.users.apps.UsersConfig',
     'landing',
-    # Your stuff: custom apps go here
+    'board',
+    'swagger',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -220,6 +222,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'semillas_backend.users.adapters.AccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'semillas_backend.users.adapters.SocialAccountAdapter'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Custom user app defaults
 # Select the correct user model
