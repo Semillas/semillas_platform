@@ -1,24 +1,25 @@
 semillas_backend
 ==============================
 
-Social Curency
-
-This repo is the code of http://semillasocial.org
-
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
      :alt: Built with Cookiecutter Django
 
+.. image:: https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000
+    :target:
 
-LICENSE: MIT
+
+Social Curency
+
+Website: https://www.semillasocial.org
+Endpoints: https://www.semillasocial.org (You should be registered and signed-in)
 
 
-Settings
-------------
+It is a transparent, nonprofit platform for the exchange of goods and services in which participation don't require legal tender involvement.
 
-Moved to settings_.
+It is based on the abundancy of resources, in the creative, artistic, manual and intelectual capacity of members. They could be children, elder people, teenagers, workers, housewives, unemployed, etc.
 
-.. _settings: http://cookiecutter-django.readthedocs.io/en/latest/settings.html
+
 
 Basic Commands
 --------------
@@ -35,6 +36,14 @@ Setting Up Your Development environment with Docker Compose
 
 * Once docker compose is installed and docker engine service is running:
     $ sudo docker-compose -f dev.yml up
+
+---------------------------------------
+Alternative way of installing Docker Compose:
+
+    $ curl -sSL https://get.docker.com
+    $ pip install docker-compose  # run it as sudo to install it globally.
+    $ gpasswd -a $USER docker  # add user to docker group
+    # login/logout from shell
 
 
 Setting Up Your Users
@@ -53,8 +62,9 @@ Test coverage
 
 To run the tests, check your test coverage, and generate an HTML coverage report::
 
-    $ coverage run manage.py test
-    $ coverage html
+
+    $ docker-compose -f dev.yml run django coverage run manage.py test
+    $ docker-compose -f dev.yml run django coverage html
     $ open htmlcov/index.html
 
 Running tests with py.test
@@ -62,7 +72,7 @@ Running tests with py.test
 
 ::
 
-  $ py.test
+  $ docker-compose -f dev.yml run django py.test
 
 
 Live reloading and Sass CSS compilation
@@ -90,9 +100,6 @@ Please check `cookiecutter-django Docker documentation`_ for more details how to
 With MailHog running, to view messages that are sent by your application, open your browser and go to ``http://127.0.0.1:8025``
 
 
-
-
-
 Sentry
 ^^^^^^
 https://sentry.io/semillas
@@ -108,4 +115,3 @@ Check it on www.semillasocial.org
 
 
 Whatever is pushed to 'dev' branch it will automatically be deployed to http://alpha.semillasocial.org
-
