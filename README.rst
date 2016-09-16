@@ -1,12 +1,12 @@
 semillas_backend
-==============================
+================
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
      :alt: Built with Cookiecutter Django
 
 .. image:: https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000
-    :target:
+
 
 
 Social Curency
@@ -25,7 +25,7 @@ Basic Commands
 --------------
 
 Setting Up Your Development environment with Docker Compose
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Install Docker Engine:
   For example, in Ubuntu I installed it following this:
   https://docs.docker.com/engine/installation/linux/ubuntulinux/
@@ -37,8 +37,11 @@ Setting Up Your Development environment with Docker Compose
 * Once docker compose is installed and docker engine service is running:
     $ sudo docker-compose -f dev.yml up
 
----------------------------------------
-Alternative way of installing Docker Compose:
+"""""""""""""""""""""""""""""""""""""""""""""
+
+**Alternative way of installing Docker Compose:**
+
+
 
     $ curl -sSL https://get.docker.com
     $ pip install docker-compose  # run it as sudo to install it globally.
@@ -95,7 +98,6 @@ In development, it is often nice to be able to see emails that are being sent fr
 .. _mailhog: https://github.com/mailhog/MailHog
 
 Container mailhog will start automatically when you will run all docker containers.
-Please check `cookiecutter-django Docker documentation`_ for more details how to start all containers.
 
 With MailHog running, to view messages that are sent by your application, open your browser and go to ``http://127.0.0.1:8025``
 
