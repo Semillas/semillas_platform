@@ -10,6 +10,9 @@ semillas_backend
 .. image:: https://travis-ci.org/Semillas/semillas_backend.svg?branch=master
     :target: https://travis-ci.org/Semillas/semillas_backend
 
+.. image:: https://codecov.io/gh/Semillas/semillas_backend/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/Semillas/semillas_backend
+
 
 Social Curency
 
