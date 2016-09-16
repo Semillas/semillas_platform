@@ -11,14 +11,16 @@ semillas_backend
 
 Social Curency
 
-Website: https://www.semillasocial.org
-Endpoints: https://www.semillasocial.org (You should be registered and signed-in)
 
 
 It is a transparent, nonprofit platform for the exchange of goods and services in which participation don't require legal tender involvement.
 
 It is based on the abundancy of resources, in the creative, artistic, manual and intelectual capacity of members. They could be children, elder people, teenagers, workers, housewives, unemployed, etc.
 
+
+Website: https://www.semillasocial.org
+Endpoints: https://www.semillasocial.org (You should be registered and signed-in)
+On the url https://www.semillasocial.org/webapp is the ReactJS being executed.
 
 
 Basic Commands
