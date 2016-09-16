@@ -30,6 +30,7 @@ urlpatterns = [
 
     # Your stuff: custom urls includes go here
     url(r'^landing/', include('landing.urls', namespace='landing')),
+    url(r'^docs/', include('swagger.urls', namespace='docs')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

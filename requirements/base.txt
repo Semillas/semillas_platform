@@ -51,6 +51,7 @@ geoip2==2.4.0
 
 # Rest Framework
 djangorestframework==3.4.6
+django-rest-swagger==2.0.5
 
 
 

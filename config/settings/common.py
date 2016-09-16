@@ -40,6 +40,7 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
+    'rest_framework_swagger', # Rest-api web documentation
 )
 
 # Apps specific for this project go here.
@@ -48,7 +49,7 @@ LOCAL_APPS = (
     'semillas_backend.users.apps.UsersConfig',
     'landing',
     'board',
-    # Your stuff: custom apps go here
+    'swagger',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
