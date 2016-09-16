@@ -7,6 +7,8 @@ semillas_backend
 
 .. image:: https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000
 
+.. image:: https://travis-ci.org/Semillas/semillas_backend.svg?branch=master
+    :target: https://travis-ci.org/Semillas/semillas_backend
 
 
 Social Curency
