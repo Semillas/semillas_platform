@@ -12,6 +12,7 @@ python:
 
 install:
   - pip install codecov
+  - pip install -r requirements/local.txt
 
 script:
    - coverage run tests.py
