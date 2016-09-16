@@ -32,7 +32,7 @@ class Service(models.Model):
                           help_text="Your website.",
                           default=None, blank=True)
     # TODO: gps intentional: map = models.¿?
-    # TODO: seeds ammount - bucket
+    # TODO: seeds ammount - wallet
     # TODO: photomanager album 1-N relationship
 
     pic = models.ImageField(upload_to=None,
