@@ -8,7 +8,7 @@ from . import views
 urlpatterns = [
     # URL pattern for the ServiceListView
     url(
-        regex=r'all_services^$',
+        regex=r'^all_services$',
         view=views.ServiceList.as_view(),
         name='list'
     ),
