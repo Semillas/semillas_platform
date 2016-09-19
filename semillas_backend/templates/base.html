@@ -58,7 +58,7 @@
               <a class="nav-link" href="{% url 'landing:development' %}"><i class="fa fa-mobile" aria-hidden="true"></i> {% trans "Software" %}</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="{% url 'landing:contact' %}"><i class="fa fa-envelope" aria-hidden="true"></i> {% trans " Contacto" %}</a>
+              <a class="nav-link" href="{% url 'landing:contact' %}"><i class="fa fa-envelope" aria-hidden="true"></i> {% trans "Contacto" %}</a>
               </li>
             </ul>
             <ul class="nav navbar-nav pull-xs-right">
@@ -79,27 +79,31 @@
               {% endif %}
             </ul>
           </div>
-          {% get_current_language as LANGUAGE_CODE %}
-          {% get_available_languages as LANGUAGES %}
-          {% get_language_info_list for LANGUAGES as languages %}
-              <form class="form-inline" action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                  {% for language in languages %}
-                    {% if LANGUAGE_CODE == language.code %}
-                        <button  type="submit" class="btn btn-link"
-                        {% if LANGUAGE_CODE != "es" %}
-                         value="es" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i> Cambiar a Castellano
-                        {% else %}
-                         value="en" name="language"><i class="fa fa-flag-o" aria-hidden="true"></i>  Change to English
-                        {% endif %}
-                        </button>
-                      {% endif %}
-                  {% endfor %}
-              </form>
       </nav>
     </div>
   </div><!--container navbar-->
-  <br>
+  <div class="container">
+      {% get_current_language as LANGUAGE_CODE %}
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+      <form class="form-inline" action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}"/>
+          {% for language in languages %}
+            {% if LANGUAGE_CODE == language.code %}
+                <button type="submit" class="btn btn-link pull-right"
+                {% if LANGUAGE_CODE != "es" %}
+                 value="es" name="language" alt="Cambiar a Castellano" title="Cambiar a Castellano">
+                    <img class="img-fluid" src="{% static 'images/spanish_flag.png' %}" />
+                {% else %}
+                 value="en" name="language" alt="Change to English" title="Change to English">
+                    <img class="img-fluid" src="{% static 'images/english_flag.png' %}"/>
+                {% endif %}
+                </button>
+              {% endif %}
+          {% endfor %}
+      </form>
+
+  </div>
     <div class="container">
       <br>
       {% if messages %}
@@ -174,13 +178,12 @@
               </a>
                <br>
                <br>
-              
               <small class="whiterly">
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.
               </small>
                <br>
               <small class="whiterly"> Semillas 2016 - </small> ∞
-<!--              
+<!--
               <small>
               <ul class="list-inline">
                    <li class="list-inline-item">
@@ -204,7 +207,7 @@
                   </li>
             </ul>
             </small>
--->            
+-->
             </div>
             </center>
         </footer>
