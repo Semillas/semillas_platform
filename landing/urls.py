@@ -11,11 +11,6 @@ from django.views.generic import TemplateView
 urlpatterns = [
     # url pattern for the userlistview
     url(
-        regex=r'^FAQ/$',
-        view=TemplateView.as_view(template_name='landing/FAQ.html'),
-        name='FAQ'
-    ),
-    url(
         regex=r'^people/$',
         view=TemplateView.as_view(template_name='landing/who_we_are.html'),
         name='people'
