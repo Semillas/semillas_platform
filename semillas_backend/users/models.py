@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, absolute_import
 
+import os
+
 from django.contrib.auth.models import AbstractUser
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.gis.db.models import PointField
-
-from .storage import user_store
 
 
 @python_2_unicode_compatible
@@ -23,11 +23,16 @@ class User(AbstractUser):
         help_text='User Location, only read in production user admin panel'
     )
 
+    def user_photo_upload(instance, filename):
+        extension = os.path.splitext(filename)[1]
+        return "media/users/%s%s" % (str(instance.id), extension)
+
+
     picture = models.ImageField(
         null=True,
         blank=True,
         help_text='Profile Picture',
-        storage=user_store
+        upload_to=user_photo_upload,
     )
 
     def __str__(self):
