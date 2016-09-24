@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block javascript_level2 %}
+	<script type="text/javascript" src="{% static 'webapp/js/geoexample.js' %}" defer="defer"></script>
+{% endblock %}
+    
+{% block content %}
+
+
+
+<p id="demo">Click the button to get your position.</p>
+
+<button onclick="getLocation()">Set Map</button>
+<button onclick="resetMap()">Clean Map</button>
+
+<div id="mapholder"></div>
+
+<button onclick="getLocation2()">Example 2</button>
+<button onclick="getLocation3()">Example 3</button>
+
+{% endblock %}
