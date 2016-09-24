@@ -10,8 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://use.fontawesome.com/5ca06a28bc.js"></script>
-    <!--link rel="stylesheet" href="http://netdna.bootstrapcdn
-    .com/font-awesome/4.0.3/css/font-awesome.css"/-->
+    <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/-->
     <title>{% block title %}Semillas{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -28,6 +27,23 @@
     <!-- This file store project specific CSS -->
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
+    {% block javascript %}
+	<!-- Latest JQuery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" defer="defer"></script>
+
+	<!-- Tether - a requirement for Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" defer="defer"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous" defer="defer"></script>
+
+	<!-- Your stuff: Third-party javascript libraries go here -->
+	<!-- place project specific Javascript in this file -->
+
+	<script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
+    {% endblock javascript %}
+    {% block javascript_level2 %}
+    {% endblock javascript_level2 %}
   </head>
 
   <body>
@@ -85,11 +101,11 @@
             {% if LANGUAGE_CODE == language.code %}
                 <button type="submit" class="btn btn-link pull-right"
                 {% if LANGUAGE_CODE != "es" %}
-                 value="es" name="language" alt="Cambiar a Castellano" title="Cambiar a Castellano">
-                    <img class="img-fluid" src="{% static 'images/spanish_flag.png' %}" />
+                 value="es" name="language" title="Cambiar a Castellano">
+                    <img class="img-fluid" src="{% static 'images/spanish_flag.png' %}" alt="Cambiar a Castellano" />
                 {% else %}
-                 value="en" name="language" alt="Change to English" title="Change to English">
-                    <img class="img-fluid" src="{% static 'images/english_flag.png' %}"/>
+                 value="en" name="language" title="Change to English">
+                    <img class="img-fluid" src="{% static 'images/english_flag.png' %}" alt="Change to English" />
                 {% endif %}
                 </button>
               {% endif %}
@@ -154,23 +170,4 @@
     </a>
   </body>
 </html>
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    {% block javascript %}
-      <!-- Latest JQuery -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-      <!-- Tether - a requirement for Bootstrap tooltips -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-
-      <!-- Your stuff: Third-party javascript libraries go here -->
-      <!-- place project specific Javascript in this file -->
-
-      <script src="{% static 'js/project.js' %}"></script>
-
-    {% endblock javascript %}
 
