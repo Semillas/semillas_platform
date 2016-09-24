@@ -1,17 +1,11 @@
 # semillas_backend
 ================
 
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
+[![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg)](https://github.com/pydanny/cookiecutter-django/)
+![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
+[![Travis-CI](https://travis-ci.org/Semillas/semillas_backend.svg?branch=master)](https://travis-ci.org/Semillas/semillas_backend)
+[![Coverage Codecov](https://codecov.io/gh/Semillas/semillas_backend/branch/master/graph/badge.svg)](https://codecov.io/gh/Semillas/semillas_backend)
 
-.. image:: https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000
-
-.. image:: https://travis-ci.org/Semillas/semillas_backend.svg?branch=master
-    :target: https://travis-ci.org/Semillas/semillas_backend
-
-.. image:: https://codecov.io/gh/Semillas/semillas_backend/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/Semillas/semillas_backend
 
 
 ## Social Curency
@@ -107,9 +101,7 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 
 ### Live reloading and Sass CSS compilation
 
-Moved to `Live reloading and SASS compilation`_.
-
-.. _`Live reloading and SASS compilation`: http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html
+Live reloading and SASS compilation http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html
 
 
 
@@ -118,13 +110,13 @@ Moved to `Live reloading and SASS compilation`_.
 
 ### Email Server
 
-In development, it is often nice to be able to see emails that are being sent from your application. For that reason local SMTP server `MailHog`_ with a web interface is available as docker container.
+In development, it is often nice to be able to see emails that are being sent from your application. For that reason local SMTP server MailHog with a web interface is available as docker container.
 
-.. _mailhog: https://github.com/mailhog/MailHog
+Mailhog: https://github.com/mailhog/MailHog
 
 Container mailhog will start automatically when you will run all docker containers.
 
-With MailHog running, to view messages that are sent by your application, open your browser and go to ``http://127.0.0.1:8025``
+With MailHog running, to view messages that are sent by your application, open your browser and go to http://127.0.0.1:8025
 
 
 ### Error Log: Sentry

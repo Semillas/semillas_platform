@@ -15,8 +15,17 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_('Name of User'), blank=True, max_length=255)
-    location = PointField(null=True)
-    picture = models.ImageField(null=True)
+    location = PointField(
+        null=True,
+        blank=True,
+        help_text='User Location, only read in production user admin panel'
+    )
+
+    picture = models.ImageField(
+        null=True,
+        blank=True,
+        help_text='Profile Picture'
+    )
 
     def __str__(self):
         return self.username

@@ -5,13 +5,14 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
-from .models import User
+from django.contrib.gis.admin.options import GeoModelAdmin
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
+from .models import User
 
 class MyUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
         model = User
-
 
 class MyUserCreationForm(UserCreationForm):
 
@@ -32,9 +33,9 @@ class MyUserCreationForm(UserCreationForm):
 
 
 @admin.register(User)
-class MyUserAdmin(AuthUserAdmin):
-    form = MyUserChangeForm
-    add_form = MyUserCreationForm
+class MyUserAdmin(AuthUserAdmin, GeoModelAdmin):
+    openlayers_url = static('openlayers/OpenLayers.js')
+    add_form = UserCreationForm
     fieldsets = (
             ('User Profile', {'fields': ('name','picture', 'location')}),
     ) + AuthUserAdmin.fieldsets

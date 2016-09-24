@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 15:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Ismael <ismael.deesteban@gmail.com>, 2016\n"
+"Last-Translator: Heather Danielle Johnston <ginger_gypsy@hotmail.com>, 2016\n"
 "Language-Team: English (https://www.transifex.com/semilla-social/teams/65146/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -174,9 +174,9 @@ msgid ""
 "empleo y el constante crecimiento económico. Además de estar depredando "
 "nuestros ritmos naturales y nuestros ecosistemas."
 msgstr ""
-"The monetary economy is depredating the non-monetary in the search for full "
-"employment and the need for constant economic growth, while  plundering our "
-"natural cycles and ecosystems in the process."
+"The monetary economy is depredating the non-monetary in the hunt for full "
+"employment opportunities and the need for constant economic growth, while "
+"plundering our natural cycles and ecosystems in the process."
 
 #: landing/templates/landing/home.html:18
 msgid ""
@@ -187,13 +187,13 @@ msgid ""
 "economías de ayuda mutua, economías de cuidados y economías de reutilización"
 " de bienes."
 msgstr ""
-"The Non-monetary system has been damaged as a result of various factors. "
+"The non-monetary system has been damaged as a result of various factors. "
 "Firstly, by the migration of people from the countryside to the city. "
-"Secondly, by the integration of women into the workforce. The latter is "
-"something clearly very positive for gender equality, however, as a result, "
-"family units have become increasingly more fragile (e.g. a single father "
-"with two kids). These are some issues that have negatively affected "
-"economies based on reciprocity, care, and the reutilization of goods."
+"Secondly, by the integration of women into the workforce. While the latter "
+"is something clearly very positive for gender equality, as a result, family "
+"units have become increasingly more fragile. These are some issues that have"
+" negatively affected economies which are based on reciprocity, care, and the"
+" reutilization of goods."
 
 #: landing/templates/landing/home.html:19
 msgid ""
@@ -212,8 +212,8 @@ msgid ""
 "como herramienta de cambio social. "
 msgstr ""
 "There are many projects involving social currencies nowadays. Semillas is a "
-"trustworthy open technology, serving society and nature as a tool for social"
-" change."
+"trustworthy open technology, serving society and nature as a tool to "
+"implement social change."
 
 #: landing/templates/landing/home.html:21
 msgid ""
@@ -314,8 +314,9 @@ msgid ""
 "Sin embargo, queremos dar una posibilidad tecnológica para poder obtener, a "
 "cambio de tus semillas, clases de inglés al otro lado del océano."
 msgstr ""
-"However, we also aim to utilize technology. For example, receiving English "
-"classes from a teacher overseas in return for your Semillas. "
+"However, we also aim to utilize technology. For example, you may choose to "
+"receive English classes from a teacher overseas in return for your Semillas."
+" "
 
 #: landing/templates/landing/home.html:38
 msgid "La creación de semillas: "
@@ -347,7 +348,7 @@ msgstr ""
 
 #: landing/templates/landing/home.html:44
 msgid "Creación de Semillas: Servicios a la comunidad:"
-msgstr "Semillas Creation: Community Services"
+msgstr "Generating Semillas: Community Services"
 
 #: landing/templates/landing/home.html:45
 msgid ""
@@ -355,9 +356,9 @@ msgid ""
 "colaboración con asociaciones locales se organizarán sesiones de trabajo en "
 "grupo donde todos los voluntarios serán retribuídos en Semillas."
 msgstr ""
-"Some community services will be paid with Semillas. Working in collaboration"
-" with local associations some groups working sessions will be organized. "
-"There every volunteer will be paid with Semillas"
+"Some community services will be paid in Semillas. Some group working "
+"sessions will be organized, in collaboration with local associations, where "
+"every volunteer will be paid in Semillas."
 
 #: landing/templates/landing/home.html:46
 msgid "Conversión de semillas a euros"
@@ -386,7 +387,7 @@ msgstr "Our servers and clients are open source, hosted in"
 
 #: landing/templates/landing/home.html:51
 msgid "Buscamos voluntarios y desarrolladores de toda índole."
-msgstr "We look for volunteers and developers of any kind."
+msgstr "We are currently looking for volunteers and developers of any kind."
 
 #: landing/templates/landing/home.html:52
 msgid "Estado del proyecto:"
@@ -398,9 +399,9 @@ msgid ""
 "producto y quieres colaborar escríbenos a info.semillasocial@gmail.com y te "
 "invitamos a nuestro <a href='https://slack.com'>Slack</a>."
 msgstr ""
-"Under development!. If you want to be updated on product discussions or do "
-"you want to get involved write us to info.semillasocial@gmail.com and we "
-"will invite you to our <a href='https://slack.com'>Slack</a>."
+"Under development!. If you'd like to be updated on product discussions or "
+"want to get involved, write us at info.semillasocial@gmail.com and we will "
+"invite you to our <a href='https://slack.com'>Slack</a>."
 
 #: landing/templates/landing/who_we_are.html:8
 msgid "El Equipo"
@@ -411,20 +412,20 @@ msgid ""
 "Desarrollador Back-end. Interesado en economía, política, educación y "
 "tecnología."
 msgstr ""
-"Back-end developer. Interests are economy; politics; education and "
-"technology."
+"Back-end developer. Interests include: Economics, Politics, Education and "
+"Technology."
 
 #: landing/templates/landing/who_we_are.html:29
 msgid ""
 "Desarrollador full stack. Interesado en el software libre, Linux y nuevas "
 "tecnologías."
 msgstr ""
-"Back-end developer. Interests are economy; politics; education and "
-"technology."
+"Full-stack developer. Interests include: Freeware, Linux, and New "
+"technologies."
 
 #: landing/templates/landing/who_we_are.html:39
 msgid "Necesitamos gente, ¿Quieres participar en el proyecto?"
-msgstr "Join us!! "
+msgstr "Would you like to participate in the project? Join us!! "
 
 #: landing/templates/landing/who_we_are.html:53
 msgid "Historia:"
@@ -432,7 +433,7 @@ msgstr "History:"
 
 #: landing/templates/landing/who_we_are.html:53
 msgid "cómo surgió"
-msgstr "How did it start"
+msgstr "How did it start?"
 
 #: landing/templates/landing/who_we_are.html:57
 msgid ""
@@ -454,11 +455,11 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"We think that another form of economy is possible. We think every person has something to offer and that this fact should suffice in order to cover the bare minimum to obtain a decent livelihood. We designed this platform to act as facilitators for this to be possible. \n"
+"We think that another form of economy is possible. We think every person has something to offer and that this fact should suffice in order to cover the bare minimum to make a decent livelihood. We designed this platform to act as facilitators to make this possible. \n"
 "\n"
 "We are a group of hacktivists and we don't do this for money.\n"
 "\n"
-"We welcome all kinds of help, and right now especially with Android, iOS, design, frontend..."
+"We welcome all kinds of help, and right now especially with Android, iOS, design, front-end..."
 
 #: landing/templates/landing/who_we_are.html:79
 msgid "Quiénes somos"
@@ -467,7 +468,7 @@ msgstr "The Team"
 #: semillas_backend/templates/account/account_inactive.html:5
 #: semillas_backend/templates/account/account_inactive.html:8
 msgid "Account Inactive"
-msgstr "Account Inactive"
+msgstr "Account Inactive "
 
 #: semillas_backend/templates/account/account_inactive.html:10
 msgid "This account is inactive."
