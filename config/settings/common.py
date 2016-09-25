@@ -218,14 +218,15 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # Some really nice defaults
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Semillas] "
+ACCOUNT_USERNAME_REQUIRED = False
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'semillas_backend.users.adapters.AccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'semillas_backend.users.adapters.SocialAccountAdapter'
-ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Custom user app defaults
 # Select the correct user model
