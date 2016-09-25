@@ -33,7 +33,7 @@ class User(AbstractUser):
         null=True,
         blank=True,
         help_text='Profile Picture',
-        upload_to='media',
+        upload_to=user_photo_upload,
     )
 
     def __str__(self):
