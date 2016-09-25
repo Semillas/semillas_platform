@@ -10,7 +10,6 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.gis.db.models import PointField
 
-from .storage import user_store
 
 @python_2_unicode_compatible
 class User(AbstractUser):
