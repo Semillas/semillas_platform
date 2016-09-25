@@ -63,3 +63,9 @@ tests/.hitch
 
 #Vagrant
 .vagrant
+
+#ctags
+tags
+
+#cache
+.cache/
