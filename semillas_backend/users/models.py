@@ -10,6 +10,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.gis.db.models import PointField
 
+from .storage import user_store
 
 @python_2_unicode_compatible
 class User(AbstractUser):
@@ -33,6 +34,7 @@ class User(AbstractUser):
         blank=True,
         help_text='Profile Picture',
         upload_to=user_photo_upload,
+        storage=user_store
     )
 
     def __str__(self):
