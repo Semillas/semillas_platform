@@ -2,9 +2,16 @@
 {% block content %}
 {% load staticfiles %}
 {% load i18n %}
-
+    <h2>
+         <text>
+            <i class="fa fa-users" aria-hidden="true"></i>
+             {% trans "El Equipo" %}
+         </text>
+    </h2>
+    <hr>
+<div class="container">
 <div class="row">
-  <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
     <div class="img-thumbnail center-block">
       <img src="{% static 'images/landing/Ismael.jpg' %}" class=" center-block img-thumbnail img-fluid img-circle" style=" height: 280px;" alt="...">
       <div class="caption text-xs-center">
@@ -14,7 +21,7 @@
       </div>
     </div>
   </div>
-  <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
     <div class="img-thumbnail">
       <img src="{% static 'images/landing/p01010101.png' %}" class="center-block img-thumbnail img-fluid" style=" height: 280px;" alt="...">
       <div class="caption text-xs-center">
@@ -24,7 +31,7 @@
       </div>
     </div>
   </div>
-  <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
     <div class="img-thumbnail">
         <img src="" class="img-thumbnail img-fluid center-block" style="width:280px; height: 280px;" alt="">
       <div class="caption  text-xs-center">
@@ -35,21 +42,19 @@
     </div>
   </div>
 </div>
+</div>
 
-
+<div class="container">
 <div class="row">
-  <div class="col-xs-10 col-sm-12 col-md-12 col-lg-12">
-    
-
+  <div class="col-xs-10 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     <hr class="featurette-divider">
-
       <div class="row featurette">
         <div class="col-md-7">
             <h2 class="featurette-heading">{% trans "Historia:" %} <span class="text-muted">{% trans "cómo surgió" %}</span></h2>
           <p class="lead">
-          <quote> 
+          <quote>
           <span>
-              {% trans "Semilla social pretende constituírse como ONG. Este proyecto nace como open source y sin ánimo de lucro." %} 
+              {% trans "Semilla social pretende constituírse como ONG. Este proyecto nace como open source y sin ánimo de lucro." %}
           </span>
           </quote>
           </p>
@@ -59,9 +64,9 @@
       {% blocktrans %}
          Pensamos que otra forma de economía es posible. Pensamos que toda persona
          puede ofrecer algo y que eso debería ser suficiente para cubrir los mínimos de una vida digna.
-         Diseñamos esta plataforma para ofrecer un medio, un soporte para un fin. 
-         Somos un grupo de hacktivistas, no hacemos esto por dinero. 
-         Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, diseño, 
+         Diseñamos esta plataforma para ofrecer un medio, un soporte para un fin.
+         Somos un grupo de hacktivistas, no hacemos esto por dinero.
+         Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, diseño,
          frontend...
       {% endblocktrans %}
   </div>
@@ -69,7 +74,7 @@
 </div>
 
 {% endblock %}
-{% block footer %} 
+{% block footer %}
   <li><a href="{% url 'info' %}">Info</a> </li>
   <li class="active">{%trans "Quiénes somos" %}</li>
 {% endblock %}

@@ -9,32 +9,41 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
     <script src="https://use.fontawesome.com/5ca06a28bc.js"></script>
-
-    <!--link rel="stylesheet" href="http://netdna.bootstrapcdn
-    .com/font-awesome/4.0.3/css/font-awesome.css"/-->
+    <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/-->
     <title>{% block title %}Semillas{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     {% block css %}
     <!-- Latest compiled and minified CSS -->
     <!--link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-
     <!-- Your stuff: Third-party css libraries go here -->
-
     <!-- This file store project specific CSS -->
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
+    {% block javascript %}
+	<!-- Latest JQuery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" defer="defer"></script>
+
+	<!-- Tether - a requirement for Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" defer="defer"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous" defer="defer"></script>
+
+	<!-- Your stuff: Third-party javascript libraries go here -->
+	<!-- place project specific Javascript in this file -->
+
+	<script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
+    {% endblock javascript %}
+    {% block javascript_level2 %}
+    {% endblock javascript_level2 %}
   </head>
 
   <body>
@@ -92,11 +101,11 @@
             {% if LANGUAGE_CODE == language.code %}
                 <button type="submit" class="btn btn-link pull-right"
                 {% if LANGUAGE_CODE != "es" %}
-                 value="es" name="language" alt="Cambiar a Castellano" title="Cambiar a Castellano">
-                    <img class="img-fluid" src="{% static 'images/spanish_flag.png' %}" />
+                 value="es" name="language" title="Cambiar a Castellano">
+                    <img class="img-fluid" src="{% static 'images/spanish_flag.png' %}" alt="Cambiar a Castellano" />
                 {% else %}
-                 value="en" name="language" alt="Change to English" title="Change to English">
-                    <img class="img-fluid" src="{% static 'images/english_flag.png' %}"/>
+                 value="en" name="language" title="Change to English">
+                    <img class="img-fluid" src="{% static 'images/english_flag.png' %}" alt="Change to English" />
                 {% endif %}
                 </button>
               {% endif %}
@@ -105,50 +114,18 @@
 
   </div>
     <div class="container">
-      <br>
       {% if messages %}
           {% for message in messages %}
               <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
           {% endfor %}
       {% endif %}
-
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
 
     </div> <!-- /container -->
-
     {% block modal %}{% endblock modal %}
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    {% block javascript %}
-      <!-- Latest JQuery -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-      <!-- Tether - a requirement for Bootstrap tooltips -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-
-      <!-- Your stuff: Third-party javascript libraries go here -->
-      <!-- place project specific Javascript in this file -->
-
-      <script src="{% static 'js/project.js' %}"></script>
-
-    {% endblock javascript %}
-    <!-- Up button v1 TODO-->
-    <div class="container">
-      <div class="col-xs-10 col-sm-7 col-md-9 col-lg-9">
-      </div>
-      <div class="col-xs-2 col-sm-5 col-md-3 col-lg-3 pull-right rounderly menos" align="right">
-          <a href="#top"><text class="hidden-xs">{% trans "Subir" %}</text>
-        <i class="fa fa-caret-square-o-up"></i></a>
-     </div>
-    </div>
-    <br>
     <!-- footer -->
     <div class="container text-muted">
     <footer class="footer clearfix">
@@ -183,35 +160,14 @@
               </small>
                <br>
               <small class="whiterly"> Semillas 2016 - </small> ∞
-<!--
-              <small>
-              <ul class="list-inline">
-                   <li class="list-inline-item">
-                    <a href="{% url 'landing:FAQ' %}">FAQ</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="footer-list-link"
-                        href="{% url 'landing:about' %}">{% trans "Acerca de" %}</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="footer-list-link"
-                       href="{% url 'landing:terms' %}">{% trans "Términos" %}</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="footer-list-link"
-                        href="{% url 'landing:privacy' %}">{% trans "Privacidad" %}</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="footer-list-link"
-                        href="{% url 'landing:license' %}">{% trans "Licencia" %}</a>
-                  </li>
-            </ul>
-            </small>
--->
             </div>
             </center>
         </footer>
      </div>
+  <!-- Up button v1 TODO-->
+    <a class="back-to-top">
+        {% trans "Subir" %}<i class="fa fa-caret-square-o-up"></i>
+    </a>
   </body>
 </html>
 

@@ -51,12 +51,12 @@ class ServiceListView(LoginRequiredMixin, ListView):
 class ServiceList(generics.ListAPIView):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
-    #permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)
 
 
 class ServiceDetail(generics.RetrieveUpdateAPIView):
-    """ access: curl http://0.0.0.0:8000/api/v1/service/2/
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
-    #permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)

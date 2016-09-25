@@ -2,8 +2,7 @@
 {% block content %}
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
-{% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
+{% load staticfiles %}
 
     <h1>{% trans "El proyecto" %}</h1>
     <p>{% trans "Es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal. " %}</p>
@@ -11,7 +10,11 @@
     <h3>{% trans "Objetivo" %}</h3>
     <p>{% trans "El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se suele contemplar. Empleo remunerado de todas las personas que sostienen la sociedad." %}</p>
     <p>{% trans "Según" %} <a href="http://www.vivirsinempleo.org">Gisbert</a>, {% trans "consideramos dos economías:" %}</p>
-        <img class="img-responsive center-block" alt="" src="{{ STATIC_PREFIX }}images/landing/{{ LANGUAGE_CODE }}/economies_comparison.png" style="align:center;" title=""/>
+    {% if LANGUAGE_CODE == 'es' %}
+      <img class="img-responsive center-block" alt="" src="{% static 'images/landing/es/economies_comparison.png' %}" style="align:center;" title=""/>
+    {% else %}
+      <img class="img-responsive center-block" alt="" src="{% static 'images/landing/en/economies_comparison.png' %}" style="align:center;" title=""/>
+    {% endif %}
     <br>
     <p>{% trans "Ambas son muy necesarias para el funcionamiento correcto de la sociedad. Todo el trabajo altruista de la segunda permite que la primera tenga un valor de cambio tan alto en el mercado. " %}</p>
     <p>{% trans "La monetaria está depredando a la paraeconómica en la búsqueda por el pleno empleo y el constante crecimiento económico. Además de estar depredando nuestros ritmos naturales y nuestros ecosistemas." %}</p>
@@ -41,6 +44,8 @@
     <p>{% trans "Publicación del primer servicio: 5 semillas" %}</p>
     <p>{% trans "Primera venta o primer servicio ofrecido: 15 semillas" %}</p>
     <p>{% trans "Cualquier donación en euros para desarrollar y fomentar la plataforma tendrá una recompensa en el mismo número de semillas. 1 Euro - 1 Semilla. " %}</p>
+    <h5>{% trans "Creación de Semillas: Servicios a la comunidad:" %}</h5>
+    <p>{% trans "Determinados servicios a la comunidad serán remunerados por semillas. En colaboración con asociaciones locales se organizarán sesiones de trabajo en grupo donde todos los voluntarios serán retribuídos en Semillas." %}</p>
     <h4>{% trans "Conversión de semillas a euros" %}</h4>
     <p>{% trans "No se permite tal opción. Quedaría una relación clara y directa de 1-1 de Semillas/Euros. Y la plataforma sería una forma de realizar intercambios evadiendo al fisco. " %}</p>
     <h3>{% trans "Quiénes Somos: " %}</h3>
@@ -48,7 +53,6 @@
     <p>{% trans "Tanto el servidor como los clientes pretenden ser de código abierto, alojados en" %} <a href="https://github.com/Semillas">Github</a>.</p>
     <p>{% trans "Buscamos voluntarios y desarrolladores de toda índole." %}</p>
     <h3>{% trans "Estado del proyecto:" %}</h3>
-    <p>{% trans "Esto que ves es todo lo que hay." %}</p>
-    
+    <p>{% trans "En pleno desarrollo. Si quieres estar al tanto de las discusiones de producto y quieres colaborar escríbenos a info.semillasocial@gmail.com y te invitamos a nuestro <a href='https://slack.com'>Slack</a>." %}</p>
 {% endblock content %}
 

@@ -27,6 +27,7 @@ DJANGO_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
 
     # Useful template tags:
     # 'django.contrib.humanize',
@@ -40,6 +41,7 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
+    'rest_framework_swagger', # Rest-api web documentation
 )
 
 # Apps specific for this project go here.
@@ -48,6 +50,7 @@ LOCAL_APPS = (
     'semillas_backend.users.apps.UsersConfig',
     'landing',
     'board',
+    'swagger',
     'webapp',
     # Your stuff: custom apps go here
 )
@@ -222,6 +225,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'semillas_backend.users.adapters.AccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'semillas_backend.users.adapters.SocialAccountAdapter'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Custom user app defaults
 # Select the correct user model

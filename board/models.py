@@ -38,7 +38,7 @@ class Service(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    
+
     seeds_price = models.PositiveIntegerField(
                                                 help_text="Proposed price in seeds",
                                                 null=False,
