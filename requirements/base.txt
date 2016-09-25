@@ -56,3 +56,8 @@ django-rest-swagger==2.0.5
 
 
 # Your custom requirements go here
+
+#Factory libs. For making up some data.
+# Should be removed from production in the future
+factory-boy==2.7.0
+fake-factory==0.7.2
