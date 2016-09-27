@@ -8,7 +8,7 @@
 
 
 
-## Social Curency
+## Social Currency
 
 
 It is a transparent, nonprofit platform for the exchange of goods and services in which participation don't require legal tender involvement.

@@ -1,6 +1,6 @@
 {
   "name": "semillas_backend",
-  "description": "Social Curency",
+  "description": "Social Currency",
   "env": {
     "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-python",
     "DJANGO_SETTINGS_MODULE": "config.settings.production",
