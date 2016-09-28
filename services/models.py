@@ -21,12 +21,12 @@ class Service(models.Model):
     description = models.TextField(max_length=2000,
                             help_text="A description of the service.")
 
-    available = models.BooleanField(default=False)  # user easily can disable it
+    available = models.BooleanField(default=True)  # user easily can disable it
 
     url = models.URLField(
         verbose_name="your website",
         help_text="Your website.",
-        default=None, blank=True
+        default=None, blank=True, null=True
     )
 
     author = models.ForeignKey(
