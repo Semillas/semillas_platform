@@ -234,7 +234,7 @@ man_pages = [
 texinfo_documents = [
     ('index', 'semillas_backend', 'semillas_backend Documentation',
      """Ismael de Esteban""", 'semillas_backend',
-     """Social Curency""", 'Miscellaneous'),
+     """Social Currency""", 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
