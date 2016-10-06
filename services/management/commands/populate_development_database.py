@@ -11,8 +11,6 @@ from django.core.management.base import BaseCommand
 from semillas_backend.users.factory import UserFactory
 from services.factory import ServiceFactory, CategoryFactory
 
-
-
 class Command(BaseCommand):
     help = "This command will create some users and some services for development purpose"
 
