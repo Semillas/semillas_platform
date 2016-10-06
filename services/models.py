@@ -40,8 +40,43 @@ class Service(models.Model):
         blank=False,
     )
 
+    category = models.ForeignKey(
+        'Category',
+        null=True,
+    )
+
 #    def __unicode__(self):
 #        return u'something goes here'
 
 #    def get_absolute_url(self):
 #        return reverse('users:detail', kwargs={'username': self.username})
+
+
+@python_2_unicode_compatible
+class Category(models.Model):
+    """
+    Represents an category of a Service
+    """
+    name = models.CharField(
+        unique=True,
+        max_length=100,
+        help_text="A name for the category.")
+
+    def category_photo_upload(instance, filename):
+        extension = os.path.splitext(filename)[1]
+        return "media/categries/%s%s" % (str(instance.id), extension)
+
+    photo = models.ImageField(
+        null=True,
+        blank=True,
+        help_text='Category Picture',
+        upload_to=category_photo_upload,
+    )
+
+    order = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
+#    def get_absolute_url(self):
+#        return reverse('categries:detail', kwargs={'category': self.name})
