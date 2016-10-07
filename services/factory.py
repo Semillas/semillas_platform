@@ -44,7 +44,8 @@ class CategoryFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Category
 
-    order=Category.objects.count()
-    name = categories[order]
-    if not name:
-        name = factory.LazyAttribute(lambda x: faker.sentence(nb_words=3))
+#    order=Category.objects.count()
+#    print(str(order))
+#    name = categories[order]
+#    if not name:
+#        name = factory.LazyAttribute(lambda x: faker.sentence(nb_words=3))
