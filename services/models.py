@@ -45,11 +45,11 @@ class Service(models.Model):
         null=True,
     )
 
-#    def __unicode__(self):
-#        return u'something goes here'
+    def __unicode__(self):
+        return self.title
 
-#    def get_absolute_url(self):
-#        return reverse('users:detail', kwargs={'username': self.username})
+    def get_absolute_url(self):
+        return reverse('api_service:detail', kwargs={'pk': self.id})
 
 
 @python_2_unicode_compatible
