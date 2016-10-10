@@ -1,6 +1,12 @@
 from rest_framework import serializers
-from .models import Service
-from .models import ServicePhoto
+
+from .models import Service, Category, ServicePhoto
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ('id', 'name', 'photo', 'order')
 
 
 class ServicePhotoSerializer(serializers.ModelSerializer):
@@ -18,9 +24,8 @@ class ServiceSerializer(serializers.ModelSerializer):
 
         JSONRenderer().render(UserSerializer(user_instance).data)
     """
-
+    category = CategorySerializer()
     photos = ServicePhotoSerializer(many=True)
-
     class Meta:
         model = Service
-        fields = ('id', 'title', 'date', 'description', 'photos')
+        fields = ('id', 'title', 'date', 'description', 'category', 'photos')
