@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-
 from __future__ import unicode_literals, absolute_import
+
+import os
+
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
@@ -32,6 +34,7 @@ class Service(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
+        related_name='services',
     )
 
     seeds_price = models.PositiveIntegerField(
@@ -80,3 +83,28 @@ class Category(models.Model):
 
 #    def get_absolute_url(self):
 #        return reverse('categries:detail', kwargs={'category': self.name})
+
+
+class ServicePhoto(models.Model):
+    """ This model is a relation 1:N to Service.
+        There could exists many photos related to one service.
+    """
+
+    def service_photo_upload(instance, filename):
+        extension = os.path.splitext(filename)[1]
+        return "media/services/%s%s" % (str(instance.id), extension)
+
+
+    service = models.ForeignKey(
+        Service,
+        related_name='photos',
+    )
+
+    photo = models.FileField(
+        max_length=300,
+        null=True,
+        blank=True,
+        upload_to=service_photo_upload,
+        help_text="Photos of the service being offered",
+        default=None
+    )

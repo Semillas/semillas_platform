@@ -6,7 +6,7 @@ import datetime
 
 from django.conf import settings
 
-from .models import Service, Category
+from .models import Service, Category, ServicePhoto
 from semillas_backend.users.models import User
 
 faker = faker.Factory.create()
@@ -28,6 +28,13 @@ categories=[
 	"Gestión y administración"
 ]
 
+
+class ServicePhotoFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = ServicePhoto
+    photo = factory.django.ImageField()
+
+
 class ServiceFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Service
@@ -38,7 +45,8 @@ class ServiceFactory(factory.django.DjangoModelFactory):
     category = factory.Iterator(Category.objects.all())
     date = factory.Sequence(lambda n: datetime.datetime.now() + datetime.timedelta(days=n))
     seeds_price = factory.Faker('pyint')
-    
+    photos = factory.RelatedFactory(ServicePhotoFactory, 'service')
+
 
 class CategoryFactory(factory.django.DjangoModelFactory):
     class Meta:

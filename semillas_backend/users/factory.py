@@ -15,3 +15,4 @@ class UserFactory(factory.django.DjangoModelFactory):
     email = factory.Faker('email')
     username = factory.Faker('name')
     location = Point(-3.7035285, 40.4169473) # Puerta del Sol, Madrid
+    picture = factory.django.ImageField()
