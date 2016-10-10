@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from .models import Service, Category, ServicePhoto
+from semillas_backend.users.serializers import UserSerializer
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -26,6 +27,7 @@ class ServiceSerializer(serializers.ModelSerializer):
     """
     category = CategorySerializer()
     photos = ServicePhotoSerializer(many=True)
+    author = UserSerializer()
     class Meta:
         model = Service
-        fields = ('id', 'title', 'date', 'description', 'category', 'photos')
+        fields = ('id', 'title', 'date', 'description', 'author', 'category', 'photos')
