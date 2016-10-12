@@ -15,7 +15,7 @@ from .serializers import WalletSerializer
 
 class WalletDetailView(LoginRequiredMixin, DetailView):
     model = Wallet
-    slug_field = 'wallet.pk'
+    slug_field = 'wallet.user.pk'
     # slug_url_kwarg = ''
 
 

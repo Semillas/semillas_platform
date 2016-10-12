@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
+-*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 
 from django.db import models
 from django.db import OperationalError
@@ -21,7 +20,7 @@ class Wallet(models.Model):
     relationship is 1 to 1.
     """
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
-    seeds = models.BigIntegerField(default=0)
+    seeds = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def deposit(self, value):
@@ -30,6 +29,8 @@ class Wallet(models.Model):
         Also creates a new transaction with
         more detail and info.
         """
+        if value <= 0:
+          raise NegativeAmount("Not enough seeds :(.")
         transaction = Transaction(
                 running_balance=self.seeds + value,
                 value=value,
@@ -44,8 +45,6 @@ class Wallet(models.Model):
         Creates a new transaction with the withdraw
         value.
         """
-        if value > self.balance:
-            raise NegativeAmount("Not enough seeds :(.")
         transaction = Transaction(
                 value=-value,
                 running_balance=self.seeds - value
@@ -70,7 +69,7 @@ class Transaction(models.Model):
                                    help_text="Value of seeds to be transfer"
                                    )
     running_balance = models.BigIntegerField(default=0,
-                                             help_text="How the seeds amount changes."
+                                             help_text="How the seeds amount changes before."
                                              )
     date = models.DateTimeField(auto_now_add=True,
                                 help_text="When the transaction happened.")
