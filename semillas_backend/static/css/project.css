@@ -1,85 +1,32 @@
-/* These styles are generated from project.scss. */
-
 .alert-debug {
-  color: black;
-  background-color: white;
+  background-color: #fff;
   border-color: #d6e9c6;
-}
+  color: #000; }
 
 .alert-error {
-  color: #b94a48;
   background-color: #f2dede;
   border-color: #eed3d7;
-}
+  color: #b94a48; }
 
-/* This is a fix for the bootstrap4 alpha release */
+.navbar {
+  border-radius: 0px; }
+
 @media (max-width: 47.9em) {
   .navbar-nav .nav-item {
-    float: none;
-    width: 100%;
     display: inline-block;
-  }
-
+    float: none;
+    width: 100%; }
   .navbar-nav .nav-item + .nav-item {
-    margin-left: 0;
-  }
-
+    margin-left: 0; }
   .nav.navbar-nav.pull-xs-right {
-    float: none !important;
-  }
-}
+    float: none !important; } }
 
-/* Display django-debug-toolbar.
-   See https://github.com/django-debug-toolbar/django-debug-toolbar/issues/742
-   and https://github.com/pydanny/cookiecutter-django/issues/317
-*/
 [hidden][style="display: block;"] {
-  display: block !important;
-}
-/* pilamb */
-  .rounderly{
-    /*border: 1px solid #a1a1a1;*/
-    border-radius: 10px;
-  }
-  .footer {
-    padding-top: 40px;
-    bottom:0;
-  }
+  display: block !important; }
 
-#minicono:hover {
--webkit-transform:scale(1.1);
--moz-transform:scale(1.1);
--o-transform:scale(1.1);
-            }
-#minicono {
--webkit-transform:scale(0.8);
-/* para cada tipo de navegador: */
--moz-transform:scale(0.8);
--o-transform:scale(0.8);
--webkit-transition-duration: 0.5s;
--moz-transition-duration: 0.5s;
--o-transition-duration: 0.5s;
-            }
+.footer_icon:hover {
+  text-decoration: none !important; }
 
-#iconos
-{
-height:39px;width:50px;
-}
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-a.back-to-top {
-	display: none;
-	width: 60px;
-	height: 60px;
-	/*text-indent: -9999px;*/
-	position: fixed;
-	z-index: 999;
-	right: 20px;
-	bottom: 20px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-}
+.footer_icon img {
+  max-width: 30px;
+  width: 30px; }

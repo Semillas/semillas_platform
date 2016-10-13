@@ -60,7 +60,7 @@ $red: #b94a48;
 }
 
 ////////////////////////////////
-		//Django Toolbar//
+// Django Toolbar//
 ////////////////////////////////
 
 // Display django-debug-toolbar.
@@ -69,4 +69,19 @@ $red: #b94a48;
 
 [hidden][style="display: block;"] {
   display: block !important;
+}
+
+////////////////////////////////
+// Footer
+////////////////////////////////
+.footer_icon {
+    
+    &:hover {
+         text-decoration: none !important;
+    }
+
+    & img {
+        max-width: 30px;
+        width: 30px;
+    }
 }
