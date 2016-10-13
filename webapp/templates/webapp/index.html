@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load staticfiles %}
 
 <!-- index.html -->
 <!DOCTYPE html>
@@ -16,7 +17,6 @@
   </head>
   <body>
     <div id="content"></div>
-    {% load static %}
     <script type="text/babel" src={% static 'webapp/js/example.js' %}></script>
     <script type="text/babel">
       // To get started with this tutorial running your own code, simply remove
