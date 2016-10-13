@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer_icon {
+    
+	&:hover {
+		text-decoration: none !important;
+	}
+
+	& img {
+		max-width: 30px;
+		width: 30px;
+	}
+}

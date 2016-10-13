@@ -19,6 +19,10 @@ urlpatterns = [
         view=views.ServiceDetail.as_view(),
         name='detail'
     ),
-
-
+    # URL pattern for the CategoryListView
+    url(
+        regex=r'^categories$',
+        view=views.CategoryList.as_view(),
+        name='list'
+    ),
 ]
