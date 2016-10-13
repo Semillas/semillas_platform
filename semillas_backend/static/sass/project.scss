@@ -5,7 +5,7 @@
   'abstracts/variables',
   'abstracts/functions',
   'abstracts/mixins',
-  'abstracts/mixins';
+  'abstracts/shame';
 
 // 2. Vendors
 @import
@@ -20,7 +20,7 @@
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer'
+  'layout/footer',
   'layout/nav';
 
 // 5. Components
@@ -32,5 +32,5 @@
   'pages/home';
 
 // 7. Themes
-@import
-  'themes/default';
+// @import
+// 'themes/default';

@@ -104,8 +104,8 @@ gulp.task('default', function() {
 // Watch
 ////////////////////////////////
 gulp.task('watch', ['default'], function() {
-    gulp.watch(paths.sass + '/*.scss', ['styles']);
-    gulp.watch(paths.js + '/*.js', ['scripts']);
-    gulp.watch(paths.images + '/*', ['imgCompression']);
-    gulp.watch('templates/*.html');
+    gulp.watch(paths.sass + '/**/*.scss', ['styles']);
+    gulp.watch(paths.js + '/**/*.js', ['scripts']);
+    gulp.watch(paths.images + '/**/*', ['imgCompression']);
+    gulp.watch('templates/**/*.html');
 });
