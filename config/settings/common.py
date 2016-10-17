@@ -44,7 +44,7 @@ THIRD_PARTY_APPS = (
     'rest_framework_swagger', # Rest-api web documentation
 
     # Providers you want to enable:
-#    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.openid',
 )
@@ -247,7 +247,7 @@ SOCIALACCOUNT_PROVIDERS = {
     'openid': { 'SERVERS': [] },
     'facebook': {
         'METHOD': 'oauth2',
-        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        'SCOPE': ['email', 'public_profile'],
         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         'FIELDS': [
             'id',
