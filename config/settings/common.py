@@ -47,6 +47,8 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.openid',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.twitter',
 )
 
 # Apps specific for this project go here.
@@ -242,6 +244,12 @@ LOGIN_URL = 'account_login'
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "854610517269-uesqam6c0il787htcmr7oqpiopuo6qf1.apps.googleusercontent.com"
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "yQrQIU-jvGft554WhR_xAiOJ"
+
+SOCIAL_AUTH_FACEBOOK_KEY = "1670457356597946"
+SOCIAL_AUTH_FACEBOOK_SECRET = "4712dbf58b48cd8befefb7e7ff49fa58"
 
 SOCIALACCOUNT_PROVIDERS = {
     'openid': { 'SERVERS': [] },
