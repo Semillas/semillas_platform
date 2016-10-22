@@ -1,0 +1,1 @@
+{"status":"error","error":"ModuleBuildError","message":"Module build failed: SyntaxError: Unexpected token (4:13)\n\n  2 | var App = require('./app')\n  3 | \n> 4 | React.render(<App/>, document.getElementById('react-app'))\n    |              ^\n  5 | \n"}

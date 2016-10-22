@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 from __future__ import absolute_import, unicode_literals
 
 import environ
+import os
 
 ROOT_DIR = environ.Path(__file__) - 3  # (semillas_backend/config/settings/common.py - 3 = semillas_backend/)
 APPS_DIR = ROOT_DIR.path('semillas_backend')
+
 
 env = environ.Env()
 
@@ -42,6 +44,7 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
+    'webpack_loader',
 )
 
 # Apps specific for this project go here.
@@ -186,7 +189,7 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
-    str(APPS_DIR.path('static')),
+    os.path.join(os.path.dirname(APPS_DIR), 'assets'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
@@ -194,6 +197,15 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(os.path.dirname(APPS_DIR), 'webpack-stats.json'),
+    }
+}
+
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------

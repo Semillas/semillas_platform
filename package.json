@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "dependencies": {},
   "devDependencies": {
-    
     "browser-sync": "^2.12.10",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
@@ -17,8 +16,13 @@
     "gulp-sass": "^2.3.1",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
-    "run-sequence": "^1.2.1"
-    
+    "run-sequence": "^1.2.1",
+    "babel": "~6.5.2",
+    "webpack-bundle-tracker": "0.0.93",
+    "react": "~15.3.2",
+    "webpack": "~1.13.2",
+    "babel-core": "~6.17.0",
+    "babel-loader": "~6.2.5"
   },
   "engines": {
     "node": ">=0.8.0"
