@@ -47,8 +47,6 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.openid',
-    'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.twitter',
 )
 
 # Apps specific for this project go here.
