@@ -33,9 +33,6 @@ services:
       - mailhog
 
 
-
-
-
   mailhog:
     image: mailhog/mailhog
     ports:
