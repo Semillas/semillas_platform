@@ -11,7 +11,51 @@
     <p>{% trans "El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se suele contemplar. Empleo remunerado de todas las personas que sostienen la sociedad." %}</p>
     <p>{% trans "Según" %} <a href="http://www.vivirsinempleo.org">Gisbert</a>, {% trans "consideramos dos economías:" %}</p>
     {% if LANGUAGE_CODE == 'es' %}
-      <img class="img-responsive center-block" alt="" src="{% static 'landing/images/es/economies_comparison.png' %}" style="align:center;" title=""/>
+        <div class="wrapper">
+            <div class="wrapper--element">
+                <h3>Monetaria</h3>
+                <ul>
+                    <li>
+                        <p>Empresas, instituciones públicas, trabajadores, patrones, funcionaros.</p>
+                    </li>
+                    <li>
+                        <p>Inflaccionista, oferta y demanda, especulativa.</p>
+                    </li>
+                    <li>
+                        <p>Alto valor en el sistema de precios actual.</p>
+                    </li>
+                    <li>
+                        <p>Influye en el PIB.</p>
+                    </li>
+                    <li>
+                        <p>Sometida a crisis sistémicas.</p>
+                    </li>
+                    <li>
+                        <p>Ninguna conciencia ecológica.</p>
+                    </li>
+                </ul>
+            </div>          
+            <div class="wrapper--element">
+                <h3>Paraeconómica</h3>
+                <ul>
+                    <li>
+                        <p>Gente mayor, amas de casa, niños, asociaciones, voluntarios.</p>
+                    </li>
+                    <li>
+                        <p>Ayuda mutua y colaboración.</p>
+                    </li>
+                    <li>
+                        <p>Generalmente sin valor en el sistema de precios actual.</p>
+                    </li>
+                    <li>
+                        <p>Independiente de la Globalización.</p>
+                    </li>
+                    <li>
+                        <p>Altruismo y corresponsabilidad.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     {% else %}
       <img class="img-responsive center-block" alt="" src="{% static 'landing/images/en/economies_comparison.png' %}" style="align:center;" title=""/>
     {% endif %}

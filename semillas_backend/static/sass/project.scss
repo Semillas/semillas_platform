@@ -1,72 +1,36 @@
+@charset 'UTF-8';
 
-// project specific CSS goes here
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins',
+  'abstracts/shame';
 
-////////////////////////////////
-		//Variables//
-////////////////////////////////
+// 2. Vendors
+@import
+  'vendor/normalize';
 
-// Alert colors
+// 3. Base stuff
+@import
+  'base/base',
+  'base/typography',
+  'base/helpers';
 
-$white: #fff;
-$mint-green: #d6e9c6;
-$black: #000;
-$pink: #f2dede;
-$dark-pink: #eed3d7;
-$red: #b94a48;
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/footer',
+  'layout/nav';
 
-////////////////////////////////
-		//Alerts//
-////////////////////////////////
+// 5. Components
+@import
+  'components/button';
 
-// bootstrap alert CSS, translated to the django-standard levels of
-// debug, info, success, warning, error
+// 6. Page-specific styles
+@import
+  'pages/home';
 
-.alert-debug {
-  background-color: $white;
-  border-color: $mint-green;
-  color: $black;
-}
-
-.alert-error {
-  background-color: $pink;
-  border-color: $dark-pink;
-  color: $red;
-}
-
-////////////////////////////////
-		//Navbar//
-////////////////////////////////
-
-// This is a fix for the bootstrap4 alpha release
-
-.navbar {
-  border-radius: 0px;
-}
-
-@media (max-width: 47.9em) {
-  .navbar-nav .nav-item {
-    display: inline-block;
-    float: none;
-    width: 100%;
-  }
-
-  .navbar-nav .nav-item + .nav-item {
-    margin-left: 0;
-  }
-
-  .nav.navbar-nav.pull-xs-right {
-    float: none !important;
-  }
-}
-
-////////////////////////////////
-		//Django Toolbar//
-////////////////////////////////
-
-// Display django-debug-toolbar.
-// See https://github.com/django-debug-toolbar/django-debug-toolbar/issues/742
-// and https://github.com/pydanny/cookiecutter-django/issues/317
-
-[hidden][style="display: block;"] {
-  display: block !important;
-}
+// 7. Themes
+// @import
+// 'themes/default';
