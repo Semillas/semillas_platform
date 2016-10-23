@@ -85,19 +85,6 @@ class Category(models.Model):
 #        return reverse('users:detail', kwargs={'username': self.username})
 
 
-
-
-class ServicePhoto(models.Model):
-    """ This model is a relation 1:N to Service. 
-        There could exists many photos related to one service. 
-    """
-
-    service = models.ForeignKey(
-        Service, 
-        related_name='photos',
-    )
-
-
 class ServicePhoto(models.Model):
     """ This model is a relation 1:N to Service.
         There could exists many photos related to one service.
