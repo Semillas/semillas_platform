@@ -11,7 +11,7 @@ RUN mkdir geos \
     && cd geos && ./configure && make && make install && cd - \
     && rm -r geos
 
-RUN pip install -r /requirements/production.txt \
+RUN pip install --no-cache-dir -r /requirements/production.txt \
     && groupadd -r django \
     && useradd -r -g django django
 
