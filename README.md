@@ -97,6 +97,9 @@ To run the tests, check your test coverage, and generate an HTML coverage report
     $ docker-compose -f dev.yml run django py.test
 
 
+### Develop the Client Webapp
+
+    $ ./node_modules/.bin/webpack --config webpack.config.js
 
 
 ### Live reloading and Sass CSS compilation

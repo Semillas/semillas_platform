@@ -1,1 +1,1 @@
-{"status":"error","error":"ModuleBuildError","message":"Module build failed: SyntaxError: Unexpected token (4:13)\n\n  2 | var App = require('./app')\n  3 | \n> 4 | React.render(<App/>, document.getElementById('react-app'))\n    |              ^\n  5 | \n"}
+{"status":"done","chunks":{"main":[{"name":"main-45b4275af76560780499.js","path":"/home/ismael/branches/semillas_backend/assets/bundles/main-45b4275af76560780499.js"}]}}
