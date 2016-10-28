@@ -1,5 +1,6 @@
 {% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
   <head>
     <meta charset="UTF-8">
@@ -7,6 +8,7 @@
   </head>
 
   <body>
+  <link rel="stylesheet" href="{% static 'css/webapp.css' %}" />
     <div id="react-app"></div>
     {% render_bundle 'main' %}
   </body>
