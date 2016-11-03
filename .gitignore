@@ -55,6 +55,9 @@ node_modules/
 # virtual environments
 .env
 
+# Webpack Statistics
+webpack-stats.json
+
 # User-uploaded media
 semillas_backend/media/
 
