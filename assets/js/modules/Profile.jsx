@@ -4,7 +4,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        User: {this.props.params.id}
+        Your Profile
       </div>
     )
   }

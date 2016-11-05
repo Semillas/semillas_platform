@@ -101,6 +101,8 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 
     $ ./node_modules/.bin/webpack --config webpack.config.js
 
+Add flag --watch for live reload.
+
 
 ### Live reloading and Sass CSS compilation
 
