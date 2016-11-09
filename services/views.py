@@ -24,3 +24,9 @@ class CategoryList(generics.ListAPIView):
     serializer_class = CategorySerializer
     permission_classes = (permissions.IsAuthenticated,)
 
+class UserServiceList(generics.ListAPIView):
+    serializer_class = ServiceSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    def get_queryset(self):
+        pk = self.kwargs['user_id']
+        return Service.objects.filter(author=pk)
