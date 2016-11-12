@@ -16,13 +16,13 @@ urlpatterns = [
 
     # URL pattern for the UserDetailView
     url(
-        regex=r'^(?P<pk>[0-9]+)/$',
+        regex=r'^(?P<uuid>[^/]+)/$',
         view=views.UserDetail.as_view(),
         name='detail'
     ),
     # URL pattern for the UserServiceList
     url(
-        regex=r'^(?P<user_id>[0-9]+)/services$',
+        regex=r'^(?P<user_id>[^/]+)/services$',
         view=UserServiceList.as_view(),
         name='list'
     ),

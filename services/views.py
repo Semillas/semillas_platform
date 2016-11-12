@@ -6,6 +6,7 @@ from rest_framework import permissions
 
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer
+from semillas_backend.users.models import User
 
 class ServiceList(generics.ListAPIView):
     queryset = Service.objects.all()
@@ -18,6 +19,7 @@ class ServiceDetail(generics.RetrieveUpdateAPIView):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
+    lookup_field = 'uuid'
 
 class CategoryList(generics.ListAPIView):
     queryset = Category.objects.all()
@@ -29,4 +31,6 @@ class UserServiceList(generics.ListAPIView):
     permission_classes = (permissions.IsAuthenticated,)
     def get_queryset(self):
         pk = self.kwargs['user_id']
-        return Service.objects.filter(author=pk)
+        u=User.objects.get(uuid=pk)
+        if u:
+            return Service.objects.filter(author=u.id)

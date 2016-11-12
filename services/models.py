@@ -2,6 +2,7 @@
 from __future__ import unicode_literals, absolute_import
 
 import os
+from uuid import uuid4
 
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -16,6 +17,7 @@ class Service(models.Model):
     Represents an advert of a user on the platform. Its intended to be
     exchangeable for seeds and mainly geolocated oriented (TODOs!)
     """
+    uuid = models.UUIDField(default=uuid4, editable=False, unique=True)
     title = models.TextField(max_length=100,
                              help_text="A title for what you offer.")
     date = models.DateTimeField(auto_now_add=True,
