@@ -30,4 +30,4 @@ class ServiceSerializer(serializers.ModelSerializer):
     author = UserSerializer()
     class Meta:
         model = Service
-        fields = ('id', 'title', 'date', 'description', 'author', 'category', 'photos')
+        fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos')
