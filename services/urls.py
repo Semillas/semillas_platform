@@ -12,7 +12,6 @@ urlpatterns = [
         view=views.ServiceList.as_view(),
         name='list'
     ),
-
     # URL pattern for the ServiceDetailView
     url(
         regex=r'^(?P<pk>[0-9]+)/$',
