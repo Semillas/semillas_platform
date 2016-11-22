@@ -6,7 +6,7 @@ export default React.createClass({
     return (
       <div>
         Service: {this.props.params.id}
-        <li><NavLink to="/user/1">Owner</NavLink></li>
+        <li><NavLink to="/user/1/">Owner</NavLink></li>
       </div>
     )
   }

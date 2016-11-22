@@ -7,10 +7,10 @@ export default React.createClass({
       <div>
         <h1>Semillas</h1>
         <ul role="nav">
-          <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-          <li><NavLink to="/profile">Profile</NavLink></li>
-          <li><NavLink to="/service/1">Service</NavLink></li>
+          <li><NavLink to="/webapp/" onlyActiveOnIndex={true}>Home</NavLink></li>
+          <li><NavLink to="/about/">About</NavLink></li>
+          <li><NavLink to="/profile/">Profile</NavLink></li>
+          <li><NavLink to="/service/1/">Service</NavLink></li>
         </ul>
         {this.props.children}
       </div>
