@@ -18,13 +18,13 @@ module.exports = {
 
   module: {
     loaders: [
-      { 
-          test: /\.jsx?$/, 
-          exclude: /node_modules/, 
+      {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
           loader: 'babel',
           query:
             {
-                presets:['react']
+                presets:['react', 'es2015', 'stage-2']
             }
       }, // to transform JSX into JS
     ],
