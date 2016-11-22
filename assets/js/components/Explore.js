@@ -41,7 +41,7 @@ export default class Explore extends Component {
         <p>Type a username or repo full name and hit 'Go':</p>
         <input size="45"
                ref="input"
-               defaultValue={this.props.value}
+               defaultValue='iesteban'/*{this.props.value}*/
                onKeyUp={this.handleKeyUp} />
         <button onClick={this.handleGoClick}>
           Go!

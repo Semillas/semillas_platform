@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   handleChange = nextValue => {
-    browserHistory.push(`/${nextValue}`)
+    browserHistory.push(`/webapp/${nextValue}/`)
   }
 
   renderErrorMessage() {

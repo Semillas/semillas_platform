@@ -8,6 +8,7 @@ import About from './modules/About'
 import Service from './modules/Service'
 import Profile from './modules/Profile'
 import Base from './components/Base'
+import UserPage from './containers/UserPage'
 
 
 export default <Route path="/webapp/" component={Base}>
@@ -16,4 +17,6 @@ export default <Route path="/webapp/" component={Base}>
       <Route path="/about/" component={About}/>
       <Route path="/service/:id/" component={Service}/>
       <Route path="/profile/" component={Profile}/>
+  <Route path="/webapp/:login/"
+         component={UserPage} />
     </Route>
