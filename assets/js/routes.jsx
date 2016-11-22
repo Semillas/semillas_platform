@@ -7,7 +7,7 @@ import App from './containers/App'
 import About from './modules/About'
 import Service from './modules/Service'
 import Profile from './modules/Profile'
-import Base from './modules/App'
+import Base from './components/Base'
 
 
 export default <Route path="/webapp/" component={Base}>
