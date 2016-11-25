@@ -25,4 +25,10 @@ urlpatterns = [
         view=views.CategoryList.as_view(),
         name='list'
     ),
+    # URL pattern for the CreateService
+    url(
+        regex=r'^$',
+        view=views.CreateService.as_view(),
+        name='create'
+    ),
 ]
