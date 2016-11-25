@@ -14,7 +14,7 @@ urlpatterns = [
     ),
     # URL pattern for the ServiceDetailView
     url(
-        regex=r'^(?P<pk>[0-9]+)/$',
+        regex=r'^(?P<uuid>[^/]+)/$',
         view=views.ServiceDetail.as_view(),
         name='detail'
     ),
