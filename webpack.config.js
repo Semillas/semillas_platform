@@ -34,4 +34,9 @@ module.exports = {
     modulesDirectories: ['node_modules', 'bower_components'],
     extensions: ['', '.js', '.jsx']
   },
+
+  watchOptions: {
+    poll: 1000,
+    aggregateTimeout: 1000
+  },
 }

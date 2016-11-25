@@ -58,6 +58,9 @@ node_modules/
 # Webpack Statistics
 webpack-stats.json
 
+# Webpack Generated Bundles
+bundles/
+
 # User-uploaded media
 semillas_backend/media/
 
