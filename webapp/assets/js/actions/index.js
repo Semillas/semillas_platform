@@ -112,6 +112,31 @@ export const loadStargazers = (fullName, nextPage) => (dispatch, getState) => {
   return dispatch(fetchStargazers(fullName, nextPageUrl))
 }
 
+export const SERVICE_REQUEST = 'SERVICE_REQUEST'
+export const SERVICE_SUCCESS = 'SERVICE_SUCCESS'
+export const SERVICE_FAILURE = 'SERVICE_FAILURE'
+
+// Fetches a single service from Semillas API.
+// Relies on the custom API middleware defined in ../middleware/api.js.
+const fetchService = uuid => ({
+  [CALL_SEMILLAS_API]: {
+    types: [ SERVICE_REQUEST, SERVICE_SUCCESS, SERVICE_FAILURE ],
+    endpoint: `service/${uuid}`,
+    schema: Schemas.SERVICE
+  }
+})
+
+// Fetches a single service from Github API unless it is cached.
+// Relies on Redux Thunk middleware.
+export const loadService= (uuid, requiredFields = []) => (dispatch, getState) => {
+  const service = getState().entities.services[uuid]
+  if (service && requiredFields.every(key => service.hasOwnProperty(key))) {
+    return null
+  }
+
+  return dispatch(fetchService(uuid))
+}
+
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
 
 // Resets the currently visible error message.

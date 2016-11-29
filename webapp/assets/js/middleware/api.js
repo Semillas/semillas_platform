@@ -66,12 +66,18 @@ repoSchema.define({
   owner: userSchema
 })
 
+const serviceSchema = new Schema('services', {
+  idAttribute: service => service.uuid.toLowerCase()
+})
+
 // Schemas for Github API responses.
 export const Schemas = {
   USER: userSchema,
   USER_ARRAY: arrayOf(userSchema),
   REPO: repoSchema,
   REPO_ARRAY: arrayOf(repoSchema)
+  SERVICE: serviceSchema,
+  SERVICE_ARRAY: arrayOf(serviceSchema)
 }
 
 // Action key that carries API call info interpreted by this Redux middleware.
