@@ -17,8 +17,14 @@ class ServicePhotoSerializer(serializers.ModelSerializer):
         model = ServicePhoto
         fields = ('id', 'photo')
 
+class CreateServiceSerializer(serializers.ModelSerializer):
+    """ Usage:
+    """
+    class Meta:
+        model = Service
+        fields = ('id', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price')
 
-class ServiceSerializer(serializers.ModelSerializer):
+class ServiceSerializer(CreateServiceSerializer):
     """ Usage:
         from rest_framework.renderers import JSONRenderer
         from semillas_backend.users.serializers import UserSerializer
@@ -28,6 +34,3 @@ class ServiceSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
     photos = ServicePhotoSerializer(many=True)
     author = UserSerializer()
-    class Meta:
-        model = Service
-        fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos')

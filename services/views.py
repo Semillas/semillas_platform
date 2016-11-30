@@ -4,9 +4,17 @@ from __future__ import absolute_import, unicode_literals
 from rest_framework import generics
 from rest_framework import permissions
 
-from .models import Service, Category
-from .serializers import ServiceSerializer, CategorySerializer
 from semillas_backend.users.models import User
+
+from .models import Service, Category
+from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
+
+class CreateService(generics.CreateAPIView):
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
+    """
+    queryset = Service.objects.all()
+    serializer_class = CreateServiceSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
 class ServiceList(generics.ListAPIView):
     queryset = Service.objects.all()
