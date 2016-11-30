@@ -13,6 +13,7 @@ const getNextPageUrl = response => {
     return null
   }
 
+
   return nextLink.split(';')[0].slice(1, -1)
 }
 
@@ -75,7 +76,7 @@ export const Schemas = {
   USER: userSchema,
   USER_ARRAY: arrayOf(userSchema),
   REPO: repoSchema,
-  REPO_ARRAY: arrayOf(repoSchema)
+  REPO_ARRAY: arrayOf(repoSchema),
   SERVICE: serviceSchema,
   SERVICE_ARRAY: arrayOf(serviceSchema)
 }
