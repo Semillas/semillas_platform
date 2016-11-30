@@ -20,7 +20,7 @@ urlpatterns = [
     ),
     # URL pattern for the ServiceDetailView --> Get Services by Category
     url(
-        regex=r'^feed/(?P<category_id>[^/]+)/$',
+        regex=r'^feed$',
         view=views.CategoryServiceList.as_view(),
         name='detail'
     ),

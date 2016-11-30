@@ -42,6 +42,7 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
+    # 'django_filters',
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
@@ -304,6 +305,5 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
     ),
-
 }
 
