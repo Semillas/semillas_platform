@@ -42,3 +42,15 @@ class UserServiceList(generics.ListAPIView):
         u=User.objects.get(uuid=pk)
         if u:
             return Service.objects.filter(author=u.id)
+
+# Filter services by category_id
+class CategoryServiceList(generics.ListAPIView):
+    """ access: GET /api/v1/services/feed
+    """ 
+    serializer_class = ServiceSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    def get_queryset(self):
+        pk = self.kwargs['category_id']
+        u=Category.objects.get(id=pk)
+        if u:
+            return u.services.all()
