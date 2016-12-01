@@ -13,10 +13,10 @@ import UserPage from './containers/UserPage'
 
 export default <Route path="/webapp/" component={Base}>
       <IndexRoute component={App}/>
-      <Route path="/user/:id/" component={User}/>
-      <Route path="/about/" component={About}/>
-      <Route path="/service/:id/" component={Service}/>
-      <Route path="/profile/" component={Profile}/>
+      <Route path="/webapp/user/:id/" component={User}/>
+      <Route path="/webapp/about/" component={About}/>
+      <Route path="/webapp/service/:id/" component={Service}/>
+      <Route path="/webapp/profile/" component={Profile}/>
   <Route path="/webapp/:login/"
          component={UserPage} />
     </Route>
