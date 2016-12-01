@@ -53,7 +53,8 @@ geoip2==2.4.0
 djangorestframework==3.4.6
 django-rest-swagger==2.0.5
 
-
+# Filtering for API
+django-filter==1.0.1
 
 # Your custom requirements go here
 
