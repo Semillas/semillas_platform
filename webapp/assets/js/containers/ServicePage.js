@@ -1,17 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { loadService } from '../actions'
-import User from '../components/User'
-import Repo from '../components/Repo'
 import Service from '../components/Service'
-import List from '../components/List'
 import zip from 'lodash/zip'
 
 const loadData = ({ uuid, loadService }) => {
   loadService(uuid)
 }
 
-class UserPage extends Component {
+class ServicePage extends Component {
   static propTypes = {
     uuid: PropTypes.string.isRequired,
     service: PropTypes.object,
@@ -32,14 +29,6 @@ class UserPage extends Component {
 //    this.props.loadStarred(this.props.uuid, true)
 //  }
 
-//  renderRepo([ repo, owner ]) {
-//    return (
-//      <Repo
-//        repo={repo}
-//        owner={owner}
-//        key={repo.fullName} />
-//    )
-//  }
 
   render() {
     const { service, uuid } = this.props
@@ -47,16 +36,11 @@ class UserPage extends Component {
       return <h1><i>Loading {uuid}{"'s service..."}</i></h1>
     }
 
-    const { starredRepos, starredRepoOwners, starredPagination } = this.props
+    //const { starredRepos, starredRepoOwners, starredPagination } = this.props
     return (
       <div>
         <Service service={Service} />
         <hr />
-//        <List renderItem={this.renderRepo}
-//              items={zip(starredRepos, starredRepoOwners)}
-//              //onLoadMoreClick={this.handleLoadMoreClick}
-//              loadingLabel={`Loading ${uuid}'s starred...`}
-//              {...starredPagination} />
       </div>
     )
   }
@@ -69,19 +53,19 @@ const mapStateToProps = (state, ownProps) => {
 
   const {
     pagination: { starredByUser },
-    entities: { users, repos }
+    entities: { services }
   } = state
 
-  const starredPagination = starredByUser[login] || { ids: [] }
-  const starredRepos = starredPagination.ids.map(id => repos[id])
-  const starredRepoOwners = starredRepos.map(repo => users[repo.owner])
+//  const starredPagination = starredByUser[login] || { ids: [] }
+//  const starredRepos = starredPagination.ids.map(id => repos[id])
+//  const starredRepoOwners = starredRepos.map(repo => users[repo.owner])
 
   return {
     uuid,
-    starredRepos,
-    starredRepoOwners,
-    starredPagination,
-    user: users[login]
+//    starredRepos,
+//    starredRepoOwners,
+//    starredPagination,
+    services: services[uuid]
   }
 }
 

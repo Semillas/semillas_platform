@@ -17,12 +17,13 @@ const getNextPageUrl = response => {
   return nextLink.split(';')[0].slice(1, -1)
 }
 
-const API_ROOT = 'https://api.github.com/'
+const API_ROOT = '/'
 
 // Fetches an API response and normalizes the result JSON according to schema.
 // This makes every API response have the same shape, regardless of how nested it was.
 const callApi = (endpoint, schema) => {
   const fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint
+  debugger;
 
   return fetch(fullUrl)
     .then(response =>
@@ -50,39 +51,26 @@ const callApi = (endpoint, schema) => {
 
 // Read more about Normalizr: https://github.com/paularmstrong/normalizr
 
-// GitHub's API may return results with uppercase letters while the query
-// doesn't contain any. For example, "someuser" could result in "SomeUser"
-// leading to a frozen UI as it wouldn't find "someuser" in the entities.
-// That's why we're forcing lower cases down there.
-
-const userSchema = new Schema('users', {
-  idAttribute: user => user.login.toLowerCase()
-})
-
-const repoSchema = new Schema('repos', {
-  idAttribute: repo => repo.fullName.toLowerCase()
-})
-
-repoSchema.define({
-  owner: userSchema
+const serviceSchema = new Schema('services', {
+  idAttribute: service => service.uuid.toLowerCase()
 })
 
 // Schemas for Github API responses.
-export const GithubSchemas = {
-  USER: userSchema,
-  USER_ARRAY: arrayOf(userSchema),
-  REPO: repoSchema,
-  REPO_ARRAY: arrayOf(repoSchema),
+export const Schemas = {
+  SERVICE: serviceSchema,
+  SERVICE_ARRAY: arrayOf(serviceSchema)
 }
 
 // Action key that carries API call info interpreted by this Redux middleware.
-export const CALL_API = Symbol('Call API')
+export const CALL_API = Symbol('Call Semillas API')
 
 // A Redux middleware that interprets actions with CALL_API info specified.
 // Performs the call and promises when such actions are dispatched.
 export default store => next => action => {
+  debugger;
   const callAPI = action[CALL_API]
   if (typeof callAPI === 'undefined') {
+    debugger;
     return next(action)
   }
 

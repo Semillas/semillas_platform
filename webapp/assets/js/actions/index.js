@@ -1,4 +1,5 @@
-import { CALL_API, Schemas } from '../middleware/api'
+import { CALL_API, GithubSchemas } from '../middleware/api'
+import { CALL_SEMILLAS_API, Schemas } from '../middleware/semillas_api'
 
 export const USER_REQUEST = 'USER_REQUEST'
 export const USER_SUCCESS = 'USER_SUCCESS'
@@ -10,7 +11,7 @@ const fetchUser = login => ({
   [CALL_API]: {
     types: [ USER_REQUEST, USER_SUCCESS, USER_FAILURE ],
     endpoint: `users/${login}`,
-    schema: Schemas.USER
+    schema: GithubSchemas.USER
   }
 })
 
@@ -21,6 +22,7 @@ export const loadUser = (login, requiredFields = []) => (dispatch, getState) => 
   if (user && requiredFields.every(key => user.hasOwnProperty(key))) {
     return null
   }
+  debugger;
 
   return dispatch(fetchUser(login))
 }
@@ -35,7 +37,7 @@ const fetchRepo = fullName => ({
   [CALL_API]: {
     types: [ REPO_REQUEST, REPO_SUCCESS, REPO_FAILURE ],
     endpoint: `repos/${fullName}`,
-    schema: Schemas.REPO
+    schema: GithubSchemas.REPO
   }
 })
 
@@ -61,7 +63,7 @@ const fetchStarred = (login, nextPageUrl) => ({
   [CALL_API]: {
     types: [ STARRED_REQUEST, STARRED_SUCCESS, STARRED_FAILURE ],
     endpoint: nextPageUrl,
-    schema: Schemas.REPO_ARRAY
+    schema: GithubSchemas.REPO_ARRAY
   }
 })
 
@@ -92,7 +94,7 @@ const fetchStargazers = (fullName, nextPageUrl) => ({
   [CALL_API]: {
     types: [ STARGAZERS_REQUEST, STARGAZERS_SUCCESS, STARGAZERS_FAILURE ],
     endpoint: nextPageUrl,
-    schema: Schemas.USER_ARRAY
+    schema: GithubSchemas.USER_ARRAY
   }
 })
 
@@ -119,7 +121,7 @@ export const SERVICE_FAILURE = 'SERVICE_FAILURE'
 // Fetches a single service from Semillas API.
 // Relies on the custom API middleware defined in ../middleware/api.js.
 const fetchService = uuid => ({
-  [CALL_SEMILLAS_API]: {
+  [CALL_API]: {
     types: [ SERVICE_REQUEST, SERVICE_SUCCESS, SERVICE_FAILURE ],
     endpoint: `service/${uuid}`,
     schema: Schemas.SERVICE
@@ -128,12 +130,11 @@ const fetchService = uuid => ({
 
 // Fetches a single service from Github API unless it is cached.
 // Relies on Redux Thunk middleware.
-export const loadService= (uuid, requiredFields = []) => (dispatch, getState) => {
+export const loadService = (uuid, requiredFields = []) => (dispatch, getState) => {
   const service = getState().entities.services[uuid]
   if (service && requiredFields.every(key => service.hasOwnProperty(key))) {
     return null
   }
-
   return dispatch(fetchService(uuid))
 }
 

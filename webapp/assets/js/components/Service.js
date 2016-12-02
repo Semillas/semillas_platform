@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
-const service = ({ service }) => {
+const Service = ({ service }) => {
   const { title, description } = service
 
   return (
@@ -22,11 +22,11 @@ const service = ({ service }) => {
   )
 }
 
-Repo.propTypes = {
+Service.propTypes = {
   repo: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string
   }).isRequired
 }
 
-export default Repo
+export default Service
