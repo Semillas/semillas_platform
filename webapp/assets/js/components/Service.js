@@ -6,27 +6,26 @@ const Service = ({ service }) => {
 
   return (
     <div className="Service">
-      <h3>
         <Link to={`ismaell/ismael`}>
           {title}
         </Link>
-        {' by '}
-        <Link to={`/ismael`}>
-          {login}
-        </Link>
-      </h3>
-      {description &&
+
+     {description &&
         <p>{description}</p>
+
       }
     </div>
   )
 }
 
 Service.propTypes = {
-  repo: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+  //uuid: PropTypes.string.isRequired,
+  //description: PropTypes.string
+
+  service: PropTypes.shape({
+    uuid: PropTypes.string.isRequired,
     description: PropTypes.string
-  }).isRequired
+  }).isRequired,
 }
 
 export default Service

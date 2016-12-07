@@ -39,7 +39,7 @@ class ServicePage extends Component {
     //const { starredRepos, starredRepoOwners, starredPagination } = this.props
     return (
       <div>
-        <Service service={Service} />
+        <Service service={service} />
         <hr />
       </div>
     )
@@ -52,7 +52,6 @@ const mapStateToProps = (state, ownProps) => {
   const uuid = ownProps.params.uuid
 
   const {
-    pagination: { starredByUser },
     entities: { services }
   } = state
 
@@ -62,6 +61,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     uuid,
+    service: services[uuid],
 //    starredRepos,
 //    starredRepoOwners,
 //    starredPagination,
