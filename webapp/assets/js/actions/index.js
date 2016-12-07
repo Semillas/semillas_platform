@@ -121,7 +121,7 @@ export const SERVICE_FAILURE = 'SERVICE_FAILURE'
 // Fetches a single service from Semillas API.
 // Relies on the custom API middleware defined in ../middleware/api.js.
 const fetchService = uuid => ({
-  [CALL_API]: {
+  [CALL_SEMILLAS_API]: {
     types: [ SERVICE_REQUEST, SERVICE_SUCCESS, SERVICE_FAILURE ],
     endpoint: `service/${uuid}`,
     schema: Schemas.SERVICE

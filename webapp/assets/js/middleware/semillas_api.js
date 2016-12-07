@@ -17,15 +17,16 @@ const getNextPageUrl = response => {
   return nextLink.split(';')[0].slice(1, -1)
 }
 
-const API_ROOT = '/'
+const API_ROOT = 'http://0.0.0.0:8000/api/v1/'
 
 // Fetches an API response and normalizes the result JSON according to schema.
 // This makes every API response have the same shape, regardless of how nested it was.
 const callApi = (endpoint, schema) => {
   const fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint
-  debugger;
 
-  return fetch(fullUrl)
+  return fetch(
+    fullUrl,
+    {credentials: 'same-origin'})
     .then(response =>
       response.json().then(json => {
         if (!response.ok) {
@@ -62,15 +63,13 @@ export const Schemas = {
 }
 
 // Action key that carries API call info interpreted by this Redux middleware.
-export const CALL_API = Symbol('Call Semillas API')
+export const CALL_SEMILLAS_API = Symbol('Call Semillas API')
 
 // A Redux middleware that interprets actions with CALL_API info specified.
 // Performs the call and promises when such actions are dispatched.
 export default store => next => action => {
-  debugger;
-  const callAPI = action[CALL_API]
+  const callAPI = action[CALL_SEMILLAS_API]
   if (typeof callAPI === 'undefined') {
-    debugger;
     return next(action)
   }
 
@@ -96,7 +95,7 @@ export default store => next => action => {
 
   const actionWith = data => {
     const finalAction = Object.assign({}, action, data)
-    delete finalAction[CALL_API]
+    delete finalAction[CALL_SEMILLAS_API]
     return finalAction
   }
 
