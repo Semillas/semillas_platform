@@ -18,6 +18,12 @@ urlpatterns = [
         view=views.ServiceDetail.as_view(),
         name='detail'
     ),
+    # URL pattern for the ServiceDetailView --> Get Services by Category
+    url(
+        regex=r'^feed$',
+        view=views.CategoryServiceList.as_view(),
+        name='detail'
+    ),
     # URL pattern for the CategoryListView
     url(
         regex=r'^categories$',
