@@ -32,6 +32,8 @@ services:
     links:
       - postgres
       - mailhog
+    stdin_open: true
+    tty: true
 
   mailhog:
     image: mailhog/mailhog

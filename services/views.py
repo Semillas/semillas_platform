@@ -3,6 +3,7 @@ from __future__ import absolute_import, unicode_literals
 
 from rest_framework import generics
 from rest_framework import permissions
+from django_filters.rest_framework.backends import DjangoFilterBackend
 
 from semillas_backend.users.models import User
 
@@ -42,3 +43,12 @@ class UserServiceList(generics.ListAPIView):
         u=User.objects.get(uuid=pk)
         if u:
             return Service.objects.filter(author=u.id)
+
+# Filter services by category_id
+class CategoryServiceList(generics.ListAPIView):
+    """ access: GET /api/v1/services/feed
+    """
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    filter_fields = ('category',)
