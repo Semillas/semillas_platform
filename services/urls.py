@@ -22,7 +22,7 @@ urlpatterns = [
     url(
         regex=r'^feed$',
         view=views.CategoryServiceList.as_view(),
-        name='detail'
+        name='feed'
     ),
     # URL pattern for the CategoryListView
     url(
