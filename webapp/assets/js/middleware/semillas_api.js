@@ -59,7 +59,7 @@ const serviceSchema = new Schema('services', {
 // Schemas for Github API responses.
 export const Schemas = {
   SERVICE: serviceSchema,
-  SERVICE_ARRAY: arrayOf(serviceSchema)
+  FEED: arrayOf(serviceSchema)
 }
 
 // Action key that carries API call info interpreted by this Redux middleware.

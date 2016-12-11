@@ -43,7 +43,16 @@ const pagination = combineReducers({
       ActionTypes.STARGAZERS_SUCCESS,
       ActionTypes.STARGAZERS_FAILURE
     ]
+  }),
+  feedServices: paginate({
+    mapActionToKey: action => action,
+    types: [
+      ActionTypes.FEED_REQUEST,
+      ActionTypes.FEED_SUCCESS,
+      ActionTypes.FEED_FAILURE
+    ]
   })
+
 })
 
 const rootReducer = combineReducers({
