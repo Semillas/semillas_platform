@@ -52,3 +52,4 @@ class CategoryServiceList(generics.ListAPIView):
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
     filter_fields = ('category',)
+    word_fields = ('title','description',)

@@ -42,6 +42,7 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
+    'rest_framework_word_filter', # Full text search
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
@@ -60,9 +61,9 @@ LOCAL_APPS = (
     # Your stuff: custom apps go here
 )
 
-
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -306,8 +307,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework_word_filter.FullWordSearchFilter',
     )
-
-
 }
 
