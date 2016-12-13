@@ -42,7 +42,6 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
-    'rest_framework_word_filter', # Full text search
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
@@ -58,6 +57,7 @@ LOCAL_APPS = (
     'services',
     'swagger',
     'webapp',
+    'rest_framework_word_filter',
     # Your stuff: custom apps go here
 )
 
