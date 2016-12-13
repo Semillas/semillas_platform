@@ -3,7 +3,6 @@ from __future__ import absolute_import, unicode_literals
 
 from rest_framework import generics
 from rest_framework import permissions
-from django_filters.rest_framework.backends import DjangoFilterBackend
 
 from semillas_backend.users.models import User
 
