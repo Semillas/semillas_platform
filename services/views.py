@@ -45,10 +45,11 @@ class UserServiceList(generics.ListAPIView):
             return Service.objects.filter(author=u.id)
 
 # Filter services by category_id
-class CategoryServiceList(generics.ListAPIView):
+class FeedServiceList(generics.ListAPIView):
     """ access: GET /api/v1/services/feed
     """
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
     filter_fields = ('category',)
+    search_fields = ('description',)
