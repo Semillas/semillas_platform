@@ -5,6 +5,7 @@ from rest_framework import generics
 from rest_framework import permissions
 
 from semillas_backend.users.models import User
+from rest_framework_word_filter.filter import FullWordSearchFilter
 
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
@@ -50,5 +51,13 @@ class FeedServiceList(generics.ListAPIView):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    filter_fields = ('category',)
+    # filter_fields = ('category',)
+    # search_param = ('title','description',)
     word_fields = ('title','description',)
+
+    def get_queryset(self):
+
+        filter_services = FullWordSearchFilter()
+        # self, request, queryset, view
+        filtered_services = filter_services.filter_queryset(self.request, self.queryset, self)
+        return filtered_services
