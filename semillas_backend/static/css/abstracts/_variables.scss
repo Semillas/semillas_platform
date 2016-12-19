@@ -6,7 +6,7 @@
 // Text
 // --------------------------------
 $headingsFont:
-        "Droid Serif",
+        "Fira Sans",
         "San Francisco",
         "Arial",
         "Helvetica",
@@ -14,7 +14,7 @@ $headingsFont:
         sans-serif;
 
 $bodyFont:
-        "Fira Sans",
+        "Droid Serif",
         "Georgia",
         "Times New Roman",
         "Palatino",
@@ -26,11 +26,12 @@ $bodyFont:
 // Base Colors
 // --------------------------------
 $alertColor:                 #67b5db;
+$alertHoverColor:            blue;
 $backgroundColor:            white;
 $headingsColor:              #b1957d;
 $textColor:                  #564f47;
 $ctaColor:                   #e29e4b;
-$ctaSecondaryColor:          #f0c68c;
+$ctaHoverColor:              brown;
 
 // --------------------------------
 // Grey Colors

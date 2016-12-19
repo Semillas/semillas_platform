@@ -13,15 +13,43 @@ body {
 h1, h2, h3, h4, h5 {
 	margin-top: 30px;
 	font-family: $headingsFont;
+	font-size: 16px;
+	font-size: 1rem;
 	font-weight: bold;
-	color: $headingsColor;
 	text-transform: uppercase;
+	line-height: 1.4;
+	color: $headingsColor;
 }
 
-//
-// Vertical rhythm
-//
-p, ul, ol, li {
-	margin-top: 12px;
-	margin-top: 0.75em;
+p, li {
+	margin-top: 5px;
+	margin-bottom: 16px;
+	margin-bottom: 1em;
+}
+
+
+.c-heading-main {
+	font-size: 30px;
+	font-size: 1.875rem;
+	text-align: center;
+	color: $ctaColor;
+}
+
+.c-heading-sub {
+	font-size: 26px;
+	font-size: 1.625rem;
+	text-align: center;
+	color: $ctaColor;
+}
+
+// .c-heading-page {
+	
+// }
+
+.c-heading-section {
+	margin-top: 45px;
+	margin-top: 3em;
+	font-family: $bodyFont;
+	text-align: center;
+	color: $headingsColor;
 }

@@ -5,23 +5,30 @@
 {% load staticfiles %}
 
   <main>
-    <h3>{% trans "Semillas es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal." %}</h3>
-    <h3>{% trans "Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros, ya sean niños, mayores, jóvenes, asalariados, parados, amas de casa, etc." %}</h3>
-    <h3>{% trans "El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se suele contemplar. Empleo remunerado de todas las personas que sostienen la sociedad." %}</h3>
-
+    <h3 class="c-heading-section">{% trans "¿Qué es Semilla Social?" %}</h3>
+    <h4 class="c-heading-sub">Somos una plataforma de intercambio de bienes y servicios</h4>
+    <ul class="list">
+        <li><p>{% trans "Semilla Social es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal." %}</p></li>
+        <li><p>{% trans "Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros, ya sean niños, mayores, jóvenes, asalariados, parados, amas de casa, etc." %}</p></li>
+        <li><p>{% trans "El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se suele contemplar. Empleo remunerado de todas las personas que sostienen la sociedad." %}</p></li>
+    </ul>
     <p>{% trans "Buscamos voluntarios de todo tipo: divulgadores, técnicos informáticos, economistas, abogados, traductores, amigos que nos traigan frutos secos y semillas." %}</p>
+    <a href="{% url 'landing:people' %}" class="btn  btn--big">{% trans "Participa" %}</a>
 
-    <h3>{% trans "Economía Ecológica. Economía Feminista" %}</h3>
+    <h5>{% trans "Economía Ecológica. Economía Feminista" %}</h5>
     <p>{% trans "Semillas busca la sostenibilidad de la vida: en todos los procesos necesarios para la reproducción y buen vivir. No para la sostenibilidad del crecimiento económico." %}</p>
     <p>{% trans "Leé más de nuestra motivación en " %}<a href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>.</p>
     
     <div class="rule"></div>
 
-    <h4>{% trans "¿Cómo Funciona?" %}</h4>
+    <h3 class="c-heading-section">{% trans "¿Cómo Funciona?" %}</h3>
+    <h4 class="c-heading-sub">{% trans "Somos transparentes y sin ánimo de lucro" %}</h4>
     <p>{% trans "Semillas es una aplicación multiplataforma 100% OpenSource que va a permitir a los indivuos intercambiar bienes y servicios usando sus “Semillas” un artificio de intercambio inspirado en monedas sociales." %}</p>
     <p>{% trans "El diseño y la funcionalidad está muy inspirado en las aplicaciones de compraventa, como Wallapop. LetGo, Vibbo…" %}</p>
 
-    <h4>{% trans "¿Cómo conseguir semillas?" %}</h4>
+    <div class="rule"></div>
+
+    <h3 class="c-heading-section">{% trans "¿Cómo conseguir semillas?" %}</h3>
     <ul class="list">
         <li>{% trans "Todo el mundo empieza con la misma cantidad de semillas, simplemente por pertenecer a la plataforma." %}</li>
         <li>{% trans "Se pueden conseguir semillas con comportamientos cívicos. Como por ejemplo usando transporte público o bicicleta." %}</li>

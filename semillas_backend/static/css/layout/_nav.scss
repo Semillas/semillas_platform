@@ -29,13 +29,13 @@
 		padding: 0.5em 0.75em;
 		text-decoration: none;
 		text-transform: uppercase;
-		font-family: $headingsFont;
+		font-family: $bodyFont;
 		font-weight: bold;
 		border-radius: $borderRadius;
 		color: $textColor;
 
 		&:hover {
-			background-color: $ctaSecondaryColor;
+			background-color: darken($ctaColor, 20%);
 			font-style: italic;
 		}
 	}

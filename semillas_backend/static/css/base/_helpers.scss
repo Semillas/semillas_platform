@@ -21,6 +21,8 @@
   max-width: $max-width; /* 1 */
   margin-left: auto; /* 2 */
   margin-right: auto; /* 2 */
+  padding: 20px;
+  padding: 1.25em;
   width: 100%; /* 1 */
  }
 
@@ -59,7 +61,7 @@
   height: 3px;
   width: 56px;
   margin: 19px auto;
-  margin: 1em auto;
+  margin: 2em auto;
   background-color: $ctaColor;
 }
 

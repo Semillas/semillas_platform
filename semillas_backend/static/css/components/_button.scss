@@ -14,8 +14,23 @@
 	text-transform: uppercase;
 	color: $backgroundColor;
 
+	&--big {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 16px 24px;
+		padding: 1em 1.5em;
+		font-size: 120%;
+		color: $backgroundColor;
+
+		&:hover {
+			background-color: darken($ctaColor, 20%) !important;
+			color: $backgroundColor;
+		}
+	}
+
 	&:hover {
-		background-color: $ctaSecondaryColor;
+		background-color: darken($ctaColor, 20%);
 	}
 }
 
