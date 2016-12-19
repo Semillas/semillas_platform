@@ -4,99 +4,32 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% load staticfiles %}
 
-    <h1>{% trans "El proyecto" %}</h1>
-    <p>{% trans "Es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal. " %}</p>
-    <p>{% trans "Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros, ya sean niños, mayores, jóvenes, asalariados, parados, amas de casa, etc." %}</p>
-    <h3>{% trans "Objetivo" %}</h3>
-    <p>{% trans "El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se suele contemplar. Empleo remunerado de todas las personas que sostienen la sociedad." %}</p>
-    <p>{% trans "Según" %} <a href="http://www.vivirsinempleo.org">Gisbert</a>, {% trans "consideramos dos economías:" %}</p>
-    {% if LANGUAGE_CODE == 'es' %}
-        <div class="wrapper">
-            <div class="wrapper--element">
-                <h3>Monetaria</h3>
-                <ul>
-                    <li>
-                        <p>Empresas, instituciones públicas, trabajadores, patrones, funcionaros.</p>
-                    </li>
-                    <li>
-                        <p>Inflaccionista, oferta y demanda, especulativa.</p>
-                    </li>
-                    <li>
-                        <p>Alto valor en el sistema de precios actual.</p>
-                    </li>
-                    <li>
-                        <p>Influye en el PIB.</p>
-                    </li>
-                    <li>
-                        <p>Sometida a crisis sistémicas.</p>
-                    </li>
-                    <li>
-                        <p>Ninguna conciencia ecológica.</p>
-                    </li>
-                </ul>
-            </div>          
-            <div class="wrapper--element">
-                <h3>Paraeconómica</h3>
-                <ul>
-                    <li>
-                        <p>Gente mayor, amas de casa, niños, asociaciones, voluntarios.</p>
-                    </li>
-                    <li>
-                        <p>Ayuda mutua y colaboración.</p>
-                    </li>
-                    <li>
-                        <p>Generalmente sin valor en el sistema de precios actual.</p>
-                    </li>
-                    <li>
-                        <p>Independiente de la Globalización.</p>
-                    </li>
-                    <li>
-                        <p>Altruismo y corresponsabilidad.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    {% else %}
-      <img class="img-responsive center-block" alt="" src="{% static 'landing/images/en/economies_comparison.png' %}" style="align:center;" title=""/>
-    {% endif %}
-    <br>
-    <p>{% trans "Ambas son muy necesarias para el funcionamiento correcto de la sociedad. Todo el trabajo altruista de la segunda permite que la primera tenga un valor de cambio tan alto en el mercado. " %}</p>
-    <p>{% trans "La monetaria está depredando a la paraeconómica en la búsqueda por el pleno empleo y el constante crecimiento económico. Además de estar depredando nuestros ritmos naturales y nuestros ecosistemas." %}</p>
-    <p>{% trans "La paraeconómica, muy dañada, primero, con la migración del campo a la ciudad. La incorporación de la mujer al mercado laboral (algo indudablemente muy bueno para la igualdad de género), y unidades familiares cada vez más frágiles (ejemplo: un padre soltero con dos hijas). Afectando a todas estas economías de ayuda mutua, economías de cuidados y economías de reutilización de bienes." %}</p>
-    <p>{% trans "Este proyecto pretende ser un puente entre ambas economías. En ningún caso desafiar a la moneda de curso legal. Sino permitir a mucha gente obtener bienes de forma accesible. " %}</p>
-    <p>{% trans "Existen muchos proyectos de divisas sociales en marcha. Semillas es una tecnología abierta y confiable al servicio de lo humano y la naturaleza, como herramienta de cambio social. " %}</p>
+  <main>
+    <h3>{% trans "Semillas es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal." %}</h3>
+    <h3>{% trans "Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros, ya sean niños, mayores, jóvenes, asalariados, parados, amas de casa, etc." %}</h3>
+    <h3>{% trans "El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se suele contemplar. Empleo remunerado de todas las personas que sostienen la sociedad." %}</h3>
+
     <p>{% trans "Buscamos voluntarios de todo tipo: divulgadores, técnicos informáticos, economistas, abogados, traductores, amigos que nos traigan frutos secos y semillas." %}</p>
-    <h3>{% trans "A quién está enfocado:" %}</h3>
-    <ul>
-        <li>{% trans "Trabajos fuera del PIB" %}</li>
-        <li>{% trans "Economía de cuidados" %}</li>
-        <li>{% trans "Acompañamiento de ancianos" %}</li>
-        <li>{% trans "Gente que quiere empezar a dedicarse a algo que le gusta hacer. Ganando experiencia y sustento." %}</li>
-        <li>{% trans "Aquellos que han quedado excluidos del mercado laboral. Simplemente porque la moneda de curso legal tiene un valor muy alto y no todo el mundo puede ganarla y a la vez tener la vida que necesita tener." %}</li>
-        <li>{% trans "Comunidades de la <a href='https://es.wikipedia.org/wiki/Comunidad_de_transicion'>transición</a> que quieran cambiar la realidad que vivimos." %}</li>
-        <li>{% trans "Productores y artesanos que quieran vender sus maravillosos productos por otro canal" %}</li>
-        <li>{% trans "Monedas sociales, redes de trueque o bancos de tiempo existentes que quieran fusionarse y empezar a usar esta herramienta." %}</li>
+
+    <h3>{% trans "Economía Ecológica. Economía Feminista" %}</h3>
+    <p>{% trans "Semillas busca la sostenibilidad de la vida: en todos los procesos necesarios para la reproducción y buen vivir. No para la sostenibilidad del crecimiento económico." %}</p>
+    <p>{% trans "Leé más de nuestra motivación en " %}<a href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>.</p>
+    
+    <div class="rule"></div>
+
+    <h4>{% trans "¿Cómo Funciona?" %}</h4>
+    <p>{% trans "Semillas es una aplicación multiplataforma 100% OpenSource que va a permitir a los indivuos intercambiar bienes y servicios usando sus “Semillas” un artificio de intercambio inspirado en monedas sociales." %}</p>
+    <p>{% trans "El diseño y la funcionalidad está muy inspirado en las aplicaciones de compraventa, como Wallapop. LetGo, Vibbo…" %}</p>
+
+    <h4>{% trans "¿Cómo conseguir semillas?" %}</h4>
+    <ul class="list">
+        <li>{% trans "Todo el mundo empieza con la misma cantidad de semillas, simplemente por pertenecer a la plataforma." %}</li>
+        <li>{% trans "Se pueden conseguir semillas con comportamientos cívicos. Como por ejemplo usando transporte público o bicicleta." %}</li>
+        <li>{% trans "Se pueden conseguir semillas con trabajos a la comunidad, esto se realiza en colaboración con diferentes colectivos y asociaciones vecinales." %}</li>
     </ul>
-    <h3>{% trans "Cómo funciona:" %}</h3>
-    <p>{% trans "A nivel de funcionalidad y diseño, pretende ser una copia de la exitosa start-up española: Wallapop. " %}</p>
-    <h4>{% trans "Local y Global " %}</h4>
-    <p>{% trans "Como en Wallapop, el orden de las ofertas será por proximidad para favorecer el mercado local. " %}</p>
-    <p>{% trans "Sin embargo, queremos dar una posibilidad tecnológica para poder obtener, a cambio de tus semillas, clases de inglés al otro lado del océano." %}</p>
-    <h4>{% trans "La creación de semillas: " %}</h4>
-    <p>{% trans "La inyección de moneda en el sistema sería: " %}</p>
-    <p>{% trans "Registro con verificación de SMS: 10 semillas" %}</p>
-    <p>{% trans "Publicación del primer servicio: 5 semillas" %}</p>
-    <p>{% trans "Primera venta o primer servicio ofrecido: 15 semillas" %}</p>
-    <p>{% trans "Cualquier donación en euros para desarrollar y fomentar la plataforma tendrá una recompensa en el mismo número de semillas. 1 Euro - 1 Semilla. " %}</p>
-    <h5>{% trans "Creación de Semillas: Servicios a la comunidad:" %}</h5>
-    <p>{% trans "Determinados servicios a la comunidad serán remunerados por semillas. En colaboración con asociaciones locales se organizarán sesiones de trabajo en grupo donde todos los voluntarios serán retribuídos en Semillas." %}</p>
-    <h4>{% trans "Conversión de semillas a euros" %}</h4>
-    <p>{% trans "No se permite tal opción. Quedaría una relación clara y directa de 1-1 de Semillas/Euros. Y la plataforma sería una forma de realizar intercambios evadiendo al fisco. " %}</p>
-    <h3>{% trans "Quiénes Somos: " %}</h3>
-    <p>{% trans "Semilla social pretende constituirse como ONG. " %}</p>
-    <p>{% trans "Tanto el servidor como los clientes pretenden ser de código abierto, alojados en" %} <a href="https://github.com/Semillas">Github</a>.</p>
-    <p>{% trans "Buscamos voluntarios y desarrolladores de toda índole." %}</p>
-    <h3>{% trans "Estado del proyecto:" %}</h3>
-    <p>{% trans "En pleno desarrollo. Si quieres estar al tanto de las discusiones de producto y quieres colaborar escríbenos a info.semillasocial@gmail.com y te invitamos a nuestro <a href='https://slack.com'>Slack</a>." %}</p>
+    
+    <p>{% trans "Más información en " %}<a href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>.</p>
+  </main>
+
 {% endblock content %}
 

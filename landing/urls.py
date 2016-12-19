@@ -10,9 +10,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     # url pattern for the userlistview
-
-
-  
+    
     url(
         regex=r'^philosophy/$',
         view=TemplateView.as_view(template_name='landing/philosophy.html'),

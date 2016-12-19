@@ -63,41 +63,48 @@
   </head>
   <body>
 
-    <!-- Nav -->
-      <nav class="site-nav  clearfix">
-        <a href="/"><img class="site-nav__logo" src="static/images/logo.png" alt="Semilla Social Logo"></a>
-        <ul>
-          <li>
-            <a class="site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
-          </li>
-          <li>
-            <a class="site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
-          </li>
-          <li>
-            <a class="site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
-          </li>
-          {% if request.user.is_authenticated %}
-            <li>
-              <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-            </li>
-            <li>
-              <a class="site-nav__home-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
-            </li>
-            {% else %}
-            <li>
-              <a class="site-nav__home-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-            </li>
-            <li>
-              <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
-            </li>
-          {% endif %}
-        </ul>
-      </nav>
+    <!-- Header -->
+      <header class="page-head--masthead">
+        <div class="wrapper">
+          <nav id="nav" class="site-nav  clearfix">
+            <a href="/"><img class="site-nav__logo" src="/static/images/logo.png" alt="Semilla Social Logo"></a>
+            <ul>
+              <li>
+                <a class="site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
+              </li>
+              <li>
+                <a class="site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
+              </li>
+              <li>
+                <a class="site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
+              </li>
+              {% if request.user.is_authenticated %}
+                <li>
+                  <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                </li>
+                <li>
+                  <a class="site-nav__home-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
+                </li>
+                {% else %}
+                <li>
+                  <a class="site-nav__home-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                </li>
+                <li>
+                  <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+          <div class="page-head--content">
+            <h2>Semilla Social</h2>
+          </div>
+        </div>
+      </header>
 
+<div class="container">
     <!-- Form -->
-
     <!-- Revisar, da error al hacer click -->
-      <div>
+      <div class="flag-form">
         {% get_current_language as LANGUAGE_CODE %}
         {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
@@ -127,49 +134,41 @@
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
       {% block modal %}{% endblock modal %}
-
+    
+    </div>
     <!-- Footer -->
-      <div>
-        <footer class="footer clearfix">
-          <small class="whiterly">{%trans "Hecho con:" %}</small>
-          <div>
-            <a class="footer_icon" href="https://en.wikipedia.org/wiki/HTML/" target=_blank>
-              <img src="{% static "images/html.svg" %}" alt="HTML logo"/>
-            </a>
-            <a class="footer_icon" href="https://en.wikipedia.org/wiki/CSS/" target=_blank>
-              <img src="{% static "images/css.svg" %}" alt="CSS logo"/>
-            </a>
-            <a class="footer_icon" href="https://en.wikipedia.org/wiki/javascript/" target=_blank>
-              <img src="{% static "images/javascript.svg" %}" alt="JavaScript logo"/>
-            </a>
-            <a class="footer_icon" href="https://github.com/" target=_blank>
-              <img src="{% static "images/git.svg" %}" alt="Github logo"/>
-            </a>
-            <a class="footer_icon" href="http://v4-alpha.getbootstrap.com/" target=_blank>
-              <img src="{% static "images/bootstrap.svg" %}" alt="Bootstrap logo"/>
-            </a>
-            <a class="footer_icon" href="https://www.python.org/" target=_blank>
-              <img src="{% static "images/python.svg" %}" alt="Python logo"/>
-            </a>
-            <a class="footer_icon" href="https://www.djangoproject.com/" target=_blank>
-              <img src="{% static "images/django.png" %}" alt="Django logo"/>
-            </a>
-            <a class="footer_icon" href="https://www.docker.com/" target=_blank>
-              <img src="{% static "images/docker.svg" %}" alt="Docker logo"/>
-            </a>
-            <br>
-            <br>
-            <small class="whiterly">
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="footer__icon" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.
-            </small>
-            <br>
-            <small class="whiterly"> Semillas 2016 - </small> ∞
-          </div>
-        </footer>
-      </div>
-
-    <!-- Up button v1 TODO-->
-      <a>{% trans "Subir" %}</a>
+      <footer class="foo clearfix">
+        <p class="whiterly">{%trans "Hecho con:" %}</p>
+        <div>
+          <a class="foo_icon" href="https://en.wikipedia.org/wiki/HTML/" target=_blank>
+            <img src="{% static "images/html.svg" %}" alt="HTML logo" title="{% trans 'Información oficial de HTML' %}"/>
+          </a>
+          <a class="foo_icon" href="https://en.wikipedia.org/wiki/CSS/" target=_blank>
+            <img src="{% static "images/css.svg" %}" alt="CSSS logo" title="{% trans 'Información oficial de CSSS' %}"/>
+          </a>
+          <a class="foo_icon" href="https://en.wikipedia.org/wiki/javascript/" target=_blank>
+            <img src="{% static "images/javascript.svg" %}" alt="JavaScript logo" title="{% trans 'Información oficial de JavaScript' %}"/>
+          </a>
+          <a class="foo_icon" href="https://github.com/" target=_blank>
+            <img src="{% static "images/git.svg" %}" alt="Github logo" title="{% trans 'Información oficial de Github' %}"/>
+          </a>
+          <a class="foo_icon" href="https://www.python.org/" target=_blank>
+            <img src="{% static "images/python.svg" %}" alt="Python logo" title="{% trans 'Información oficial de Python' %}"/>
+          </a>
+          <a class="foo_icon" href="https://www.djangoproject.com/" target=_blank>
+            <img src="{% static "images/django.png" %}" alt="Django logo" title="{% trans 'Información oficial de Django' %}"/>
+          </a>
+          <a class="foo_icon" href="https://www.docker.com/" target=_blank>
+            <img src="{% static "images/docker.svg" %}" alt="Docker logo" title="{% trans 'Información oficial de Docker' %}"/>
+          </a>
+          <p class="whiterly">
+          <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="foo__icon" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.
+          </p>
+          <p class="whiterly"> Semillas 2016 - 2017</p>
+        </div>
+      </footer>
+      <!-- Up button v1 TODO-->
+      <a class="btn btn--alert" href="#nav">{% trans "Subir" %}</a>
   </body>
 </html>
 

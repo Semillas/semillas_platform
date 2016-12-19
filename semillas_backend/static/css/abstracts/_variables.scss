@@ -25,12 +25,12 @@ $bodyFont:
 // --------------------------------
 // Base Colors
 // --------------------------------
-$alertColor:        #67b5db;
-$backgroundColor:   #f1f1f1;
-$headingsColor:     #b1957d;
-$textColor:         #564f47;
-$ctaColor:          #e29e4b;
-$ctaSecondaryColor: #f0c68c;
+$alertColor:                 #67b5db;
+$backgroundColor:            white;
+$headingsColor:              #b1957d;
+$textColor:                  #564f47;
+$ctaColor:                   #e29e4b;
+$ctaSecondaryColor:          #f0c68c;
 
 // --------------------------------
 // Grey Colors
@@ -44,13 +44,13 @@ $darkGrey:         #121212;
 // --------------------------------
 // Max-Width
 // --------------------------------
-$max-width:       800px;
+$max-width:       1024px;
 
 
 // --------------------------------
 // Border-Radius
 // --------------------------------
-$borderRaius:     3px;
+$borderRadius:     3px;
 
 
 // --------------------------------
@@ -58,15 +58,13 @@ $borderRaius:     3px;
 // --------------------------------
 //
 // small: 320px (target) / 16px (context) = 20em
-// medium: 600px (target) / 16px (context) = 37.5em
-// big: 800px (target) / 16px (context) = 50em
+// medium: 720px (target) / 16px (context) = 45em
 // large: 1024px (target) / 16px (context) = 64em
 // xtraLarge: 1280px (target) / 16 (context) = 80em
 // xtraBig: 1920 (target) / 16 (context) = 120em
 //
-$bpSmall: 19.875em;
-$bpMedium: 37.5em;
-$bpBig: 50em;
+$bpSmall: 20em;
+$bpMedium: 45em;
 $bpLarge: 64em;
 $bpXtraLarge: 80em;
 $bpXtraBig: 120em;

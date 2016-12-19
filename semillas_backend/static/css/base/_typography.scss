@@ -2,8 +2,8 @@
  * Basic typography style for copy text
  */
 body {
-	font: 18px/1.4 $bodyFont;
-	font: 1.125rem/1.4 $bodyFont;
+	font: 16px/1.4 $bodyFont;
+	font: 1rem/1.4 $bodyFont;
   color: $textColor;
 }
 
@@ -19,33 +19,9 @@ h1, h2, h3, h4, h5 {
 }
 
 //
-// Headings level 1
-//
-h1, {
-	font-size: 32px;
-	font-size: 2rem;
-}
-
-//
-// Headings level 2
-//
-h2 {
-	font-size: 30px;
-	font-size: 1.875rem;
-}
-
-//
-// Headingds level 3
-//
-h3 {
-	font-size: 26px;
-	font-size: 1.625rem;
-}
-
-//
 // Vertical rhythm
 //
 p, ul, ol, li {
-	margin-top: 5px;
-	margin-bottom: 10px;
+	margin-top: 12px;
+	margin-top: 0.75em;
 }

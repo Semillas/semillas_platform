@@ -31,10 +31,12 @@
 		text-transform: uppercase;
 		font-family: $headingsFont;
 		font-weight: bold;
-		border-radius: $borderRaius;
+		border-radius: $borderRadius;
+		color: $textColor;
 
 		&:hover {
 			background-color: $ctaSecondaryColor;
+			font-style: italic;
 		}
 	}
 }
