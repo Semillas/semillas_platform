@@ -17,120 +17,112 @@
 			<div class="grid__item">
 			  <h4>Django</h4>
 			  <img src="{% static 'landing/images/django.png' %}" alt="Django image">
-			  <p>The awesome framework that makes this possible.</p>
+			  <p>{% trans "El framework de back-end que hace Semilla Social posible" %}.</p>
 			  <a href="http://www.djangoproject.com" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
 			  <h4>Docker</h4>
 			   <img src="{% static 'landing/images/docker.png' %}" alt="Docker image">
-			  <p>Docker is what holds everything and makes it easy to export.</p>
+			  <p>{% trans "La herramienta que sostiene todo y hace fácil de exportar" %}.</p>
 			  <a href="https://www.docker.com/" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
 			  <h4>GitHub</h4>
 			  <img src="{% static 'landing/images/gitHub.png' %}" alt="GitHub image">
-			  <p>The repository used to control software version.</p>
+			  <p>{% trans "Donde almacenamos nuestro código y así como control de versiones" %}.</p>
 			  <a href="https://www.github.com" class="btn btn-link">Web</a>
 			  <a href="https://github.com/Semillas" class="btn btn-link">Repositorio</a>
 			</div>
 			<div class="grid__item">
 			  <h4>Slack</h4>
 			  <img src="{% static 'landing/images/web-slack.png' %}" alt="Slack Image">
-			  <p>The future of chats. Is where the team gets updated and have fun.</p>
+			  <p>{% trans "El futuro de los chats. Donde los equipos se comuican y divierten" %}.</p>
 			  <a href="https://slack.com/" class="btn btn-link">Web</a>
 			  <a href="https://semillas.slack.com/" class="btn btn-link">Canal</a>
 			</div>
 			<div class="grid__item">
 			  <h4>HTML5</h4>
 			  <img src="{% static 'landing/images/html5.png' %}" alt="HTML5 Image">
-			  <p>HyperText Markup Language 5 es el lenguaje básico de la W3C</p>
+			  <p>{% trans "HyperText Markup Language 5 es el lenguaje básico de la W3C" %}</p>
 			  <a href="https://www.w3.org/TR/html5/" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
 			  <h4>Heroku</h4>
 			  <img src="{% static 'landing/images/heroku.png' %}" alt="Heroku Image">
-			  <p>Heroku es una plataforma como servicio de computación en la Nube.</p>
+			  <p>{% trans "Heroku es una plataforma como servicio de computación en la Nube." %}</p>
 			  <a href="https://www.heroku.com/" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
 			  <h4>Python</h4>
 			  <img src="{% static 'landing/images/python.png' %}" alt="Python Image">
-			  <p>It's the powerful languaje where all is made with, such as Django.</p>
+			  <p>{% trans "Un potente lenguaje back-end con el que se ha hecho Django." %}</p>
 			  <a href="https://www.python.org" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
 			  <h4>Linux</h4>
 			  <img src="{% static 'landing/images/tux.png' %}" alt="Tux Image">
-			  <p>Linux es un sistema operativo que controla un ordenador.</p>
+			  <p>{% trans "Linux es un sistema operativo que controla un ordenador." %}</p>
 			  <a href="https://www.linux.com/" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
 			  <h4>Swagger</h4>
 			  <img src="{% static 'landing/images/swagger.png' %}" alt="Swagger Image">
-			  <p>This swagg software helps us test quality code.</p>
+			  <p>{% trans "Nos permite probar la calidad del código" %}</p>
 			  <a href="http://swagger.io" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
 			  <h4>Sentry</h4>
 			  <img src="{% static 'landing/images/sentry.png' %}" alt="Sentry Image">
-			  <p>For fixing and log errors on the server.</p>
+			  <p>{% trans "Usamos Sentry para solucionar problemas en el servidor" %}</p>
 			  <a href="https://sentry.io" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
 			  <h4>JavaScript</h4>
 			  <img src="{% static 'landing/images/JS.png' %}" alt="JavaScript Image">
-			  <p>We use JavaScript to make the web more friendable :).</p>
+			  <p>{% trans "Usamos JavaScript para hacer la web más amistosa" %}</p>
 			  <a href="#" class="btn btn-link">Web</a>
 			</div>
 			<div class="grid__item">
-			  <h4>Bootstrap</h4>
-			  <img src="{% static 'landing/images/bootstrap.png' %}" alt="Bootstrap Image">
-			  <p>The frontend framework used to make this gorgeous!</p>
-			  <a href="https://www.getbootstrap.com" class="btn btn-link">Web</a>
-			</div>
-			<div class="grid__item">
-			  <h4>License</h4>
+			  <h4>{% trans "Licencia</h4>
 			  <img src="{% static 'landing/images/creativeCommons.png' %}" alt="License Image">
-			  <p>Creative Commons es una corporación sin ánimo de lucro</p>
+			  <p>{% trans "Creative Commons es una corporación sin ánimo de lucro" %}</p>
 			  <a href="http://creativecommons.org" class="btn btn-link">Web</a>
 			</div>
 		</div>
-	</main>
 
+		<div class="rule"></div>
 
-<!-- Product
-Wireframes
+		<h3 class="c-heading-section">{% trans "Obtención de Semillas" %}</h3>
+		<h4 class="c-heading-sub">{% trans "Cada persona empieza con la misma cantidad de semillas" %}</h4>
+		
+		<ul class="list">
+		  <li>{% trans "Registro con verificación de SMS: 5 semillas" %}</li>
+		  <li>{% trans "Publicación del primer servicio: 5 semillas" %}</li>
+		  <li>{% trans "Primera venta o primer servicio ofrecido: 5 semillas" %}</li>
+		</ul>
+		
+		<div class="rule"></div>
+		
+		<h3 class="c-heading-section">{% trans "Creación de Semillas" %}</h3>
+		<h4 class="c-heading-sub">{% trans "Comportamiento Cívico y Servicios a la comunidad" %}</h4>
 
-Obtención de Semillas
+		<p>{% trans "Comportamientos Cívicos: Como Biko, que por cada kilómetro hecho en bicicleta en una ciudad, se paga con puntos útiles para pagar tasas del ayuntamiento. Queremos introducir medidas para premiar con Semillas comportamiento cívico." %}</p>
+		<p>{% trans "Determinados servicios a la comunidad serán remunerados por semillas. En colaboración con asociaciones locales se organizarán sesiones de trabajo en grupo donde todos los voluntarios serán retribuídos en Semillas." %}</p>
 
-Cada persona empieza con la misma cantidad de semillas: 
-Registro con verificación de SMS: 5 semillas
-Publicación del primer servicio: 5 semillas
-Primera venta o primer servicio ofrecido: 5 semillas
+		<div class="rule"></div>
+		
+		<h3 class="c-heading-section">{% trans "Donación de Euros para obtener Semillas" %}</h3>
+		<h4 class="c-heading-sub">{% trans "La importancia de colaborar en la comunidad" %}</h4>
+		
+		<p>{% trans "Cualquier donación en euros para desarrollar y fomentar la plataforma tendrá una recompensa en el mismo número de semillas. 1 Euro - 1 Semilla. " %}</p>
+	
+		<div class="rule"></div>
+		
+		<h3 class="c-heading-section">{% trans "Local y Global" %}</h3>
+		<h4 class="c-heading-sub">{% trans "El orden de las ofertas será por proximidad" %}</h4>
+	
+		<p>{% trans "La proximidad hará que se favorezca al mercado local. Sin embargo, queremos dar una posibilidad tecnológica para poder obtener, a cambio de tus semillas, clases de inglés al otro lado del océano." %}</p>
+</main>
 
-
-Creación de Semillas: Comportamiento Cívico y Servicios a la comunidad:
-Comportamientos Cívicos: Como Biko, que por cada kilómetro hecho en bicicleta en una ciudad, se paga con puntos útiles para pagar tasas del ayuntamiento. Queremos introducir medidas para premiar con Semillas comportamiento cívico. 
-
-Determinados servicios a la comunidad serán remunerados por semillas. En colaboración con asociaciones locales se organizarán sesiones de trabajo en grupo donde todos los voluntarios serán retribuídos en Semillas.
-Donación de Euros para obtener Semillas
-Cualquier donación en euros para desarrollar y fomentar la plataforma tendrá una recompensa en el mismo número de semillas. 1 Euro - 1 Semilla. 
-
-Local y Global
-El orden de las ofertas será por proximidad para favorecer el mercado local.
-
-Sin embargo, queremos dar una posibilidad tecnológica para poder obtener, a cambio de tus semillas, clases de inglés al otro lado del océano.
-
-
-Coding
-Github
-
-Stack
-Para el back-end: Python/Django con Django-Rest-Framework
-Cliente web: ReactJS + Redux
-
-
-Swagger
-Sign-up, Sign-in and go to http://semillasocial.org/docs and query the different endpoints to see the results.
 
 {% endblock %}
