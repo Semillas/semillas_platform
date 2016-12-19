@@ -1,0 +1,69 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the nav of the site/application.
+// -----------------------------------------------------------------------------
+.site-nav {
+	display: block;
+	padding: 1.25em;
+	background-color: $ctaColor;
+
+	& .site-nav__logo {
+		display: block;
+		max-width: 4em;
+		margin: 0 auto;
+	}
+
+	& ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+	}
+
+	& li {
+		width: 100%;
+	}
+
+	& .site-nav__home-link {
+		display: block;
+		float: left;
+		margin: 0 1em;
+		padding: 0.5em 0.75em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: $headingsFont;
+		font-weight: bold;
+		border-radius: $borderRaius;
+
+		&:hover {
+			background-color: $ctaSecondaryColor;
+		}
+	}
+}
+
+// page-head  page-head--masthead
+
+@media screen and (min-width: $bpMedium) {
+	.site-nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		& .site-nav__logo {
+			margin-right: 1.5em;
+		}
+		
+		& ul {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		& li {
+			width: auto;
+		}
+
+		& .site-nav__home-link {
+			margin-left: 0;
+		}
+	}
+}	
+
+	

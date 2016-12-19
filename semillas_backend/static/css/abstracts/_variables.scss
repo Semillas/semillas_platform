@@ -47,21 +47,29 @@ $darkGrey:         #121212;
 $max-width:       800px;
 
 
+// --------------------------------
+// Border-Radius
+// --------------------------------
+$borderRaius:     3px;
+
 
 // --------------------------------
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+//  Breakpoints
 // --------------------------------
-$breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
-
-
-
-
+//
+// small: 320px (target) / 16px (context) = 20em
+// medium: 600px (target) / 16px (context) = 37.5em
+// big: 800px (target) / 16px (context) = 50em
+// large: 1024px (target) / 16px (context) = 64em
+// xtraLarge: 1280px (target) / 16 (context) = 80em
+// xtraBig: 1920 (target) / 16 (context) = 120em
+//
+$bpSmall: 19.875em;
+$bpMedium: 37.5em;
+$bpBig: 50em;
+$bpLarge: 64em;
+$bpXtraLarge: 80em;
+$bpXtraBig: 120em;
 
 
 /// Relative or absolute URL where all assets are served from

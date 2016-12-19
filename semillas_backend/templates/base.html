@@ -60,47 +60,42 @@
       {% endblock javascript %}
       {% block javascript_level2 %}
      {% endblock javascript_level2 %}
-    </head>
-
+  </head>
   <body>
 
     <!-- Nav -->
-      <nav>
-        <a href="/">Semillas</a>
-        <div>
-          <ul>
+      <nav class="site-nav  clearfix">
+        <a href="/"><img class="site-nav__logo" src="static/images/logo.png" alt="Semilla Social Logo"></a>
+        <ul>
+          <li>
+            <a class="site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
+          </li>
+          <li>
+            <a class="site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
+          </li>
+          <li>
+            <a class="site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
+          </li>
+          {% if request.user.is_authenticated %}
             <li>
-              <a href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
+              <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
             </li>
             <li>
-              <a href="{% url 'landing:development' %}">{% trans "Software" %}</a>
+              <a class="site-nav__home-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
+            </li>
+            {% else %}
+            <li>
+              <a class="site-nav__home-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
             </li>
             <li>
-              <a href="{% url 'landing:contact' %}">{% trans "Contacto" %}</a>
+              <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
             </li>
-            </ul>
-            <ul>
-            {% if request.user.is_authenticated %}
-              <li>
-                <a href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-              </li>
-              <li>
-                <a href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
-              </li>
-              {% else %}
-              <li>
-                <a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-              </li>
-              <li>
-                <a href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
-              </li>
-            {% endif %}
-          </ul>
-        </div>
+          {% endif %}
+        </ul>
       </nav>
 
     <!-- Form -->
-    
+
     <!-- Revisar, da error al hacer click -->
       <div>
         {% get_current_language as LANGUAGE_CODE %}

@@ -36,9 +36,4 @@ body {
 a {
   color: $textColor;
   text-decoration: none;
-
-  @include on-event {
-    color: $textColor;
-    text-decoration: underline;
-  }
 }
