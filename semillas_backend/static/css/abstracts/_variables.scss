@@ -1,0 +1,64 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// --------------------------------
+// Text
+// --------------------------------
+$headingsFont:
+        "Fira Sans",
+        "San Francisco",
+        "Arial",
+        "Helvetica",
+        "Verdana",
+        sans-serif;
+
+$bodyFont:
+        "Droid Serif",
+        "Georgia",
+        "Times New Roman",
+        "Palatino",
+        serif;
+
+
+
+// --------------------------------
+// Color
+// --------------------------------
+$alertColor:      #67b5db;
+$backgroundColor: #f1f1f1;
+$headingsColor:   #b1957d;
+$textColor:       #564f47;
+$ctaColor:        #e29e4b;
+$ctaHover:        #f0c68c;
+
+
+
+// --------------------------------
+// Max-Width
+// --------------------------------
+$max-width:       800px;
+
+
+
+// --------------------------------
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+// --------------------------------
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

@@ -1,11 +1,8 @@
-@charset 'UTF-8';
-
 // 1. Configuration and helpers
 @import
   'abstracts/variables',
   'abstracts/functions',
-  'abstracts/mixins',
-  'abstracts/shame';
+  'abstracts/mixins';
 
 // 2. Vendors
 @import
@@ -14,14 +11,14 @@
 // 3. Base stuff
 @import
   'base/base',
+  'base/fonts',
   'base/typography',
   'base/helpers';
 
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer',
-  'layout/nav';
+  'layout/footer';
 
 // 5. Components
 @import
@@ -32,5 +29,5 @@
   'pages/home';
 
 // 7. Themes
-// @import
-// 'themes/default';
+@import
+  'themes/default';

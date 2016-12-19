@@ -23,6 +23,11 @@ html {
  * Basic styles for links
  */
 a {
-  color: $mainColor;
+  color: $textColor;
   text-decoration: none;
+
+  @include on-event {
+    color: $textColor;
+    text-decoration: underline;
+  }
 }

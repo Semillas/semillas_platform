@@ -13,39 +13,51 @@
     <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/-->
     <title>{% block title %}Semillas{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Vollkorn" rel="stylesheet">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Semilla Social" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="semillasocial.org" />
+    <meta property="og:image" content="https://www.semillasocial.org/static/images/logo.png" />
+    <meta property="og:description" content="Semilla Social es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal." />
+    <meta property="og:site_name" content="semillasocial.org" />
+
+    <!-- Twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@semilla_social">
+    <meta name="twitter:domain" content="semillasocial.org">
+    <meta name="twitter:creator" content="@semilla_social">
+    <meta name="twitter:title" content="Semilla Social">
+    <meta name="twitter:image" content="https://www.semillasocial.org/static/images/logo.png">
+    <meta name="twitter:description" content="Semilla Social es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Fira+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/static/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <link rel="mask-icon" href="/static/images/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/static/images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     {% block css %}
-    <!-- Latest compiled and minified CSS -->
-    <!--link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-    <!-- Your stuff: Third-party css libraries go here -->
-    <!-- This file store project specific CSS -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
     {% endblock %}
     {% block javascript %}
-	<!-- Latest JQuery -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" defer="defer"></script>
-
-	<!-- Tether - a requirement for Bootstrap tooltips -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" defer="defer"></script>
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous" defer="defer"></script>
-
-	<!-- Your stuff: Third-party javascript libraries go here -->
-	<!-- place project specific Javascript in this file -->
-
-	<script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
-    {% endblock javascript %}
-    {% block javascript_level2 %}
-    {% endblock javascript_level2 %}
-  </head>
+	
+  	<script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
+      {% endblock javascript %}
+      {% block javascript_level2 %}
+      {% endblock javascript_level2 %}
+    </head>
 
   <body>
     <div class="container">
