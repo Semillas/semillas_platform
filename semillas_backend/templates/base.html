@@ -63,7 +63,7 @@
     </head>
 
   <body>
-  
+
     <!-- Nav -->
       <nav>
         <a href="/">Semillas</a>
@@ -100,6 +100,8 @@
       </nav>
 
     <!-- Form -->
+    
+    <!-- Revisar, da error al hacer click -->
       <div>
         {% get_current_language as LANGUAGE_CODE %}
         {% get_available_languages as LANGUAGES %}
@@ -108,11 +110,11 @@
           <input name="next" type="hidden" value="{{ redirect_to }}"/>
           {% for language in languages %}
           {% if LANGUAGE_CODE == language.code %}
-            <button type="submit" {% if LANGUAGE_CODE != "es" %} value="es" name="language" title="Cambiar a Castellano">
-              <img src="{% static 'images/spanish_flag.png' %}" alt="Cambiar a Castellano" />
+            <button class="btn--flag" type="submit" {% if LANGUAGE_CODE != "es" %} value="es" name="language" title="Cambiar a Castellano">
+              <img src="{% static 'images/spanish_flag.svg' %}" alt="Cambiar a Castellano" />
               {% else %}
                 value="en" name="language" title="Change to English">
-                <img src="{% static 'images/english_flag.png' %}" alt="Change to English" />
+                <img src="{% static 'images/english_flag.svg' %}" alt="Change to English" />
               {% endif %}
             </button>
           {% endif %}

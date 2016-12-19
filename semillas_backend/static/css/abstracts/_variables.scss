@@ -6,7 +6,7 @@
 // Text
 // --------------------------------
 $headingsFont:
-        "Fira Sans",
+        "Droid Serif",
         "San Francisco",
         "Arial",
         "Helvetica",
@@ -14,7 +14,7 @@ $headingsFont:
         sans-serif;
 
 $bodyFont:
-        "Droid Serif",
+        "Fira Sans",
         "Georgia",
         "Times New Roman",
         "Palatino",
@@ -23,14 +23,21 @@ $bodyFont:
 
 
 // --------------------------------
-// Color
+// Base Colors
 // --------------------------------
-$alertColor:      #67b5db;
-$backgroundColor: #f1f1f1;
-$headingsColor:   #b1957d;
-$textColor:       #564f47;
-$ctaColor:        #e29e4b;
-$ctaHover:        #f0c68c;
+$alertColor:        #67b5db;
+$backgroundColor:   #f1f1f1;
+$headingsColor:     #b1957d;
+$textColor:         #564f47;
+$ctaColor:          #e29e4b;
+$ctaSecondaryColor: #f0c68c;
+
+// --------------------------------
+// Grey Colors
+// --------------------------------
+$lightGrey:        #a0a0a0;
+$mediumGrey:       #282828;
+$darkGrey:         #121212;
 
 
 

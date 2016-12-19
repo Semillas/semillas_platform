@@ -1,3 +1,24 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+.btn {
+	max-width: 6.25em;
+	background-color: $ctaColor;
+	border: 3px solid $ctaColor;
+	color: $backgroundColor;
+
+	&:hover {
+		background-color: transparent;
+		border: 3px solid $ctaSecondaryColor;
+		color: $textColor;
+	}
+}
+
+	.btn--flag {
+		background-color: transparent;
+
+		& img {
+			max-width: 1.75em;
+		}
+	}
