@@ -5,6 +5,24 @@
 
   <main>
   
+  <h3 class="c-heading-section">{% trans "¿Quiénes somos?" %}</h3>
+  <h4 class="c-heading-sub">{% trans "Conoce por qué nos une Semilla Social" %}</h4>
+  
+  <p>{% trans "Pensamos que otra forma de economía es posible. Pensamos que toda persona puede ofrecer algo y que eso debería ser suficiente para cubrir los mínimos de una vida digna. Diseñamos esta plataforma para ofrecer un medio, un soporte para un fin. Somos un grupo de hacktivistas, no hacemos esto por dinero. Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, diseño, frontend... " %}</p>
+
+  <div class="rule"></div>
+
+  <h4 class="c-heading-sub">{% trans "Conoce por qué nos une Semilla Social" %}</h4>
+
+  <ul class="list">
+    <li>{% trans "Porque quieres contribuir al software libre y trabajar con un equipo de personas muy simpáticas y muy motivadas ayudándote." %}</li>
+    <li>{% trans "Porque hacemos esto para aprender, usar las últimas tecnologías, reciclarnos y disfrutar." %}</li>
+    <li>{% trans "Porque queremos dejar la situación socioeconómica mejor de lo que la hemos encontrado." %}</li>
+    <li>{% trans "Porque vamos a hacer un producto precioso y hecho con amor. Donde se van a intercambiar las cosas bonitas que fabrican las personas de nuestro alrededor." %}</li>
+  </ul>
+
+  <div class="rule"></div>
+
   <h3 class="c-heading-section">{% trans "El Equipo" %}</h3>
   <h4 class="c-heading-sub">{% trans "Personas que colaboran en Semilla Social" %}</h4>
 
@@ -73,11 +91,20 @@
       <p>{% trans "Traducciones" %}, Gijón (Asturias)</p>
     </div>
   </div>
-  
-  <h2 class="featurette-heading">{% trans "Historia:" %} <span class="text-muted">{% trans "cómo surgió" %}</span></h2>
-  <quote>{% trans "Semilla social pretende constituírse como ONG. Este proyecto nace como open source y sin ánimo de lucro." %}</quote>
 
-  <div>
+  <div class="rule"></div>
+
+  <h3 class="c-heading-section">{% trans "¿Semillas Lab?" %}</h3>
+  <h4 class="c-heading-sub">{% trans "Conoce donde nos reunimos" %}</h4>
+
+
+  <p>{% trans "El equipo de Semillas está deslocalizado, sin embargo gran parte de nosotros estamos en Madrid. " %}</p>
+  <p>{% trans "Cada miércoles nos reunimos en el Semillas Lab, en la Tabacalera de Lavapiés, Madrid. " %}</p>
+  <p><a href="https://www.youtube.com/watch?v=_tFYRFXaI_k">{% trans "Video de Semillas Lab" %}</a></p>
+  <p>{% trans "También nos puedes escribir a " %}<a href="https://www.youtube.com/watch?v=_tFYRFXaI_k">mailto:info.semillasocial@gmail.com </a></p>
+  <p>{% trans "Llamadnos al teléfono " %}679923602</p>
+
+   <!-- <div>
     {% blocktrans %}
        Pensamos que otra forma de economía es posible. Pensamos que toda persona
        puede ofrecer algo y que eso debería ser suficiente para cubrir los mínimos de una vida digna.
@@ -92,6 +119,6 @@
   {% block footer %}
     <li><a href="{% url 'info' %}">Info</a> </li>
     <li class="active">{%trans "Quiénes somos" %}</li>
-  {% endblock %}
+  {% endblock %} -->
 
 </main> 
