@@ -160,7 +160,7 @@ export const loadFeed = (login, nextPage) => (dispatch, getState) => {
   const {
     nextPageUrl = `feed`,
     pageCount = 0
-  } = getState().pagination.feedServices || {}
+  } = getState().pagination.feedServicesPagination || {}
 
   if (pageCount > 0 && !nextPage) {
     return null

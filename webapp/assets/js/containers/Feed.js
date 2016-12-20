@@ -4,13 +4,13 @@ import { loadFeed } from '../actions/Feed'
 import Service from '../components/Service'
 import zip from 'lodash/zip'
 
-const loadData = ({ login, loadUser, loadStarred }) => {
+const loadData = ({ login, loadFeed }) => {
   loadFeed(filters)
 }
 
-class UserPage extends Component {
+class FeedPage extends Component {
   static propTypes = {
-    starredPagination: PropTypes.object,
+    servicePagination: PropTypes.object,
     feed: PropTypes.array.isRequired,
   }
 
@@ -25,7 +25,7 @@ class UserPage extends Component {
   }
 
   handleLoadMoreClick = () => {
-    this.props.loadStarred(this.props.login, true)
+    this.props.loadFeed(this.props.login, true)
   }
 
   renderService([ service ]) {
@@ -60,7 +60,7 @@ const mapStateToProps = (state, ownProps) => {
   // Have a look at ../middleware/api.js for more details.
 
   const {
-    pagination: { feedServices },
+    pagination: { feedServicesPagination },
     entities: { services }
   } = state
 
