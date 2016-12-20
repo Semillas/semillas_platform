@@ -53,6 +53,7 @@ class FullWordSearchFilter(BaseFilterBackend):
         orm_lookups = [self.construct_search(str(search_field))
                        for search_field in search_fields]
 
+
         search_term = request.query_params.get(self.search_param, '').split()
 
         if not search_term:
