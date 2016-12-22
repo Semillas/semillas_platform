@@ -70,27 +70,41 @@
             <a href="/"><img class="site-nav__logo" src="/static/images/logo.png" alt="Semilla Social Logo"></a>
             <ul>
               <li>
-                <a class="site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
+                {% block nav-filosophy %}
+                  <a class="site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
+                {% endblock %}
               </li>
               <li>
-                <a class="site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
+                {% block nav-product %}
+                  <a class="site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
+                {% endblock %}
               </li>
               <li>
-                <a class="site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
+                {% block nav-people %}
+                  <a class="site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
+                {% endblock %}
               </li>
               {% if request.user.is_authenticated %}
                 <li>
-                  <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                  {% block nav-user %}
+                    <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                {% endblock %}
                 </li>
                 <li>
-                  <a class="site-nav__home-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
+                  {% block nav-logout %}
+                    <a class="site-nav__home-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
+                {% endblock %}
                 </li>
                 {% else %}
                 <li>
-                  <a class="site-nav__home-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                  {% block nav-signup %}
+                    <a class="site-nav__home-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                {% endblock %}
                 </li>
                 <li>
-                  <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                  {% block nav-signin %}
+                    <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                {% endblock %}
                 </li>
               {% endif %}
             </ul>
@@ -129,12 +143,12 @@
         {% for message in messages %}
           <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
         {% endfor %}
-      {% endif %} 
+      {% endif %}
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
       {% block modal %}{% endblock modal %}
-    
+
     </div>
     <!-- Footer -->
       <footer class="foo clearfix">
