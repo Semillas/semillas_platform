@@ -48,16 +48,17 @@ class UserServiceList(generics.ListAPIView):
 class FeedServiceList(generics.ListAPIView):
     """ access: GET /api/v1/services/feed
     """
-    queryset = Service.objects.all()
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
     # filter_fields = ('category',)
-    # search_param = ('title','description',)
+
+    # columns to search in 
     word_fields = ('title','description',)
 
     def get_queryset(self):
+        
+        queryset = Service.objects.all()
 
-        filter_services = FullWordSearchFilter()
-        # self, request, queryset, view
-        filtered_services = filter_services.filter_queryset(self.request, self.queryset, self)
-        return filtered_services
+        queryset = FullWordSearchFilter().filter_queryset(self.request, queryset, self)
+        
+        return queryset
