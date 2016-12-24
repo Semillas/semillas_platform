@@ -36,45 +36,38 @@ class FeedPage extends Component {
   }
 
   render() {
-    const { services } = this.props
-    if (!services) {
+    const { FeedServices } = this.props
+    if (!FeedServices) {
       return <h1><i>Loading {" services..."}</i></h1>
     }
 
     return (
       <div>
-        <User user={user} />
-        <hr />
         <List renderItem={this.renderService}
-              items={services}
+              items={FeedServices}
               onLoadMoreClick={this.handleLoadMoreClick}
               loadingLabel={'Loading more...'}
-              {...starredPagination} />
+              {...feedServicesPagination} />
       </div>
     )
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  // We need to lower case the login due to the way GitHub's API behaves.
-  // Have a look at ../middleware/api.js for more details.
 
   const {
     pagination: { feedServicesPagination },
     entities: { services }
   } = state
 
-  const starredPagination = starredByUser[login] || { ids: [] }
-  const starredRepos = starredPagination.ids.map(id => repos[id])
-  const starredRepoOwners = starredRepos.map(repo => users[repo.owner])
+  const feedServices = feedServicesPagination.uuids.map(id => services[id])
 
   return {
-    login,
-    user: users[login]
+    feedServices,
+    feedServicesPagination,
   }
 }
 
 export default connect(mapStateToProps, {
-  loadUser,
-  loadStarred
-})(UserPage)
+  loadFeed
+})(FeedPage)
