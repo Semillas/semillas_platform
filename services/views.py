@@ -55,10 +55,4 @@ class FeedServiceList(generics.ListAPIView):
     # columns to search in 
     word_fields = ('title','description',)
 
-    def get_queryset(self):
-        
-        queryset = Service.objects.all()
-
-        queryset = FullWordSearchFilter().filter_queryset(self.request, queryset, self)
-        
-        return queryset
+    queryset = Service.objects.all()
