@@ -11,6 +11,7 @@ from rest_framework import permissions
 
 from .models import User
 from .serializers import UserSerializer
+from .permissions import IsOwnerOrReadOnly
 
 
 
@@ -64,4 +65,5 @@ class UserDetail(generics.RetrieveUpdateAPIView):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
+    lookup_field = 'uuid'

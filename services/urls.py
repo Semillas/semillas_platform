@@ -12,17 +12,28 @@ urlpatterns = [
         view=views.ServiceList.as_view(),
         name='list'
     ),
-
     # URL pattern for the ServiceDetailView
     url(
-        regex=r'^(?P<pk>[0-9]+)/$',
+        regex=r'^(?P<uuid>[^/]+)/$',
         view=views.ServiceDetail.as_view(),
         name='detail'
+    ),
+    # URL pattern for the ServiceDetailView --> Get Services by Category
+    url(
+        regex=r'^feed$',
+        view=views.CategoryServiceList.as_view(),
+        name='feed'
     ),
     # URL pattern for the CategoryListView
     url(
         regex=r'^categories$',
         view=views.CategoryList.as_view(),
         name='list'
+    ),
+    # URL pattern for the CreateService
+    url(
+        regex=r'^$',
+        view=views.CreateService.as_view(),
+        name='create'
     ),
 ]
