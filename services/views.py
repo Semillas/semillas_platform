@@ -10,6 +10,8 @@ from rest_framework_word_filter.filter import FullWordSearchFilter
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
 
+from django.contrib.gis.db.models.functions import Distance
+
 class CreateService(generics.CreateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
@@ -58,7 +60,12 @@ class FeedServiceList(generics.ListAPIView):
     def get_queryset(self):
         
         queryset = Service.objects.all()
-
         queryset = FullWordSearchFilter().filter_queryset(self.request, queryset, self)
+        #Order all the services by distance to the requester user location
+        ref_location = self.request.user.location
+        queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
         
+        # for service in queryset:
+        #     print("-----> " + service.title+ " -->" +service.author.name + " -- " + str(service.author.location) + " --> " + str(service.distance) + "\n")
+
         return queryset
