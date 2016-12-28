@@ -5,7 +5,6 @@ from rest_framework import generics
 from rest_framework import permissions
 
 from semillas_backend.users.models import User
-from rest_framework_word_filter.filter import FullWordSearchFilter
 
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
