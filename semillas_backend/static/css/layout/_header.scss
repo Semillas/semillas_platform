@@ -18,13 +18,14 @@
 
     @media screen and (min-width: $bpMedium) {
       .page-head--masthead {
-          background-image: url(https://s3.amazonaws.com/semillaalpha/images/masthead-medium.jpg);
+        {
+          background-image: url(landing/images/masthead-medium.jpg);
       }
     }
 
     @media screen and (min-width: $bpLarge) {
       .page-head--masthead {
-          background-image: url(https://s3.amazonaws.com/semillaalpha/images/masthead-large.jpg);
+          background-image: url(landing/images/masthead-large.jpg);
       }
     }
 

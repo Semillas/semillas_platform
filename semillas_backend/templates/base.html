@@ -66,8 +66,8 @@
     <!-- Header -->
       <header class="page-head--masthead">
         <div class="wrapper">
-          <nav id="nav" class="site-nav  clearfix">
-            <a href="/"><img class="site-nav__logo" src="https://s3.amazonaws.com/semillaalpha/images/logo.png" alt="Semilla Social Logo"></a>
+          <nav id="nav" class="site-nav  clearfix">       
+            <a href="/"><img class="site-nav__logo" src="{% static 'landing/images/logo.png' %}" alt="Semilla Social Logo"></a>
             <ul>
               <li>
                 <a class="site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
