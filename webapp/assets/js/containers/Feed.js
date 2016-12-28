@@ -4,14 +4,14 @@ import { loadFeed } from '../actions/Feed'
 import Service from '../components/Service'
 import zip from 'lodash/zip'
 
-const loadData = ({ login, loadFeed }) => {
+const loadData = ({ filters, loadFeed }) => {
   loadFeed(filters)
 }
 
 class FeedPage extends Component {
   static propTypes = {
     servicePagination: PropTypes.object,
-    feed: PropTypes.array.isRequired,
+    //feed: PropTypes.array.isRequired,
   }
 
   componentWillMount() {
@@ -31,7 +31,9 @@ class FeedPage extends Component {
   renderService([ service ]) {
     return (
       <Service
-        service={service} />
+        service={service}
+        key={service.uuid}
+      />
     )
   }
 
@@ -56,14 +58,15 @@ class FeedPage extends Component {
 const mapStateToProps = (state, ownProps) => {
 
   const {
-    pagination: { feedServicesPagination },
+    pagination: { feedServices },
     entities: { services }
   } = state
 
-  const feedServices = feedServicesPagination.uuids.map(id => services[id])
+  const feedServicesPagination = feedServices || { uuids: [] }
+  const feedServicesPaginated = feedServicesPagination.uuids.map(id => services[id])
 
   return {
-    feedServices,
+    feedServicesPaginated,
     feedServicesPagination,
   }
 }

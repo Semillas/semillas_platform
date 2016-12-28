@@ -17,7 +17,7 @@ const fetchFeed = filters=> ({
 // Fetches a single feed from Github API unless it is cached.
 // Relies on Redux Thunk middleware.
 export const loadFeed = (filters, requiredFields = []) => (dispatch, getState) => {
-  const feed = getState().entities.feeds[uuid]
+  const feed = getState().entities.feed
   if (feed && requiredFields.every(key => feed.hasOwnProperty(key))) {
     return null
   }
