@@ -9,7 +9,7 @@ export const FEED_FAILURE = 'FEED_FAILURE'
 const fetchFeed = filters=> ({
   [CALL_SEMILLAS_API]: {
     types: [ FEED_REQUEST, FEED_SUCCESS, FEED_FAILURE ],
-    endpoint: `feed`,
+    endpoint: `service/feed`,
     schema: Schemas.FEED
   }
 })

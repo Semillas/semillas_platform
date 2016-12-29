@@ -158,7 +158,7 @@ const fetchFeed = (login, nextPageUrl) => ({
 // Relies on Redux Thunk middleware.
 export const loadFeed = (login, nextPage) => (dispatch, getState) => {
   const {
-    nextPageUrl = `feed`,
+    nextPageUrl = `service/feed`,
     pageCount = 0
   } = getState().pagination.feedServicesPagination || {}
 
