@@ -39,8 +39,8 @@ class UserServiceList(generics.ListAPIView):
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
     def get_queryset(self):
-        if hasattr(self, 'user_id'):
-            pk = self.kwargs['user_id']
+        if 'user_uuid' in self.kwargs:
+            pk = self.kwargs['user_uuid']
             u=User.objects.get(uuid=pk)
             if u:
                 return Service.objects.filter(author=u.id)
