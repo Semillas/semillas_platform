@@ -1,23 +1,71 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the nav of the site/application.
 // -----------------------------------------------------------------------------
-// This is a fix for the bootstrap4 alpha release
-.navbar {
-    border-radius: 0px;
+.site-nav {
+	display: block;
+	padding: 1.25em;
+	background-color: $ctaColor;
+
+	& .site-nav__logo {
+		display: block;
+		max-width: 4em;
+		margin: 0 auto;
+	}
+
+	& ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+	}
+
+	& li {
+		width: 100%;
+	}
+
+	& .site-nav__home-link {
+		display: block;
+		float: left;
+		margin: 0 1em;
+		padding: 0.5em 0.75em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: $bodyFont;
+		font-weight: bold;
+		border-radius: $borderRadius;
+		color: $textColor;
+
+		&:hover {
+			background-color: darken($ctaColor, 20%);
+			font-style: italic;
+		}
+	}
 }
 
-@media (max-width: 47.9em) {
-    .navbar-nav .nav-item {
-        display: inline-block;
-        float: none;
-        width: 100%;
-    }
+// page-head  page-head--masthead
 
-    .navbar-nav .nav-item + .nav-item {
-        margin-left: 0;
-    }
+@media screen and (min-width: $bpMedium) {
+	.site-nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
 
-    .nav.navbar-nav.pull-xs-right {
-        float: none !important;
-    }
-}
+		& .site-nav__logo {
+			margin-right: 1.5em;
+		}
+		
+		& ul {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		& li {
+			width: auto;
+		}
+
+		& .site-nav__home-link {
+			margin-left: 0;
+		}
+	}
+}	
+
+	
