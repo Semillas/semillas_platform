@@ -7,6 +7,9 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Semillas API')
 
 urlpatterns = [
 
@@ -30,7 +33,7 @@ urlpatterns = [
 
     # Your stuff: custom urls includes go here
     url(r'^landing/', include('landing.urls', namespace='landing')),
-    url(r'^docs/', include('swagger.urls', namespace='docs')),
+    url(r'^docs/', schema_view),
     url(r'^webapp/', include('webapp.urls', namespace='webapp')),
 
 
