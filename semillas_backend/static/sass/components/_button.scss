@@ -58,3 +58,16 @@
 			background-color: darken($alertColor, 20%);
 		}
 	}
+
+.is-active {
+    padding: 10px 16px;
+    padding: 0.625em 1em;
+    max-width: 160px;
+    max-width: 10em;
+    background-color: darken($ctaColor, 20%);
+    border-radius: $borderRadius;
+    text-align: center;
+    font-size: 110%;
+    text-transform: uppercase;
+    color: $backgroundColor;
+}
