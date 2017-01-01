@@ -18,13 +18,13 @@
 
     @media screen and (min-width: $bpMedium) {
       .page-head--masthead {
-          background-image: url(/static/images/masthead-medium.jpg);
+          background-image: url(../images/masthead-medium.jpg);
       }
     }
 
     @media screen and (min-width: $bpLarge) {
       .page-head--masthead {
-          background-image: url(/static/images/masthead-large.jpg);
+          background-image: url(../images/masthead-large.jpg);
       }
     }
 
@@ -93,6 +93,6 @@
         height: 35em;
       }
     }
-  
+
 
 
