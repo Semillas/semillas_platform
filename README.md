@@ -5,6 +5,7 @@
 ![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
 [![Travis-CI](https://travis-ci.org/Semillas/semillas_backend.svg?branch=master)](https://travis-ci.org/Semillas/semillas_backend)
 [![Coverage Codecov](https://codecov.io/gh/Semillas/semillas_backend/branch/master/graph/badge.svg)](https://codecov.io/gh/Semillas/semillas_backend)
+[![Updates](https://pyup.io/repos/github/semillas/semillas_backend/shield.svg)](https://pyup.io/repos/github/semillas/semillas_backend/)
 
 
 
@@ -117,3 +118,11 @@ Whenever master branch is updated with a new commit or merge. A deploy will be t
 Check it on https://www.semillasocial.org
 
 Whatever is pushed to 'dev' branch it will automatically be deployed to http://alpha.semillasocial.org
+
+
+### Recreate CSS files from SCSS (SASS)
+
+Command: 
+ ```$ ./node_modules/gulp/bin/gulp.js sass```
+
+Need to have installed gulp and some others: $ npm install

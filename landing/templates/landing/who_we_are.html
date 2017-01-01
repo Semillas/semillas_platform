@@ -2,155 +2,123 @@
 {% block content %}
 {% load staticfiles %}
 {% load i18n %}
-    <h2>
-         <text>
-            <i class="fa fa-users" aria-hidden="true"></i>
-             {% trans "El Equipo" %}
-         </text>
-    </h2>
-    <hr>
-    <div class="container">
 
-        <div class="row">
-            <div class="col-md-4 col-lg-4 col-xl-4"></div>
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-               <div class="img-thumbnail">
-               <img src="{% static 'landing/images/unkown.png' %}" class="img-thumbnail img-responsive  center-block" style="width:280px; height: 280px;" alt="">
-                    <div class="caption  text-xs-center">
-                        <h4>- ????? -</h4>
-                        <p>{% trans "Necesitamos gente, ¿Quieres participar en el proyecto?" %} <br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row"><!--3 elements-->
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <div class="img-thumbnail center-block">
-              <img src="{% static 'landing/images/alipio.jpg' %}" class="center-block img-thumbnail img-fluid img-circle" style=" height: 280px;" alt="...">
-              <div class="caption text-xs-center">
-                <h4>Alipio Muñiz de Gorostiza (Supergerminador)</h4>
-                <p>{% trans "Interesado en encontrar ecoalternativas, comprometido con elevar la vibración armónica y asesorar sobre ecosinuestra (evulonimo de economía) como monedas sociales." %}</p>
-                 <p><a href="http://www.ecoalternative.net/">EcoAlternative</a></p>
-                 <p><a href="https://www.linkedin.com/in/alipio">Linkedin</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <div class="img-thumbnail center-block">
-              <img src="{% static 'landing/images/fedora.jpg' %}" class=" center-block img-thumbnail img-fluid" style=" height: 280px;" alt="...">
-              <div class="caption text-xs-center">
-                <h4>C. Martel</h4>
-                <p>{% trans "Traducciones" %}</p>
-                <p>Toronto. Canada.</p>
-                <p><a href="https://www.linkedin.com/in/albertobsaez" class="btn btn-default" role="button">Linkedin</a></p>
-              </div>
-            </div>
-          </div>
+  <main>
 
-        </div>
+  <h3 class="c-heading-section">{% trans "¿Quiénes somos?" %}</h3>
+  <h4 class="c-heading-sub">{% trans "Conoce por qué nos une Semilla Social" %}</h4>
 
-        <div class="row"><!--3 elements-->
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="img-thumbnail center-block">
-              <img src="{% static 'landing/images/LeireDeEsteban.jpg' %}" class="center-block img-thumbnail img-fluid" style=" height: 280px;" alt="...">
-              <div class="caption text-xs-center">
-                <h4>Leire</h4>
-                <p>{% trans "Community Manager. Pamplona." %}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="img-thumbnail center-block">
-              <img src="{% static 'landing/images/AlbertoBernabe.jpg' %}" class=" center-block img-thumbnail img-fluid" style=" height: 280px;" alt="...">
-              <div class="caption text-xs-center">
-                <h4>Alberto</h4>
-                <p>Marketing Mentor</p>
-                <p> Social Marketing Manager {% trans "at" %} SkyScanner.</p>
-                <p>Edinburgh, United Kingdom.</p>
-                <p><a href="https://www.linkedin.com/in/albertobsaez" class="btn btn-default" role="button">Linkedin</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="img-thumbnail center-block">
-              <img src="{% static 'landing/images/Heather_Johnston.jpg' %}" class="center-block img-thumbnail img-fluid img-circle" style=" height: 280px;" alt="...">
-              <div class="caption text-xs-center">
-                <h4>Heather</h4>
-                <p>{% trans "Traducciones" %}, Gijón Asturias.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <p>{% trans "Pensamos que otra forma de economía es posible. Pensamos que toda persona puede ofrecer algo y que eso debería ser suficiente para cubrir los mínimos de una vida digna. Diseñamos esta plataforma para ofrecer un medio, un soporte para un fin. Somos un grupo de hacktivistas, no hacemos esto por dinero. Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, diseño, frontend... " %}</p>
 
-        <br>
-         <div class="row"><!--3 elements-->
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="img-thumbnail center-block">
-              <img src="{% static 'landing/images/alicia.jpg' %}" class=" center-block img-thumbnail img-fluid img-circle" style=" height: 280px;" alt="...">
-              <div class="caption text-xs-center">
-                <h4>Alicia Zunzunegui</h4>
-                <p>Marketing Mentor, Barcelona</p>
-                <p><a href="https://www.linkedin.com/in/aliciazunzunegui" class="btn btn-default" role="button">Linkedin</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="img-thumbnail center-block">
-              <img src="{% static 'landing/images/Ismael.jpg' %}" class=" center-block img-thumbnail img-fluid img-circle" style=" height: 280px;" alt="...">
-              <div class="caption text-xs-center">
-                <h4>Ismael</h4>
-                <p>{% trans "Desarrollador Back-end. Interesado en economía, política, educación y tecnología." %}</p>
-                <p><a href="https://www.linkedin.com/in/ismaeldeesteban" class="btn btn-default" role="button">Linkedin</a></p>
-              </div>
-            </div>
-          </div>
+  <div class="rule"></div>
 
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="img-thumbnail">
-              <img src="{% static 'landing/images/p01010101.png' %}" class="center-block img-thumbnail img-fluid" style=" height: 280px;" alt="...">
-              <div class="caption text-xs-center">
-                <h4>Pedro</h4>
-                <p>{% trans "Desarrollador full stack. Interesado en el software libre, Linux y nuevas tecnologías." %}</p>
-                <p><a href="https://www.linkedin.com/in/pecordero" class="btn btn-default" role="button">Linkedin</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <h4 class="c-heading-sub">{% trans "Conoce por qué nos une Semilla Social" %}</h4>
+
+  <ul class="list">
+    <li>{% trans "Porque quieres contribuir al software libre y trabajar con un equipo de personas muy simpáticas y muy motivadas ayudándote." %}</li>
+    <li>{% trans "Porque hacemos esto para aprender, usar las últimas tecnologías, reciclarnos y disfrutar." %}</li>
+    <li>{% trans "Porque queremos dejar la situación socioeconómica mejor de lo que la hemos encontrado." %}</li>
+    <li>{% trans "Porque vamos a hacer un producto precioso y hecho con amor. Donde se van a intercambiar las cosas bonitas que fabrican las personas de nuestro alrededor." %}</li>
+  </ul>
+
+  <div class="rule"></div>
+
+  <h3 class="c-heading-section">{% trans "El Equipo" %}</h3>
+  <h4 class="c-heading-sub">{% trans "Personas que colaboran en Semilla Social" %}</h4>
+
+  <div class="grid">
+    <div class="grid__item">
+      <h4>?????</h4>
+      <img src="{% static 'landing/images/unkown.png' %}" alt="">
+      <p>{% trans "Necesitamos gente" %}</p>
+      <p>{% trans "¿Quieres participar en el proyecto?" %}</p>
     </div>
-
-<div class="container">
-<div class="row">
-  <div class="col-xs-10 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-    <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">{% trans "Historia:" %} <span class="text-muted">{% trans "cómo surgió" %}</span></h2>
-          <p class="lead">
-          <quote>
-          <span>
-              {% trans "Semilla social pretende constituírse como ONG. Este proyecto nace como open source y sin ánimo de lucro." %}
-          </span>
-          </quote>
-          </p>
-        </div>
-      </div>
-
-      {% blocktrans %}
-         Pensamos que otra forma de economía es posible. Pensamos que toda persona
-         puede ofrecer algo y que eso debería ser suficiente para cubrir los mínimos de una vida digna.
-         Diseñamos esta plataforma para ofrecer un medio, un soporte para un fin.
-         Somos un grupo de hacktivistas, no hacemos esto por dinero.
-         Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, diseño,
-         frontend...
-      {% endblocktrans %}
+    <div class="grid__item">
+      <h4>Ismael</h4>
+      <img src="{% static 'landing/images/Ismael.jpg' %}" class=" center-block img-thumbnail img-fluid img-circle" alt="...">
+      <p>{% trans "Desarrollador Back-end. Interesado en economía, política, educación y tecnología." %}</p>
+      <p><a href="https://www.linkedin.com/in/ismaeldeesteban" class="btn" role="button">Linkedin</a></p>
+    </div>
+    <div class="grid__item">
+      <h4>C. Martel</h4>
+      <img src="{% static 'landing/images/fedora.jpg' %}" alt="...">
+      <p>{% trans "Traducciones" %}</p>
+      <p>Toronto, (Canada)</p>
+      <p><a href="https://www.linkedin.com/in/albertobsaez" class="btn" role="button">Linkedin</a></p>
+    </div>
+    <div class="grid__item">
+      <h4>Alipio Muñiz de Gorostiza</h4>
+      <img src="{% static 'landing/images/alipio.jpg' %}" alt="...">
+      <p>{% trans "Interesado en encontrar ecoalternativas y asesorar sobre monedas sociales" %}</p>
+      <!-- <p><a href="http://www.ecoalternative.net/" class="btn">EcoAlternative</a></p> -->
+      <p><a href="https://www.linkedin.com/in/alipio" class="btn">Linkedin</a></p>
+    </div>
+    <div class="grid__item">
+      <h4>Ignacio Villanueva</h4>
+      <img src="{% static 'landing/images/ignacio-villanueva.jpg' %}" alt="...">
+      <p>{% trans "Front-end. Especializado en web performance, responsive web design y software libre" %}</p>
+      <p><a href="http://ignaciodenuevo.com/" class="btn" role="button">Web</a></p>
+    </div>
+    <div class="grid__item">
+      <h4>Alberto</h4>
+      <img src="{% static 'landing/images/AlbertoBernabe.jpg' %}" alt="...">
+      <p>{% trans "Marketing Mentor & Marketing Manager at SkyScanner" %}</p>
+      <p>{% trans "Edinburgh, (United Kingdom)" %}</p>
+      <p><a href="https://www.linkedin.com/in/albertobsaez" class="btn" role="button">Linkedin</a></p>
+    </div>
+    <div class="grid__item">
+      <h4>Alicia Zunzunegui</h4>
+      <img src="{% static 'landing/images/alicia.jpg' %}" class=" center-block img-thumbnail img-fluid img-circle" alt="...">
+      <p>{% trans "Marketing Mentor" %}</p>
+      <p>{% trans "Barcelona" %}</p>
+      <p><a href="https://www.linkedin.com/in/aliciazunzunegui" class="btn" role="button">Linkedin</a></p>
+    </div>
+    <div class="grid__item">
+      <h4>Pedro</h4>
+      <img src="{% static 'landing/images/p01010101.png' %}" alt="...">
+      <p>{% trans "Desarrollador full stack. Interesado en el software libre, Linux y nuevas tecnologías" %}</p>
+      <p><a href="https://www.linkedin.com/in/pecordero" class="btn" role="button">Linkedin</a></p>
+    </div>
+    <div class="grid__item">
+      <h4>Leire</h4>
+      <img src="{% static 'landing/images/LeireDeEsteban.jpg' %}" alt="...">
+      <p>{% trans "Community Manager" %}</p>
+      <p>Pamplona, (Navarra)</p>
+    </div>
+    <div class="grid__item">
+      <h4>Heather</h4>
+      <img src="{% static 'landing/images/Heather_Johnston.jpg' %}" alt="...">
+      <p>{% trans "Traducciones" %}, Gijón (Asturias)</p>
+    </div>
   </div>
-</div>
-</div>
 
-{% endblock %}
-{% block footer %}
-  <li><a href="{% url 'info' %}">Info</a> </li>
-  <li class="active">{%trans "Quiénes somos" %}</li>
-{% endblock %}
+  <div class="rule"></div>
+
+  <h3 class="c-heading-section">{% trans "¿Semillas Lab?" %}</h3>
+  <h4 class="c-heading-sub">{% trans "Conoce donde nos reunimos" %}</h4>
+
+
+  <p>{% trans "El equipo de Semillas está deslocalizado, sin embargo gran parte de nosotros estamos en Madrid. " %}</p>
+  <p>{% trans "Cada miércoles nos reunimos en el Semillas Lab, en la Tabacalera de Lavapiés, Madrid. " %}</p>
+  <p><a href="https://www.youtube.com/watch?v=_tFYRFXaI_k">{% trans "Video de Semillas Lab" %}</a></p>
+  <p>{% trans "También nos puedes escribir a " %}<a href="https://www.youtube.com/watch?v=_tFYRFXaI_k">mailto:info.semillasocial@gmail.com </a></p>
+  <p>{% trans "Llamadnos al teléfono " %}679923602</p>
+
+   <!-- <div>
+    {% blocktrans %}
+       Pensamos que otra forma de economía es posible. Pensamos que toda persona
+       puede ofrecer algo y que eso debería ser suficiente para cubrir los mínimos de una vida digna.
+       Diseñamos esta plataforma para ofrecer un medio, un soporte para un fin.
+       Somos un grupo de hacktivistas, no hacemos esto por dinero.
+       Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, diseño,
+       frontend...
+    {% endblocktrans %}
+  </div>
+
+  {% endblock %}
+  {% block footer %}
+    <li><a href="{% url 'info' %}">Info</a> </li>
+    <li class="active">{%trans "Quiénes somos" %}</li>
+  {% endblock %} -->
+
+</main>

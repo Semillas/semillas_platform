@@ -28,7 +28,7 @@ Pillow==3.4.2
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
-django-allauth==0.29.0
+django-allauth==0.30.0
 
 
 # Python-PostgreSQL Database Adapter
@@ -53,11 +53,12 @@ geoip2==2.4.2
 djangorestframework==3.5.3
 django-rest-swagger==2.1.0
 
-
+# Filtering for API
+django-filter==1.0.1
 
 # Your custom requirements go here
 
 #Factory libs. For making up some data.
 # Should be removed from production in the future
 factory-boy==2.8.1
-fake-factory==9999.9.9
+fake-factory==0.7.2

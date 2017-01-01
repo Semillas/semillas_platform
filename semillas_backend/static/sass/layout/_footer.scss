@@ -1,15 +1,29 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+.foo {
+	padding: 1.25em;
+	text-align: center;
+	background-color: $ctaColor;
 
-.footer_icon {
-    
+	& div {
+		max-width: 360px;
+		max-width: 22.5em;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.foo_icon {
+
 	&:hover {
 		text-decoration: none !important;
 	}
 
 	& img {
-		max-width: 30px;
 		width: 30px;
+		max-width: 30px;
+		margin-right: 5px;
+		margin-left: 5px;
 	}
 }
