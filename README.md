@@ -5,6 +5,7 @@
 ![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
 [![Travis-CI](https://travis-ci.org/Semillas/semillas_backend.svg?branch=master)](https://travis-ci.org/Semillas/semillas_backend)
 [![Coverage Codecov](https://codecov.io/gh/Semillas/semillas_backend/branch/master/graph/badge.svg)](https://codecov.io/gh/Semillas/semillas_backend)
+[![Updates](https://pyup.io/repos/github/semillas/semillas_backend/shield.svg)](https://pyup.io/repos/github/semillas/semillas_backend/)
 
 
 
