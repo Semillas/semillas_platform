@@ -8,7 +8,7 @@ wheel==0.29.0
 django==1.9.7
 
 # Configuration
-django-environ==0.4.0
+django-environ==0.4.1
 whitenoise==3.2
 
 
