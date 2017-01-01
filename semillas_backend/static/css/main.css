@@ -730,6 +730,18 @@ p, li {
   .btn--alert a:hover {
     background-color: #2a85b2; }
 
+.is-active {
+  padding: 10px 16px;
+  padding: 0.625em 1em;
+  max-width: 160px;
+  max-width: 10em;
+  background-color: #ab6b1c;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 110%;
+  text-transform: uppercase;
+  color: white; }
+
 .list {
   padding-bottom: 1em;
   padding-left: 2em; }
