@@ -80,17 +80,25 @@
               </li>
               {% if request.user.is_authenticated %}
                 <li>
-                  <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                  {% block nav-user %}
+                    <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                {% endblock %}
                 </li>
                 <li>
-                  <a class="site-nav__home-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
+                  {% block nav-logout %}
+                    <a class="site-nav__home-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
+                {% endblock %}
                 </li>
                 {% else %}
                 <li>
-                  <a class="site-nav__home-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                  {% block nav-signup %}
+                    <a class="site-nav__home-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                {% endblock %}
                 </li>
                 <li>
-                  <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                  {% block nav-signin %}
+                    <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                {% endblock %}
                 </li>
               {% endif %}
             </ul>

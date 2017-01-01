@@ -118,3 +118,11 @@ Whenever master branch is updated with a new commit or merge. A deploy will be t
 Check it on https://www.semillasocial.org
 
 Whatever is pushed to 'dev' branch it will automatically be deployed to http://alpha.semillasocial.org
+
+
+### Recreate CSS files from SCSS (SASS)
+
+Command: 
+ ```$ ./node_modules/gulp/bin/gulp.js sass```
+
+Need to have installed gulp and some others: $ npm install

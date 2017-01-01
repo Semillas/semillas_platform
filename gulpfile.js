@@ -121,5 +121,6 @@ gulp.task('sass', function () {
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+	this.app = "./" + pjson.name;
+  gulp.watch(this.app + '/static/sass/**/*.scss', ['sass']);
 });
