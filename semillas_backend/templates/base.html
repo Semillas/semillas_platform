@@ -66,8 +66,8 @@
     <!-- Header -->
       <header class="page-head--masthead">
         <div class="wrapper">
-          <nav id="nav" class="site-nav  clearfix">       
-            <a href="/"><img class="site-nav__logo" src="{% static 'landing/images/logo.png' %}" alt="Semilla Social Logo"></a>
+          <nav id="nav" class="site-nav  clearfix">
+            <a href="/"><img class="site-nav__logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo"></a>
             <ul>
               <li>
                 <a class="site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
@@ -129,12 +129,12 @@
         {% for message in messages %}
           <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
         {% endfor %}
-      {% endif %} 
+      {% endif %}
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
       {% block modal %}{% endblock modal %}
-    
+
     </div>
     <!-- Footer -->
       <footer class="foo clearfix">
