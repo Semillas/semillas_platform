@@ -24,7 +24,7 @@ phonenumberslite==7.5.2
 
 
 # Images
-Pillow==3.2.0
+Pillow==3.4.2
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
