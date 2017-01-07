@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { loadFeed } from '../actions/Feed'
 import Service from '../components/Service'
 import zip from 'lodash/zip'
+import List from '../components/List'
 
 const loadData = ({ filters, loadFeed }) => {
   loadFeed(filters)
@@ -38,15 +39,16 @@ class FeedPage extends Component {
   }
 
   render() {
-    const { FeedServices } = this.props
-    if (!FeedServices) {
+    const { feedServicesPaginated, feedServicesPagination } = this.props
+    // TODO: Control the case no service is returned.
+    if (!feedServicesPaginated) {
       return <h1><i>Loading {" services..."}</i></h1>
     }
 
     return (
       <div>
         <List renderItem={this.renderService}
-              items={FeedServices}
+              items={feedServicesPaginated}
               onLoadMoreClick={this.handleLoadMoreClick}
               loadingLabel={'Loading more...'}
               {...feedServicesPagination} />
@@ -62,8 +64,8 @@ const mapStateToProps = (state, ownProps) => {
     entities: { services }
   } = state
 
-  const feedServicesPagination = feedServices || { uuids: [] }
-  const feedServicesPaginated = feedServicesPagination.uuids.map(id => services[id])
+  const feedServicesPagination = feedServices.feed || { ids: [] }
+  const feedServicesPaginated = feedServicesPagination.ids.map(id => services[id])
 
   return {
     feedServicesPaginated,

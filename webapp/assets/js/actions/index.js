@@ -22,7 +22,6 @@ export const loadUser = (login, requiredFields = []) => (dispatch, getState) => 
   if (user && requiredFields.every(key => user.hasOwnProperty(key))) {
     return null
   }
-  debugger;
 
   return dispatch(fetchUser(login))
 }
@@ -160,7 +159,7 @@ export const loadFeed = (login, nextPage) => (dispatch, getState) => {
   const {
     nextPageUrl = `service/feed`,
     pageCount = 0
-  } = getState().pagination.feedServicesPagination || {}
+  } = getState().pagination.feedServices || {}
 
   if (pageCount > 0 && !nextPage) {
     return null
