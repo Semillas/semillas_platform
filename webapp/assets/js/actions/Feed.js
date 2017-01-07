@@ -6,21 +6,26 @@ export const FEED_FAILURE = 'FEED_FAILURE'
 
 // Fetches the feed from Semillas API.
 // Relies on the custom API middleware defined in ../middleware/api.js.
-const fetchFeed = filters=> ({
+const fetchFeed = (filters, nextPageUrl)=> ({
   [CALL_SEMILLAS_API]: {
     types: [ FEED_REQUEST, FEED_SUCCESS, FEED_FAILURE ],
-    endpoint: `service/feed`,
+    endpoint: nextPageUrl,
     schema: Schemas.FEED
   }
 })
 
 // Fetches a single feed from Github API unless it is cached.
 // Relies on Redux Thunk middleware.
-export const loadFeed = (filters, requiredFields = []) => (dispatch, getState) => {
-  const feed = getState().entities.feed
-  if (feed && requiredFields.every(key => feed.hasOwnProperty(key))) {
+export const loadFeed = (filters, nextPage, requiredFields = []) => (dispatch, getState) => {
+  const {
+    nextPageUrl = `service/feed`,
+    pageCount = 0
+  } = getState().pagination.feedServices.feed || {}
+  debugger;
+
+  if (pageCount > 0 && !nextPage) {
     return null
   }
-  return dispatch(fetchFeed(filters))
-}
 
+  return dispatch(fetchFeed(filters, nextPageUrl))
+}

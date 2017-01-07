@@ -170,7 +170,6 @@ export const loadFeed = (login, nextPage) => (dispatch, getState) => {
 
 
 
-
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
 
 // Resets the currently visible error message.
