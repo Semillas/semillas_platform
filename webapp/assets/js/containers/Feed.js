@@ -48,7 +48,7 @@ class FeedPage extends Component {
     return (
       <div>
         <List renderItem={this.renderService}
-              items={feedServicesPaginated}
+              items={zip(feedServicesPaginated)}
               onLoadMoreClick={this.handleLoadMoreClick}
               loadingLabel={'Loading more...'}
               {...feedServicesPagination} />
