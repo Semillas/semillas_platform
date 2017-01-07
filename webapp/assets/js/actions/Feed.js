@@ -21,7 +21,6 @@ export const loadFeed = (filters, nextPage, requiredFields = []) => (dispatch, g
     nextPageUrl = `service/feed`,
     pageCount = 0
   } = getState().pagination.feedServices.feed || {}
-  debugger;
 
   if (pageCount > 0 && !nextPage) {
     return null
