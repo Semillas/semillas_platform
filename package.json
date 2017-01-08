@@ -16,7 +16,7 @@
     "redux-devtools-log-monitor": "^1.1.1",
     "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",
-    "webpack": "^1.13.3",
+    "webpack": "1.13.3",
     "webpack-bundle-tracker": "0.0.93"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
     "redux-devtools-log-monitor": "^1.1.1",
     "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",
-    "webpack": "^1.13.3",
+    "webpack": "1.13.3",
     "webpack-bundle-tracker": "0.0.93"
   },
   "engines": {
