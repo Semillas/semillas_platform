@@ -64,4 +64,4 @@ factory-boy==2.8.1
 fake-factory==0.7.2
 
 # Client
-django-webpack-loader==0.3.3
+django-webpack-loader==0.4.1
