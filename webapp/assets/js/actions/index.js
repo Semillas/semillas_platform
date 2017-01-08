@@ -137,38 +137,6 @@ export const loadService = (uuid, requiredFields = []) => (dispatch, getState) =
   return dispatch(fetchService(uuid))
 }
 
-export const FEED_REQUEST = 'FEED_REQUEST'
-export const FEED_SUCCESS = 'FEED_SUCCESS'
-export const FEED_FAILURE = 'FEED_FAILURE'
-
-// Fetches a page of feed repos by a particular user.
-// Relies on the custom API middleware defined in ../middleware/api.js.
-const fetchFeed = (login, nextPageUrl) => ({
-  login,
-  [CALL_API]: {
-    types: [ FEED_REQUEST, FEED_SUCCESS, FEED_FAILURE ],
-    endpoint: nextPageUrl,
-    schema: GithubSchemas.REPO_ARRAY
-  }
-})
-
-// Fetches a page of feed repos by a particular user.
-// Bails out if page is cached and user didn't specifically request next page.
-// Relies on Redux Thunk middleware.
-export const loadFeed = (login, nextPage) => (dispatch, getState) => {
-  const {
-    nextPageUrl = `service/feed`,
-    pageCount = 0
-  } = getState().pagination.feedServices || {}
-
-  if (pageCount > 0 && !nextPage) {
-    return null
-  }
-
-  return dispatch(fetchFeed(login, nextPageUrl))
-}
-
-
 
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
 

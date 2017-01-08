@@ -1,4 +1,5 @@
-import * as ActionTypes from '../actions'
+import * as ActionTypes from '../actions/index'
+import * as FeedActionTypes from '../actions/Feed'
 import merge from 'lodash/merge'
 import paginate from './paginate'
 import { routerReducer as routing } from 'react-router-redux'
@@ -47,9 +48,9 @@ const pagination = combineReducers({
   feedServices: paginate({
     mapActionToKey: action => 'feed',
     types: [
-      ActionTypes.FEED_REQUEST,
-      ActionTypes.FEED_SUCCESS,
-      ActionTypes.FEED_FAILURE
+      FeedActionTypes.FEED_REQUEST,
+      FeedActionTypes.FEED_SUCCESS,
+      FeedActionTypes.FEED_FAILURE
     ]
   })
 
