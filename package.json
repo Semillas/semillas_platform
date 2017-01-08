@@ -36,7 +36,7 @@
   },
 
 	"scripts": {
-		"build": "NODE_ENV=production webpack --config ./webpack.config.js --progress --colors",
+		"build": "NODE_ENV=production webpack --config ./webpack.config.js --progress --colors"
 	}
 
 }
