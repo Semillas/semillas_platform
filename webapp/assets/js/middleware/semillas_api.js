@@ -17,7 +17,7 @@ const getNextPageUrl = response => {
   return nextLink.split(';')[0].slice(1, -1)
 }
 
-const API_ROOT = 'http://0.0.0.0:8000/api/v1/'
+const API_ROOT = '/api/v1/'
 
 // Fetches an API response and normalizes the result JSON according to schema.
 // This makes every API response have the same shape, regardless of how nested it was.
