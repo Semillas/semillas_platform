@@ -5,35 +5,74 @@
 // --------------------------------
 // Text
 // --------------------------------
-$serifFont:
-        "Vollkorn",
-        "Georgia",
-        "Times New Roman",
-        "Palatino",
-        serif;
-
-$sansFont:
-        "Lato",
+$headingsFont:
+        "Fira Sans",
         "San Francisco",
         "Arial",
         "Helvetica",
         "Verdana",
         sans-serif;
 
+$bodyFont:
+        "Droid Serif",
+        "Georgia",
+        "Times New Roman",
+        "Palatino",
+        serif;
+
 
 
 // --------------------------------
-// Color
+// Base Colors
 // --------------------------------
-$white: #fff;
-$mint-green: #d6e9c6;
-$black: #000;
-$pink: #f2dede;
-$dark-pink: #eed3d7;
-$red: #b94a48;
+$alertColor:                 #67b5db;
+$alertHoverColor:            blue;
+$backgroundColor:            white;
+$headingsColor:              #b1957d;
+$textColor:                  #564f47;
+$ctaColor:                   #e29e4b;
+$ctaHoverColor:              brown;
+
+// --------------------------------
+// Grey Colors
+// --------------------------------
+$lightGrey:        #a0a0a0;
+$mediumGrey:       #282828;
+$darkGrey:         #121212;
 
 
-$max-width:            800px;
-$text-color:             #222222;
-$mainColor:           #00FFB6;
-$secondaryColor:  #FF8360;
+
+// --------------------------------
+// Max-Width
+// --------------------------------
+$max-width:       1024px;
+
+
+// --------------------------------
+// Border-Radius
+// --------------------------------
+$borderRadius:     3px;
+
+
+// --------------------------------
+//  Breakpoints
+// --------------------------------
+//
+// small: 320px (target) / 16px (context) = 20em
+// medium: 720px (target) / 16px (context) = 45em
+// large: 1024px (target) / 16px (context) = 64em
+// xtraLarge: 1280px (target) / 16 (context) = 80em
+// xtraBig: 1920 (target) / 16 (context) = 120em
+//
+$bpSmall: 20em;
+$bpMedium: 45em;
+$bpLarge: 64em;
+$bpXtraLarge: 80em;
+$bpXtraBig: 120em;
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

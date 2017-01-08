@@ -1,3 +1,75 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+.btn {
+	padding: 10px 16px;
+	padding: 0.625em 1em;
+	max-width: 160px;
+	max-width: 10em;
+	background-color: $ctaColor;
+	border-radius: $borderRadius;
+	text-align: center;
+	font-size: 110%;
+	text-transform: uppercase;
+	color: $backgroundColor;
+
+	&--big {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 16px 24px;
+		padding: 1em 1.5em;
+		font-size: 120%;
+		color: $backgroundColor;
+
+		&:hover {
+			background-color: darken($ctaColor, 20%) !important;
+			color: $backgroundColor;
+		}
+	}
+
+	&:hover {
+		background-color: darken($ctaColor, 20%);
+	}
+}
+
+	.btn--flag {
+		background-color: transparent;
+
+		& img {
+			max-width: 1.75em;
+		}
+	}
+
+	.btn--alert {
+		position: fixed;
+		bottom: 16px;
+		bottom: 1em;
+		right: 16px;
+		right: 1em;
+		background-color: $alertColor;
+
+		&:hover {
+			background-color: darken($alertColor, 20%);
+		}
+
+		a:hover {
+			background-color: darken($alertColor, 20%);
+		}
+	}
+
+
+// Highlight enabled button class
+.is-active {
+    padding: 10px 16px;
+    padding: 0.625em 1em;
+    max-width: 160px;
+    max-width: 10em;
+    background-color: darken($ctaColor, 20%);
+    border-radius: $borderRadius;
+    text-align: center;
+    font-size: 110%;
+    text-transform: uppercase;
+    color: $backgroundColor;
+}

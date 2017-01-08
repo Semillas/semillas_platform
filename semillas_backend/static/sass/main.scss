@@ -1,0 +1,34 @@
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// 2. Vendors
+@import
+  'vendor/normalize';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/nav',
+  'layout/footer',
+  'layout/grid';
+
+// 5. Components
+@import
+  'components/button';
+
+// 6. Page-specific styles
+@import
+  'pages/home';
+
+// 7. Themes
+@import
+  'themes/default';
