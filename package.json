@@ -36,7 +36,8 @@
   },
 
 	"scripts": {
-		"build": "NODE_ENV=production webpack --config ./webpack.config.js --progress --colors"
+		"webpack:deploy": "webpack --config=webpack.config.js -p",
+		"heroku-postbuild": "npm run webpack:deploy"
 	}
 
 }
