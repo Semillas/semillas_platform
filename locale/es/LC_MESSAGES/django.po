@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 22:06+0000\n"
+"POT-Creation-Date: 2017-01-09 16:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ismael <ismael.deesteban@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/semilla-social/teams/65146/"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings/common.py:284
+#: config/settings/common.py:297
 msgid "Spanish"
 msgstr "Español"
 
-#: config/settings/common.py:285
+#: config/settings/common.py:298
 msgid "English"
 msgstr "Inglés"
 
@@ -99,7 +99,7 @@ msgid "Leé más de nuestra motivación en "
 msgstr ""
 
 #: landing/templates/landing/home.html:20
-#: semillas_backend/templates/base.html:74
+#: semillas_backend/templates/base.html:73
 msgid "Filosofía"
 msgstr ""
 
@@ -153,7 +153,7 @@ msgstr ""
 
 #: landing/templates/landing/home.html:38
 #: landing/templates/landing/product_and_code.html:7
-#: semillas_backend/templates/base.html:79
+#: semillas_backend/templates/base.html:76
 msgid "Producto y Código"
 msgstr ""
 
@@ -412,7 +412,6 @@ msgid "¿Quiénes somos?"
 msgstr ""
 
 #: landing/templates/landing/who_we_are.html:9
-#: landing/templates/landing/who_we_are.html:15
 msgid "Conoce por qué nos une Semilla Social"
 msgstr ""
 
@@ -424,6 +423,10 @@ msgid ""
 "soporte para un fin. Somos un grupo de hacktivistas, no hacemos esto por "
 "dinero. Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, "
 "diseño, frontend... "
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:15
+msgid "Por qué ser parte del proyecto"
 msgstr ""
 
 #: landing/templates/landing/who_we_are.html:18
@@ -662,7 +665,7 @@ msgstr ""
 #: semillas_backend/templates/account/login.html:7
 #: semillas_backend/templates/account/login.html:11
 #: semillas_backend/templates/account/login.html:44
-#: semillas_backend/templates/base.html:106
+#: semillas_backend/templates/base.html:100
 msgid "Sign In"
 msgstr ""
 
@@ -770,7 +773,7 @@ msgstr "Unirse"
 
 #: semillas_backend/templates/account/signup.html:9
 #: semillas_backend/templates/account/signup.html:19
-#: semillas_backend/templates/base.html:101
+#: semillas_backend/templates/base.html:95
 msgid "Sign Up"
 msgstr "Unirse"
 
@@ -826,51 +829,51 @@ msgstr ""
 "<strong>Nota:</strong> todavía puedes <a href=\"%(email_url)s\">cambiar tu "
 "dirección de correo</a>."
 
-#: semillas_backend/templates/base.html:84
+#: semillas_backend/templates/base.html:79
 msgid "Quiénes Somos"
 msgstr ""
 
-#: semillas_backend/templates/base.html:90
+#: semillas_backend/templates/base.html:84
 msgid "My Profile"
 msgstr "Mi Perfil"
 
-#: semillas_backend/templates/base.html:95
+#: semillas_backend/templates/base.html:89
 msgid "Sign out"
 msgstr "Salir"
 
-#: semillas_backend/templates/base.html:155
+#: semillas_backend/templates/base.html:149
 msgid "Hecho con:"
 msgstr ""
 
-#: semillas_backend/templates/base.html:158
+#: semillas_backend/templates/base.html:152
 msgid "Información oficial de HTML"
 msgstr ""
 
-#: semillas_backend/templates/base.html:161
+#: semillas_backend/templates/base.html:155
 msgid "Información oficial de CSSS"
 msgstr ""
 
-#: semillas_backend/templates/base.html:164
+#: semillas_backend/templates/base.html:158
 msgid "Información oficial de JavaScript"
 msgstr ""
 
-#: semillas_backend/templates/base.html:167
+#: semillas_backend/templates/base.html:161
 msgid "Información oficial de Github"
 msgstr ""
 
-#: semillas_backend/templates/base.html:170
+#: semillas_backend/templates/base.html:164
 msgid "Información oficial de Python"
 msgstr ""
 
-#: semillas_backend/templates/base.html:173
+#: semillas_backend/templates/base.html:167
 msgid "Información oficial de Django"
 msgstr ""
 
-#: semillas_backend/templates/base.html:176
+#: semillas_backend/templates/base.html:170
 msgid "Información oficial de Docker"
 msgstr ""
 
-#: semillas_backend/templates/base.html:185
+#: semillas_backend/templates/base.html:179
 msgid "Subir"
 msgstr ""
 
