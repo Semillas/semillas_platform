@@ -109,3 +109,18 @@ gulp.task('watch', ['default'], function() {
     gulp.watch(paths.images + '/**/*', ['imgCompression']);
     gulp.watch('templates/**/*.html');
 });
+
+
+'use strict';
+
+gulp.task('sass', function () {
+	this.app = "./" + pjson.name;
+  return gulp.src(this.app + '/static/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(this.app + '/static/css'));
+});
+
+gulp.task('sass:watch', function () {
+	this.app = "./" + pjson.name;
+  gulp.watch(this.app + '/static/sass/**/*.scss', ['sass']);
+});

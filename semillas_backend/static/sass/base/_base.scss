@@ -17,12 +17,32 @@ html {
  */
 *, *::before, *::after {
   box-sizing: inherit;
+  margin: 0;
+	padding: 0;
+	border: 0;
 } 
+
+
+/**
+* Basic body styles
+*/
+body {
+	background-color: $backgroundColor;
+}
 
 /**
  * Basic styles for links
  */
 a {
-  color: $mainColor;
+  color: $headingsColor;
   text-decoration: none;
+	 
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+
+main {
+	background-color: $backgroundColor;
 }

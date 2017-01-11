@@ -13,165 +13,170 @@
     <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/-->
     <title>{% block title %}Semillas{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Vollkorn" rel="stylesheet">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Semilla Social" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="semillasocial.org" />
+    <meta property="og:image" content="https://www.semillasocial.org/static/images/logo.png" />
+    <meta property="og:description" content="Semilla Social es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal." />
+    <meta property="og:site_name" content="semillasocial.org" />
+
+    <!-- Twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@semilla_social">
+    <meta name="twitter:domain" content="semillasocial.org">
+    <meta name="twitter:creator" content="@semilla_social">
+    <meta name="twitter:title" content="Semilla Social">
+    <meta name="twitter:image" content="https://www.semillasocial.org/static/images/logo.png">
+    <meta name="twitter:description" content="Semilla Social es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Fira+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/static/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <link rel="mask-icon" href="/static/images/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/static/images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+  <!-- CSS -->
     {% block css %}
-    <!-- Latest compiled and minified CSS -->
-    <!--link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-    <!-- Your stuff: Third-party css libraries go here -->
-    <!-- This file store project specific CSS -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+      <link href="{% static 'css/main.css' %}" rel="stylesheet">
     {% endblock %}
+
+  <!-- JavaScript -->
     {% block javascript %}
-	<!-- Latest JQuery -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" defer="defer"></script>
-
-	<!-- Tether - a requirement for Bootstrap tooltips -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" defer="defer"></script>
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous" defer="defer"></script>
-
-	<!-- Your stuff: Third-party javascript libraries go here -->
-	<!-- place project specific Javascript in this file -->
-
-	<script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
-    {% endblock javascript %}
-    {% block javascript_level2 %}
-    {% endblock javascript_level2 %}
+      <script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
+      {% endblock javascript %}
+      {% block javascript_level2 %}
+     {% endblock javascript_level2 %}
   </head>
-
   <body>
-    <div class="container">
-    <div class="m-b">
-      <nav class="navbar navbar-dark navbar-static-top bg-inverse">
-          <a class="navbar-brand" href="/"><i class="fa fa-envira" aria-hidden="true"></i>Semillas</a>
-          <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-            &#9776;
-          </button>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'landing:people' %}"><i class="fa fa-users" aria-hidden="true"></i> {% trans "Quiénes Somos" %}</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'landing:development' %}"><i class="fa fa-mobile" aria-hidden="true"></i> {% trans "Software" %}</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'landing:contact' %}"><i class="fa fa-envelope" aria-hidden="true"></i> {% trans "Contacto" %}</a>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav pull-xs-right">
-              {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
-                </li>
-              {% else %}
-                <li class="nav-item">
-                  <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-                </li>
-                <li class="nav-item">
-                  <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
-                </li>
-              {% endif %}
-            </ul>
-          </div>
-      </nav>
-    </div>
-  </div><!--container navbar-->
-  <div class="container">
-      {% get_current_language as LANGUAGE_CODE %}
-  {% get_available_languages as LANGUAGES %}
-  {% get_language_info_list for LANGUAGES as languages %}
-      <form class="form-inline" action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
-        <input name="next" type="hidden" value="{{ redirect_to }}"/>
-          {% for language in languages %}
-            {% if LANGUAGE_CODE == language.code %}
-                <button type="submit" class="btn btn-link pull-right"
-                {% if LANGUAGE_CODE != "es" %}
-                 value="es" name="language" title="Cambiar a Castellano">
-                    <img class="img-fluid" src="{% static 'images/spanish_flag.png' %}" alt="Cambiar a Castellano" />
-                {% else %}
-                 value="en" name="language" title="Change to English">
-                    <img class="img-fluid" src="{% static 'images/english_flag.png' %}" alt="Change to English" />
-                {% endif %}
-                </button>
-              {% endif %}
-          {% endfor %}
-      </form>
 
-  </div>
-    <div class="container">
-      {% if messages %}
-          {% for message in messages %}
-              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+    <!-- Header -->
+      <header class="page-head--masthead">
+        <div class="wrapper">
+          <nav id="nav" class="site-nav  clearfix">
+            <a href="/"><img class="site-nav__logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo"></a>
+            <ul>
+              <li>
+                <a class="{% if request.resolver_match.view_name == "landing:philosophy" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
+              </li>
+              <li>
+                <a class="{% if request.resolver_match.view_name == "landing:product" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
+              </li>
+              <li>
+                <a class="{% if request.resolver_match.view_name == "landing:people" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
+              </li>
+              {% if request.user.is_authenticated %}
+                <li>
+                  {% block nav-user %}
+                    <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                {% endblock %}
+                </li>
+                <li>
+                  {% block nav-logout %}
+                    <a class="site-nav__home-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
+                {% endblock %}
+                </li>
+                {% else %}
+                <li>
+                  {% block nav-signup %}
+                    <a class="site-nav__home-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                {% endblock %}
+                </li>
+                <li>
+                  {% block nav-signin %}
+                    <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                {% endblock %}
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+          <div class="page-head--content">
+            <h2>Semilla Social</h2>
+          </div>
+        </div>
+      </header>
+
+<div class="container">
+    <!-- Form -->
+    <!-- Revisar, da error al hacer click -->
+      <div class="flag-form">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        <form action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
+          <input name="next" type="hidden" value="{{ redirect_to }}"/>
+          {% for language in languages %}
+          {% if LANGUAGE_CODE == language.code %}
+            <button class="btn--flag" type="submit" {% if LANGUAGE_CODE != "es" %} value="es" name="language" title="Cambiar a Castellano">
+              <img src="{% static 'images/spanish_flag.svg' %}" alt="Cambiar a Castellano" />
+              {% else %}
+                value="en" name="language" title="Change to English">
+                <img src="{% static 'images/english_flag.svg' %}" alt="Change to English" />
+              {% endif %}
+            </button>
+          {% endif %}
           {% endfor %}
+        </form>
+      </div>
+
+    <!-- Content -->
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+        {% endfor %}
       {% endif %}
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
+      {% block modal %}{% endblock modal %}
 
-    </div> <!-- /container -->
-    {% block modal %}{% endblock modal %}
-
-    <!-- footer -->
-    <div class="container text-muted">
-    <footer class="footer clearfix">
-            <center>
-                <small class="whiterly">{%trans "Hecho con:" %}</small>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <a class="footer_icon" href="https://en.wikipedia.org/wiki/HTML/" target=_blank>
-                        <img src="{% static "images/html.svg" %}" alt="HTML logo"/>
-                    </a>
-                    <a class="footer_icon" href="https://en.wikipedia.org/wiki/CSS/" target=_blank>
-                        <img src="{% static "images/css.svg" %}" alt="CSS logo"/>
-                    </a>
-                    <a class="footer_icon" href="https://en.wikipedia.org/wiki/javascript/" target=_blank>
-                        <img src="{% static "images/javascript.svg" %}" alt="JavaScript logo"/>
-                    </a>
-                    <a class="footer_icon" href="https://github.com/" target=_blank>
-                        <img src="{% static "images/git.svg" %}" alt="Github logo"/>
-                    </a>
-                    <a class="footer_icon" href="http://v4-alpha.getbootstrap.com/" target=_blank>
-                        <img src="{% static "images/bootstrap.svg" %}" alt="Bootstrap logo"/>
-                    </a>
-                    <a class="footer_icon" href="https://www.python.org/" target=_blank>
-                        <img src="{% static "images/python.svg" %}" alt="Python logo"/>
-                    </a>
-                    <a class="footer_icon" href="https://www.djangoproject.com/" target=_blank>
-                        <img src="{% static "images/django.png" %}" alt="Django logo"/>
-                    </a>
-                    <a class="footer_icon" href="https://www.docker.com/" target=_blank>
-                        <img src="{% static "images/docker.svg" %}" alt="Docker logo"/>
-                    </a>
-                    <br>
-                    <br>
-                    <small class="whiterly">
-                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="footer__icon" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.
-                    </small>
-                    <br>
-                    <small class="whiterly"> Semillas 2016 - </small> ∞
-                </div>
-            </center>
-        </footer>
-     </div>
-  <!-- Up button v1 TODO-->
-    <a class="back-to-top">
-        {% trans "Subir" %}<i class="fa fa-caret-square-o-up"></i>
-    </a>
+    </div>
+    <!-- Footer -->
+      <footer class="foo clearfix">
+        <p class="whiterly">{%trans "Hecho con:" %}</p>
+        <div>
+          <a class="foo_icon" href="https://en.wikipedia.org/wiki/HTML/" target=_blank>
+            <img src="{% static "images/html.svg" %}" alt="HTML logo" title="{% trans 'Información oficial de HTML' %}"/>
+          </a>
+          <a class="foo_icon" href="https://en.wikipedia.org/wiki/CSS/" target=_blank>
+            <img src="{% static "images/css.svg" %}" alt="CSSS logo" title="{% trans 'Información oficial de CSSS' %}"/>
+          </a>
+          <a class="foo_icon" href="https://en.wikipedia.org/wiki/javascript/" target=_blank>
+            <img src="{% static "images/javascript.svg" %}" alt="JavaScript logo" title="{% trans 'Información oficial de JavaScript' %}"/>
+          </a>
+          <a class="foo_icon" href="https://github.com/" target=_blank>
+            <img src="{% static "images/git.svg" %}" alt="Github logo" title="{% trans 'Información oficial de Github' %}"/>
+          </a>
+          <a class="foo_icon" href="https://www.python.org/" target=_blank>
+            <img src="{% static "images/python.svg" %}" alt="Python logo" title="{% trans 'Información oficial de Python' %}"/>
+          </a>
+          <a class="foo_icon" href="https://www.djangoproject.com/" target=_blank>
+            <img src="{% static "images/django.png" %}" alt="Django logo" title="{% trans 'Información oficial de Django' %}"/>
+          </a>
+          <a class="foo_icon" href="https://www.docker.com/" target=_blank>
+            <img src="{% static "images/docker.svg" %}" alt="Docker logo" title="{% trans 'Información oficial de Docker' %}"/>
+          </a>
+          <p class="whiterly">
+          <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="foo__icon" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.
+          </p>
+          <p class="whiterly"> Semillas 2016 - 2017</p>
+        </div>
+      </footer>
+      <!-- Up button v1 TODO-->
+      <a class="btn btn--alert" href="#nav">{% trans "Subir" %}</a>
   </body>
 </html>
 

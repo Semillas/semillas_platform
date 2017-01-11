@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(
-        regex=r'^$',
+        regex=r'',
         view=TemplateView.as_view(template_name='webapp/index.html'),
         name='webapp'
     ),
@@ -16,4 +16,4 @@ urlpatterns = [
         view=TemplateView.as_view(template_name='webapp/geolocation.html'),
         name='geolocation'
     ),
-] 
+]
