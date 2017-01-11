@@ -52,7 +52,7 @@ class FeedServiceList(generics.ListAPIView):
     """
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    # filter_fields = ('category',)
+    filter_fields = ('category',)
 
     # columns to search in 
     word_fields = ('title','description',)
@@ -64,8 +64,5 @@ class FeedServiceList(generics.ListAPIView):
         #Order all the services by distance to the requester user location
         ref_location = self.request.user.location
         queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
-        
-        # for service in queryset:
-        #     print("-----> " + service.title+ " -->" +service.author.name + " -- " + str(service.author.location) + " --> " + str(service.distance) + "\n")
 
         return queryset
