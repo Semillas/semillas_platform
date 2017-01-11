@@ -156,4 +156,29 @@ class TestFeedServiceList(BaseServiceTestCase):
             0
         )
 
+    def test_text_search_filtering(self):
+        Service.objects.all().update(category=Category.objects.first())
+        serv = Service.objects.first()
+        serv.title = 'wordtobesearched'
+        serv.save()
+        # Generate a request search for "testing" key word
+        request = self.factory.get('/api/v1/service/feed?search=wordtobesearched')
+        # Attach the user to the request
+        request.user = self.users[3]
+
+        self.view = FeedServiceList.as_view()
+        response = self.view(request)
+
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            len(response.data),
+            1
+        )
+
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+
 
