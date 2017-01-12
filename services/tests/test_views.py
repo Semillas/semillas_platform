@@ -36,7 +36,7 @@ class TestFeedServiceList(BaseServiceTestCase):
 
         # Create self.users, Services & Categories for test cases
         if not hasattr(self, 'users'):
-            ipdb.set_trace()
+
             self.users = UserFactory.create_batch(size=5)
             for i in range(len(categories)):
                 CategoryFactory(name=categories[i],order=i)
@@ -88,7 +88,7 @@ class TestFeedServiceList(BaseServiceTestCase):
     def test_response_check_distances(self):
 
         # Generate a request search for "testing" key word
-        request = self.factory.get('/api/v1/service/feed?search=')
+        request = self.factory.get('/api/v1/service/feed?search=testing')
         # Attach the user to the request
         request.user = self.users[3]
 
