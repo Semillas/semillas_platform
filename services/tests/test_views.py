@@ -31,37 +31,54 @@ class TestFeedServiceList(BaseServiceTestCase):
         self.view = FeedServiceList()
 
         # Create self.users, Services & Categories for test cases
-        self.users = UserFactory.create_batch(size=5)
-        for i in range(len(categories)):
-            CategoryFactory(name=categories[i],order=i)
-        self.services = ServiceFactory.create_batch(
-                size=5,
-                category=Category.objects.first()
-            )
+        if not hasattr(self, 'users'):
 
-        # Assign each service to 1 of the self.users
-        self.services[0].author = self.users[0]
-        self.services[0].title = "1"
-        self.services[0].description = "testing"
-        self.services[0].save()
-        self.services[1].author = self.users[1]
-        self.services[1].title = "2"
-        self.services[1].description = "testing"
-        self.services[1].save()
-        self.services[2].author = self.users[2]
-        self.services[2].title = "3"
-        self.services[2].description = "testing"
-        self.services[2].save()
-        self.services[3].author = self.users[3]
-        self.services[3].title = "4"
-        self.services[3].description = "testing"
-        self.services[3].save()
-        self.services[4].author = self.users[4]
-        self.services[4].title = "5"
-        self.services[4].description = "testing"
-        self.services[4].save()
+            self.users = UserFactory.create_batch(size=5)
+            for i in range(len(categories)):
+                CategoryFactory(name=categories[i],order=i)
+            self.services = ServiceFactory.create_batch(size=5)
+            
+            # Create some locations
+            location_madrid = Point(-3.8196228, 40.4378698) # Madrid 0
+            location_paris = Point(2.3488, 48.8534) # Paris 1
+            location_london = Point(-0.3817834, 51.528308) # London 2
+            location_berlin = Point(13.4105, 52.5244) # Berlin 3
+            location_rome = Point(12.395912, 41.909986) # Rome 4
 
+            # Update locations on each of the self.users
+            self.users[0].location = location_madrid
+            self.users[0].save()
+            self.users[1].location = location_paris
+            self.users[1].save()
+            self.users[2].location = location_london
+            self.users[2].save()
+            self.users[3].location = location_berlin
+            self.users[3].save()
+            self.users[4].location = location_rome
+            self.users[4].save()
 
+            # Assign each service to 1 of the self.users
+            self.services[0].author = self.users[0]
+            self.services[0].title = "1"
+            self.services[0].description = "testing"
+            self.services[0].save()
+            self.services[1].author = self.users[1]
+            self.services[1].title = "2"
+            self.services[1].description = "testing"
+            self.services[1].save()
+            self.services[2].author = self.users[2]
+            self.services[2].title = "3"
+            self.services[2].description = "testing"
+            self.services[2].save()
+            self.services[3].author = self.users[3]
+            self.services[3].title = "4"
+            self.services[3].description = "testing"
+            self.services[3].save()
+            self.services[4].author = self.users[4]
+            self.services[4].title = "5"
+            self.services[4].description = "testing"
+            self.services[4].save()
+        
 
     def test_response_check_distances(self):
 
@@ -85,7 +102,7 @@ class TestFeedServiceList(BaseServiceTestCase):
         self.users[4].save()
 
         # Generate a request search for "testing" key word
-        request = self.factory.get('/api/v1/service/feed?search=')
+        request = self.factory.get('/api/v1/service/feed?search=testing')
         # Attach the user to the request
         request.user = self.users[3]
 
