@@ -2,11 +2,7 @@ from django.test import RequestFactory
 
 from test_plus.test import TestCase
 
-from ..views import (
-    FeedServiceList
-)
-
-import ipdb;
+from ..views import FeedServiceList
 
 from django.contrib.gis.geos import Point
 
@@ -24,8 +20,8 @@ class BaseServiceTestCase(TestCase):
 
 class TestFeedServiceList(BaseServiceTestCase):
 
-    def tearDown(self):
-        Category.objects.all().delete()
+    #def tearDown(self):
+    #    Category.objects.all().delete()
 
     def setUp(self):
         # call BaseServiceTestCase.setUp()
@@ -83,9 +79,27 @@ class TestFeedServiceList(BaseServiceTestCase):
             self.services[4].description = "testing"
             self.services[4].save()
         
-        
 
     def test_response_check_distances(self):
+
+        # Create some locations
+        location_madrid = Point(-3.8196228, 40.4378698) # Madrid 0
+        location_paris = Point(2.3488, 48.8534) # Paris 1
+        location_london = Point(-0.3817834, 51.528308) # London 2
+        location_berlin = Point(13.4105, 52.5244) # Berlin 3
+        location_rome = Point(12.395912, 41.909986) # Rome 4
+
+        # Update locations on each of the self.users
+        self.users[0].location = location_madrid
+        self.users[0].save()
+        self.users[1].location = location_paris
+        self.users[1].save()
+        self.users[2].location = location_london
+        self.users[2].save()
+        self.users[3].location = location_berlin
+        self.users[3].save()
+        self.users[4].location = location_rome
+        self.users[4].save()
 
         # Generate a request search for "testing" key word
         request = self.factory.get('/api/v1/service/feed?search=testing')
@@ -103,7 +117,7 @@ class TestFeedServiceList(BaseServiceTestCase):
         )
 
         self.assertIsInstance(
-            response.data, 
+            response.data,
             list
         )
 
@@ -112,8 +126,7 @@ class TestFeedServiceList(BaseServiceTestCase):
             ["4", "2", "3", "5", "1"]
         )
 
-        # def test_category_filtering(self):
-
+    def test_category_filtering(self):
         Service.objects.all().update(category=Category.objects.first())
         serv = Service.objects.first()
         serv.category = Category.objects.last()
@@ -139,8 +152,7 @@ class TestFeedServiceList(BaseServiceTestCase):
             200
         )
 
-        # def test_wrong_category(self):
-
+    def test_wrong_category(self):
         # Generate a request search for "testing" key word
         request = self.factory.get('/api/v1/service/feed?category=2000000')
         # Attach the user to the request
@@ -159,6 +171,31 @@ class TestFeedServiceList(BaseServiceTestCase):
         self.assertEqual(
             len(response.data),
             0
+        )
+
+    def test_text_search_filtering(self):
+        Service.objects.all().update(category=Category.objects.first())
+        serv = Service.objects.first()
+        serv.title = 'wordtobesearched'
+        serv.save()
+        # Generate a request search for "testing" key word
+        request = self.factory.get('/api/v1/service/feed?search=wordtobesearched')
+        # Attach the user to the request
+        request.user = self.users[3]
+
+        self.view = FeedServiceList.as_view()
+        response = self.view(request)
+
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            len(response.data),
+            1
+        )
+
+        self.assertEqual(
+            response.status_code,
+            200
         )
 
 

@@ -5,53 +5,53 @@
 wheel==0.29.0
 
 # Bleeding edge Django
-django==1.10.3
+django==1.10.4
 
 # Configuration
-django-environ==0.4.0
-whitenoise==3.2
+django-environ==0.4.1
+whitenoise==3.2.2
 
 
 # Forms
-django-braces==1.9.0
-django-crispy-forms==1.6.0
-django-floppyforms==1.6.2
+django-braces==1.10.0
+django-crispy-forms==1.6.1
+django-floppyforms==1.7.0
 
 # Models
-django-model-utils==2.5
+django-model-utils==2.6
 django-phonenumber-field==1.1.0
-phonenumberslite==7.5.2
+phonenumberslite==8.0.0
 
 
 # Images
-Pillow==3.2.0
+Pillow==3.4.2
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
-django-allauth==0.25.2
+django-allauth==0.30.0
 
 
 # Python-PostgreSQL Database Adapter
-psycopg2==2.6.1
+psycopg2==2.6.2
 
 # Unicode slugification
 unicode-slugify==0.1.3
 django-autoslug==1.9.3
 
 # Time zones support
-pytz==2016.4
+pytz==2016.10
 
 # Redis support
-django-redis==4.4.3
+django-redis==4.6.0
 redis>=2.10.0
 
 
 # Geo
-geoip2==2.4.0
+geoip2==2.4.2
 
 # Rest Framework
-djangorestframework==3.4.6
-django-rest-swagger==2.0.5
+djangorestframework==3.5.3
+django-rest-swagger==2.1.0
 
 # Filtering for API
 django-filter==1.0.1
@@ -60,8 +60,11 @@ django-filter==1.0.1
 
 #Factory libs. For making up some data.
 # Should be removed from production in the future
-factory-boy==2.7.0
+factory-boy==2.8.1
 fake-factory==0.7.2
 
 # For filtering API requests
 django-filters==0.2.1
+
+# Client
+django-webpack-loader==0.3.3

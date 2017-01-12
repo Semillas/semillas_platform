@@ -5,7 +5,6 @@ from rest_framework import generics
 from rest_framework import permissions
 
 from semillas_backend.users.models import User
-from rest_framework_word_filter.filter import FullWordSearchFilter
 
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
@@ -41,10 +40,13 @@ class UserServiceList(generics.ListAPIView):
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
     def get_queryset(self):
-        pk = self.kwargs['user_id']
-        u=User.objects.get(uuid=pk)
-        if u:
-            return Service.objects.filter(author=u.id)
+        if 'user_uuid' in self.kwargs:
+            pk = self.kwargs['user_uuid']
+            u=User.objects.get(uuid=pk)
+            if u:
+                return Service.objects.filter(author=u.id)
+        else:
+            return Service.objects.all()
 
 # Filter services by category_id
 class FeedServiceList(generics.ListAPIView):
@@ -54,13 +56,11 @@ class FeedServiceList(generics.ListAPIView):
     permission_classes = (permissions.IsAuthenticated,)
     filter_fields = ('category',)
 
-    # columns to search in 
+    # columns to search in
     word_fields = ('title','description',)
 
     def get_queryset(self):
-        
         queryset = Service.objects.all()
-        queryset = FullWordSearchFilter().filter_queryset(self.request, queryset, self)
         #Order all the services by distance to the requester user location
         ref_location = self.request.user.location
         queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')

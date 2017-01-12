@@ -2,6 +2,54 @@
  * Basic typography style for copy text
  */
 body {
-	color: $text-color;
-	font: normal 100% / 1.4 $sansFont;
+	font: 16px/1.4 $bodyFont;
+	font: 1rem/1.4 $bodyFont;
+  color: $textColor;
+}
+
+// 
+// H1, H2, H3, H4 & H5 fontfamily
+// 
+h1, h2, h3, h4, h5 {
+	margin-top: 30px;
+	font-family: $headingsFont;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1.4;
+	color: $headingsColor;
+}
+
+p, li {
+	margin-top: 5px;
+	margin-bottom: 16px;
+	margin-bottom: 1em;
+}
+
+
+.c-heading-main {
+	font-size: 30px;
+	font-size: 1.875rem;
+	text-align: center;
+	color: $ctaColor;
+}
+
+.c-heading-sub {
+	font-size: 26px;
+	font-size: 1.625rem;
+	text-align: center;
+	color: $ctaColor;
+}
+
+// .c-heading-page {
+	
+// }
+
+.c-heading-section {
+	margin-top: 45px;
+	margin-top: 3em;
+	font-family: $bodyFont;
+	text-align: center;
+	color: $headingsColor;
 }
