@@ -87,7 +87,7 @@ class Category(models.Model):
         return self.name
 
 #    def get_absolute_url(self):
-#        return reverse('categries:detail', kwargs={'category': self.name})
+#        return reverse('users:detail', kwargs={'username': self.username})
 
 
 class ServicePhoto(models.Model):
@@ -98,7 +98,6 @@ class ServicePhoto(models.Model):
     def service_photo_upload(instance, filename):
         extension = os.path.splitext(filename)[1]
         return "media/services/%s%s" % (str(instance.id), extension)
-
 
     service = models.ForeignKey(
         Service,

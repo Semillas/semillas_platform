@@ -1,3 +1,98 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+.page-head--masthead .site-nav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+  .page-head--masthead {
+    background-position: center center;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+            background-size: cover;
+    color: $backgroundColor;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
+  }
+
+    @media screen and (min-width: $bpMedium) {
+      .page-head--masthead {
+          background-image: url(../images/masthead-medium.jpg);
+      }
+    }
+
+    @media screen and (min-width: $bpLarge) {
+      .page-head--masthead {
+          background-image: url(../images/masthead-large.jpg);
+      }
+    }
+
+  .wrapper {
+    margin: 0 auto;
+  }
+
+    // @media screen and (min-width: 720px) {
+    //   .wrapper {
+    //       padding-right: 24px;
+    //       padding-left: 24px;
+    //   }
+    // }
+
+  .page-head--masthead > .wrapper {
+    position: relative;
+  }
+
+  @media screen and (min-width: $bpMedium) {
+    .page-head--masthead > .wrapper {
+        padding-top: 0;
+        height: 560px;
+        height: 35em;
+    }
+  }
+
+  .flag-form {
+    padding-top: 400px;
+    padding-top: 25em;
+  }
+
+    @media screen and (min-width: $bpMedium) {
+      .flag-form {
+          padding-top: 16px;
+          padding-top: 1em;
+      }
+    }
+
+  .page-head--content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 0;
+    // clip: rect(0 0 0 0);
+    // height: 1px;
+    // margin: -1px;
+    // overflow: hidden;
+    // padding: 0;
+    // position: absolute;
+    // width: 1px;
+
+    & h2 {
+      font-size: 32px;
+      font-size: 2rem;
+      font-family: $headingsFont;
+      font-weight: bold;
+      text-transform: uppercase;
+      @include centeredTextShadow();
+      color: $backgroundColor;
+    }
+  }
+
+    @media screen and (min-width: $bpMedium) {
+      .page-head--content {
+        height: 560px;
+        height: 35em;
+      }
+    }
+
+
+

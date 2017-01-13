@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 from __future__ import absolute_import, unicode_literals
 
 import environ
+import os
 
 ROOT_DIR = environ.Path(__file__) - 3  # (semillas_backend/config/settings/common.py - 3 = semillas_backend/)
 APPS_DIR = ROOT_DIR.path('semillas_backend')
+
 
 env = environ.Env()
 
@@ -42,6 +44,8 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
+    # 'django_filters',
+    'webpack_loader',
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
@@ -55,14 +59,14 @@ LOCAL_APPS = (
     'semillas_backend.users.apps.UsersConfig',
     'landing',
     'services',
-    'swagger',
     'webapp',
+    'rest_framework_word_filter',
     # Your stuff: custom apps go here
 )
 
-
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -192,6 +196,7 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
+    os.path.join(os.path.dirname(APPS_DIR), 'webapp/assets'),
     str(APPS_DIR.path('static')),
 )
 
@@ -200,6 +205,15 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(os.path.dirname(APPS_DIR), 'webpack-stats.json'),
+    }
+}
+
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -306,8 +320,10 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
-    )
-
-
+        'rest_framework_word_filter.FullWordSearchFilter',
+    ),
+	'DEFAULT_PAGINATION_CLASS':
+		'semillas_backend.utils.link_header_pagination.LinkHeaderPagination',
+	'PAGE_SIZE': 20,
 }
 

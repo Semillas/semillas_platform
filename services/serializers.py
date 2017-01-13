@@ -22,7 +22,7 @@ class CreateServiceSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Service
-        fields = ('id', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price')
+        fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price')
 
 class ServiceSerializer(CreateServiceSerializer):
     """ Usage:
