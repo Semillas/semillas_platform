@@ -3,12 +3,13 @@ from __future__ import absolute_import, unicode_literals
 
 from rest_framework import generics
 from rest_framework import permissions
-from django_filters.rest_framework.backends import DjangoFilterBackend
 
 from semillas_backend.users.models import User
 
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
+
+from django.contrib.gis.db.models.functions import Distance
 
 class CreateService(generics.CreateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
@@ -48,10 +49,20 @@ class UserServiceList(generics.ListAPIView):
             return Service.objects.all()
 
 # Filter services by category_id
-class CategoryServiceList(generics.ListAPIView):
+class FeedServiceList(generics.ListAPIView):
     """ access: GET /api/v1/services/feed
     """
-    queryset = Service.objects.all()
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAuthenticated,)
     filter_fields = ('category',)
+
+    # columns to search in
+    word_fields = ('title','description',)
+
+    def get_queryset(self):
+        queryset = Service.objects.all()
+        #Order all the services by distance to the requester user location
+        ref_location = self.request.user.location
+        queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
+
+        return queryset
