@@ -6,6 +6,7 @@
 [![Travis-CI](https://travis-ci.org/Semillas/semillas_backend.svg?branch=master)](https://travis-ci.org/Semillas/semillas_backend)
 [![Coverage Codecov](https://codecov.io/gh/Semillas/semillas_backend/branch/master/graph/badge.svg)](https://codecov.io/gh/Semillas/semillas_backend)
 [![Updates](https://pyup.io/repos/github/semillas/semillas_backend/shield.svg)](https://pyup.io/repos/github/semillas/semillas_backend/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/36d1eabaab3b43c4bcc90704266e788f)](https://www.codacy.com/app/iesteban/semillas_backend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Semillas/semillas_backend&amp;utm_campaign=Badge_Grade)
 
 
 
