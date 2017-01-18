@@ -1,0 +1,7 @@
+
+# Every kind of update
+update: all
+
+# Create the pull request against branch dev
+branch: dev
+

@@ -8,6 +8,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from rest_framework_swagger.views import get_swagger_view
+import debug_toolbar
 
 schema_view = get_swagger_view(title='Semillas API')
 
@@ -47,4 +48,5 @@ if settings.DEBUG:
         url(r'^403/$', default_views.permission_denied, kwargs={'exception': Exception('Permission Denied')}),
         url(r'^404/$', default_views.page_not_found, kwargs={'exception': Exception('Page not Found')}),
         url(r'^500/$', default_views.server_error),
+        url(r'^__debug__/', include(debug_toolbar.urls)),
     ]
