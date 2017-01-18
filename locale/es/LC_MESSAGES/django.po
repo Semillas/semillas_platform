@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-09 16:41+0000\n"
+"POT-Creation-Date: 2017-01-11 18:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ismael <ismael.deesteban@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/semilla-social/teams/65146/"
@@ -772,7 +772,7 @@ msgid "Signup"
 msgstr "Unirse"
 
 #: semillas_backend/templates/account/signup.html:9
-#: semillas_backend/templates/account/signup.html:19
+#: semillas_backend/templates/account/signup.html:20
 #: semillas_backend/templates/base.html:95
 msgid "Sign Up"
 msgstr "Unirse"
@@ -783,13 +783,20 @@ msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
 msgstr ""
 
+#: semillas_backend/templates/account/signup.html:12
+msgid ""
+"We are not live yet, but we can keep you updated of our improvements and "
+"notify you once we launch."
+msgstr ""
+
 #: semillas_backend/templates/account/signup_closed.html:5
 #: semillas_backend/templates/account/signup_closed.html:8
 msgid "Sign Up Closed"
 msgstr ""
 
 #: semillas_backend/templates/account/signup_closed.html:10
-msgid "We are sorry, but the sign up is currently closed."
+msgid ""
+"Thanks a lot for joining. We will keep you posted. Keep reading about us"
 msgstr ""
 
 #: semillas_backend/templates/account/verification_sent.html:5
