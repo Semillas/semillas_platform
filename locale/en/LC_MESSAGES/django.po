@@ -609,15 +609,15 @@ msgstr "Semillas Lab?"
 
 #: landing/templates/landing/who_we_are.html:98
 msgid "Conoce donde nos reunimos"
-msgstr "Know where we meet"
+msgstr "Where we meet"
 
 #: landing/templates/landing/who_we_are.html:101
 msgid ""
 "El equipo de Semillas está deslocalizado, sin embargo gran parte de nosotros"
 " estamos en Madrid. "
 msgstr ""
-"Semillas team is distrubuted, however a significant part of us are located "
-"in Madrid"
+"Semillas team is spread around the world, however a significant part of us "
+"are located in Madrid"
 
 #: landing/templates/landing/who_we_are.html:102
 msgid ""
@@ -897,7 +897,7 @@ msgid ""
 "We are not live yet, but we can keep you updated of our improvements and "
 "notify you once we launch."
 msgstr ""
-"We are not live yet, but we can keep you updated of our progress and notify "
+"We are not live yet, but we can keep you updated on our progress and notify "
 "you once we launch."
 
 #: semillas_backend/templates/account/signup_closed.html:5
