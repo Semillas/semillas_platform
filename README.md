@@ -93,7 +93,6 @@ $ open htmlcov/index.html
 ```
 ### Running tests with py.test
 
-<<<<<<< HEAD
  ```$ docker-compose -f dev.yml run django py.test```
 
 
