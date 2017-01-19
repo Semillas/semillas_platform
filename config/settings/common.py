@@ -59,6 +59,7 @@ LOCAL_APPS = (
     'semillas_backend.users.apps.UsersConfig',
     'landing',
     'services',
+    'wallet',
     'webapp',
     'rest_framework_word_filter',
     # Your stuff: custom apps go here
