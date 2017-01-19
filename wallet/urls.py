@@ -12,4 +12,9 @@ urlpatterns = [
         view=views.WalletList.as_view(),
         name='list'
     ),
+    url(
+        regex=r'^(?P<uuid>[^/]+)/$',
+        view=views.WalletDetail.as_view(),
+        name='detail'
+    ),
 ]

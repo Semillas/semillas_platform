@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Wallet
+from .models import Wallet, Transaction
 from semillas_backend.users.serializers import UserSerializer
 
 
@@ -9,7 +9,7 @@ class CreateWalletSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Wallet
-        fields = ('uuid', 'owner', 'balance', 'last_updated')
+        fields = ('uuid', 'owner', 'balance', 'last_updated', 'transactions')
 
 class TransactionSerializer(CreateWalletSerializer):
     class Meta:
@@ -23,5 +23,5 @@ class WalletSerializer(CreateWalletSerializer):
 
         JSONRenderer().render(UserSerializer(user_instance).data)
     """
-    transaction = TransactionSerializer(many=True)
+    transactions = TransactionSerializer(many=True)
     owner = UserSerializer()

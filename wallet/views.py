@@ -9,9 +9,20 @@ from .models import Wallet
 from .serializers import WalletSerializer, CreateWalletSerializer
 
 class UserWalletDetail(generics.RetrieveUpdateAPIView):
-    serializer_class = ServiceSerializer
+    serializer_class = WalletSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    def get_queryset(self):
+
+class WalletDetail(generics.RetrieveUpdateAPIView):
+    queryset = Wallet.objects.all()
+    serializer_class = WalletSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    lookup_field = 'uuid'
+
+class WalletList(generics.ListAPIView):
+    queryset = Wallet.objects.all()
+    serializer_class = WalletSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
     
 
 

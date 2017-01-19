@@ -16,7 +16,7 @@ urlpatterns = [
     # API
     url(r'^api/v1/user/', include('semillas_backend.users.api_urls', namespace='api_users')),
     url(r'^api/v1/service/', include('services.urls', namespace='api_service')),
-
+    url(r'^api/v1/wallet/', include('wallet.urls', namespace='api_wallet')),
 
 
     url(r'^i18n/', include('django.conf.urls.i18n')),
