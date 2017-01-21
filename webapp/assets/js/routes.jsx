@@ -12,7 +12,7 @@ import UserPage from './containers/UserPage'
 
 
 export default <Route path="/webapp/" component={Base}>
-      <IndexRoute component={App}/>
+      <IndexRoute component={Feed}/>
       <Route path="/webapp/user/:id/" component={User}/>
       <Route path="/webapp/about/" component={About}/>
       <Route path="/webapp/service/:uuid/" component={ServicePage}/>
