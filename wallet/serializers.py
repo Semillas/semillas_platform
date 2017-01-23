@@ -19,12 +19,12 @@ class TransactionSerializer(CreateWalletSerializer):
         model = Transaction
         fields = ('id', 'value', 'balance', 'user', 'created_at')
 
-    def get_user(self):
-        # if (self.request.user.wallet == self.obj)
+    def get_user(self, obj):
+        # if (self.request.wallet == obj)
         return 10
 
-    def get_balance(self):
-        # if (self.request.user.wallet == self.obj)
+    def get_balance(self, obj):
+        # if (self.request.user.wallet == obj)
         return 10
 
 
