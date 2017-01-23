@@ -21,12 +21,14 @@ class TransactionSerializer(CreateWalletSerializer):
 
     def get_user(self, obj):
         # if (self.request.wallet == obj)
-        return 10
+        return obj.wallet_dest.owner.name
 
     def get_balance(self, obj):
-        # if (self.request.user.wallet == obj)
-        return 10
-
+        # if (Wallet.objects.get(uuid=transactions.wallet) == obj.wallet_source):
+        #     return obj.balance_source
+        # else:
+        #     return obj.balance_dest
+        return obj.balance_source
 
 class WalletSerializer(CreateWalletSerializer):
     """ Usage:
