@@ -17,7 +17,7 @@ export default <Route path="/webapp/" component={Base}>
       <Route path="/webapp/about/" component={About}/>
       <Route path="/webapp/service/:uuid/" component={ServicePage}/>
       <Route path="/webapp/profile/" component={Profile}/>
-      <Route path="/webapp/feed/" component={Feed}/>
+      <Route path="/webapp/github/" component={App}/>
   <Route path="/webapp/:login/"
          component={UserPage} />
     </Route>
