@@ -32,7 +32,7 @@ class Command(BaseCommand):
             CategoryFactory(name=categories[i],order=i)
         ServiceFactory.create_batch(size=50)
 
-        WalletFactory.create_batch(size=User.objects.count())
+        #WalletFactory.create_batch(size=User.objects.count())
 
         # Create transactions
         count = Wallet.objects.count()

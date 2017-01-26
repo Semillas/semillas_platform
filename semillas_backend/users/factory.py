@@ -5,6 +5,7 @@ import factory
 from django.contrib.gis.geos import Point
 
 from .models import User
+from wallet.factory import WalletFactory
 
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
@@ -16,3 +17,4 @@ class UserFactory(factory.django.DjangoModelFactory):
     username = factory.Faker('name')
     location = Point(-3.7035285, 40.4169473) # Puerta del Sol, Madrid
     picture = factory.django.ImageField()
+    wallet = factory.RelatedFactory(WalletFactory, 'owner')

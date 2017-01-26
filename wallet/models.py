@@ -19,7 +19,7 @@ class Wallet(models.Model):
     """
     uuid = models.UUIDField(default=uuid4, editable=False, unique=True)
 
-    owner = models.ForeignKey(
+    owner = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name='wallet',
