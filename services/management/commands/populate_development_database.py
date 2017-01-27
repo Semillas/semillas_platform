@@ -15,21 +15,24 @@ from services.factory import categories
 from wallet.factory import WalletFactory
 from semillas_backend.users.models import User
 from wallet.models import Wallet, Transaction
+from services.models import Category
 
 from faker import Factory
 
 class Command(BaseCommand):
     help = "This command will create some users and some services for development purpose"
     fake = Factory.create()
-    
+
     def handle(self, *args, **kwargs):
         UserFactory.create_batch(size=10)
 				# CategoryFactory.create_batch(size=20)
+
+        Category.objects.all().delete()
         for i in range(len(categories)):
             CategoryFactory(name=categories[i],order=i)
         ServiceFactory.create_batch(size=50)
 
-        WalletFactory.create_batch(size=User.objects.count())
+        #WalletFactory.create_batch(size=User.objects.count())
 
         # Create transactions
         count = Wallet.objects.count()
@@ -41,10 +44,10 @@ class Command(BaseCommand):
 	        	val=randint(1, 2)
 	        	new_transaction = Transaction.objects.create(
 	        		value=val,
-	            wallet_dest=dst_wallet,
-	            wallet_source=wallet,
-	            balance_dest=dst_wallet.balance + val,
-	            balance_source=wallet.balance - val,
+                    wallet_dest=dst_wallet,
+                    wallet_source=wallet,
+                    balance_dest=dst_wallet.balance + val,
+                    balance_source=wallet.balance - val,
 	        	)
 	        	new_transaction.save()
 	        	wallet.balance-=val

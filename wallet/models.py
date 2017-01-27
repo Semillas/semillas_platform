@@ -18,21 +18,21 @@ class Wallet(models.Model):
     exchangeable for seeds and mainly geolocated oriented (TODOs!)
     """
     uuid = models.UUIDField(default=uuid4, editable=False, unique=True)
-    
-    owner = models.ForeignKey(
+
+    owner = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name='wallet',
     )
 
-    balance = models.PositiveIntegerField(
+    balance = models.IntegerField(
         help_text="Available seeds in wallet",
         null=False,
         blank=False,
     )
 
     last_updated = models.DateTimeField(
-        auto_now_add=True, 
+        auto_now_add=True,
     )
 
     @property
@@ -49,7 +49,7 @@ class Wallet(models.Model):
         # Save source values on transaction
         transaction.balance_dest=self.balance + value
         transaction.save()
-        
+
         # Save values on wallet
         self.balance += value
         self.save()
@@ -69,7 +69,7 @@ class Wallet(models.Model):
         transaction.wallet_source=self
         transaction.balance_source = self.balance - value
         transaction.save()
-        
+
         # Save values on wallet
         self.balance -= value
         self.save()
@@ -92,7 +92,7 @@ class Wallet(models.Model):
         wallet.deposit(value, transaction)
 
 class Transaction(models.Model):
-    """Referes to the wallet owned by the user 
+    """Referes to the wallet owned by the user
     that is paying for the service"""
 
     wallet_source = models.ForeignKey(
@@ -101,7 +101,7 @@ class Transaction(models.Model):
         blank=True,
     )
 
-    """Referes to the wallet owned by the user 
+    """Referes to the wallet owned by the user
     that is offering for the service"""
     wallet_dest = models.ForeignKey(
         Wallet,
@@ -118,7 +118,7 @@ class Transaction(models.Model):
     """The balance of the source wallet after the
     transaction. Useful for displaying transaction
     history."""
-    balance_source = models.PositiveIntegerField(
+    balance_source = models.IntegerField(
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=True,
@@ -128,7 +128,7 @@ class Transaction(models.Model):
     """The balance of the destination wallet after the
     transaction. Useful for displaying transaction
     history."""
-    balance_dest = models.PositiveIntegerField(
+    balance_dest = models.IntegerField(
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=False,

@@ -16,14 +16,14 @@ class WalletDetail(generics.RetrieveUpdateAPIView):
     queryset = Wallet.objects.all()
     serializer_class = WalletSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    lookup_field = 'uuid'
+    lookup_field = 'owner__uuid'
 
 class WalletList(generics.ListAPIView):
     queryset = Wallet.objects.all()
     serializer_class = WalletSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
-    
+
 
 
 

@@ -13,7 +13,7 @@ urlpatterns = [
         name='list'
     ),
     url(
-        regex=r'^(?P<uuid>[^/]+)/$',
+        regex=r'^(?P<owner__uuid>[^/]+)/$',
         view=views.WalletDetail.as_view(),
         name='detail'
     ),
