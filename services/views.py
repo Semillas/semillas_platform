@@ -63,6 +63,7 @@ class FeedServiceList(generics.ListAPIView):
         queryset = Service.objects.all()
         #Order all the services by distance to the requester user location
         ref_location = self.request.user.location
-        queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
+        if ref_location:
+            queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
 
         return queryset

@@ -15,17 +15,15 @@ faker = faker.Factory.create()
 class WalletFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Wallet
-
-    owner = factory.Iterator(User.objects.all())
-    balance = 10
+    balance = 0
 
 class TransactionFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = Wallet
+        model = Transaction
 
     wallet_source = factory.Iterator(Wallet.objects.all())
     balance_source = 0
-    wallet_dst = factory.Iterator(Wallet.objects.all())
-    balance_dst = 0
+    wallet_dest = factory.Iterator(Wallet.objects.all())
+    balance_dest = 0
     value = factory.Faker('pyint')
 

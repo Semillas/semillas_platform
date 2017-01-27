@@ -11,14 +11,16 @@ from .models import Wallet, Transaction
 from .serializers import WalletSerializer, CreateWalletSerializer, TransactionSerializer
 
 class UserWalletDetail(generics.RetrieveUpdateAPIView):
-	serializer_class = WalletSerializer
-	permission_classes = (permissions.IsAuthenticated,)
-
-class WalletDetail(generics.RetrieveUpdateAPIView):
 	queryset = Wallet.objects.all()
 	serializer_class = WalletSerializer
 	permission_classes = (permissions.IsAuthenticated,)
-	lookup_field = 'uuid'
+	lookup_field = 'owner__uuid'
+
+class WalletDetail(generics.RetrieveUpdateAPIView):
+	queryset = Wallet.objects.all()
+    serializer_class = WalletSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    lookup_field = 'uuid'
 
 class WalletList(generics.ListAPIView):
 	queryset = Wallet.objects.all()
@@ -49,7 +51,7 @@ class WalletList(generics.ListAPIView):
 
 
 
-    
+
 
 
 

@@ -5,11 +5,11 @@
 wheel==0.29.0
 
 # Bleeding edge Django
-django==1.10.4
+django==1.10.5
 
 # Configuration
 django-environ==0.4.1
-whitenoise==3.2.2
+whitenoise==3.2.3
 
 
 # Forms
@@ -18,13 +18,13 @@ django-crispy-forms==1.6.1
 django-floppyforms==1.7.0
 
 # Models
-django-model-utils==2.6
+django-model-utils==2.6.1
 django-phonenumber-field==1.1.0
-phonenumberslite==8.0.0
+phonenumberslite==8.0.1
 
 
 # Images
-Pillow==3.4.2
+Pillow==4.0.0
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
@@ -42,7 +42,7 @@ django-autoslug==1.9.3
 pytz==2016.10
 
 # Redis support
-django-redis==4.6.0
+django-redis==4.7.0
 redis>=2.10.0
 
 
@@ -51,7 +51,7 @@ geoip2==2.4.2
 
 # Rest Framework
 djangorestframework==3.5.3
-django-rest-swagger==2.1.0
+django-rest-swagger==2.1.1
 
 # Filtering for API
 django-filter==1.0.1
@@ -67,4 +67,4 @@ fake-factory==0.7.2
 django-filters==0.2.1
 
 # Client
-django-webpack-loader==0.3.3
+django-webpack-loader==0.4.1
