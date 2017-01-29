@@ -5,14 +5,13 @@ import Service from '../components/Service'
 import zip from 'lodash/zip'
 import List from '../components/List'
 
-const loadData = ({ filters, loadFeed }) => {
-  loadFeed(filters)
+const loadData = ({ params, loadFeed }) => {
+  loadFeed(location.search)
 }
 
 class FeedPage extends Component {
   static propTypes = {
     servicePagination: PropTypes.object,
-    //feed: PropTypes.array.isRequired,
   }
 
   componentWillMount() {
@@ -20,13 +19,13 @@ class FeedPage extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.login !== this.props.login) {
+    if (nextProps.filters !== this.props.filters) {
       loadData(nextProps)
     }
   }
 
   handleLoadMoreClick = () => {
-    this.props.loadFeed(this.props.login, true)
+    this.props.loadFeed(true)
   }
 
   renderService([ service ]) {
