@@ -7,9 +7,10 @@ export const FEED_FAILURE = 'FEED_FAILURE'
 // Fetches the feed from Semillas API.
 // Relies on the custom API middleware defined in ../middleware/api.js.
 const fetchFeed = (filters, nextPageUrl)=> ({
+  
   [CALL_SEMILLAS_API]: {
     types: [ FEED_REQUEST, FEED_SUCCESS, FEED_FAILURE ],
-    endpoint: nextPageUrl,
+    endpoint: nextPageUrl + filters,
     schema: Schemas.FEED
   }
 })
