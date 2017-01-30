@@ -13,7 +13,7 @@ urlpatterns = [
 		name='list'
 	),
 	url(
-		regex=r'^(?P<owner_uuid>[^/]+)/$',
+		regex=r'^owner/(?P<owner_uuid>[^/]+)/$',
 		view=views.UserWalletDetail.as_view(),
 		name='list'
 	),
@@ -23,13 +23,13 @@ urlpatterns = [
 		name='detail'
 	),
 	url(
-		regex=r'^(?P<user_id>[0-9]+)/transactions/$',
+		regex=r'^owner/(?P<owner_uuid>[0-9]+)/transactions/$',
 		view=views.UserTransactionsList.as_view(),
 		name='list'
 	),
 	url(
-		regex=r'^(?P<id_wallet>[0-9]+)/transactions/(?P<id_trans>[0-9]+)/$',
-		view=views.UserTransactionDetail.as_view(),
+		regex=r'^transactions/(?P<id>[0-9]+)/$',
+		view=views.TransactionDetail.as_view(),
 		name='detail'
 	),
 ]

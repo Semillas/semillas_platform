@@ -8,5 +8,5 @@ from .models import Wallet
 
 @admin.register(Wallet)
 class WalletAdmin(admin.ModelAdmin):
-    pass
+	pass
 
