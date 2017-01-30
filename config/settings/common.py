@@ -44,6 +44,7 @@ THIRD_PARTY_APPS = (
     'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
+    # 'django_filters',
     'webpack_loader',
 
     # Providers you want to enable:
@@ -59,12 +60,13 @@ LOCAL_APPS = (
     'landing',
     'services',
     'webapp',
+    'rest_framework_word_filter',
     # Your stuff: custom apps go here
 )
 
-
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -318,6 +320,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework_word_filter.FullWordSearchFilter',
     ),
 	'DEFAULT_PAGINATION_CLASS':
 		'semillas_backend.utils.link_header_pagination.LinkHeaderPagination',
