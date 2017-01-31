@@ -5,7 +5,6 @@ from test_plus.test import TestCase
 
 from semillas_backend.users.factory import UserFactory
 from wallet.factory import TransactionFactory
-from wallet.models import Wallet
 
 class BaseWalletTestCase(TestCase):
 

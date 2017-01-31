@@ -1,7 +1,8 @@
 from rest_framework import serializers
 
-from .models import Wallet, Transaction
 from semillas_backend.users.serializers import UserSerializer
+
+from .models import Wallet, Transaction
 
 class TransactionSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
@@ -12,15 +13,12 @@ class TransactionSerializer(serializers.ModelSerializer):
         fields = ('id', 'trans_value', 'balance', 'user', 'created_at')
 
     def get_user(self, obj):
-        if type(self.context['view']).__name__ ==  "UserWalletDetail":
-            owner_uuid = self.context['view'].kwargs['owner_uuid']
-            is_owner = bool(owner_uuid == str(obj.wallet_source.owner.uuid))
-            if is_owner:
-                return obj.wallet_dest.owner.name
-            else:
-                return obj.wallet_source.owner.name
-        else:
-            return obj.wallet_source.owner.name
+        if (
+            'owner_uuid' in self.context and
+            self.context['owner_uuid'] == obj.wallet_source.owner.uuid
+        ):
+            return obj.wallet_dest.owner.name
+        return obj.wallet_source.owner.name
 
     def get_balance(self, obj):
         if type(self.context['view']).__name__ ==  "UserWalletDetail":

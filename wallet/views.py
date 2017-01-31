@@ -15,18 +15,36 @@ class WalletList(generics.ListAPIView):
     serializer_class = WalletSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
-class UserWalletDetail(generics.ListAPIView):
-    serializer_class = WalletSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+class UserWalletDetail(generics.RetrieveAPIView):
+    # serializer_class = WalletSerializer
+    # permission_classes = (permissions.IsAuthenticated,)
 
-    def get_queryset(self):
-        if 'owner_uuid' in self.kwargs:
-            pk = self.kwargs['owner_uuid']
-            u=User.objects.get(uuid=pk)
-            if u:
-                return Wallet.objects.filter(owner=u)
-        else:
-            return Wallet.objects.all()
+    # def get_queryset(self):
+    #     if 'owner_uuid' in self.kwargs:
+    #         pk = self.kwargs['owner_uuid']
+    #         u=User.objects.get(uuid=pk)
+    #         if u:
+    #             return Wallet.objects.filter(owner=u)
+    #     else:
+    #         return Wallet.objects.all()
+
+    serializer_class = WalletSerializer
+    queryset = Wallet.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
+    lookup_field = 'uuid'
+    lookup_url_kwarg = 'owner_uuid'
+
+    def get_serializer_context(self):
+        context = super(UserWalletDetail, super).get_serializer_context()
+        serializer_context = {
+            'owner_uuid': self.owner_uuid
+        }
+        context.update(serializer_context)
+        return context
+
+    def get(self, request, owner_uuid, format=None):
+        self.owner_uuid = owner_uuid
+        return super(UserWalletDetail, self).get(request, owner_uuid, format)
 
 class WalletDetail(generics.RetrieveUpdateAPIView):
     queryset = Wallet.objects.all()
@@ -35,7 +53,7 @@ class WalletDetail(generics.RetrieveUpdateAPIView):
     lookup_field = 'uuid'
 
 class UserTransactionsList(generics.ListAPIView):
-    serializer_class = WalletSerializer
+    serializer_class = TransactionSerializer
     permission_classes = (permissions.IsAuthenticated,)
     def get_queryset(self):
         if 'owner_uuid' in self.kwargs:

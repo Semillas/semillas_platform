@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, absolute_import
 
-import os
 from uuid import uuid4
 
 from django.core.urlresolvers import reverse
@@ -10,7 +9,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
-from errors import InsufficientBalance
+from .errors import InsufficientBalance
 
 @python_2_unicode_compatible
 class Wallet(models.Model):

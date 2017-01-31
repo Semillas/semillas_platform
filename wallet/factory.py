@@ -2,15 +2,10 @@
 
 import factory
 import faker
-import datetime
-
-from django.conf import settings
 
 from .models import Wallet, Transaction
-from semillas_backend.users.models import User
 
 faker = faker.Factory.create()
-
 
 class WalletFactory(factory.django.DjangoModelFactory):
     class Meta:

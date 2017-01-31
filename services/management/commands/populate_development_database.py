@@ -15,7 +15,6 @@ from services.factory import ServiceFactory, CategoryFactory
 from services.factory import categories
 from services.models import Category
 
-from wallet.factory import WalletFactory
 from wallet.models import Wallet, Transaction
 
 from faker import Factory
@@ -32,8 +31,6 @@ class Command(BaseCommand):
         for i in range(len(categories)):
             CategoryFactory(name=categories[i],order=i)
         ServiceFactory.create_batch(size=50)
-
-        #WalletFactory.create_batch(size=User.objects.count())
 
         # Create transactions
         count = Wallet.objects.count()
