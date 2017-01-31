@@ -6,7 +6,7 @@ import datetime
 
 from django.conf import settings
 
-from .models import Wallet
+from .models import Wallet, Transaction
 from semillas_backend.users.models import User
 
 faker = faker.Factory.create()
@@ -19,6 +19,7 @@ class WalletFactory(factory.django.DjangoModelFactory):
     balance = 0
 
 class TransactionFactory(factory.django.DjangoModelFactory):
+
     class Meta:
         model = Transaction
 
