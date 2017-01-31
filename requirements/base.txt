@@ -9,7 +9,7 @@ django==1.10.5
 
 # Configuration
 django-environ==0.4.1
-whitenoise==3.2.3
+whitenoise==3.3.0
 
 
 # Forms
