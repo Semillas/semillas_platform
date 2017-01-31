@@ -33,7 +33,6 @@ class TransactionSerializer(CreateWalletSerializer):
 		else:
 			return obj.wallet_source.owner.name
 
-
 	def get_balance(self, obj):
 		# import ipdb;ipdb.set_trace()
 		# is_owner = bool(self.context['wallet'].owner == obj.wallet_source.owner)
