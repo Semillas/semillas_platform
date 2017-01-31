@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-
 import factory
-
 from django.contrib.gis.geos import Point
-
-from .models import User
 from wallet.factory import WalletFactory
+from .models import User
 
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
