@@ -10,14 +10,13 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from semillas_backend.users.factory import UserFactory
-from semillas_backend.users.models import User
 
 from services.factory import ServiceFactory, CategoryFactory
 from services.factory import categories
 from services.models import Category
 
 from wallet.factory import WalletFactory
-from wallet import models
+from wallet.models import Wallet, Transaction
 
 from faker import Factory
 
