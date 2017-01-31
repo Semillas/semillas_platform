@@ -15,7 +15,7 @@ faker = faker.Factory.create()
 class WalletFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Wallet
-    
+
     balance = 0
 
 class TransactionFactory(factory.django.DjangoModelFactory):

@@ -1,13 +1,9 @@
-from test_plus.test import TestCase
-import ipdb
-
-from semillas_backend.users.factory import UserFactory
 from wallet.factory import WalletFactory
-from wallet.models import Wallet, Transaction
+from wallet.models import Transaction
 
 from django.test import RequestFactory
 from semillas_backend.users.models import User
-
+from semillas_backend.users.factory import UserFactory
 
 class TestWalletModel(TestCase):
 
@@ -25,14 +21,7 @@ class TestWalletMethonds(TestWalletModel):
 
     def test_transfer(self):
 
-
-        # Expect: expect queryset of services ordered by proximity
-        #   self.make_user()
-
         self.users[0].wallet.first().transfer(self.users[1].wallet.first(), 5)
-
-        #ipdb.set_trace()
-
         # Check that the transaction is created with the correct value
         self.assertEqual(
             Transaction.objects.first().value,
@@ -48,4 +37,3 @@ class TestWalletMethonds(TestWalletModel):
             self.users[1].wallet.first().balance,
             15
         )
-
