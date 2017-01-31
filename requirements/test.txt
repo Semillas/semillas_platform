@@ -5,7 +5,7 @@
 django-coverage-plugin==1.4.1
 coverage==4.3.4
 
-django-test-plus==1.0.16
+django-test-plus==1.0.17
 factory-boy==2.8.1
 flake8==3.2.1
 
