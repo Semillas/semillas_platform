@@ -1,6 +1,6 @@
 # Local development dependencies go here
 -r base.txt
-django-coverage-plugin==1.4
+django-coverage-plugin==1.4.1
 coverage==4.3.4
 
 Sphinx==1.5.2
