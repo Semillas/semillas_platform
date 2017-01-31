@@ -8,7 +8,7 @@ from django.db.models import Q
 
 from semillas_backend.users.models import User
 from .models import Wallet, Transaction
-from .serializers import WalletSerializer, CreateWalletSerializer, TransactionSerializer
+from .serializers import WalletSerializer, TransactionSerializer
 
 class WalletList(generics.ListAPIView):
 	queryset = Wallet.objects.all()

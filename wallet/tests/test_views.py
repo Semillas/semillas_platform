@@ -29,7 +29,7 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         # Attach the user to the request
         c = Client()
         c.force_login(self.user1)
-        response = c.get('/api/v1/wallet/%s/' % self.user1.uuid)
+        response = c.get('/api/v1/wallet/owner/%s/' % self.user1.uuid)
 
         # Expect: expect queryset of services ordered by proximity
         #   self.make_user()
