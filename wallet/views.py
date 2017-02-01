@@ -8,34 +8,17 @@ from django.db.models import Q
 
 from semillas_backend.users.models import User
 from .models import Wallet, Transaction
-from .serializers import WalletSerializer, TransactionSerializer
-
-class WalletList(generics.ListAPIView):
-    queryset = Wallet.objects.all()
-    serializer_class = WalletSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+from .serializers import WalletSerializer, CreateTransactionSerializer
 
 class UserWalletDetail(generics.RetrieveAPIView):
-    # serializer_class = WalletSerializer
-    # permission_classes = (permissions.IsAuthenticated,)
-
-    # def get_queryset(self):
-    #     if 'owner_uuid' in self.kwargs:
-    #         pk = self.kwargs['owner_uuid']
-    #         u=User.objects.get(uuid=pk)
-    #         if u:
-    #             return Wallet.objects.filter(owner=u)
-    #     else:
-    #         return Wallet.objects.all()
-
     serializer_class = WalletSerializer
     queryset = Wallet.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
-    lookup_field = 'uuid'
+    lookup_field = 'owner__uuid'
     lookup_url_kwarg = 'owner_uuid'
 
     def get_serializer_context(self):
-        context = super(UserWalletDetail, super).get_serializer_context()
+        context = super().get_serializer_context()
         serializer_context = {
             'owner_uuid': self.owner_uuid
         }
@@ -46,26 +29,9 @@ class UserWalletDetail(generics.RetrieveAPIView):
         self.owner_uuid = owner_uuid
         return super(UserWalletDetail, self).get(request, owner_uuid, format)
 
-class WalletDetail(generics.RetrieveUpdateAPIView):
-    queryset = Wallet.objects.all()
-    serializer_class = WalletSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-    lookup_field = 'uuid'
-
-class UserTransactionsList(generics.ListAPIView):
-    serializer_class = TransactionSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-    def get_queryset(self):
-        if 'owner_uuid' in self.kwargs:
-            pk = self.kwargs['owner_uuid']
-            u=User.objects.get(uuid=pk)
-            if u:
-                return Transaction.objects.filter(Q(wallet_source__owner=u)|Q(wallet_dest__owner=u))
-        else:
-            return Transaction.objects.all()
-
-class TransactionDetail(generics.RetrieveUpdateAPIView):
+class CreateTransaction(generics.CreateAPIView):
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
+    """
     queryset = Transaction.objects.all()
-    serializer_class = TransactionSerializer
+    serializer_class = CreateTransactionSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    lookup_field = 'id'

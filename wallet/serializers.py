@@ -4,6 +4,11 @@ from semillas_backend.users.serializers import UserSerializer
 
 from .models import Wallet, Transaction
 
+class CreateTransactionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Transaction
+        fields = ('wallet_source', 'wallet_dest', 'value')
+
 class TransactionSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     balance = serializers.SerializerMethodField()
@@ -15,33 +20,26 @@ class TransactionSerializer(serializers.ModelSerializer):
     def get_user(self, obj):
         if (
             'owner_uuid' in self.context and
-            self.context['owner_uuid'] == obj.wallet_source.owner.uuid
+            self.context['owner_uuid'] == str(obj.wallet_source.owner.uuid)
         ):
             return obj.wallet_dest.owner.name
         return obj.wallet_source.owner.name
 
     def get_balance(self, obj):
-        if type(self.context['view']).__name__ ==  "UserWalletDetail":
-            owner_uuid = self.context['view'].kwargs['owner_uuid']
-            is_owner = bool(owner_uuid == str(obj.wallet_source.owner.uuid))
-            # import ipdb;ipdb.set_trace()
-            if is_owner:
-                return obj.balance_source
-            else:
-                return obj.balance_dest
-        else:
+        if (
+            'owner_uuid' in self.context and
+            self.context['owner_uuid'] == str(obj.wallet_source.owner.uuid)
+        ):
             return obj.balance_source
+        return obj.balance_dest
 
     def get_trans_value(self, obj):
-        if type(self.context['view']).__name__ ==  "UserWalletDetail":
-            owner_uuid = self.context['view'].kwargs['owner_uuid']
-            is_owner = bool(owner_uuid == str(obj.wallet_source.owner.uuid))
-            if is_owner:
-                return -obj.value
-            else:
-                return obj.value
-        else:
-            return obj.value
+        if (
+            'owner_uuid' in self.context and
+            self.context['owner_uuid'] == str(obj.wallet_source.owner.uuid)
+        ):
+            return -obj.value
+        return obj.value  
 
 class WalletSerializer(serializers.ModelSerializer):
     transactions = TransactionSerializer(many=True)

@@ -132,6 +132,7 @@ class Transaction(models.Model):
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=False,
+        default=0,
     )
 
     # The date/time of the creation of this transaction.
