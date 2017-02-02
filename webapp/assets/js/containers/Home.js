@@ -5,8 +5,9 @@ import { browserHistory } from 'react-router'
 import Explore from '../components/Explore'
 import FilterText from '../components/FilterText'
 import { resetErrorMessage } from '../actions'
+import FeedPage from '../containers/Feed'
 
-class App extends Component {
+class Home extends Component {
   static propTypes = {
     // Injected by React Redux
     errorMessage: PropTypes.string,
@@ -26,6 +27,7 @@ class App extends Component {
   }
 
   handleChangeSearch = searchValue => {
+    //browserHistory.push(`/webapp/about/`)
     browserHistory.push(`/webapp/?search=${searchValue}/`)
   }
 
@@ -51,16 +53,12 @@ class App extends Component {
     const { children, inputValue } = this.props
     return (
       <div>
-      {/*
-        <Explore value={inputValue}
-                 onChange={this.handleChange} />
-        <hr />
-        */}
         <FilterText value={inputValue}
                  onChange={this.handleChangeSearch} />
         <hr />
 
         {this.renderErrorMessage()}
+        <FeedPage text='prueba ismael' />
         {children}
       </div>
     )
@@ -74,4 +72,4 @@ const mapStateToProps = (state, ownProps) => ({
 
 export default connect(mapStateToProps, {
   resetErrorMessage
-})(App)
+})(Home)

@@ -12,6 +12,7 @@ const loadData = ({ params, loadFeed }) => {
 class FeedPage extends Component {
   static propTypes = {
     servicePagination: PropTypes.object,
+    text: PropTypes.string.isRequired
   }
 
   componentWillMount() {
@@ -46,6 +47,7 @@ class FeedPage extends Component {
 
     return (
       <div>
+      {this.props.text}
         <List renderItem={this.renderService}
               items={zip(feedServicesPaginated)}
               onLoadMoreClick={this.handleLoadMoreClick}
