@@ -26,7 +26,7 @@ class FeedPage extends Component {
   }
 
   handleLoadMoreClick = () => {
-    this.props.loadFeed('', true)
+    this.props.loadFeed(location.search, true)
   }
 
   renderService([ service ]) {
