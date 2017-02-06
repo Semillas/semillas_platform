@@ -35,6 +35,9 @@ class Wallet(models.Model):
         auto_now_add=True,
     )
 
+    def __str__(self):
+        return str(self.id)+" - "+self.owner.name+" - Balance: "+ str(self.balance)
+
     @property
     def transactions(self):
         return self.transactions_outbound.all() | self.transactions_inbound.all()
@@ -63,8 +66,8 @@ class Wallet(models.Model):
         that it automatically rolls-back during a
         transaction lifecycle.
         """
-        if value > self.balance:
-            raise InsufficientBalance('This wallet has insufficient balance.')
+        # if value > self.balance:
+        #     raise InsufficientBalance('This wallet has insufficient balance.')
         # Save source values on transaction
         transaction.wallet_source=self
         transaction.balance_source = self.balance - value
@@ -87,9 +90,11 @@ class Wallet(models.Model):
             balance_dest=0,
             balance_source=0,
         )
+        
         transaction.save()
         self.withdraw(value, transaction)
         destination_wallet.deposit(value, transaction)
+        return transaction
 
 class Transaction(models.Model):
     """Referes to the wallet owned by the user
@@ -139,3 +144,6 @@ class Transaction(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True,
     )
+
+    def __str__(self):
+        return str(self.id)+" - From:"+str(self.wallet_source.id)+" To:"+str(self.wallet_dest.id)
