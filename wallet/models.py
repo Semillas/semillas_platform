@@ -45,19 +45,18 @@ class Wallet(models.Model):
     def get_absolute_url(self):
         return reverse('api_wallet:detail', kwargs={'pk': self.id})
 
-    def deposit(self, value, transaction):
+    def __deposit(self, value, transaction):
         """Deposits a value to the wallet. Also updates the transaction
         balance_dest field
         """
         # Save source values on transaction
         transaction.balance_dest=self.balance + value
-        transaction.save()
 
         # Save values on wallet
         self.balance += value
         self.save()
 
-    def withdraw(self, value, transaction):
+    def __withdraw(self, value, transaction):
         """Withdraw's a value from the wallet.
         Should the withdrawn amount is greater than the
         balance this wallet currently has, it raises an
@@ -71,7 +70,6 @@ class Wallet(models.Model):
         # Save source values on transaction
         transaction.wallet_source=self
         transaction.balance_source = self.balance - value
-        transaction.save()
 
         # Save values on wallet
         self.balance -= value
@@ -91,9 +89,10 @@ class Wallet(models.Model):
             balance_source=0,
         )
         
+        self.__withdraw(value, transaction)
+        destination_wallet.__deposit(value, transaction)
         transaction.save()
-        self.withdraw(value, transaction)
-        destination_wallet.deposit(value, transaction)
+        print("LLEGO AQUI !!!!!!")
         return transaction
 
 class Transaction(models.Model):
