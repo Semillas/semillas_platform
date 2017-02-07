@@ -17,11 +17,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='transaction',
             name='balance_dest',
-            field=models.IntegerField(default=0, help_text='Value of the wallet at the time of this transaction'),
+            field=models.IntegerField(default=0, 
+                help_text='Value of the wallet at the time of this transaction'
+            ),
         ),
         migrations.AlterField(
             model_name='wallet',
             name='owner',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='wallet', to=settings.AUTH_USER_MODEL),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, 
+                related_name='wallet', 
+                to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]

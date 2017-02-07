@@ -39,7 +39,7 @@ class TransactionSerializer(serializers.ModelSerializer):
             self.context['owner_uuid'] == str(obj.wallet_source.owner.uuid)
         ):
             return -obj.value
-        return obj.value  
+        return obj.value
 
 class WalletSerializer(serializers.ModelSerializer):
     transactions = TransactionSerializer(many=True)

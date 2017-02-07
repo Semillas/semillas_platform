@@ -20,7 +20,10 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='transaction',
             name='balance_source',
-            field=models.IntegerField(blank=True, default=0, help_text='Value of the wallet at the time of this transaction'),
+            field=models.IntegerField(blank=True, 
+                default=0, 
+                help_text='Value of the wallet at the time of this transaction'
+            ),
         ),
         migrations.AlterField(
             model_name='wallet',
