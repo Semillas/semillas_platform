@@ -1,6 +1,6 @@
 # Local development dependencies go here
 -r base.txt
-django-coverage-plugin==1.4.1
+django-coverage-plugin==1.4.2
 coverage==4.3.4
 
 django-extensions==1.7.6
