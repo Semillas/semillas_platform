@@ -5,7 +5,7 @@ from django.test import RequestFactory
 from semillas_backend.users.models import User
 from semillas_backend.users.factory import UserFactory
 
-class TestWalletModel(TestCase):
+class TestWalletModel():
 
     def setUp(self):
         self.factory = RequestFactory()

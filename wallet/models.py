@@ -51,7 +51,7 @@ class Wallet(models.Model):
         """
         # Save source values on transaction
         transaction.balance_dest=self.balance + value
-
+        transaction.wallet_dest=self
         # Save values on wallet
         self.balance += value
         self.save()
@@ -65,12 +65,11 @@ class Wallet(models.Model):
         that it automatically rolls-back during a
         transaction lifecycle.
         """
-        # if value > self.balance:
-        #     raise InsufficientBalance('This wallet has insufficient balance.')
+        if value > self.balance:
+            raise InsufficientBalance('This wallet has insufficient balance.')
         # Save source values on transaction
         transaction.wallet_source=self
         transaction.balance_source = self.balance - value
-
         # Save values on wallet
         self.balance -= value
         self.save()
@@ -81,14 +80,14 @@ class Wallet(models.Model):
         Creates the transaction record and links it to
         the 2 wallets (source and destination wallets)
         """
-        transaction = Transaction.objects.create(
+        transaction = Transaction(
             value=value,
             wallet_dest=destination_wallet,
             wallet_source=self,
             balance_dest=0,
             balance_source=0,
         )
-        
+
         self.__withdraw(value, transaction)
         destination_wallet.__deposit(value, transaction)
         transaction.save()

@@ -10,8 +10,12 @@ from rest_framework.response import Response
 from django.db.models import Q
 
 from semillas_backend.users.models import User
+
 from .models import Wallet, Transaction
+
 from .serializers import WalletSerializer, CreateTransactionSerializer
+
+from .errors import InsufficientBalance
 
 class UserWalletDetail(generics.RetrieveAPIView):
     serializer_class = WalletSerializer
@@ -40,10 +44,15 @@ class CreateTransaction(APIView):
 
     def post(self, request):
         # import ipdb;ipdb.set_trace()
-        wallet_src = Wallet.objects.get(id=request.data['wallet_source'])
-        destination_wallet = Wallet.objects.get(id=request.data['wallet_dest'])
-        trans = wallet_src.transfer(destination_wallet, int(request.data['value']))
-        import ipdb;ipdb.set_trace()
-        if trans:
-            return Response("Transaction created correctly!", status=status.HTTP_201_CREATED)
-        return Response("The transaction was not created correctly!", status=status.HTTP_400_BAD_REQUEST)
+        if request.data['wallet_source']!=request.data['wallet_dest']:
+            wallet_src = Wallet.objects.get(id=request.data['wallet_source'])
+            destination_wallet = Wallet.objects.get(id=request.data['wallet_dest'])
+            try:
+                trans = wallet_src.transfer(destination_wallet, int(request.data['value']))
+                # import ipdb;ipdb.set_trace()
+                if trans:
+                    return Response("Transaction created correctly!", status=status.HTTP_201_CREATED)
+                return Response("The transaction was not created correctly!", status=status.HTTP_400_BAD_REQUEST)
+            except InsufficientBalance:
+                return Response("The Source wallet does not contain enough balance", status=status.HTTP_400_BAD_REQUEST)
+        return Response("Source and destination wallets can not be the same!", status=status.HTTP_400_BAD_REQUEST)
