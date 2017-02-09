@@ -102,6 +102,7 @@ class Transaction(models.Model):
         Wallet,
         related_name='transactions_outbound',
         blank=True,
+        default=0,
     )
 
     """Referes to the wallet owned by the user
@@ -109,6 +110,7 @@ class Transaction(models.Model):
     wallet_dest = models.ForeignKey(
         Wallet,
         related_name='transactions_inbound',
+        default=0,
     )
 
     # The value of this transaction.
