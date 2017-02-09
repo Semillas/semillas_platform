@@ -5,14 +5,15 @@ import Service from '../components/Service'
 import zip from 'lodash/zip'
 import List from '../components/List'
 
-const loadData = ({ params, loadFeed }) => {
+const loadData = ({ searchFilters, loadFeed }) => {
   loadFeed(location.search)
 }
 
 class FeedPage extends Component {
   static propTypes = {
     servicePagination: PropTypes.object,
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    searchFeed: location.search
   }
 
   componentWillMount() {
@@ -20,13 +21,13 @@ class FeedPage extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.filters !== this.props.filters) {
+    if (nextProps.searchFeed !== this.props.searchFeed) {
       loadData(nextProps)
     }
   }
 
   handleLoadMoreClick = () => {
-    this.props.loadFeed(location.search, true)
+    this.props.loadFeed(this.props.searchFeed, true)
   }
 
   renderService([ service ]) {
@@ -39,7 +40,7 @@ class FeedPage extends Component {
   }
 
   render() {
-    const { feedServicesPaginated, feedServicesPagination } = this.props
+    const { searchFeed, feedServicesPaginated, feedServicesPagination } = this.props
     // TODO: Control the case no service is returned.
     if (!feedServicesPaginated) {
       return <h1><i>Loading {" services..."}</i></h1>
@@ -48,6 +49,8 @@ class FeedPage extends Component {
     return (
       <div>
       {this.props.text}
+
+      {searchFeed}
         <List renderItem={this.renderService}
               items={zip(feedServicesPaginated)}
               onLoadMoreClick={this.handleLoadMoreClick}
@@ -65,12 +68,15 @@ const mapStateToProps = (state, ownProps) => {
     entities: { services }
   } = state
 
-  const feedServicesPagination = feedServices.feed || { ids: [] }
+  const feedServicesPagination = feedServices[location.search] || { ids: [] }
   const feedServicesPaginated = feedServicesPagination.ids.map(id => services[id])
+  const searchFeed = location.search
+
 
   return {
     feedServicesPaginated,
     feedServicesPagination,
+    searchFeed,
   }
 }
 

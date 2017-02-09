@@ -27,8 +27,10 @@ class Home extends Component {
   }
 
   handleChangeSearch = searchValue => {
-    //browserHistory.push(`/webapp/about/`)
-    browserHistory.push(`/webapp/?search=${searchValue}/`)
+    browserHistory.push({
+      pathname: '/webapp/',
+      query: {search: `${searchValue}`}
+    })
   }
 
   renderErrorMessage() {
@@ -53,6 +55,7 @@ class Home extends Component {
     const { children, inputValue } = this.props
     return (
       <div>
+        {inputValue}
         <FilterText value={inputValue}
                  onChange={this.handleChangeSearch} />
         <hr />
