@@ -11,7 +11,7 @@ class WalletFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Wallet
 
-    balance = 0
+    balance = 10
 
 class TransactionFactory(factory.django.DjangoModelFactory):
 

@@ -41,6 +41,8 @@ class CreateTransaction(APIView):
     def post(self, request):
         # import ipdb;ipdb.set_trace()
         if request.data['wallet_source']!=request.data['wallet_dest']:
+            if request.data['value'] == "":
+                return Response("Value can't be empty", status=status.HTTP_400_BAD_REQUEST)
             wallet_src = Wallet.objects.get(id=request.data['wallet_source'])
             destination_wallet = Wallet.objects.get(id=request.data['wallet_dest'])
             try:

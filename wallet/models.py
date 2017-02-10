@@ -91,7 +91,6 @@ class Wallet(models.Model):
         self.__withdraw(value, transaction)
         destination_wallet.__deposit(value, transaction)
         transaction.save()
-        print("LLEGO AQUI !!!!!!")
         return transaction
 
 class Transaction(models.Model):
