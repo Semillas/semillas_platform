@@ -42,6 +42,7 @@ THIRD_PARTY_APPS = (
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'rest_auth',
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
     # 'django_filters',
