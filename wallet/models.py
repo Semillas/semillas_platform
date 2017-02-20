@@ -25,7 +25,7 @@ class Wallet(models.Model):
         related_name='wallet',
     )
 
-    balance = models.IntegerField(
+    balance = models.FloatField(
         help_text="Available seeds in wallet",
         null=False,
         blank=False,
@@ -113,7 +113,7 @@ class Transaction(models.Model):
     )
 
     # The value of this transaction.
-    value = models.PositiveIntegerField(
+    value = models.FloatField(
         help_text="Value of the tansaction",
         null=False,
         blank=False,
@@ -122,7 +122,7 @@ class Transaction(models.Model):
     """The balance of the source wallet after the
     transaction. Useful for displaying transaction
     history."""
-    balance_source = models.IntegerField(
+    balance_source = models.FloatField(
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=True,
@@ -132,7 +132,7 @@ class Transaction(models.Model):
     """The balance of the destination wallet after the
     transaction. Useful for displaying transaction
     history."""
-    balance_dest = models.IntegerField(
+    balance_dest = models.FloatField(
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=False,
