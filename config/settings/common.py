@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = (
     'rest_auth',
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
+    'rest_framework.authtoken',
     # 'django_filters',
     'webpack_loader',
 

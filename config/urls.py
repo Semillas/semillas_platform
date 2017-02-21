@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^users/', include('semillas_backend.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login'),
+    url(r'^rest-auth/', include('rest_auth.urls')),
 
     # Your stuff: custom urls includes go here
     url(r'^landing/', include('landing.urls', namespace='landing')),
