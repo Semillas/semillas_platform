@@ -39,7 +39,7 @@ class CreateTransaction(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request):
-        # import ipdb;ipdb.set_trace()
+
         if request.data['wallet_source']!=request.data['wallet_dest']:
             if request.data['value'] == "":
                 return Response("Value can't be empty", status=status.HTTP_400_BAD_REQUEST)
@@ -47,7 +47,7 @@ class CreateTransaction(APIView):
             destination_wallet = Wallet.objects.get(id=request.data['wallet_dest'])
             try:
                 trans = wallet_src.transfer(destination_wallet, int(request.data['value']))
-                # import ipdb;ipdb.set_trace()
+
                 if trans:
                     return Response("Transaction created correctly!", status=status.HTTP_201_CREATED)
                 return Response("The transaction was not created correctly!", status=status.HTTP_400_BAD_REQUEST)

@@ -34,17 +34,12 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         )
     def test_create_transaction_ok(self):
 
-        # Generate a request search for "testing" key word
-        # Attach the user to the request
-        # import ipdb;ipdb.set_trace()
         c = Client()
         c.force_login(self.user1)
         response = c.post('/api/v1/wallet/transactions/create/', {'wallet_source': self.user1.wallet.id, 'wallet_dest': self.user2.wallet.id, 'value': 5})
         self.user1.wallet.refresh_from_db()
         self.user2.wallet.refresh_from_db()
-        # Expect: expect queryset of services ordered by proximity
-        #   self.make_user()
-        import ipdb;ipdb.set_trace()
+
         self.assertEqual(
             response.status_code,
             201
