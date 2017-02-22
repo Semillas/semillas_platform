@@ -45,3 +45,6 @@ $.pos=function(showPosition,showError){
 	return this._pos;
 };
 
+
+
+        

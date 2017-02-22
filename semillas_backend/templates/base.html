@@ -57,6 +57,10 @@
   <!-- JavaScript -->
     {% block javascript %}
       <script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+       </script>
+       <script src="{% static "js/jquery-1.11.1.js" %}"></script>
+        <script src="{% static "js/rango-jquery.js" %}"></script>
       {% endblock javascript %}
       {% block javascript_level2 %}
      {% endblock javascript_level2 %}
@@ -69,9 +73,6 @@
           <nav id="nav" class="site-nav  clearfix">
             <a href="/"><img class="site-nav__logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo"></a>
             <ul>
-              <li>
-                <a class="{% if request.resolver_match.view_name == "landing:philosophy" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
-              </li>
               <li>
                 <a class="{% if request.resolver_match.view_name == "landing:product" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
               </li>
@@ -177,6 +178,8 @@
       </footer>
       <!-- Up button v1 TODO-->
       <a class="btn btn--alert" href="#nav">{% trans "Subir" %}</a>
+      
+              
   </body>
 </html>
 
