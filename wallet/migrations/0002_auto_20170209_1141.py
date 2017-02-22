@@ -25,31 +25,54 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='transaction',
             name='balance_dest',
-            field=models.IntegerField(default=0, help_text='Value of the wallet at the time of this transaction'),
+            field=models.IntegerField(
+                default=0, 
+                help_text='Value of the wallet at the time of this transaction'
+            ),
         ),
         migrations.AddField(
             model_name='transaction',
             name='balance_source',
-            field=models.IntegerField(blank=True, default=0, help_text='Value of the wallet at the time of this transaction'),
+            field=models.IntegerField(
+                blank=True, 
+                default=0, 
+                help_text='Value of the wallet at the time of this transaction'
+            ),
         ),
         migrations.AddField(
             model_name='transaction',
             name='wallet_dest',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, related_name='transactions_inbound', to='wallet.Wallet'),
+            field=models.ForeignKey(
+                default=0, 
+                on_delete=django.db.models.deletion.CASCADE, 
+                related_name='transactions_inbound', 
+                to='wallet.Wallet'
+            ),
         ),
         migrations.AddField(
             model_name='transaction',
             name='wallet_source',
-            field=models.ForeignKey(blank=True, default=0, on_delete=django.db.models.deletion.CASCADE, related_name='transactions_outbound', to='wallet.Wallet'),
+            field=models.ForeignKey(
+                blank=True, default=0, 
+                on_delete=django.db.models.deletion.CASCADE, 
+                related_name='transactions_outbound', 
+                to='wallet.Wallet'
+            ),
         ),
         migrations.AlterField(
             model_name='wallet',
             name='balance',
-            field=models.IntegerField(help_text='Available seeds in wallet'),
+            field=models.IntegerField(
+                help_text='Available seeds in wallet'
+            ),
         ),
         migrations.AlterField(
             model_name='wallet',
             name='owner',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='wallet', to=settings.AUTH_USER_MODEL),
+            field=models.OneToOneField(
+                on_delete=django.db.models.deletion.CASCADE, 
+                related_name='wallet', 
+                to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]
