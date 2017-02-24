@@ -8,6 +8,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from rest_framework import generics
 from rest_framework import permissions
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
+
 
 from .models import User
 from .serializers import UserSerializer
@@ -67,3 +70,7 @@ class UserDetail(generics.RetrieveUpdateAPIView):
     serializer_class = UserSerializer
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
     lookup_field = 'uuid'
+
+
+class FacebookLogin(SocialLoginView):
+    adapter_class = FacebookOAuth2Adapter
