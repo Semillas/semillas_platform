@@ -322,7 +322,6 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-		'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
@@ -333,6 +332,7 @@ REST_FRAMEWORK = {
 	'PAGE_SIZE': 20,
 }
 
+# In order to visualize every api method on Swagger, need to add SessionAuthentication to DEFAULT_AUTHENTICATION_CLASSES, but it will bring CSRF problems.
 SWAGGER_SETTINGS = {
 	'USE_SESSION_AUTH': False,
     'SECURITY_DEFINITIONS': {
