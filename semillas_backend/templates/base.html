@@ -74,6 +74,9 @@
             <a href="/"><img class="site-nav__logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo"></a>
             <ul>
               <li>
+                <a class="{% if request.resolver_match.view_name == "landing:porque" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a>
+              </li>
+              <li>
                 <a class="{% if request.resolver_match.view_name == "landing:product" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
               </li>
               <li>
