@@ -4,19 +4,23 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% load staticfiles %}
 
-  <main>
-    
-    
-    <h4 class="c-heading-sub">{% trans "Por qué Usar Semillas" %}</h4>
-        <p>{% trans " La Semilla otorga soberanía local,  está sujeta a los procesos participativos y democráticos de las personas que usan la moneda y sus relaciones locales. Ponemos en movimiento los recursos que la economía formal no utiliza. "%}</p>
-    
+  <main>     
+    <div>
+        <h3>{% trans "Marketplace Social " %}</h3>
+        <p>{% trans "Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros. Los bienes y servicios ofertados aparecen ordenados por proximidad" %}</p>
+        <p><img src="{% static 'landing/images/web_phone_feed.png' %}" alt="web phone feed"></p>
+    </div>
 
-     
-
-    
-
+     <div>
+        <h3>{% trans "Cooperativa " %}</h3>
+        <p>{% trans "Somos una cooperativa y nuestro producto es software libre. Ven y participa." %}</p>
+        <p><img src="{% static 'landing/images/web_phone_offer_detail.png' %}" alt="web phone offer detail"></p>
+    </div>
+     <div>
         
-
+        <p>{% trans "Semillas promociona el bien común. Retribuyendo en semillas trabajos a la comunidad o acciones cívicas." %}</p>
+        <p><img src="{% static 'landing/images/web_phone_user_profile.png' %}" alt="user profile"></p>
+    </div>
 
 
     <!-- <p>{% trans "Buscamos voluntarios de todo tipo: divulgadores, técnicos informáticos, economistas, abogados, traductores, amigos que nos traigan frutos secos y semillas." %}</p>
