@@ -5,6 +5,7 @@ from django.test import TestCase
 from rest_framework.generics import ListAPIView
 from rest_framework.serializers import ModelSerializer
 from rest_framework.test import APIRequestFactory
+from rest_framework import permissions
 
 from .filter import FullWordSearchFilter
 
@@ -25,6 +26,7 @@ class FooListView(ListAPIView):
     serializer_class = FooSerializer
     filter_backends = (FullWordSearchFilter, )
     word_fields = ('text',)
+    permission_classes = (permissions.AllowAny,)
 
 
 class FullWordFilterTestCase(TestCase):
