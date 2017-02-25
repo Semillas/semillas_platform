@@ -60,7 +60,7 @@ class UserListView(LoginRequiredMixin, ListView):
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAdminUser,)
 
 
 class UserDetail(generics.RetrieveUpdateAPIView):

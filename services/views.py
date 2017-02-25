@@ -21,7 +21,7 @@ class CreateService(generics.CreateAPIView):
 class ServiceList(generics.ListAPIView):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAdminUser,)
 
 class ServiceDetail(generics.RetrieveUpdateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
@@ -34,11 +34,11 @@ class ServiceDetail(generics.RetrieveUpdateAPIView):
 class CategoryList(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.AllowAny,)
 
 class UserServiceList(generics.ListAPIView):
     serializer_class = ServiceSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.AllowAny,)
     def get_queryset(self):
         if 'user_uuid' in self.kwargs:
             pk = self.kwargs['user_uuid']
@@ -53,7 +53,7 @@ class FeedServiceList(generics.ListAPIView):
     """ access: GET /api/v1/services/feed
     """
     serializer_class = ServiceSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.AllowAny,)
     filter_fields = ('category',)
 
     # columns to search in
@@ -62,8 +62,9 @@ class FeedServiceList(generics.ListAPIView):
     def get_queryset(self):
         queryset = Service.objects.all()
         #Order all the services by distance to the requester user location
-        ref_location = self.request.user.location
-        if ref_location:
-            queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
+        if not self.request.user.is_anonymous():
+            ref_location = self.request.user.location
+            if ref_location:
+                queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
 
         return queryset
