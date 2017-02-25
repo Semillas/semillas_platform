@@ -62,8 +62,6 @@ class FeedServiceList(generics.ListAPIView):
     def get_queryset(self):
         queryset = Service.objects.all()
         #Order all the services by distance to the requester user location
-        print(self.request.user)
-        print(type(self.request.user))
         if not self.request.user.is_anonymous():
             ref_location = self.request.user.location
             if ref_location:
