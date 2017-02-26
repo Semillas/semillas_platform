@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load i18n %}
+
+	<main>	
+
+		<h4 class="c-heading-sub">{% trans "Visión" %}</h4>
+	        <p>{% trans " Semilla Social es una cooperativa que busca promover el capital colectivo de las comunidades a través del intercambio ético de bienes y servicios. "%}
+	        </p>
+
+	    <h4 class="c-heading-sub">{% trans "Misión" %}</h4>
+	        <p>{% trans " Semillas es una tecnología abierta y transparente  al servicio de lo humano y la naturaleza. Es una herramienta de cambio social por su potencia para construir redes entre iguales por donde circula, se distribuye y se intercambia la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros. La Semilla otorga soberanía local,  está sujeta a los procesos participativos y democráticos de las personas que usan la moneda y sus relaciones locales.Ponemos en movimiento los recursos que la economía formal no utiliza. "%}</p>
+
+		    <h3 class="c-heading-sub">{% trans "Software Libre" %}</h4>
+		        <p>{% trans " Todo el código que escribimos lo publicamos instantáneamente en Internet:"%}<a href="https://github.com/semillas"> Github/semillas</a> {% trans  ". Si alguien modifica el producto, está obligado también a publicarlo en internet, pudiendo el resto de desarrolladores adoptar las mejoras. Por tanto es 100% redistribuible, copiable y modificable. No se pagan licencias por su uso.Cualquier entidad podría crearse su propia moneda utilizando este software."%}</p>
+
+		    <h3 class="c-heading-sub">{% trans "Crédito Mutuo" %}</h3>
+	        	<p>{% trans " Semillas es un sistema de crédito mutuo. La suma de las cantidades positivas y negativas de todos sus miembros es 0. Propone una oxidación equitativa para incentivar el uso y evitar la acumulación.Las Semillas cobran existencia en el mismo momento en el que dos personas o colectivos aceptan libremente un intercambio: a una se le suma el valor convenido en semillas y a otra se le resta esa misma cantidad.Un saldo positivo indica que hemos aportado a la red más de lo que hemos consumido, mientras que un saldo negativo indica que hemos consumido de la red más de lo que hemos aportado. Así, cuando nuestro saldo sea negativo ofreceremos algún producto o servicio para ponernos en positivo, y cuando estemos en positivo consumiremos y reduciremos hasta valores negativos. "%}</p>
+
+
+	        <h3 class="c-heading-sub">{% trans "Plug & Play" %}</h3>
+	        	<p>{% trans " A pesar de que hay diferentes grupos y experimentos con iniciativas similares, es muy complicado empezar a formar parte de ellas. Hay que enviar correos, ir a colectivos el día de asamblea. En Semillas darse de alta va a ser cuestión de segundos. "%}</p>
+
+	     	<h3 class="c-heading-sub">{% trans "Local & Global" %}</h3>
+	        	<p>{% trans " El orden de las ofertas será por proximidad. La proximidad hará que se favorezca al mercado local. Sin embargo, queremos dar una posibilidad tecnológica para poder obtener, a cambio de tus semillas, clases de inglés al otro lado del océano. "%}</p>
+
+	        <h3 class="c-heading-sub">{% trans "Moneda Colaborativa" %}</h3>
+	            <p>{% trans " Nuestra propuesta no es solo una moneda alternativa, si no también una herramienta para crear redes colaborativas. Propone sinergias con plataformas de economía colaborativa que acepten pago en semillas."%}</p>
+
+
+    	<h4 class="c-heading-sub">{% trans "Catalizador de Sobreranía" %}</h4>
+        	<p>{% trans " Semillas Social promociona el bien común. Retribuyendo en semillas trabajos a la comunidad o acciones cívicas.Para ello se apoya en los “Bancos de Semillas” e “Invernaderos” "%}</p>
+
+        	<h3 class="c-heading-sub">{% trans "Banco de semillas" %}</h3>
+		        <p>{% trans " Es un grupo vecinal al cobijo de una institución pública o privada. El Banco de Semillas se encarga de crear y retribuir trabajos a la comunidad (índole social, ecológica, educativa, medioambiental) así como acciones cívicas. Ejemplo de un ayuntamiento coordinando un banco de semillas. El ayuntamiento cierra el ciclo monetario aceptando La Semilla en el alquiler de polideportivos, pago de multas, etc. "%}</p>
+		        <img src="{% static 'landing/images/banco.png' %}">
+
+		    <h3 class="c-heading-sub">{% trans "Moneda Colaborativa" %}</h3>
+		        <p>{% trans " Nuestra propuesta no es solo una moneda alternativa, si no también una herramienta para crear redes colaborativas. Propone sinergias con plataformas de economía colaborativa que acepten pago en semillas. "%}</p>
+
+	        <h3 class="c-heading-sub">{% trans "Invernadero" %}</h3>
+	            <p>{% trans " Los invernaderos están gestionados por bancos de semillas.El invernadero se encarga de reutilizar objetos. Ejemplo: Un miembro entrega su motosierra al invernadero a cambio de una cantidad de semillas. El Invernadero alquila esa motosierra a los miembros de la comunidad por semillas. Es un lugar de reutilización. El invernadero es biblioteca, es espacio de alquiler, reparación y reciclaje de objetos, es espacio de intercambio, es centro de formación y empleo. "%}</p>
+
+
+	</main>
+
+{% endblock %}
