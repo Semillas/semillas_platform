@@ -46,6 +46,7 @@ THIRD_PARTY_APPS = (
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
     'rest_framework.authtoken',
+    'phonenumber_field', # To phone field
     # 'django_filters',
     'webpack_loader',
 
