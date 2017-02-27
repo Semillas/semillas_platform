@@ -82,7 +82,7 @@
               <li>
                 <a class="{% if request.resolver_match.view_name == "landing:people" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
               </li>
-              {% if request.user.is_authenticated %}
+              <!-- {% if request.user.is_authenticated %}
                 <li>
                   {% block nav-user %}
                     <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
@@ -104,11 +104,11 @@
                     <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
                 {% endblock %}
                 </li>
-              {% endif %}
+              {% endif %} -->
             </ul>
           </nav>
           <div class="page-head--content">
-            <h2>Semilla Social</h2>
+            <h2>App móvil de compraventa de bienes y servicios con monedas virtuales.</h2>
           </div>
         </div>
       </header>
