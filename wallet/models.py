@@ -145,4 +145,4 @@ class Transaction(models.Model):
     )
 
     def __str__(self):
-        return str(self.id)+" - From:"+str(self.wallet_source.id)+" To:"+str(self.wallet_dest.id)
+        return str(self.id)+" - From:"+str(self.wallet_source.owner.id)+" To:"+str(self.wallet_dest.owner.id)

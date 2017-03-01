@@ -4,10 +4,14 @@ from semillas_backend.users.serializers import UserSerializer
 
 from .models import Wallet, Transaction
 
-class CreateTransactionSerializer(serializers.ModelSerializer):
+class CreateTransactionSerializer(serializers.Serializer):
+    user_source = serializers.IntegerField()
+    user_dest = serializers.IntegerField()
+    value = serializers.FloatField()
     class Meta:
         model = Transaction
-        fields = ('wallet_source', 'wallet_dest', 'value')
+        fields = ('user_source', 'user_dest', 'value')
+
 
 class TransactionSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()

@@ -38,8 +38,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         c.force_login(self.user1)
         response = c.post(
             '/api/v1/wallet/transactions/create/', 
-            {'wallet_source': self.user1.wallet.id, 
-            'wallet_dest': self.user2.wallet.id, 
+            {'user_source': self.user1.id, 
+            'user_dest': self.user2.id, 
             'value': 5}
         )
         self.user1.wallet.refresh_from_db()
@@ -64,8 +64,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         c.force_login(self.user1)
         response = c.post(
             '/api/v1/wallet/transactions/create/', 
-            {'wallet_source': self.user1.wallet.id, 
-            'wallet_dest': self.user2.wallet.id, 'value': 25}
+            {'user_source': self.user1.id, 
+            'user_dest': self.user2.id, 'value': 25}
         )
         # Expect: expect queryset of services ordered by proximity
         #   self.make_user()
@@ -74,14 +74,14 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
             400
         )
 
-    def test_create_transaction_for_ourself(self):
+    def test_create_transaction_to_ourself(self):
         # Same wallet on source and destination
         c = Client()
         c.force_login(self.user1)
         response = c.post(
             '/api/v1/wallet/transactions/create/', 
-            {'wallet_source': self.user1.wallet.id, 
-            'wallet_dest': self.user1.wallet.id, 
+            {'user_source': self.user1.id, 
+            'user_dest': self.user1.id, 
             'value': 1}
         )
         # Expect: expect queryset of services ordered by proximity
@@ -91,3 +91,19 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
             400
         )
 
+    def test_create_transaction_from_others_wallet(self):
+        # Same wallet on source and destination
+        c = Client()
+        c.force_login(self.user2)
+        response = c.post(
+            '/api/v1/wallet/transactions/create/', 
+            {'user_source': self.user1.id, 
+            'user_dest': self.user2.id, 
+            'value': 1}
+        )
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.status_code,
+            401
+        )
