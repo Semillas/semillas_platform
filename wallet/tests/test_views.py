@@ -3,13 +3,18 @@ from django.test import Client
 
 from test_plus.test import TestCase
 
+from rest_framework.test import force_authenticate
+from rest_framework.test import APIRequestFactory
+
 from semillas_backend.users.factory import UserFactory
 from wallet.factory import TransactionFactory
+
+from wallet import views
 
 class BaseWalletTestCase(TestCase):
 
     def setUp(self):
-        self.factory = RequestFactory()
+        self.factory = APIRequestFactory()
         self.user1 = UserFactory()
         self.user2 = UserFactory()
         TransactionFactory(
@@ -17,14 +22,16 @@ class BaseWalletTestCase(TestCase):
             wallet_dest=self.user2.wallet
         )
 
+
 class WalletEndpointsTestCase(BaseWalletTestCase):
     def test_get_wallet(self):
 
         # Generate a request search for "testing" key word
         # Attach the user to the request
-        c = Client()
-        c.force_login(self.user1)
-        response = c.get('/api/v1/wallet/owner/%s/' % self.user1.uuid)
+
+        request = self.factory.get('/api/v1/wallet/owner/')
+        force_authenticate(request, user=self.user1)
+        response = views.UserWalletDetail.as_view()(request, owner_uuid=self.user1.uuid)
 
         # Expect: expect queryset of services ordered by proximity
         #   self.make_user()
@@ -32,16 +39,20 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
             response.status_code,
             200
         )
+
     def test_create_transaction_ok(self):
 
-        c = Client()
-        c.force_login(self.user1)
-        response = c.post(
-            '/api/v1/wallet/transactions/create/', 
-            {'user_source': self.user1.id, 
-            'user_dest': self.user2.id, 
+        request = self.factory.post(
+            '/api/v1/wallet/transactions/create/',
+            {'user_source': self.user1.id,
+            'user_dest': self.user2.id,
             'value': 5}
         )
+
+        force_authenticate(request, user=self.user1)
+
+        response = views.CreateTransaction.as_view()(request)
+
         self.user1.wallet.refresh_from_db()
         self.user2.wallet.refresh_from_db()
 
@@ -60,15 +71,17 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
             15
         )
     def test_create_transaction_without_balance(self):
-        c = Client()
-        c.force_login(self.user1)
-        response = c.post(
-            '/api/v1/wallet/transactions/create/', 
-            {'user_source': self.user1.id, 
-            'user_dest': self.user2.id, 'value': 25}
+        request = self.factory.post(
+            '/api/v1/wallet/transactions/create/',
+            {'user_source': self.user1.id,
+            'user_dest': self.user2.id,
+            'value': 25}
         )
-        # Expect: expect queryset of services ordered by proximity
-        #   self.make_user()
+
+        force_authenticate(request, user=self.user1)
+
+        response = views.CreateTransaction.as_view()(request)
+
         self.assertEqual(
             response.status_code,
             400
@@ -76,16 +89,17 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
 
     def test_create_transaction_to_ourself(self):
         # Same wallet on source and destination
-        c = Client()
-        c.force_login(self.user1)
-        response = c.post(
-            '/api/v1/wallet/transactions/create/', 
-            {'user_source': self.user1.id, 
-            'user_dest': self.user1.id, 
+        request = self.factory.post(
+            '/api/v1/wallet/transactions/create/',
+            {'user_source': self.user1.id,
+            'user_dest': self.user1.id,
             'value': 1}
         )
-        # Expect: expect queryset of services ordered by proximity
-        #   self.make_user()
+
+        force_authenticate(request, user=self.user1)
+
+        response = views.CreateTransaction.as_view()(request)
+
         self.assertEqual(
             response.status_code,
             400
@@ -93,14 +107,17 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
 
     def test_create_transaction_from_others_wallet(self):
         # Same wallet on source and destination
-        c = Client()
-        c.force_login(self.user2)
-        response = c.post(
-            '/api/v1/wallet/transactions/create/', 
-            {'user_source': self.user1.id, 
-            'user_dest': self.user2.id, 
+        request = self.factory.post(
+            '/api/v1/wallet/transactions/create/',
+            {'user_source': self.user1.id,
+            'user_dest': self.user2.id,
             'value': 1}
         )
+
+        force_authenticate(request, user=self.user2)
+
+        response = views.CreateTransaction.as_view()(request)
+
         # Expect: expect queryset of services ordered by proximity
         #   self.make_user()
         self.assertEqual(
