@@ -6,15 +6,15 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    # URL pattern for the ServiceListView
-    url(
-        regex=r'^all_wallets$',
-        view=views.WalletList.as_view(),
-        name='list'
-    ),
-    url(
-        regex=r'^(?P<uuid>[^/]+)/$',
-        view=views.WalletDetail.as_view(),
-        name='detail'
+	# URL pattern for the ServiceListView
+	url(
+		regex=r'^owner/(?P<owner_uuid>[^/]+)/$',
+		view=views.UserWalletDetail.as_view(),
+		name='list'
+	),
+	url(
+        regex=r'^transactions/create/$',
+        view=views.CreateTransaction.as_view(),
+        name='create'
     ),
 ]

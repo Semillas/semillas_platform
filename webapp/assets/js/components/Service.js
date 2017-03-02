@@ -2,12 +2,12 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
 const Service = ({ service }) => {
-  const { title, description } = service
+  const { title, description, uuid } = service
 
   return (
     <div className="Service">
         <Link to={`ismaell/ismael`}>
-          {title}
+          {uuid}
         </Link>
 
      {description &&

@@ -6,10 +6,10 @@ from rest_framework import permissions
 
 from semillas_backend.users.models import User
 
+from django.contrib.gis.db.models.functions import Distance
+
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
-
-from django.contrib.gis.db.models.functions import Distance
 
 class CreateService(generics.CreateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
@@ -63,6 +63,7 @@ class FeedServiceList(generics.ListAPIView):
         queryset = Service.objects.all()
         #Order all the services by distance to the requester user location
         ref_location = self.request.user.location
-        queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
+        if ref_location:
+            queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
 
         return queryset
