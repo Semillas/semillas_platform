@@ -1,8 +1,9 @@
-from django.test import RequestFactory
-
 from test_plus.test import TestCase
 
 from ..views import FeedServiceList
+
+from rest_framework.test import force_authenticate
+from rest_framework.test import APIRequestFactory
 
 from django.contrib.gis.geos import Point
 
@@ -16,7 +17,7 @@ from services.models import Service, Category
 class BaseServiceTestCase(TestCase):
 
     def setUp(self):
-        self.factory = RequestFactory()
+        self.factory = APIRequestFactory()
 
 class TestFeedServiceList(BaseServiceTestCase):
 
@@ -87,7 +88,8 @@ class TestFeedServiceList(BaseServiceTestCase):
         # Generate a request search for "testing" key word
         request = self.factory.get('/api/v1/service/feed?search=')
         # Attach the user to the request
-        request.user = self.users[3]
+        force_authenticate(request, user=self.users[3])
+        #request.user = self.users[3]
 
         self.view = FeedServiceList.as_view()
         response = self.view(request)
@@ -118,7 +120,7 @@ class TestFeedServiceList(BaseServiceTestCase):
         # Generate a request search for "testing" key word
         request = self.factory.get('/api/v1/service/feed?category='+str(cat.id))
         # Attach the user to the request
-        request.user = self.users[3]
+        force_authenticate(request, user=self.users[3])
 
         self.view = FeedServiceList.as_view()
         response = self.view(request)
@@ -139,7 +141,7 @@ class TestFeedServiceList(BaseServiceTestCase):
         # Generate a request search for "testing" key word
         request = self.factory.get('/api/v1/service/feed?category=2000000')
         # Attach the user to the request
-        request.user = self.users[3]
+        force_authenticate(request, user=self.users[3])
 
         self.view = FeedServiceList.as_view()
         response = self.view(request)
@@ -164,7 +166,7 @@ class TestFeedServiceList(BaseServiceTestCase):
         # Generate a request search for "testing" key word
         request = self.factory.get('/api/v1/service/feed?search=wordtobesearched')
         # Attach the user to the request
-        request.user = self.users[3]
+        force_authenticate(request, user=self.users[3])
 
         self.view = FeedServiceList.as_view()
         response = self.view(request)

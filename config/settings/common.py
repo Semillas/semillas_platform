@@ -42,8 +42,11 @@ THIRD_PARTY_APPS = (
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'rest_auth',
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
+    'rest_framework.authtoken',
+    'phonenumber_field', # To phone field
     # 'django_filters',
     'webpack_loader',
 
@@ -316,8 +319,11 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
@@ -328,3 +334,14 @@ REST_FRAMEWORK = {
 	'PAGE_SIZE': 20,
 }
 
+# In order to visualize every api method on Swagger, need to add SessionAuthentication to DEFAULT_AUTHENTICATION_CLASSES, but it will bring CSRF problems.
+SWAGGER_SETTINGS = {
+	'USE_SESSION_AUTH': False,
+    'SECURITY_DEFINITIONS': {
+        'api_key': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization'
+        }
+    },
+}

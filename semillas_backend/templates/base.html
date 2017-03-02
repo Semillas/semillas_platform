@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {% load staticfiles i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!--TODO: this magic needs to be installed with pip...
   {-!-% load bootstrap3 %}
   {!% bootstrap_css %}
   {!% bootstrap_javascript %}
   {!% bootstrap_messages %} -->
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -32,7 +33,7 @@
     <meta name="twitter:description" content="Semilla Social es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal.">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Fira+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif%7CFira+Sans" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
@@ -113,7 +114,6 @@
     <!-- Form -->
     <!-- Revisar, da error al hacer click -->
       <div class="flag-form">
-        {% get_current_language as LANGUAGE_CODE %}
         {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
         <form action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
@@ -148,26 +148,26 @@
       <footer class="foo clearfix">
         <p class="whiterly">{%trans "Hecho con:" %}</p>
         <div>
-          <a class="foo_icon" href="https://en.wikipedia.org/wiki/HTML/" target=_blank>
-            <img src="{% static "images/html.svg" %}" alt="HTML logo" title="{% trans 'Información oficial de HTML' %}"/>
+          <a class="foo_icon" href="http://validator.w3.org/check?uri=referer" target=_blank>
+            <img src="{% static "images/html.svg" %}" alt="HTML logo" title="{% trans 'HTML5' %}"/>
           </a>
-          <a class="foo_icon" href="https://en.wikipedia.org/wiki/CSS/" target=_blank>
+          <!--a class="foo_icon" href="https://en.wikipedia.org/wiki/CSS" target=_blank>
             <img src="{% static "images/css.svg" %}" alt="CSSS logo" title="{% trans 'Información oficial de CSSS' %}"/>
           </a>
-          <a class="foo_icon" href="https://en.wikipedia.org/wiki/javascript/" target=_blank>
+          <a class="foo_icon" href="https://en.wikipedia.org/wiki/javascript" target=_blank>
             <img src="{% static "images/javascript.svg" %}" alt="JavaScript logo" title="{% trans 'Información oficial de JavaScript' %}"/>
-          </a>
-          <a class="foo_icon" href="https://github.com/" target=_blank>
-            <img src="{% static "images/git.svg" %}" alt="Github logo" title="{% trans 'Información oficial de Github' %}"/>
+          </a-->
+          <a class="foo_icon" href="https://github.com/Semillas" target=_blank>
+            <img src="{% static "images/git.svg" %}" alt="Github logo" title="{% trans 'Código fuente en Github' %}"/>
           </a>
           <a class="foo_icon" href="https://www.python.org/" target=_blank>
-            <img src="{% static "images/python.svg" %}" alt="Python logo" title="{% trans 'Información oficial de Python' %}"/>
+            <img src="{% static "images/python.svg" %}" alt="Python logo" title="{% trans 'Python' %}"/>
           </a>
           <a class="foo_icon" href="https://www.djangoproject.com/" target=_blank>
-            <img src="{% static "images/django.png" %}" alt="Django logo" title="{% trans 'Información oficial de Django' %}"/>
+            <img src="{% static "images/django.png" %}" alt="Django logo" title="{% trans 'Django' %}"/>
           </a>
           <a class="foo_icon" href="https://www.docker.com/" target=_blank>
-            <img src="{% static "images/docker.svg" %}" alt="Docker logo" title="{% trans 'Información oficial de Docker' %}"/>
+            <img src="{% static "images/docker.svg" %}" alt="Docker logo" title="{% trans 'Docker' %}"/>
           </a>
           <p class="whiterly">
           <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="foo__icon" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.

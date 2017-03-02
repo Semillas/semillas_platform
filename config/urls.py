@@ -9,6 +9,8 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from rest_framework_swagger.views import get_swagger_view
 
+from semillas_backend.users.views import FacebookLogin
+
 schema_view = get_swagger_view(title='Semillas API')
 
 urlpatterns = [
@@ -30,6 +32,8 @@ urlpatterns = [
     # User management
     url(r'^users/', include('semillas_backend.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login'),
+    url(r'^rest-auth/', include('rest_auth.urls')),
 
     # Your stuff: custom urls includes go here
     url(r'^landing/', include('landing.urls', namespace='landing')),
