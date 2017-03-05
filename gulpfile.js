@@ -13,8 +13,8 @@ gulp.task('default', ['css'], function() {
 	gulp.watch("semillas_backend/static/sass/**/*.scss", ['css']);
 });
 
-gulp.task('semillas_backend/static/images', function() {
-    	gulp.src('images/*')
+gulp.task('img', function() {
+    	gulp.src('semillas_backend/static/images/*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('images'));
 });
