@@ -146,6 +146,12 @@ Whatever is pushed to 'dev' branch it will automatically be deployed to http://a
 
 #### We have two Gulp tasks
 
+After running any Gulp task enter the folder where you have "Semillas Social" and run the following command:
+
+```npm init```=> This will download every NPM dependency to your local machine
+
+Then run:
+
 ```gulp default```=> This task runs the following tasks:
 
 + css: converts .scss files to .css
