@@ -6,93 +6,76 @@
   width: 100%;
   top: 0;
 }
+  
+  .page-head--masthead {
+    background: url(../images/masthead-lg.jpg)no-repeat center center; 
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+            background-size: cover;
+    // color: $backgroundColor;
+    // box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
+  }
 
-  // .page-head--masthead {
-  //   background-position: center center;
-  //   -webkit-background-size: cover;
-  //      -moz-background-size: cover;
-  //           background-size: cover;
-  //   color: $backgroundColor;
-  //   box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
-  // }
+      @media screen and (min-width: $bpMedium) {
+        .page-head--masthead {
+            background: url(../images/masthead-md.jpg)no-repeat center fixed; 
+        }
+      }
 
-  //   @media screen and (min-width: $bpMedium) {
-  //     .page-head--masthead {
-  //         background-image: url(../images/masthead-medium.jpg);
-  //     }
-  //   }
+// I do not understand why there is a large media query
 
-  //   @media screen and (min-width: $bpLarge) {
-  //     .page-head--masthead {
-  //         background-image: url(../images/masthead-large.jpg);
-  //     }
-  //   }
+      // @media screen and (min-width: $bpLarge) {
+      //   .page-head--masthead {
+      //       background: url(../images/masthead-lg.jpg)no-repeat center center; 
+      //         -webkit-background-size: cover;
+      //           -moz-background-size: cover;
+      //             -o-background-size: cover;
+      //     background-size: cover;
+      //   }
+      // }
 
   .wrapper {
     margin: 0 auto;
   }
 
-    // @media screen and (min-width: 720px) {
-    //   .wrapper {
-    //       padding-right: 24px;
-    //       padding-left: 24px;
-    //   }
-    // }
+    @media screen and (min-width: 720px) {
+      .wrapper {
+          padding-right: 24px;
+          padding-left: 24px;
+      }
+    }
 
   .page-head--masthead > .wrapper {
     position: relative;
   }
 
-  // @media screen and (min-width: $bpMedium) {
-  //   .page-head--masthead > .wrapper {
-  //       padding-top: 0;
-  //       height: 560px;
-  //       height: 35em;
-  //   }
-  // }
+  @media screen and (min-width: $bpMedium) {
+    .page-head--masthead > .wrapper {
+        padding-top: 0;
+        height: 560px;
+        height: 35em;
+    }
+  }
 
-  // .flag-form {
-  //   padding-top: 400px;
-  //   padding-top: 25em;
-  // }
-
-  //   @media screen and (min-width: $bpMedium) {
-  //     .flag-form {
-  //         padding-top: 16px;
-  //         padding-top: 1em;
-  //     }
-  //   }
-
-  .page-head--content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // background-position: center center;
-    //   -webkit-background-size: cover;
-    //    -moz-background-size: cover;
-    //         background-size: cover;
-    // color: $backgroundColor;
-    // box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
+  .flag-form {
+    padding-top: 400px;
+    padding-top: 25em;
   }
 
     @media screen and (min-width: $bpMedium) {
-      .page-head--masthead {
-          background: url(../images/masthead-md.jpg)no-repeat center fixed; 
-            -webkit-background-size: cover;
-              -moz-background-size: cover;
-                -o-background-size: cover;
-        background-size: cover;
+      .flag-form {
+          padding-top: 16px;
+          padding-top: 1em;
       }
     }
 
-    @media screen and (min-width: $bpLarge) {
-      .page-head--masthead {
-          background: url(../images/masthead-lg.jpg)no-repeat center center; 
-            -webkit-background-size: cover;
-              -moz-background-size: cover;
-                -o-background-size: cover;
-        background-size: cover;
-      }
+  .page-head--content {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+
+    
  
     // border: 0;
     // clip: rect(0 0 0 0);
@@ -109,10 +92,9 @@
       font-family: $headingsFont;
       font-weight: bold;
       text-transform: uppercase;
-      @include centeredTextShadow();
-      color: $backgroundColor;
+      // @include centeredTextShadow();
+      // color: $backgroundColor;
     }
-  }
 
     @media screen and (min-width: $bpMedium) {
       .page-head--content {
