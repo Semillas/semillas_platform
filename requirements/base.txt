@@ -29,7 +29,7 @@ Pillow==4.0.0
 # For user registration, either via email or social
 # Well-built with regular release cycles!
 django-allauth==0.31.0
-django-rest-auth==0.9.0
+django-rest-auth==0.9.1
 
 
 # Python-PostgreSQL Database Adapter
