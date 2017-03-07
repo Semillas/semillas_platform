@@ -9,6 +9,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-2": "^6.18.0",
     "humps": "2.0.0",
+    "imagemin": "^5.2.2",
     "normalizr": "2.2.1",
     "react": "15.3.2",
     "react-dom": "^15.4.2",

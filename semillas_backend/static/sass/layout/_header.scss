@@ -8,31 +8,33 @@
 }
   
   .page-head--masthead {
-    background: url(../images/masthead-lg.jpg)no-repeat center center; 
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-            background-size: cover;
+
+    // background: url(../images/masthead-lg.jpg)no-repeat center center; 
+    // -webkit-background-size: cover;
+    //    -moz-background-size: cover;
+    //         background-size: cover;
     // color: $backgroundColor;
     // box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
   }
 
       @media screen and (min-width: $bpMedium) {
         .page-head--masthead {
-            background: url(../images/masthead-md.jpg)no-repeat center fixed; 
+            background: url(../images/masthead-lg.jpg)no-repeat center center; 
         }
       }
 
 // I do not understand why there is a large media query
 
-      // @media screen and (min-width: $bpLarge) {
-      //   .page-head--masthead {
-      //       background: url(../images/masthead-lg.jpg)no-repeat center center; 
-      //         -webkit-background-size: cover;
-      //           -moz-background-size: cover;
-      //             -o-background-size: cover;
-      //     background-size: cover;
-      //   }
-      // }
+      @media screen and (min-width: $bpLarge) {
+        .page-head--masthead {
+            background: url(../images/masthead-lg.jpg)no-repeat center center; 
+              -webkit-background-size: cover;
+                -moz-background-size: cover;
+                  -o-background-size: cover;
+                  background-image: linear-gradient(119deg, #77b483, #80b2ba);
+            height: 800px;
+        }
+      }
 
   .wrapper {
     margin: 0 auto;
@@ -69,39 +71,42 @@
       }
     }
 
+
+
   .page-head--content {
     display: flex;
     align-items: left;
     justify-content: left;
+    width: 768px;
+    height: 252px;
+
   }
 
-    
- 
-    // border: 0;
-    // clip: rect(0 0 0 0);
-    // height: 1px;
-    // margin: -1px;
-    // overflow: hidden;
-    // padding: 0;
-    // position: absolute;
-    // width: 1px;
-
-    & h2 {
+     h2 {
       font-size: 32px;
       font-size: 2rem;
-      font-family: $headingsFont;
       font-weight: bold;
       text-transform: uppercase;
-      // @include centeredTextShadow();
-      // color: $backgroundColor;
+      margin-left: 137px;
+      font-family: CircularStd;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.4;
+      letter-spacing: normal;
+      color: #ffffff;
+      @include centeredTextShadow();
+
     }
+
+
 
     @media screen and (min-width: $bpMedium) {
       .page-head--content {
         height: 560px;
         height: 35em;
         width: 50%;
-        padding-left: 36px;
+        padding-top: 200px;
       }
     }
 
