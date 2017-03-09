@@ -9,12 +9,8 @@
   
   .page-head--masthead {
 
-    // background: url(../images/masthead-lg.jpg)no-repeat center center; 
-    // -webkit-background-size: cover;
-    //    -moz-background-size: cover;
-    //         background-size: cover;
-    // color: $backgroundColor;
-    // box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
+    background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9));
+
   }
 
       @media screen and (min-width: $bpMedium) {
@@ -31,14 +27,14 @@
 // I do not understand why there is a large media query???
 
       @media screen and (min-width: $bpLarge) {
-        .page-head--masthead {
-          background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9)),
-          url(../images/masthead-lg.jpg)no-repeat center center; 
-              -webkit-background-size: cover;
-                -moz-background-size: cover;
-                  -o-background-size: cover;      
-          height: 600px;
-        }
+        // .page-head--masthead {
+        //   background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9)),
+        //   url(../images/masthead-lg.jpg)no-repeat center center; 
+        //       -webkit-background-size: cover;
+        //         -moz-background-size: cover;
+        //           -o-background-size: cover;      
+        //   height: 600px;
+        // }
       }
 
   .wrapper {
@@ -88,6 +84,7 @@
   }
 
      h2 {
+      display: none;
       font-size: 32px;
       font-size: 2rem;
       text-transform: uppercase;
@@ -111,6 +108,11 @@
         height: 35em;
         width: 50%;
         padding-top: 200px;
+      }
+
+      h2 {
+        display: initial;
+        
       }
     }
 
