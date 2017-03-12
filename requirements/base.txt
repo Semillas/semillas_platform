@@ -52,7 +52,7 @@ geoip2==2.4.2
 
 # Rest Framework
 djangorestframework==3.6.2
-django-rest-swagger==2.1.1
+django-rest-swagger==2.1.2
 
 # Filtering for API
 django-filter==1.0.1
