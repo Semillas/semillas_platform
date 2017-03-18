@@ -45,7 +45,9 @@ class ServiceFactory(factory.django.DjangoModelFactory):
     category = factory.Iterator(Category.objects.all())
     date = factory.Sequence(lambda n: datetime.datetime.now() + datetime.timedelta(days=n))
     seeds_price = factory.Faker('pyint')
-    photos = factory.RelatedFactory(ServicePhotoFactory, 'service')
+    photo1 = factory.RelatedFactory(ServicePhotoFactory, 'service')
+    photo2 = factory.RelatedFactory(ServicePhotoFactory, 'service')
+    photo3 = factory.RelatedFactory(ServicePhotoFactory, 'service')
 
 
 class CategoryFactory(factory.django.DjangoModelFactory):
