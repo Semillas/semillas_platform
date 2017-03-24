@@ -55,7 +55,7 @@ djangorestframework==3.6.2
 django-rest-swagger==2.1.2
 
 # Filtering for API
-django-filter==1.0.1
+django-filter==1.0.2
 
 # Your custom requirements go here
 
