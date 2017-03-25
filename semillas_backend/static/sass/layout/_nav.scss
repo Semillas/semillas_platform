@@ -24,7 +24,9 @@
 
 	& .site-nav__home-link {
 		display: block;
-		float: left;
+		text-align: center;
+		transition: 1s;
+		// float: left;
 		margin: 0 1em;
 		padding: 0.5em 0.75em;
 		text-decoration: none;
@@ -32,7 +34,7 @@
 		font-family: $bodyFont;
 		font-weight: bold;
 		border-radius: $borderRadius;
-		color: $textColor;
+		color: $headingsColor;
 
 		&:hover {
 			background-color: darken($ctaColor, 20%);
