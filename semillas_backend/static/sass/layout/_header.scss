@@ -6,38 +6,46 @@
   width: 100%;
   top: 0;
 }
-
+  
   .page-head--masthead {
-    background-position: center center;
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-            background-size: cover;
-    color: $backgroundColor;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
+    background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9));
+
   }
 
-    @media screen and (min-width: $bpMedium) {
-      .page-head--masthead {
-          background-image: url(../images/masthead-medium.jpg);
+      @media screen and (min-width: $bpMedium) {
+        .page-head--masthead {
+          background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9)),
+          url(../images/masthead-lg.jpg)no-repeat center center;
+            -webkit-background-size: cover;
+                -moz-background-size: cover;
+                  -o-background-size: cover;
+          height: 600px; 
+        }
       }
-    }
 
-    @media screen and (min-width: $bpLarge) {
-      .page-head--masthead {
-          background-image: url(../images/masthead-large.jpg);
+// I do not understand why there is a large media query???
+
+      @media screen and (min-width: $bpLarge) {
+        // .page-head--masthead {
+        //   background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9)),
+        //   url(../images/masthead-lg.jpg)no-repeat center center; 
+        //       -webkit-background-size: cover;
+        //         -moz-background-size: cover;
+        //           -o-background-size: cover;      
+        //   height: 600px;
+        // }
       }
-    }
 
   .wrapper {
     margin: 0 auto;
   }
 
-    // @media screen and (min-width: 720px) {
-    //   .wrapper {
-    //       padding-right: 24px;
-    //       padding-left: 24px;
-    //   }
-    // }
+    @media screen and (min-width: 720px) {
+      .wrapper {
+          padding-right: 24px;
+          padding-left: 24px;
+      }
+    }
 
   .page-head--masthead > .wrapper {
     position: relative;
@@ -63,34 +71,47 @@
       }
     }
 
+
+
   .page-head--content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    // border: 0;
-    // clip: rect(0 0 0 0);
-    // height: 1px;
-    // margin: -1px;
-    // overflow: hidden;
-    // padding: 0;
-    // position: absolute;
-    // width: 1px;
+    align-items: left;
+    justify-content: left;
+    width: 768px;
+    height: 252px;
 
-    & h2 {
+  }
+
+     h2 {
+      display: none;
       font-size: 32px;
       font-size: 2rem;
-      font-family: $headingsFont;
-      font-weight: bold;
       text-transform: uppercase;
+      margin-left: 137px;
+      font-family: CircularStd;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.4;
+      letter-spacing: normal;
+      color: #ffffff;
       @include centeredTextShadow();
-      color: $backgroundColor;
+
     }
-  }
+
+
 
     @media screen and (min-width: $bpMedium) {
       .page-head--content {
         height: 560px;
         height: 35em;
+        width: 50%;
+        padding-top: 200px;
+      }
+
+      h2 {
+        display: initial;
+        
       }
     }
 

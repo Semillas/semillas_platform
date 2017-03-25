@@ -51,7 +51,7 @@
 
   <!-- CSS -->
     {% block css %}
-      <link href="{% static 'css/main.css' %}" rel="stylesheet">
+      <link href="{% static '/css/main.css' %}" rel="stylesheet">
     {% endblock %}
 
   <!-- JavaScript -->
@@ -59,8 +59,8 @@
       <script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
        </script>
-       <script src="{% static "js/jquery-1.11.1.js" %}"></script>
-        <script src="{% static "js/rango-jquery.js" %}"></script>
+      <!--  <script src="{% static "js/jquery-1.11.1.js" %}"></script> -->
+     
       {% endblock javascript %}
       {% block javascript_level2 %}
      {% endblock javascript_level2 %}
@@ -82,7 +82,7 @@
               <li>
                 <a class="{% if request.resolver_match.view_name == "landing:people" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
               </li>
-              {% if request.user.is_authenticated %}
+              <!-- {% if request.user.is_authenticated %}
                 <li>
                   {% block nav-user %}
                     <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
@@ -104,16 +104,16 @@
                     <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
                 {% endblock %}
                 </li>
-              {% endif %}
+              {% endif %} -->
             </ul>
           </nav>
           <div class="page-head--content">
-            <h2>Semilla Social</h2>
+            <h2>App móvil de compraventa de bienes y servicios con monedas virtuales.</h2>
           </div>
         </div>
       </header>
 
-<div class="container">
+<div class="container-fluid">
     <!-- Form -->
     <!-- Revisar, da error al hacer click -->
       <div class="flag-form">
@@ -146,8 +146,7 @@
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
       {% block modal %}{% endblock modal %}
-
-    </div>
+</div>
     <!-- Footer -->
       <footer class="foo clearfix">
         <p class="whiterly">{%trans "Hecho con:" %}</p>
@@ -182,7 +181,10 @@
       <!-- Up button v1 TODO-->
       <a class="btn btn--alert" href="#nav">{% trans "Subir" %}</a>
       
-              
+      <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
   </body>
 </html>
 
