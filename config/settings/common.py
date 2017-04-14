@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_auth',
+    'rest_auth.registration',
     'rest_framework',
     'rest_framework_swagger', # Rest-api web documentation
     'rest_framework.authtoken',
