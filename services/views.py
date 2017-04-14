@@ -23,11 +23,20 @@ class ServiceList(generics.ListAPIView):
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAdminUser,)
 
-class ServiceDetail(generics.RetrieveUpdateAPIView):
+class ServiceDetail(generics.RetrieveAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
+    permission_classes = (permissions.AllowAny,)
+    lookup_field = 'uuid'
+
+class UpdateService(generics.UpdateAPIView):
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
+    """
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+    # TODO: Make parmission only owner can edit
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'
 
