@@ -335,6 +335,10 @@ REST_FRAMEWORK = {
 	'PAGE_SIZE': 20,
 }
 
+REST_AUTH_SERIALIZERS = {
+    'TOKEN_SERIALIZER': 'semillas_backend.users.rest_auth_serializers.TokenSerializer'
+}
+
 # In order to visualize every api method on Swagger, need to add SessionAuthentication to DEFAULT_AUTHENTICATION_CLASSES, but it will bring CSRF problems.
 #SWAGGER_SETTINGS = {
 #	'USE_SESSION_AUTH': False,
