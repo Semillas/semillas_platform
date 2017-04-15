@@ -3,7 +3,6 @@ from drf_extra_fields.geo_fields import PointField
 from .models import User
 
 
-
 class UserSerializer(serializers.ModelSerializer):
     """ Usage:
         from rest_framework.renderers import JSONRenderer
@@ -17,3 +16,12 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login')
 
+
+from wallet.serializers import WalletSerializer
+class FullUserSerializer(UserSerializer):
+
+    wallet = WalletSerializer()
+
+    class Meta:
+        model = User
+        fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login', 'wallet', 'email')
