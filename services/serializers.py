@@ -22,7 +22,7 @@ class CreateServiceSerializer(serializers.ModelSerializer):
         model = Service
         fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price')
 
-class ServiceSerializer(CreateServiceSerializer):
+class ServiceSerializer(serializers.Serializer):
     """ Usage:
         from rest_framework.renderers import JSONRenderer
         from semillas_backend.users.serializers import UserSerializer
@@ -32,3 +32,16 @@ class ServiceSerializer(CreateServiceSerializer):
     category = CategorySerializer()
     photos = ServicePhotoSerializer(many=True)
     author = UserSerializer()
+    latitude = serializers.SerializerMethodField()
+    longitude = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Service
+        fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price', 'latitude', 'longitude')
+
+    def get_latitude(self, obj):
+        return obj.author.location.y
+
+    def get_longitude(self, obj):
+        return obj.author.location.x
+
