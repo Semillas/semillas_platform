@@ -61,7 +61,13 @@ class UserServiceList(generics.ListAPIView):
 
 # Filter services by category_id
 class FeedServiceList(generics.ListAPIView):
-    """ access: GET /api/v1/services/feed
+    """ Main endpoint. This is the list of services being offered.
+        get:
+        params:
+            search: string to search in title and description
+            lat:    latitude to order the services by distance
+            lon:    longitude to order the services by distance
+            category: int the category id to filter by
     """
     serializer_class = ServiceSerializer
     permission_classes = (permissions.AllowAny,)
@@ -70,25 +76,18 @@ class FeedServiceList(generics.ListAPIView):
     word_fields = ('title','description',)
 
     def get_queryset(self):
-        queryset = Service.objects.exclude(author=self.request.user)
-        # import pdb; pdb.set_trace()
-        print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 1!!!!")
+        queryset = Service.objects.all()
         #Order all the services by distance to the requester user location
-        if not self.request.user.is_anonymous():
-            print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 2!!!!")
-            if 'Lat' in self.request.query_params and 'Lon' in self.request.query_params:
-                # import pdb; pdb.set_trace()
-                print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 3!!!!")
-                ref_location = Point(float(self.request.query_params['Lon']),float(self.request.query_params['Lat']),srid=4326)
+        if 'lat' in self.request.query_params and 'lon' in self.request.query_params:
+            ref_location = Point(float(self.request.query_params['lon']),float(self.request.query_params['lat']),srid=4326)
+            if not self.request.user.is_anonymous():
+                self.request.user.location = ref_location
+                self.request.user.save()
+            return queryset.annotate(dist=Distance('author__location', ref_location)).order_by('dist')
+        elif not self.request.user.is_anonymous and (self.request.user.location is not None):
+            ref_location = self.request.user.location
+            if ref_location:
                 return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
-            elif self.request.user.location is not None:
-                print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 4!!!!")
-                ref_location = self.request.user.location
-                if ref_location: 
-                    return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
-            
-            else:
-                print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 5!!!!")
-                return queryset.order_by('date')
-        
-        return queryset.order_by('date')
+
+        else:
+            return queryset.order_by('date')

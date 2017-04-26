@@ -22,7 +22,7 @@ class CreateServiceSerializer(serializers.ModelSerializer):
         model = Service
         fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price')
 
-class ServiceSerializer(serializers.Serializer):
+class ServiceSerializer(serializers.ModelSerializer):
     """ Usage:
         from rest_framework.renderers import JSONRenderer
         from semillas_backend.users.serializers import UserSerializer
@@ -34,7 +34,6 @@ class ServiceSerializer(serializers.Serializer):
     author = UserSerializer()
     lat = serializers.SerializerMethodField()
     lon = serializers.SerializerMethodField()
-    # distance = serializers.SerializerMethodField()
     distance = serializers.SerializerMethodField()
 
     class Meta:
