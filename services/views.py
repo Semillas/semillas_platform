@@ -8,6 +8,8 @@ from semillas_backend.users.models import User
 
 from django.contrib.gis.db.models.functions import Distance
 
+from django.contrib.gis.geos import Point
+
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
 
@@ -64,16 +66,29 @@ class FeedServiceList(generics.ListAPIView):
     serializer_class = ServiceSerializer
     permission_classes = (permissions.AllowAny,)
     filter_fields = ('category',)
-
     # columns to search in
     word_fields = ('title','description',)
 
     def get_queryset(self):
-        queryset = Service.objects.all()
+        queryset = Service.objects.exclude(author=self.request.user)
+        # import pdb; pdb.set_trace()
+        print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 1!!!!")
         #Order all the services by distance to the requester user location
         if not self.request.user.is_anonymous():
-            ref_location = self.request.user.location
-            if ref_location:
-                queryset = queryset.annotate(distance=Distance('author__location', ref_location)).order_by('distance')
-
-        return queryset
+            print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 2!!!!")
+            if 'Lat' in self.request.query_params and 'Lon' in self.request.query_params:
+                # import pdb; pdb.set_trace()
+                print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 3!!!!")
+                ref_location = Point(float(self.request.query_params['Lon']),float(self.request.query_params['Lat']),srid=4326)
+                return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
+            elif self.request.user.location is not None:
+                print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 4!!!!")
+                ref_location = self.request.user.location
+                if ref_location: 
+                    return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
+            
+            else:
+                print("ESTMOS AQUÍII!!!!!!!!!!!!!!!!!! -->>>>> 5!!!!")
+                return queryset.order_by('date')
+        
+        return queryset.order_by('date')
