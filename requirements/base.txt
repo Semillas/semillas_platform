@@ -20,7 +20,7 @@ django-floppyforms==1.7.0
 # Models
 django-model-utils==2.6.1
 django-phonenumber-field==1.1.0
-phonenumberslite==8.3.2
+phonenumberslite==8.4.2
 
 
 # Images
