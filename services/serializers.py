@@ -41,14 +41,14 @@ class ServiceSerializer(serializers.ModelSerializer):
         fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price', 'lat', 'lon', 'distance')
 
     def get_lat(self, obj):
-        return obj.author.location.y
+        return getattr(obj.author.location, 'y', 0)
 
     def get_lon(self, obj):
-        return obj.author.location.x
+        return getattr(obj.author.location, 'x', 0)
 
     def get_distance(self, obj):
         if hasattr(obj, 'dist'):
-            return round(obj.dist.km,1)
+            return round(obj.dist.km, 1)
         else:
             return None
 
