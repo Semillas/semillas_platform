@@ -5,37 +5,56 @@
 {% load staticfiles %}
 
 
-  <main>     
-    <div class="container">
-      <div class="description">
-        <h3 class="product-title">{% trans "Marketplace Social " %}</h3>
-        <p class="product-description">{% trans "Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros. Los bienes y servicios ofertados aparecen ordenados por proximidad" %}</p>
+  <div class="container">
+    <div class="row" style="align-items: center; display: flex;">
+      <div class="product_image col-sm-5">
+        
+        <img src="{% static 'landing/images/product/feed.png' %}" alt="web phone feed" style="width:80%;">
       </div>
-      <div class="product_image">
-        <img src="{% static 'landing/images/product/feed.png' %}" alt="web phone feed">
+      <div class="description col-sm-7">
+        <p class="product-title" style="font-size:26px;"><strong>{% trans "Marketplace Social " %}</strong></p>
+        <p class="product-description" style="font-size:20px; color:grey;">{% trans "Se basa en la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros." %}</p>
+        <p class="product-description" style="font-size:20px; color:grey;">{% trans "Los bienes y servicios ofertados aparecen ordenados por proximidad" %}</p>
       </div>
     </div>
+  </div>
 
-    <div class="container_product">
-      <div class="description">
-        <h3 class="product-title">{% trans "Cooperativa " %}</h3>
-        <p>{% trans "Somos una cooperativa y nuestro producto es software libre. Ven y participa." %}</p>
+  <div class="container-fluid section-two" style="position: relative; z-index: 1;">
+    <div class="bg" style="background: url('{% static 'landing/images/product_background.jpg' %}') no-repeat center center fixed; background-size:100% auto;position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*background: url(test.jpg) center center;*/
+    opacity: 0.06;
+    width: 100%;
+    height: 100%;"></div>
+    <div class="row" style="align-items: center; display: flex;">
+      <div class="description col-sm-7 text-right" style="vertical-align: middle;">
+        <p class="product-title" style="font-size:26px;"><strong>{% trans "Cooperativa " %}</strong></p>
+        <p style="font-size:20px; color:grey;">{% trans "Somos una cooperativa y nuestro producto es software libre. Ven y participa." %}</p>
+        <button type="button" class="btn btn-primary btn-round-lg" style="border-radius: 22.5px;">Ven y Participa</button>
       </div>
-      <div class="product_image">
-        <img src="{% static 'landing/images/product/user_profile.png' %}" alt="user profile">
+      <div class="product_image col-sm-5">
+        <img src="{% static 'landing/images/product/user_profile.png' %}" alt="user profile" style="width:80%;">
       </div>
     </div>
+  </div>
 
-    <div class="container">
-      <div class="description">
-        <h3 class="product-title">{% trans "Moneda Social " %}</h3>
-        <p>{% trans "Semillas promociona el bien común. Retribuyendo en semillas trabajos a la comunidad o acciones cívicas." %}</p>
+  <div class="container">
+    <div class="row" style="align-items: center; display: flex;">
+      <div class="product_image col-sm-5">
+        <img  src="{% static 'landing/images/product/offer_detail.png' %}" alt="user profile" style="width:80%;">
       </div>
-      <div class="product_image">
-        <img  src="{% static 'landing/images/product/offer_detail.png' %}" alt="user profile">
+
+      <div class="description col-sm-7">
+        <p class="product-title" style="font-size:26px;">{% trans "Moneda Social " %}</p>
+        <p style="font-size:20px; color:grey;">{% trans "Semillas promociona el bien común. Retribuyendo en semillas trabajos a la comunidad o acciones cívicas." %}</p>
       </div>
     </div>
-  </main>
+  </div>
+
 
 {% endblock content %}
 

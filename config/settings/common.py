@@ -45,7 +45,7 @@ THIRD_PARTY_APPS = (
     'rest_auth',
     'rest_auth.registration',
     'rest_framework',
-    'rest_framework_swagger', # Rest-api web documentation
+    'rest_framework_docs',
     'rest_framework.authtoken',
     'phonenumber_field', # To phone field
     # 'django_filters',
