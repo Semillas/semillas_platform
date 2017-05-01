@@ -46,6 +46,10 @@ We have the following main ones:
 * Install Docker Engine:
   For example, in Ubuntu I installed it following this:
   https://docs.docker.com/engine/installation/linux/ubuntulinux/
+* Install docker-compose:
+  https://docs.docker.com/compose/install/ from step three
+* Add your user to docker group: `usermod -aG docker ${USER}`
+  
 
 #### Mac
   Docker is native in Mac now. Drag and drop and enjoy.

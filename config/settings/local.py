@@ -75,3 +75,5 @@ def custom_show_toolbar(self):
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
   }
+
+REST_FRAMEWORK['DEFAULT_PERMISSION_CLASSES'] = 'rest_framework.permissions.AllowAny'

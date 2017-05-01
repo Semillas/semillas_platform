@@ -6,10 +6,10 @@ from rest_framework import permissions
 
 from semillas_backend.users.models import User
 
+from django.contrib.gis.db.models.functions import Distance
+
 from .models import Service, Category
 from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
-
-from django.contrib.gis.db.models.functions import Distance
 
 class CreateService(generics.CreateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
@@ -23,11 +23,20 @@ class ServiceList(generics.ListAPIView):
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAdminUser,)
 
-class ServiceDetail(generics.RetrieveUpdateAPIView):
+class ServiceDetail(generics.RetrieveAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
+    permission_classes = (permissions.AllowAny,)
+    lookup_field = 'uuid'
+
+class UpdateService(generics.UpdateAPIView):
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
+    """
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+    # TODO: Make parmission only owner can edit
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'
 

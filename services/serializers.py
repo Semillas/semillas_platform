@@ -3,12 +3,10 @@ from rest_framework import serializers
 from .models import Service, Category, ServicePhoto
 from semillas_backend.users.serializers import UserSerializer
 
-
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ('id', 'name', 'photo', 'order')
-
 
 class ServicePhotoSerializer(serializers.ModelSerializer):
     """
