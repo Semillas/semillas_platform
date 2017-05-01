@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {% load staticfiles i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!--TODO: this magic needs to be installed with pip...
   {-!-% load bootstrap3 %}
   {!% bootstrap_css %}
   {!% bootstrap_javascript %}
   {!% bootstrap_messages %} -->
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -32,7 +33,7 @@
     <meta name="twitter:description" content="Semilla Social es una plataforma transparente y sin ánimo de lucro de intercambio de bienes y servicios donde se puede participar sin moneda de curso legal.">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Fira+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif%7CFira+Sans" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
@@ -123,7 +124,6 @@
     <!-- Form -->
     <!-- Revisar, da error al hacer click -->
       <div class="flag-form">
-        {% get_current_language as LANGUAGE_CODE %}
         {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
         <form action="{% url 'set_language' %}" method="post" target=_self>{% csrf_token %}
@@ -174,6 +174,7 @@
           <div class="col-sm-6 text-center">
             <img class="logo" style="width:85px; height:85px;border-radius: 100px;background-color: white;padding: 10px;" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo">
           </div>
+
         </div>
       </footer>
       <!-- Up button v1 TODO-->

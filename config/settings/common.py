@@ -43,9 +43,11 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_auth',
+    'rest_auth.registration',
     'rest_framework',
-    'rest_framework_swagger', # Rest-api web documentation
+    'rest_framework_docs',
     'rest_framework.authtoken',
+    'phonenumber_field', # To phone field
     # 'django_filters',
     'webpack_loader',
 
@@ -61,6 +63,7 @@ LOCAL_APPS = (
     'semillas_backend.users.apps.UsersConfig',
     'landing',
     'services',
+    'wallet',
     'webapp',
     'rest_framework_word_filter',
     # Your stuff: custom apps go here
@@ -332,14 +335,18 @@ REST_FRAMEWORK = {
 	'PAGE_SIZE': 20,
 }
 
-# In order to visualize every api method on Swagger, need to add SessionAuthentication to DEFAULT_AUTHENTICATION_CLASSES, but it will bring CSRF problems.
-SWAGGER_SETTINGS = {
-	'USE_SESSION_AUTH': False,
-    'SECURITY_DEFINITIONS': {
-        'api_key': {
-            'type': 'apiKey',
-            'in': 'header',
-            'name': 'Authorization'
-        }
-    },
+REST_AUTH_SERIALIZERS = {
+    'TOKEN_SERIALIZER': 'semillas_backend.users.rest_auth_serializers.TokenSerializer'
 }
+
+# In order to visualize every api method on Swagger, need to add SessionAuthentication to DEFAULT_AUTHENTICATION_CLASSES, but it will bring CSRF problems.
+#SWAGGER_SETTINGS = {
+#	'USE_SESSION_AUTH': False,
+#    'SECURITY_DEFINITIONS': {
+#        'api_key': {
+#            'type': 'apiKey',
+#            'in': 'header',
+#            'name': 'Authorization'
+#        }
+#    },
+#}

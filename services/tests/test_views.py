@@ -12,6 +12,7 @@ from services.factory import ServiceFactory, CategoryFactory
 from services.factory import categories
 
 from services.models import Service, Category
+from semillas_backend.users.models import User
 
 
 class BaseServiceTestCase(TestCase):
@@ -64,7 +65,10 @@ class TestFeedServiceList(BaseServiceTestCase):
 
 
 
-    def test_response_check_distances(self):
+    def test_response_check_distances_saved_in_user(self):
+        """ This tests ask the feed without lat and lon and expects
+        the lat and lon are retrieved from user model saved in db
+        """
 
         # Create some locations
         location_madrid = Point(-3.8196228, 40.4378698) # Madrid 0
@@ -110,6 +114,114 @@ class TestFeedServiceList(BaseServiceTestCase):
             [item["title"] for item in response.data],
             ["4", "2", "3", "5", "1"]
         )
+
+    def test_response_check_distances_anonymous_user_sending_params(self):
+        """ This tests ask the feed without lat and lon and expects
+        the lat and lon are retrieved from user model saved in db
+        """
+
+        # Create some locations
+        location_madrid = Point(-3.8196228, 40.4378698) # Madrid 0
+        location_paris = Point(2.3488, 48.8534) # Paris 1
+        location_london = Point(-0.3817834, 51.528308) # London 2
+        location_berlin = Point(13.4105, 52.5244) # Berlin 3
+        location_rome = Point(12.395912, 41.909986) # Rome 4
+
+        # Update locations on each of the self.users
+        self.users[0].location = location_madrid
+        self.users[0].save()
+        self.users[1].location = location_paris
+        self.users[1].save()
+        self.users[2].location = location_london
+        self.users[2].save()
+        self.users[3].location = location_berlin
+        self.users[3].save()
+        self.users[4].location = location_rome
+        self.users[4].save()
+
+        # Generate a request search for "testing" key word
+        request = self.factory.get(
+                '/api/v1/service/feed?lat=%s&lon=%s' % (
+                    location_berlin.coords[1],
+                    location_berlin.coords[0]))
+
+        self.view = FeedServiceList.as_view()
+        response = self.view(request)
+
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+
+        self.assertIsInstance(
+            response.data,
+            list
+        )
+
+        self.assertEqual(
+            [item["title"] for item in response.data],
+            ["4", "2", "3", "5", "1"]
+        )
+
+    def test_response_check_distances_signed_in_user_sending_params(self):
+        """ This tests ask the feed without lat and lon and expects
+        the lat and lon are retrieved from user model saved in db
+        """
+
+        # Create some locations
+        location_madrid = Point(-3.8196228, 40.4378698) # Madrid 0
+        location_paris = Point(2.3488, 48.8534) # Paris 1
+        location_london = Point(-0.3817834, 51.528308) # London 2
+        location_berlin = Point(13.4105, 52.5244) # Berlin 3
+        location_rome = Point(12.395912, 41.909986) # Rome 4
+
+        # Update locations on each of the self.users
+        self.users[0].location = location_madrid
+        self.users[0].save()
+        self.users[1].location = location_paris
+        self.users[1].save()
+        self.users[2].location = location_london
+        self.users[2].save()
+        self.users[3].location = location_berlin
+        self.users[3].save()
+        self.users[4].location = location_rome
+        self.users[4].save()
+
+        # Generate a request search for "testing" key word
+        request = self.factory.get(
+                '/api/v1/service/feed?lat=%s&lon=%s' % (
+                    location_rome.coords[1],
+                    location_rome.coords[0]))
+
+        # Attach the user to the request
+        force_authenticate(request, user=self.users[3])
+
+        self.view = FeedServiceList.as_view()
+        response = self.view(request)
+
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+
+        self.assertIsInstance(
+            response.data,
+            list
+        )
+
+        self.assertEqual(
+            [item["title"] for item in response.data],
+            ["4", "5", "2", "1", "3"]
+        )
+
+        # check the user location is updated
+        self.users[3] = User.objects.get(id=self.users[3].id)
+        self.assertEqual(location_rome.coords, self.users[3].location.coords)
+
 
     def test_category_filtering(self):
         Service.objects.all().update(category=Category.objects.first())

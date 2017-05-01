@@ -18,6 +18,11 @@ urlpatterns = [
         view=views.ServiceDetail.as_view(),
         name='detail'
     ),
+    url(
+        regex=r'^edit/(?P<uuid>[^/]+)/$',
+        view=views.UpdateService.as_view(),
+        name='edit'
+    ),
     # URL pattern for the ServiceDetailView --> Get Services by Category
     url(
         regex=r'^feed$',

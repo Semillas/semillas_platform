@@ -10,6 +10,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.gis.db.models import PointField
 
+from phonenumber_field.modelfields import PhoneNumberField
 
 @python_2_unicode_compatible
 class User(AbstractUser):
@@ -18,6 +19,10 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_('Name of User'), blank=True, max_length=255)
+
+    phone = PhoneNumberField(blank=True)
+    phone_verified = models.BooleanField(default=False)
+
     location = PointField(
         null=True,
         blank=True,
