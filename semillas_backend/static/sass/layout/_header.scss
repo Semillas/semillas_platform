@@ -3,12 +3,53 @@
 // -----------------------------------------------------------------------------
 .page-head--masthead .site-nav {
   position: absolute;
-  width: 100%;
+  width: 50%;
   top: 0;
 }
   
   .page-head--masthead {
-    background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9));
+    // background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9));
+    background: linear-gradient(119deg, rgba(119, 180, 131, 0.9), rgba(128, 178, 186, 0.9)),
+          url(../images/masthead-lg.jpg)no-repeat center center;
+            -webkit-background-size: cover;
+                -moz-background-size: cover;
+                  -o-background-size: cover;
+          width: 100%;
+    position: relative;
+
+  }
+  .navbar{
+    background-color: transparent;
+    background: transparent;
+    border-color: transparent;
+  }
+  // .navbar-default .navbar-toggle {
+  //   border-color: none;
+  // }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    font-size: 13px;
+    color: white;
+    margin-top: 17px;
+  }
+
+  .header-text{
+    font-size: 23px;
+    color:white;
+    bottom: 0;
+    padding: 15px;
+    position: absolute;
+  }
+
+  .header-logo{
+    width:55px; 
+    height:55px;
+    border-radius: 100px;
+    background-color: white;
+    padding: 5px;
 
   }
 
@@ -20,6 +61,25 @@
                 -moz-background-size: cover;
                   -o-background-size: cover;
           height: 600px; 
+        }
+        .header-text{
+          font-size: 38px;
+          padding-left: 20px;
+          width: 100%;
+          color:white;
+          position: static;
+
+
+        }
+        .header-logo{
+          width:85px; 
+          height:85px;
+          border-radius: 100px;
+          background-color: white;
+          padding: 10px;
+        }
+        .container>.navbar-header {
+          margin-right: 75px;
         }
       }
 
@@ -59,10 +119,10 @@
     }
   }
 
-  .flag-form {
-    padding-top: 400px;
-    padding-top: 25em;
-  }
+  // .flag-form {
+  //   padding-top: 400px;
+  //   padding-top: 25em;
+  // }
 
     @media screen and (min-width: $bpMedium) {
       .flag-form {
@@ -77,10 +137,24 @@
     display: flex;
     align-items: left;
     justify-content: left;
-    width: 768px;
-    height: 252px;
-
+    
+    width: 100%;
+    height: 160px;
   }
+    @media screen and (min-width: $bpMedium) {
+      .page-head--content {
+        height: 560px;
+        height: 35em;
+        width: 60%;
+        padding-top: 100px;
+        padding-left: 84px;
+      }
+
+      h2 {
+        display: initial;
+        
+      }
+    }
 
      h2 {
       display: none;
@@ -101,19 +175,7 @@
 
 
 
-    @media screen and (min-width: $bpMedium) {
-      .page-head--content {
-        height: 560px;
-        height: 35em;
-        width: 50%;
-        padding-top: 200px;
-      }
-
-      h2 {
-        display: initial;
-        
-      }
-    }
+    
 
 
 

@@ -75,20 +75,37 @@
     <!-- Header -->
       <header class="page-head--masthead">
         <div class="wrapper">
-          <nav id="nav" class="site-nav  clearfix">
-            <a href="/"><!-- <img class="site-nav__logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo"> -->
-            <img class="logo" style="width:85px; height:85px;border-radius: 100px;background-color: white;padding: 10px;" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo">
-            </a>
-            <ul>
-              <li>
-                <a class="{% if request.resolver_match.view_name == "landing:porque" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a>
-              </li>
-              <li>
-                <a class="{% if request.resolver_match.view_name == "landing:product" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
-              </li>
-              <li>
-                <a class="{% if request.resolver_match.view_name == "landing:people" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
-              </li>
+          <!-- <nav id="nav" class="site-nav  clearfix"> -->
+          <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="border: none; background-color: transparent;">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" style="height:inherit;"><!-- <img class="site-nav__logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo"> -->
+                  <img class="header-logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo">
+                </a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <!-- <a class="{% if request.resolver_match.view_name == "landing:porque" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a> -->
+                    <a href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a>
+                  </li>
+                  <li>
+                    <!-- <a class="{% if request.resolver_match.view_name == "landing:product" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a> -->
+                    <a href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
+                  </li>
+                  <li>
+                    <!-- <a class="{% if request.resolver_match.view_name == "landing:people" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a> -->
+                    <a href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
+                  </li>
+                </ul>
+              </div>
+            </div> 
               <!-- {% if request.user.is_authenticated %}
                 <li>
                   {% block nav-user %}
@@ -112,10 +129,10 @@
                 {% endblock %}
                 </li>
               {% endif %} -->
-            </ul>
+            
           </nav>
           <div class="page-head--content">
-            <p style="color:white; font-size: 38px; padding-left: 20px;">App móvil de compraventa de bienes y servicios con monedas virtuales.</p>
+            <p class="header-text">App móvil de compraventa de bienes y servicios con monedas virtuales.</p>
           </div>
         </div>
       </header>
@@ -158,15 +175,14 @@
         <div class="row">
           <div class="col-sm-6 text-center">
             <p style="color:white; font-size:20px;">Contacta con nosotros</p>
-            <p style="color:white; font-size:13px;">hola@semillas.org</p>
+            <p style="color:white; font-size:13px;">info.semillasocial@gmail.com</p>
             <p style="color:white; font-size:13px;">Madrid</p>
           </div>
           <div class="col-sm-3 text-center">
             <p style="color:white; font-size:20px;">Síguenos</p>
             <a href="https://twitter.com/semilla_social" style="color:white; font-size:13px;"><p>Twitter</p></a>
-            <a href="https://www.facebook.com/semillasocial" style="color:white; font-size:13px;"><p>Faccebook</p></a>
+            <a href="https://www.facebook.com/semillasocial" style="color:white; font-size:13px;"><p>Facebook</p></a>
             <a href="https://github.com/Semillas" style="color:white; font-size:13px;"><p>Github</p></a>
-            <a href="#" style="color:white; font-size:13px;"><p>LinkedIn</p></a>
           </div>
         </div>
 
