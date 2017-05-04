@@ -18,6 +18,8 @@ class ServicePhotoSerializer(serializers.ModelSerializer):
 class CreateServiceSerializer(serializers.ModelSerializer):
     """ Usage:
     """
+
+    title = serializers.CharField(required=False)
     class Meta:
         model = Service
         fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price')
