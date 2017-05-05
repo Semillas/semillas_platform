@@ -11,14 +11,7 @@ from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 
 from .models import Service, Category
-from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
-
-class CreateService(generics.CreateAPIView):
-    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
-    """
-    queryset = Service.objects.all()
-    serializer_class = CreateServiceSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+from .serializers import *
 
 class ServiceList(generics.ListAPIView):
     queryset = Service.objects.all()
@@ -33,11 +26,19 @@ class ServiceDetail(generics.RetrieveAPIView):
     permission_classes = (permissions.AllowAny,)
     lookup_field = 'uuid'
 
+class CreateService(generics.CreateAPIView):
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
+    """
+    queryset = Service.objects.all()
+    serializer_class = CreateServiceSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+
 class UpdateService(generics.UpdateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
     queryset = Service.objects.all()
-    serializer_class = ServiceSerializer
+    serializer_class = UpdateServiceSerializer
     # TODO: Make parmission only owner can edit
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'

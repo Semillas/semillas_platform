@@ -48,7 +48,7 @@ class Service(models.Model):
 
     category = models.ForeignKey(
         'Category',
-        null=True,
+        null=False,
     )
 
     def __unicode__(self):

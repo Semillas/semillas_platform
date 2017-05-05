@@ -15,14 +15,36 @@ class ServicePhotoSerializer(serializers.ModelSerializer):
         model = ServicePhoto
         fields = ('id', 'photo')
 
+
 class CreateServiceSerializer(serializers.ModelSerializer):
     """ Usage:
     """
 
-    title = serializers.CharField(required=False)
     class Meta:
         model = Service
-        fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price')
+        fields = (
+            'uuid',
+            'title',
+            'description',
+            'category',
+            'seeds_price',
+        )
+
+    def create(self, validated_data):
+        return Service(author=self.context['request'].user, **validated_data)
+
+class UpdateServiceSerializer(CreateServiceSerializer):
+    """ Usage:
+    """
+
+    title = serializers.CharField(required=False)
+    description = serializers.CharField(required=False)
+    seeds_price = serializers.IntegerField(required=False)
+    category = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        required=False
+    )
+
 
 class ServiceSerializer(serializers.ModelSerializer):
     """ Usage:
