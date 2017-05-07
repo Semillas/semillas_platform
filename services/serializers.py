@@ -31,7 +31,9 @@ class CreateServiceSerializer(serializers.ModelSerializer):
         )
 
     def create(self, validated_data):
-        return Service(author=self.context['request'].user, **validated_data)
+        service = Service(author=self.context['request'].user, **validated_data)
+        service.save()
+        return service
 
 class UpdateServiceSerializer(CreateServiceSerializer):
     """ Usage:
