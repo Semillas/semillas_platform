@@ -41,11 +41,11 @@
     <link rel="icon" type="image/png" href="/static/images/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="/static/images/favicon/manifest.json">
     <link rel="mask-icon" href="/static/images/favicon/safari-pinned-tab.svg" color="#ffffff">
-    <link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
+    <link rel="shortcut icon" href="{% static '/images/favicon/favicon.ico' %}">
     <meta name="msapplication-config" content="/static/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    
-    
+
+
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -62,10 +62,10 @@
     {% block javascript %}
       <script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-       
+
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <!--  <script src="{% static "js/jquery-1.11.1.js" %}"></script> -->
-     
+
       {% endblock javascript %}
       {% block javascript_level2 %}
      {% endblock javascript_level2 %}
@@ -105,7 +105,7 @@
                   </li>
                 </ul>
               </div>
-            </div> 
+            </div>
               <!-- {% if request.user.is_authenticated %}
                 <li>
                   {% block nav-user %}
@@ -129,7 +129,7 @@
                 {% endblock %}
                 </li>
               {% endif %} -->
-            
+
           </nav>
           <div class="page-head--content">
             <p class="header-text">App móvil de compraventa de bienes y servicios con monedas virtuales.</p>
@@ -195,7 +195,7 @@
       </footer>
       <!-- Up button v1 TODO-->
       <a class="btn btn--alert" href="#nav">{% trans "Subir" %}</a>
-      
+
       <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
 //]]></script>
