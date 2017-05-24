@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 //import Feed from '../components/Feed'
 import Explore from '../components/Explore'
+import FilterText from '../components/FilterText'
 import { resetErrorMessage } from '../actions'
 
 class App extends Component {
@@ -22,6 +23,10 @@ class App extends Component {
 
   handleChange = nextValue => {
     browserHistory.push(`/webapp/${nextValue}/`)
+  }
+
+  handleChangeSearch = searchValue => {
+    browserHistory.push(`/webapp/?search=${searchValue}/`)
   }
 
   renderErrorMessage() {
@@ -46,9 +51,15 @@ class App extends Component {
     const { children, inputValue } = this.props
     return (
       <div>
+      {/*
         <Explore value={inputValue}
                  onChange={this.handleChange} />
         <hr />
+        */}
+        <FilterText value={inputValue}
+                 onChange={this.handleChangeSearch} />
+        <hr />
+
         {this.renderErrorMessage()}
         {children}
       </div>

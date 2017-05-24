@@ -46,6 +46,10 @@ We have the following main ones:
 * Install Docker Engine:
   For example, in Ubuntu I installed it following this:
   https://docs.docker.com/engine/installation/linux/ubuntulinux/
+* Install docker-compose:
+  https://docs.docker.com/compose/install/ from step three
+* Add your user to docker group: `usermod -aG docker ${USER}`
+  
 
 #### Mac
   Docker is native in Mac now. Drag and drop and enjoy.
@@ -134,9 +138,28 @@ Check it on https://www.semillasocial.org
 Whatever is pushed to 'dev' branch it will automatically be deployed to http://alpha.semillasocial.org
 
 
-### Recreate CSS files from SCSS (SASS)
+### Gulp Workflow
 
-Command: 
- ```$ ./node_modules/gulp/bin/gulp.js sass```
+#### Gulp Tasks: What they do
 
-Need to have installed gulp and some others: $ npm install
++ [Gulp-Sass](https://www.npmjs.com/package/gulp-sass)
++ [Gulp-cssnano](https://www.npmjs.com/package/gulp-cssnano)
++ [imagemin](https://www.npmjs.com/package/imagemin)
++ [Autoprefixer](https://www.npmjs.com/package/autoprefixer)
++ [Browser Sync](https://www.npmjs.com/package/browser-sync)
+
+#### We have two Gulp tasks
+
+After running any Gulp task enter the folder where you have "Semillas Social" and run the following command:
+
+```npm init```=> This will download every NPM dependency to your local machine
+
+Then run:
+
+```gulp default```=> This task runs the following tasks:
+
++ css: converts .scss files to .css
++ cssnano: minifies css
++ autoprefixer: add prefixes to the last 4 browser version
+
+```gulp img```=> This task removes unnecesary image's metadata (lossless compression)

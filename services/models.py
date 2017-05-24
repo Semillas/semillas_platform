@@ -9,6 +9,7 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
+from django.contrib.gis.db.models.functions import Distance
 
 
 @python_2_unicode_compatible
@@ -47,7 +48,7 @@ class Service(models.Model):
 
     category = models.ForeignKey(
         'Category',
-        null=True,
+        null=False,
     )
 
     def __unicode__(self):
@@ -58,6 +59,9 @@ class Service(models.Model):
 
     def get_absolute_url(self):
         return reverse('api_service:detail', kwargs={'pk': self.id})
+
+    def get_distance(self, ref_loc):
+        return Distance(self.author.location, ref_loc)
 
 
 @python_2_unicode_compatible

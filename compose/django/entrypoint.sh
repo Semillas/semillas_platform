@@ -13,6 +13,4 @@ fi
 
 export DATABASE_URL=postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@postgres:5432/$POSTGRES_USER
 
-python manage.py create_social_apps
-
 exec "$@"

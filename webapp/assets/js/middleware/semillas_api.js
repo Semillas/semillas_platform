@@ -1,7 +1,7 @@
 import { Schema, arrayOf, normalize } from 'normalizr'
 import { camelizeKeys } from 'humps'
 
-// Extracts the next page URL from Github API response.
+// Extracts the next page URL from Semillas API response.
 const getNextPageUrl = response => {
   const link = response.headers.get('link')
   if (!link) {
@@ -12,8 +12,6 @@ const getNextPageUrl = response => {
   if (!nextLink) {
     return null
   }
-
-
   return nextLink.split(';')[0].slice(1, -1)
 }
 
