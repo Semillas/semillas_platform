@@ -1,11 +1,10 @@
 # semillas_platform
-================
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg)](https://github.com/pydanny/cookiecutter-django/)
 ![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
 [![Travis-CI](https://travis-ci.org/Semillas/semillas_platform.svg?branch=master)](https://travis-ci.org/Semillas/semillas_platform)
 [![Coverage Codecov](https://codecov.io/gh/Semillas/semillas_platform/branch/master/graph/badge.svg)](https://codecov.io/gh/Semillas/semillas_platform)
-[![Updates](https://pyup.io/repos/github/semillas/semillas_platform/shield.svg)](https://pyup.io/repos/github/semillas/semillas_platform/)
+[![Updates](https://pyup.io/repos/github/Semillas/semillas_platform/shield.svg)](https://pyup.io/repos/github/Semillas/semillas_platform/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/36d1eabaab3b43c4bcc90704266e788f)](https://www.codacy.com/app/iesteban/semillas_platform?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Semillas/semillas_platform&amp;utm_campaign=Badge_Grade)
 
 
