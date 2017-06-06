@@ -57,8 +57,7 @@ class UserServiceList(generics.ListAPIView):
             u=User.objects.get(uuid=pk)
             if u:
                 return Service.objects.filter(author=u.id)
-        else:
-            return Service.objects.all()
+        return Response("User not found", status=status.HTTP_400_BAD_REQUEST)
 
 # Filter services by category_id
 class FeedServiceList(generics.ListAPIView):
