@@ -15,39 +15,6 @@ class ServicePhotoSerializer(serializers.ModelSerializer):
         model = ServicePhoto
         fields = ('id', 'photo')
 
-
-class CreateServiceSerializer(serializers.ModelSerializer):
-    """ Usage:
-    """
-
-    class Meta:
-        model = Service
-        fields = (
-            'uuid',
-            'title',
-            'description',
-            'category',
-            'seeds_price',
-        )
-
-    def create(self, validated_data):
-        service = Service(author=self.context['request'].user, **validated_data)
-        service.save()
-        return service
-
-class UpdateServiceSerializer(CreateServiceSerializer):
-    """ Usage:
-    """
-
-    title = serializers.CharField(required=False)
-    description = serializers.CharField(required=False)
-    seeds_price = serializers.IntegerField(required=False)
-    category = serializers.PrimaryKeyRelatedField(
-        queryset=Category.objects.all(),
-        required=False
-    )
-
-
 class ServiceSerializer(serializers.ModelSerializer):
     """ Usage:
         from rest_framework.renderers import JSONRenderer
@@ -77,4 +44,42 @@ class ServiceSerializer(serializers.ModelSerializer):
             return round(obj.dist.km, 1)
         else:
             return None
+
+class CreateServiceSerializer(serializers.ModelSerializer):
+    """ Usage:
+    """
+
+    service = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Service
+        fields = (
+            'uuid',
+            'title',
+            'description',
+            'category',
+            'seeds_price',
+            'service'
+        )
+
+    def create(self, validated_data):
+        service = Service(author=self.context['request'].user, **validated_data)
+        service.save()
+        return service
+
+    def get_service(self, obj):
+        return ServiceSerializer(obj).data
+
+
+class UpdateServiceSerializer(CreateServiceSerializer):
+    """ Usage:
+    """
+
+    title = serializers.CharField(required=False)
+    description = serializers.CharField(required=False)
+    seeds_price = serializers.IntegerField(required=False)
+    category = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        required=False
+    )
 
