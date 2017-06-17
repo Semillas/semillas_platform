@@ -15,6 +15,14 @@ class ServicePhotoSerializer(serializers.ModelSerializer):
         model = ServicePhoto
         fields = ('id', 'photo')
 
+
+class ServicePhotoUploadSerializer(serializers.ModelSerializer):
+    """
+    """
+    class Meta:
+        model = ServicePhoto
+        fields = ('id', 'photo')
+
 class ServiceSerializer(serializers.ModelSerializer):
     """ Usage:
         from rest_framework.renderers import JSONRenderer

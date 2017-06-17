@@ -3,6 +3,9 @@ from __future__ import absolute_import, unicode_literals
 
 from rest_framework import generics
 from rest_framework import permissions
+from rest_framework import views
+from rest_framework import parsers
+from rest_framework.response import Response
 
 from semillas_backend.users.models import User
 
@@ -91,3 +94,20 @@ class FeedServiceList(generics.ListAPIView):
 
         else:
             return queryset.order_by('date')
+
+
+class ServicePhotoUpload(views.APIView):
+    """ Test this view with the following Curl Command:
+    curl -X PUT -H "Content-Type:multipart/form-data" -H "Content-Disposition: attachment; filename*=UTF-8''joaquin.jpg" -H "Authorization: Token 04601a00e6499ade89b55caf37dba949ec99b082"  -F "file=@/home/ismael/Downloads/heroquest.jpg" http://localhost:8000/api/v1/service/photo_upload/c561b263-06e4-44d6-b72c-7d8ad2b03986/
+    """
+
+    # queryset = ServicePhoto.objects.all()
+    # serializer_class = ServicePhotoUploadSerializer
+    parser_classes = (parsers.FileUploadParser,)
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def put(self, request, uuid, format=None):
+        file_obj = request.data['file']
+        service = Service.objects.get(uuid=uuid)
+        ServicePhoto.objects.create(service=service, photo=file_obj)
+        return Response(status=204)

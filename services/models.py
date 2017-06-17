@@ -101,14 +101,18 @@ class ServicePhoto(models.Model):
 
     def service_photo_upload(instance, filename):
         extension = os.path.splitext(filename)[1]
-        return "media/services/%s%s" % (str(instance.id), extension)
+        return "media/services/%s_%s%s" % (
+            str(instance.service.id),
+            str(instance.service.photos.count() + 1),
+            extension
+        )
 
     service = models.ForeignKey(
         Service,
         related_name='photos',
     )
 
-    photo = models.FileField(
+    photo = models.ImageField(
         max_length=300,
         null=True,
         blank=True,

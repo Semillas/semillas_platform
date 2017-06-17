@@ -41,4 +41,11 @@ urlpatterns = [
         view=views.CreateService.as_view(),
         name='create'
     ),
+    # URL pattern for upload service photo
+    url(
+        regex=r'^photo_upload/(?P<uuid>[^/]+)/$',
+        view=views.ServicePhotoUpload.as_view(),
+        name='post_photo'
+    ),
+
 ]
