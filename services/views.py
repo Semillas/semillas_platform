@@ -6,6 +6,7 @@ from rest_framework import permissions
 from rest_framework import views
 from rest_framework import parsers
 from rest_framework.response import Response
+from rest_framework import status
 
 from semillas_backend.users.models import User
 
@@ -96,18 +97,27 @@ class FeedServiceList(generics.ListAPIView):
             return queryset.order_by('date')
 
 
-class ServicePhotoUpload(views.APIView):
+#class ServicePhotoUpload(views.APIView):
+class ServicePhotoUpload(generics.CreateAPIView):
     """ Test this view with the following Curl Command:
-    curl -X PUT -H "Content-Type:multipart/form-data" -H "Content-Disposition: attachment; filename*=UTF-8''joaquin.jpg" -H "Authorization: Token 04601a00e6499ade89b55caf37dba949ec99b082"  -F "file=@/home/ismael/Downloads/heroquest.jpg" http://localhost:8000/api/v1/service/photo_upload/c561b263-06e4-44d6-b72c-7d8ad2b03986/
+    curl -X PUT
+    -H "Content-Type:multipart/form-data"
+    -H "Content-Disposition: attachment; filename*=UTF-8''joaquin.jpg"
+    -H "Authorization: Token 04601a00e6499ade89b55caf37dba949ec99b082"
+    -F "file=@/home/ismael/Downloads/heroquest.jpg"
+    http://localhost:8000/api/v1/service/photo_upload/c561b263-06e4-44d6-b72c-7d8ad2b03986/
     """
 
     # queryset = ServicePhoto.objects.all()
-    # serializer_class = ServicePhotoUploadSerializer
-    parser_classes = (parsers.FileUploadParser,)
+    serializer_class = ServicePhotoUploadSerializer
+    parser_classes = (parsers.MultiPartParser,)
     permission_classes = (permissions.IsAuthenticated,)
 
-    def put(self, request, uuid, format=None):
-        file_obj = request.data['file']
-        service = Service.objects.get(uuid=uuid)
-        ServicePhoto.objects.create(service=service, photo=file_obj)
-        return Response(status=204)
+    def create(self, request, *args, **kwargs):
+        service_id = Service.objects.get(uuid=kwargs['uuid']).id
+        request.data['service'] = service_id
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
