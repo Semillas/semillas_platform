@@ -17,13 +17,6 @@ class ServicePhotoSerializer(serializers.ModelSerializer):
         fields = ('id', 'photo')
 
 
-class ServicePhotoUploadSerializer(serializers.ModelSerializer):
-    """
-    """
-    class Meta:
-        model = ServicePhoto
-        fields = ('photo', 'service')
-
 
 class ServiceSerializer(serializers.ModelSerializer):
     """ Usage:
@@ -54,6 +47,15 @@ class ServiceSerializer(serializers.ModelSerializer):
             return round(obj.dist.km, 1)
         else:
             return None
+
+class ServicePhotoUploadSerializer(serializers.ModelSerializer):
+    """
+    """
+    updated_service = ServiceSerializer(read_only=True, source='service')
+    class Meta:
+        model = ServicePhoto
+        fields = ('photo', 'service', 'updated_service')
+
 
 class CreateServiceSerializer(serializers.ModelSerializer):
     """ Usage:
