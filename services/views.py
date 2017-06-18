@@ -100,12 +100,21 @@ class FeedServiceList(generics.ListAPIView):
 #class ServicePhotoUpload(views.APIView):
 class ServicePhotoUpload(generics.CreateAPIView):
     """ Test this view with the following Curl Command:
-    curl -X PUT
+    curl -X POST
     -H "Content-Type:multipart/form-data"
     -H "Content-Disposition: attachment; filename*=UTF-8''joaquin.jpg"
     -H "Authorization: Token 04601a00e6499ade89b55caf37dba949ec99b082"
     -F "file=@/home/ismael/Downloads/heroquest.jpg"
     http://localhost:8000/api/v1/service/photo_upload/c561b263-06e4-44d6-b72c-7d8ad2b03986/
+
+    and for production:
+
+    curl -X POST
+    -H "Content-Type:multipart/form-data"
+    -H "Content-Disposition: attachment; filename*=UTF-8''heroquest.jpg"
+    -H "Authorization: Token f81422024a991f76d7bc1a11c4974206cb31c481"
+    -F "photo=@/home/ismael/Downloads/heroquest.jpg;type=image/jpg"
+    https://www.semillasocial.org/api/v1/service/photo_upload/da27db5b-09eb-44de-864a-a005d4645af8/
     """
 
     # queryset = ServicePhoto.objects.all()
