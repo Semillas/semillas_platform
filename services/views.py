@@ -30,6 +30,15 @@ class ServiceDetail(generics.RetrieveAPIView):
     permission_classes = (permissions.AllowAny,)
     lookup_field = 'uuid'
 
+class ServiceDelete(generics.DestroyAPIView):
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
+    """
+    permission_classes = (permissions.IsAuthenticated,)
+    lookup_field = 'uuid'
+
+    def get_queryset(self):
+        return Service.objects.filter(author=self.request.user)
+
 class CreateService(generics.CreateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
@@ -41,11 +50,12 @@ class CreateService(generics.CreateAPIView):
 class UpdateService(generics.UpdateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
-    queryset = Service.objects.all()
     serializer_class = UpdateServiceSerializer
     # TODO: Make parmission only owner can edit
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'
+    def get_queryset(self):
+        return Service.objects.filter(author=self.request.user)
 
 class CategoryList(generics.ListAPIView):
     queryset = Category.objects.all()
@@ -123,6 +133,7 @@ class ServicePhotoUpload(generics.CreateAPIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def create(self, request, *args, **kwargs):
+        # TODO: Check the service belongs to the user.
         service_id = Service.objects.get(uuid=kwargs['uuid']).id
         request.data['service'] = service_id
         serializer = self.get_serializer(data=request.data)

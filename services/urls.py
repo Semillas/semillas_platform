@@ -47,5 +47,9 @@ urlpatterns = [
         view=views.ServicePhotoUpload.as_view(),
         name='post_photo'
     ),
-
+    url(
+        regex=r'^delete/(?P<uuid>[^/]+)/$',
+        view=views.ServiceDelete.as_view(),
+        name='delete'
+    ),
 ]
