@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-11 18:14+0000\n"
+"POT-Creation-Date: 2017-05-04 09:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ubay González <u.gonzalez@gmail.com>, 2017\n"
 "Language-Team: English (https://www.transifex.com/semilla-social/teams/65146/en/)\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings/common.py:297
+#: config/settings/common.py:304
 msgid "Spanish"
 msgstr "Spanish"
 
-#: config/settings/common.py:298
+#: config/settings/common.py:305
 msgid "English"
 msgstr "English"
 
@@ -36,292 +36,314 @@ msgstr "Contact us:"
 
 #: landing/templates/landing/contact.html:18
 msgid "También puedes conocernos en "
-msgstr "You can also meet us here: "
+msgstr "You can also learn about us here: "
 
 #: landing/templates/landing/contact.html:18
 msgid "este link"
-msgstr "link"
+msgstr "this link"
 
 #: landing/templates/landing/development.html:8
 msgid "Version 0.1"
 msgstr "Version 0.1"
 
-#: landing/templates/landing/home.html:8
-msgid "¿Qué es Semilla Social?"
-msgstr "What is Semilla Social ?"
-
-#: landing/templates/landing/home.html:11
-msgid ""
-"Semilla Social es una plataforma transparente y sin ánimo de lucro de "
-"intercambio de bienes y servicios donde se puede participar sin moneda de "
-"curso legal."
-msgstr ""
-"Semilla Social is a non profit platform for the exchange of goods and "
-"services without any official currency involved."
-
-#: landing/templates/landing/home.html:12
-msgid ""
-"Se basa en la abundancia de recursos, la capacidad creativa, artística, "
-"manual e intelectual de todos sus miembros, ya sean niños, mayores, jóvenes,"
-" asalariados, parados, amas de casa, etc."
-msgstr ""
-"It is based on the abundancy of resources and the creative, artistic, manual"
-" and intellectual capability of the members involved. These members may be "
-"children, the elderly, teenagers, paid workers, the unemployed, housewives, "
-"etc."
-
-#: landing/templates/landing/home.html:13
-msgid ""
-"El objetivo de proyecto es el pleno empleo. Pero no el pleno empleo como se "
-"suele contemplar. Empleo remunerado de todas las personas que sostienen la "
-"sociedad."
-msgstr ""
-"The goal is to achieve full employment, but not the \"full employment\" idea"
-" we would normally imagine: the paid-by-currency kind. Our aim to achieve "
-"remunerated employment for every single person who works to keep this "
-"society up and running."
-
 #: landing/templates/landing/home.html:15
-msgid ""
-"Buscamos voluntarios de todo tipo: divulgadores, técnicos informáticos, "
-"economistas, abogados, traductores, amigos que nos traigan frutos secos y "
-"semillas."
-msgstr ""
-"We are looking for any kind of volunteers: communicators, software "
-"developers, economists, lawyers, translators and anyone else who wants to be"
-" part of the change.  "
+msgid "Marketplace Social "
+msgstr "Social Marketplace "
 
 #: landing/templates/landing/home.html:16
-msgid "Participa"
-msgstr "Join us"
-
-#: landing/templates/landing/home.html:18
-msgid "Economía Ecológica. Economía Feminista"
-msgstr "Ecologic economy. Feminist economy."
-
-#: landing/templates/landing/home.html:19
 msgid ""
-"Semillas busca la sostenibilidad de la vida: en todos los procesos "
-"necesarios para la reproducción y buen vivir. No para la sostenibilidad del "
-"crecimiento económico."
+"Se basa en la abundancia de recursos, la capacidad creativa, artística, "
+"manual e intelectual de todos sus miembros."
 msgstr ""
-"Semillas looks for life sustainability: in all necessary aspects for "
-"reproduction and good living. Not to keep an economic growth. "
+"It's based on the abundance of resources and the creative, artistic, manual "
+"and intellectual capabilities of all its members. "
 
-#: landing/templates/landing/home.html:20
-msgid "Leé más de nuestra motivación en "
-msgstr "Read more about our motivation in"
-
-#: landing/templates/landing/home.html:20
-#: semillas_backend/templates/base.html:73
-msgid "Filosofía"
-msgstr "Philosophy"
-
-#: landing/templates/landing/home.html:24
-msgid "¿Cómo Funciona?"
-msgstr "How does it work?"
-
-#: landing/templates/landing/home.html:25
-msgid "Somos transparentes y sin ánimo de lucro"
-msgstr "We are transparent and nonprofit"
-
-#: landing/templates/landing/home.html:26
-#, python-format
-msgid ""
-"Semillas es una aplicación multiplataforma 100%% OpenSource que va a "
-"permitir a los indivuos intercambiar bienes y servicios usando sus "
-"“Semillas” un artificio de intercambio inspirado en monedas sociales."
-msgstr ""
-"Semillas multiplatform app 100%% OpenSource which will allow users to trade "
-"goods and services using their \"Semillas\", a concept inspired in social "
-"currencies"
-
-#: landing/templates/landing/home.html:27
-msgid ""
-"El diseño y la funcionalidad está muy inspirado en las aplicaciones de "
-"compraventa, como Wallapop. LetGo, Vibbo…"
-msgstr ""
-"Design and functionality is heavily inspired in trading apps like Wallapop, "
-"LetGo, Vibbo..."
-
-#: landing/templates/landing/home.html:31
-msgid "¿Cómo conseguir semillas?"
-msgstr "How to earn semillas?"
-
-#: landing/templates/landing/home.html:33
-msgid ""
-"Todo el mundo empieza con la misma cantidad de semillas, simplemente por "
-"pertenecer a la plataforma."
-msgstr ""
-"Everyone starts with the same amount of semillas, just for being part of the"
-" platform."
-
-#: landing/templates/landing/home.html:34
-msgid ""
-"Se pueden conseguir semillas con comportamientos cívicos. Como por ejemplo "
-"usando transporte público o bicicleta."
-msgstr ""
-"Semillas can be earn by civic behaviour, like using public transportation or"
-" bicycle."
+#: landing/templates/landing/home.html:17
+msgid "Los bienes y servicios ofertados aparecen ordenados por proximidad"
+msgstr "The goods and services offered appear in order of proximity."
 
 #: landing/templates/landing/home.html:35
+msgid "Cooperativa "
+msgstr "Cooperative"
+
+#: landing/templates/landing/home.html:36
 msgid ""
-"Se pueden conseguir semillas con trabajos a la comunidad, esto se realiza en"
-" colaboración con diferentes colectivos y asociaciones vecinales."
+"Somos una cooperativa y nuestro producto es software libre. Ven y participa."
 msgstr ""
-"They can be earn by community work in collaboration with collectives and "
-"neighbour associations."
+"We're a cooperative, and our product is freeware. Come and participate!"
 
-#: landing/templates/landing/home.html:38
-msgid "Más información en "
-msgstr "More information:"
+#: landing/templates/landing/home.html:52
+msgid "Moneda Social "
+msgstr "Social Currency"
 
-#: landing/templates/landing/home.html:38
+#: landing/templates/landing/home.html:53
+msgid ""
+"Semillas promociona el bien común. Retribuyendo en semillas trabajos a la "
+"comunidad o acciones cívicas."
+msgstr ""
+"\"Semillas\" promotes the common good. Seeds are given in exchange for "
+"community work or civic duties. "
+
+#: landing/templates/landing/porque.html:8
+msgid "Visión"
+msgstr "Vision"
+
+#: landing/templates/landing/porque.html:9
+msgid ""
+" Semilla Social es una cooperativa que busca promover el capital colectivo "
+"de las comunidades a través del intercambio ético de bienes y servicios. "
+msgstr ""
+"\"Semilla Social\" is a cooperative whose aim is to promote collective "
+"capital in communities through the ethic exchange of goods and services. "
+
+#: landing/templates/landing/porque.html:12
+msgid "Misión"
+msgstr "Mission"
+
+#: landing/templates/landing/porque.html:13
+msgid ""
+" Semillas es una tecnología abierta y transparente  al servicio de lo humano"
+" y la naturaleza. Es una herramienta de cambio social por su potencia para "
+"construir redes entre iguales por donde circula, se distribuye y se "
+"intercambia la abundancia de recursos, la capacidad creativa, artística, "
+"manual e intelectual de todos sus miembros."
+msgstr ""
+"\"Semillas\" is an open and transparent technology, which serves both "
+"humanity and nature. It's a tool for social change, due to its ability to "
+"build networks wherever it circulates. In this way, the abundance of "
+"creative, artistic, manual and intellectual resouces is distributed and "
+"exchanged though the support of all its members. "
+
+#: landing/templates/landing/porque.html:18
+msgid ""
+" La Semilla otorga soberanía local,  está sujeta a los procesos "
+"participativos y democráticos de las personas que usan la moneda y sus "
+"relaciones locales."
+msgstr ""
+"The \"seed\" grants local sovereignty. It is subject to the participative "
+"and democratic processes of the people who use this currency, and their "
+"local relationships."
+
+#: landing/templates/landing/porque.html:19
+msgid " Ponemos en movimiento los recursos que la economía formal no utiliza."
+msgstr ""
+"We put into action the resources that the formal economy doesn't utilize."
+
+#: landing/templates/landing/porque.html:22
+msgid "Software Libre"
+msgstr "Freeware"
+
+#: landing/templates/landing/porque.html:23
+msgid ""
+" Todo el código que escribimos lo publicamos instantáneamente en Internet:"
+msgstr "All the code we write is immediately published on the Internet."
+
+#: landing/templates/landing/porque.html:24
+msgid ""
+" Si alguien modifica el producto, está obligado también a publicarlo en "
+"internet, pudiendo el resto de desarrolladores adoptar las mejoras."
+msgstr ""
+"If someone modifies the product, they are also obligated to publish it on "
+"the Internet, allowing the rest of the developers to also adopt the "
+"improvements."
+
+#: landing/templates/landing/porque.html:25
+#, python-format
+msgid " Por tanto es 100%% redistribuible, copiable y modificable."
+msgstr ""
+
+#: landing/templates/landing/porque.html:26
+msgid " No se pagan licencias por su uso."
+msgstr "There's no need to pay user license fees."
+
+#: landing/templates/landing/porque.html:27
+msgid ""
+" Cualquier entidad podría crearse su propia moneda utilizando este software."
+msgstr "Any entity could create its own currency using this software."
+
+#: landing/templates/landing/porque.html:34
+msgid "Crédito Mutuo"
+msgstr "Mutual Credit"
+
+#: landing/templates/landing/porque.html:35
+msgid ""
+" Semillas es un sistema de crédito mutuo. La suma de las cantidades "
+"positivas y negativas de todos sus miembros es 0. Propone una oxidación "
+"equitativa para incentivar el uso y evitar la acumulación."
+msgstr ""
+
+#: landing/templates/landing/porque.html:36
+msgid ""
+" Las Semillas cobran existencia en el mismo momento en el que dos personas o"
+" colectivos aceptan libremente un intercambio: a una se le suma el valor "
+"convenido en semillas y a otra se le resta esa misma cantidad."
+msgstr ""
+"The seeds come to life in the same moment that two people or collectives "
+"voluntarily accept an exchange: one adds the seed value decided upon and the"
+" other subtracts the same amount."
+
+#: landing/templates/landing/porque.html:37
+msgid ""
+" Un saldo positivo indica que hemos aportado a la red más de lo que hemos "
+"consumido, mientras que un saldo negativo indica que hemos consumido de la "
+"red más de lo que hemos aportado. Así, cuando nuestro saldo sea negativo "
+"ofreceremos algún producto o servicio para ponernos en positivo, y cuando "
+"estemos en positivo consumiremos y reduciremos hasta valores negativos. "
+msgstr ""
+"A positive balance indicates that we have contributed more than we have "
+"consumed, while a negative balance indicates that we have consumed more than"
+" we have contributed to the network. Therefore, when our balance is "
+"negative, we can offer some product or service to make it positive again. "
+
+#: landing/templates/landing/porque.html:42
+msgid "Plug & Play"
+msgstr "Plug & Play"
+
+#: landing/templates/landing/porque.html:43
+msgid ""
+" A pesar de que hay diferentes grupos y experimentos con iniciativas "
+"similares, es muy complicado empezar a formar parte de ellas. Hay que enviar"
+" correos, ir a colectivos el día de asamblea. En Semillas darse de alta va a"
+" ser cuestión de segundos. "
+msgstr ""
+"Despite the fact that there are different groups and experiments using "
+"similar iniciatives, it's very complicated to get involved in them. You must"
+" send e-mails, attend collective meetings, etc. In \"Semillas\" you can "
+"become an active member in a matter of seconds."
+
+#: landing/templates/landing/porque.html:45
+msgid "Local & Global"
+msgstr "Local & Global"
+
+#: landing/templates/landing/porque.html:46
+msgid ""
+" El orden de las ofertas será por proximidad. La proximidad hará que se "
+"favorezca al mercado local. Sin embargo, queremos dar una posibilidad "
+"tecnológica para poder obtener, a cambio de tus semillas, clases de inglés "
+"al otro lado del océano. "
+msgstr ""
+
+#: landing/templates/landing/porque.html:54
+msgid "Moneda Colaborativa"
+msgstr "Collaborative Currency"
+
+#: landing/templates/landing/porque.html:55
+msgid ""
+" Nuestra propuesta no es solo una moneda alternativa, si no también una "
+"herramienta para crear redes colaborativas. Propone sinergias con "
+"plataformas de economía colaborativa que acepten pago en semillas."
+msgstr ""
+"Our proposal isn't only an alternative currency, but also a tool for "
+"creating collaborative networks. It promotes synergies with collaborative "
+"economy platforms, which accept payment in seeds. "
+
+#: landing/templates/landing/porque.html:59
+msgid "Catalizador de Sobreranía"
+msgstr "Sovereignty Catalyst"
+
+#: landing/templates/landing/porque.html:60
+msgid ""
+" Semillas Social promociona el bien común. Retribuyendo en semillas trabajos"
+" a la comunidad o acciones cívicas.Para ello se apoya en los “Bancos de "
+"Semillas” e “Invernaderos” "
+msgstr ""
+"\"Social Seeds\" promotes the common good, distributing seeds in exchange "
+"for community service or civic duties. This is done through the use of "
+"\"Seed Banks\" and \"Greenhouses\"."
+
+#: landing/templates/landing/porque.html:62
+msgid "Banco de semillas"
+msgstr "Seed Banks"
+
+#: landing/templates/landing/porque.html:63
+msgid " Es un grupo vecinal al cobijo de una institución pública o privada."
+msgstr ""
+"It's a neighborhood group in the shelter of a public or private institution."
+
+#: landing/templates/landing/porque.html:64
+msgid ""
+" El Banco de Semillas se encarga de crear y retribuir trabajos a la "
+"comunidad (índole social, ecológica, educativa, medioambiental) así como "
+"acciones cívicas."
+msgstr ""
+"The Seed Bank is in charge of creating and rewarding community work done "
+"(social, ecological, educational, environmental), as well as civic duties. "
+
+#: landing/templates/landing/porque.html:65
+msgid ""
+" El siguiente ejemplo muestra ayuntamiento coordinando un banco de semillas."
+" El ayuntamiento cierra el ciclo monetario aceptando La Semilla en el "
+"alquiler de polideportivos, pago de multas, etc. "
+msgstr ""
+"The next example shows the city hall coordinating a Seed Bank. The city hall"
+" closes the monetary cycle by accepting The Seed as payment in the rental of"
+" sport centers, fines, etc. "
+
+#: landing/templates/landing/porque.html:69
+msgid "Invernadero"
+msgstr "Greenhouse"
+
+#: landing/templates/landing/porque.html:70
+msgid " Los invernaderos están gestionados por bancos de semillas."
+msgstr "The Greenhouses are managed by Seed Banks."
+
+#: landing/templates/landing/porque.html:71
+msgid ""
+" El invernadero se encarga de reutilizar objetos. Ejemplo: Un miembro "
+"entrega su motosierra al invernadero a cambio de una cantidad de semillas. "
+"El Invernadero alquila esa motosierra a los miembros de la comunidad por "
+"semillas."
+msgstr ""
+"The Greenhouse is in charge of re-using objects. An example: A member lends "
+"thier chainsaw to the greenhouse in exchange for an amount of seeds. The "
+"Greenhouse rents out this chainsaw to the community members in exchange for "
+"their seeds."
+
+#: landing/templates/landing/porque.html:72
+msgid ""
+" Es un lugar de reutilización. El invernadero es biblioteca, es espacio de "
+"alquiler, reparación y reciclaje de objetos, es espacio de intercambio, es "
+"centro de formación y empleo. "
+msgstr ""
+"This is place to re-use. The Greenhouse is a a type of library. A space to "
+"rent, repair and recycle and exchange objects. It's also a network for "
+"education and employment."
+
 #: landing/templates/landing/product_and_code.html:7
-#: semillas_backend/templates/base.html:76
+#: semillas_backend/templates/base.html:87
 msgid "Producto y Código"
 msgstr "Product and code"
 
-#: landing/templates/landing/philosophy.html:7
-msgid "¿Cuál es nuestra filosofía?"
-msgstr "What is our philosophy?"
-
-#: landing/templates/landing/philosophy.html:8
-msgid "Economía monetaria y para-económica"
-msgstr "Monetary economics and para-economics"
-
-#: landing/templates/landing/philosophy.html:10
-msgid ""
-"Ambas son muy necesarias para el funcionamiento correcto de la sociedad. "
-"Todo el trabajo altruista de la segunda permite que la primera tenga un "
-"valor de cambio tan alto en el mercado."
-msgstr ""
-"Both are needed for a correct society performance. All altruist work of the "
-"latter allows the former to acquire such high market value."
-
-#: landing/templates/landing/philosophy.html:14
-msgid "Economía monetaria"
-msgstr "Monetary economics"
-
-#: landing/templates/landing/philosophy.html:16
-msgid ""
-"La monetaria está depredando a la paraeconómica en la búsqueda por el pleno "
-"empleo y el constante crecimiento económico. Además de estar depredando "
-"nuestros ritmos naturales y nuestros ecosistemas."
-msgstr ""
-"The monetary economy is depredating the non-monetary in the hunt for full "
-"employment opportunities and the need for constant economic growth, while "
-"plundering our natural cycles and ecosystems in the process."
-
-#: landing/templates/landing/philosophy.html:18
-msgid "Economía para-económica"
-msgstr "Para-economics"
-
-#: landing/templates/landing/philosophy.html:20
-msgid ""
-"La para-económica, muy dañada, primero, con la migración del campo a la "
-"ciudad. La incorporación de la mujer al mercado laboral (algo indudablemente"
-" muy bueno para la igualdad de género), y unidades familiares cada vez más "
-"frágiles (ejemplo: un padre soltero con dos hijas). Afectando a todas estas "
-"economías de ayuda mutua, economías de cuidados y economías de reutilización"
-" de bienes."
-msgstr ""
-"The non-monetary system has been damaged as a result of various factors. "
-"Firstly, by the migration of people from the countryside to the city. "
-"Secondly, by the integration of women into the workforce. While the latter "
-"is something clearly very positive for gender equality, as a result, family "
-"units have become increasingly more fragile. These are some issues that have"
-" negatively affected economies which are based on reciprocity, care, and the"
-" reutilization of goods."
-
-#: landing/templates/landing/philosophy.html:21
-msgid ""
-"Este proyecto pretende ser un puente entre ambas economías. En ningún caso "
-"desafiar a la moneda de curso legal. Sino permitir a mucha gente obtener "
-"bienes de forma accesible."
-msgstr ""
-"Far from aiming to substitute legal tender, this project aims to establish a"
-" bridge between these two economies, which will allow individuals to obtain "
-"goods in a more accessible way."
-
-#: landing/templates/landing/philosophy.html:22
-msgid ""
-"Existen muchos proyectos de divisas sociales en marcha. Semillas es una "
-"tecnología abierta y confiable al servicio de lo humano y la naturaleza, "
-"como herramienta de cambio social."
-msgstr ""
-"There are many projects involving social currencies nowadays. Semillas is a "
-"trustworthy open technology, serving society and nature as a tool to "
-"implement social change."
-
-#: landing/templates/landing/philosophy.html:26
-msgid "¿A quién está enfocado?"
-msgstr "Who can benefit from it?"
-
-#: landing/templates/landing/philosophy.html:27
-msgid "Somos una plataforma de intercambio de bienes y servicios"
-msgstr "We are a marketplace of goods and services"
-
-#: landing/templates/landing/philosophy.html:30
-msgid "Trabajos fuera del PIB"
-msgstr "Outside-GDP jobs"
-
-#: landing/templates/landing/philosophy.html:31
-msgid "Economía de cuidados"
-msgstr "Caring economy"
-
-#: landing/templates/landing/philosophy.html:32
-msgid "Acompañamiento de ancianos"
-msgstr "Elderly companionship"
-
-#: landing/templates/landing/philosophy.html:33
-msgid ""
-"Gente que quiere empezar a dedicarse a algo que le gusta hacer. Ganando "
-"experiencia y sustento."
-msgstr ""
-"Individuals who would like to begin to make a living from doing something "
-"they enjoy."
-
-#: landing/templates/landing/philosophy.html:34
-msgid ""
-"Aquellos que han quedado excluidos del mercado laboral. Simplemente porque "
-"la moneda de curso legal tiene un valor muy alto y no todo el mundo puede "
-"ganarla y a la vez tener la vida que necesita tener."
-msgstr ""
-"Those who have found themselves excluded from the labour market just because"
-" of the legal tender's high value, and its insufficiency in covering the "
-"average individual's living expenses. "
-
-#: landing/templates/landing/philosophy.html:35
-msgid ""
-"Comunidades de la transición que quieran cambiar la realidad que vivimos."
-msgstr "Transition comunities willing to change our society."
-
-#: landing/templates/landing/philosophy.html:36
-msgid ""
-"Productores y artesanos que quieran vender sus maravillosos productos por "
-"otro canal"
-msgstr ""
-"Farmers and artisans looking to sell their amazing products through an "
-"alternative channel"
-
-#: landing/templates/landing/philosophy.html:37
-msgid ""
-"Monedas sociales, redes de trueque o bancos de tiempo existentes que quieran"
-" fusionarse y empezar a usar esta herramienta."
-msgstr ""
-"Currently existing social currencies, bartering and trading networks and "
-"time-based currency systems that would like to join forces with Semillas."
-
 #: landing/templates/landing/product_and_code.html:8
+msgid "Software libre"
+msgstr "Freeware"
+
+#: landing/templates/landing/product_and_code.html:9
+#, python-format
+msgid ""
+" Todo el código que escribimos lo publicamos instantáneamente en Internet: "
+"https://github.com/semillas . Si alguien modifica el producto, está obligado"
+" también a publicarlo en internet, pudiendo el resto de desarrolladores "
+"adoptar las mejoras. Por tanto es 100%% redistribuible, copiable y "
+"modificable. No se pagan licencias por su uso.Cualquier entidad podría "
+"crearse su propia moneda utilizando este software. "
+msgstr ""
+"All the code that we write is instantly published on the Internet: "
+"https://github.com/semillas. If someone modifies the product, they are "
+"obligated to also publish it on the Internet, so that others may adopt the "
+"same changes. In this way, it is 100%% percent redistributable, copiable and"
+" modifiable. No user license fees are necessary. Any entity can create its "
+"own currency by using this software. "
+
+#: landing/templates/landing/product_and_code.html:12
 msgid "Trabajamos con tecnologías de Software Libre"
 msgstr "We work exclusively with Open Source technologies"
 
-#: landing/templates/landing/product_and_code.html:10
+#: landing/templates/landing/product_and_code.html:14
 msgid "The stack is Python/Django + Django Rest Framework Running on Heroku."
 msgstr "The stack is Python/Django + Django Rest Framework Running on Heroku."
 
-#: landing/templates/landing/product_and_code.html:11
+#: landing/templates/landing/product_and_code.html:15
 msgid ""
 "You can sign-up in this page and then visit: "
 "https://www.semillasocial.org/docs to browse our API REST"
@@ -329,95 +351,99 @@ msgstr ""
 "You can sign-up in this page and then visit: "
 "https://www.semillasocial.org/docs to browse our API REST"
 
-#: landing/templates/landing/product_and_code.html:12
+#: landing/templates/landing/product_and_code.html:16
 msgid "The Web client is being crafted with ReactJS + Redux."
 msgstr "The Web client is being crafted with ReactJS + Redux."
 
-#: landing/templates/landing/product_and_code.html:13
+#: landing/templates/landing/product_and_code.html:17
 msgid "Start your own Mobile Client!!"
 msgstr "Start your own Mobile Client!!"
 
-#: landing/templates/landing/product_and_code.html:14
+#: landing/templates/landing/product_and_code.html:18
 msgid "Here is the "
 msgstr "Here is the"
 
-#: landing/templates/landing/product_and_code.html:20
+#: landing/templates/landing/product_and_code.html:24
 msgid "El framework de back-end que hace Semilla Social posible"
 msgstr "Back-end framework that enhances Semilla social"
 
-#: landing/templates/landing/product_and_code.html:26
+#: landing/templates/landing/product_and_code.html:30
 msgid "La herramienta que sostiene todo y hace fácil de exportar"
 msgstr "The backbone of it all, allowing easy export."
 
-#: landing/templates/landing/product_and_code.html:32
+#: landing/templates/landing/product_and_code.html:36
 msgid "Donde almacenamos nuestro código y así como control de versiones"
 msgstr "Where we store our code and version control"
 
-#: landing/templates/landing/product_and_code.html:39
+#: landing/templates/landing/product_and_code.html:43
 msgid "El futuro de los chats. Donde los equipos se comuican y divierten"
 msgstr "The chatroom future. Where the teams communicate and have fun"
 
-#: landing/templates/landing/product_and_code.html:46
+#: landing/templates/landing/product_and_code.html:50
 msgid "HyperText Markup Language 5 es el lenguaje básico de la W3C"
 msgstr "HyperText Markup Language 5 is the basic language of the W3C standard"
 
-#: landing/templates/landing/product_and_code.html:52
+#: landing/templates/landing/product_and_code.html:56
 msgid "Heroku es una plataforma como servicio de computación en la Nube."
 msgstr "Heroku is a cloud network service platform"
 
-#: landing/templates/landing/product_and_code.html:58
+#: landing/templates/landing/product_and_code.html:62
 msgid "Un potente lenguaje back-end con el que se ha hecho Django."
 msgstr "A strong back-end language which made Django possible."
 
-#: landing/templates/landing/product_and_code.html:64
+#: landing/templates/landing/product_and_code.html:68
 msgid "Linux es un sistema operativo que controla un ordenador."
 msgstr "Linux is an operating system for underlying control of a computer."
 
-#: landing/templates/landing/product_and_code.html:70
+#: landing/templates/landing/product_and_code.html:74
 msgid "Nos permite probar la calidad del código"
 msgstr "It allows us to test quality of the code"
 
-#: landing/templates/landing/product_and_code.html:76
+#: landing/templates/landing/product_and_code.html:80
 msgid "Usamos Sentry para solucionar problemas en el servidor"
 msgstr "We use Sentry to solve server problems"
 
-#: landing/templates/landing/product_and_code.html:82
+#: landing/templates/landing/product_and_code.html:86
 msgid "Usamos JavaScript para hacer la web más amistosa"
 msgstr "We use JavaScript to make the website user-friendly."
 
-#: landing/templates/landing/product_and_code.html:88
+#: landing/templates/landing/product_and_code.html:90
+msgid "Creative Commons"
+msgstr ""
+
+#: landing/templates/landing/product_and_code.html:92
 msgid "Creative Commons es una corporación sin ánimo de lucro"
 msgstr "Creative Commons is a nonprofit corporation"
 
-#: landing/templates/landing/product_and_code.html:95
+#: landing/templates/landing/product_and_code.html:99
 msgid "Obtención de Semillas"
 msgstr "Earning Semillas"
 
-#: landing/templates/landing/product_and_code.html:96
+#: landing/templates/landing/product_and_code.html:100
 msgid "Cada persona empieza con la misma cantidad de semillas"
 msgstr "Each individual starts with the same amount of semillas"
 
-#: landing/templates/landing/product_and_code.html:99
+#: landing/templates/landing/product_and_code.html:103
 msgid "Registro con verificación de SMS: 5 semillas"
 msgstr "Register with SMS verification: 5 semillas"
 
-#: landing/templates/landing/product_and_code.html:100
+#: landing/templates/landing/product_and_code.html:104
 msgid "Publicación del primer servicio: 5 semillas"
 msgstr "Publishing your first advertisement: 5 Semillas"
 
-#: landing/templates/landing/product_and_code.html:101
+#: landing/templates/landing/product_and_code.html:105
 msgid "Primera venta o primer servicio ofrecido: 5 semillas"
 msgstr "First sell or service offered: 5 semillas"
 
-#: landing/templates/landing/product_and_code.html:106
+#: landing/templates/landing/product_and_code.html:110
 msgid "Creación de Semillas"
 msgstr "Semilla creation"
 
-#: landing/templates/landing/product_and_code.html:107
+#: landing/templates/landing/product_and_code.html:111
 msgid "Comportamiento Cívico y Servicios a la comunidad"
 msgstr "Civic behaviour and community services"
 
-#: landing/templates/landing/product_and_code.html:109
+#: landing/templates/landing/product_and_code.html:113
 msgid ""
 "Comportamientos Cívicos: Como Biko, que por cada kilómetro hecho en "
 "bicicleta en una ciudad, se paga con puntos útiles para pagar tasas del "
@@ -428,7 +454,7 @@ msgstr ""
 "earning points to be exchanged for city tax. We want to introduce programs "
 "to reward civic behaviour"
 
-#: landing/templates/landing/product_and_code.html:110
+#: landing/templates/landing/product_and_code.html:114
 msgid ""
 "Determinados servicios a la comunidad serán remunerados por semillas. En "
 "colaboración con asociaciones locales se organizarán sesiones de trabajo en "
@@ -438,15 +464,15 @@ msgstr ""
 "sessions will be organized, in collaboration with local associations, where "
 "every volunteer will be paid in Semillas."
 
-#: landing/templates/landing/product_and_code.html:114
+#: landing/templates/landing/product_and_code.html:118
 msgid "Donación de Euros para obtener Semillas"
 msgstr "Euro donation to earn Semillas"
 
-#: landing/templates/landing/product_and_code.html:115
+#: landing/templates/landing/product_and_code.html:119
 msgid "La importancia de colaborar en la comunidad"
 msgstr "The importance of comunity collaboration"
 
-#: landing/templates/landing/product_and_code.html:117
+#: landing/templates/landing/product_and_code.html:121
 msgid ""
 "Cualquier donación en euros para desarrollar y fomentar la plataforma tendrá"
 " una recompensa en el mismo número de semillas. 1 Euro - 1 Semilla. "
@@ -454,15 +480,15 @@ msgstr ""
 "Any donation made in Euros to help develop and promote the platform will be "
 "compensated with the equivalent number in semillas: 1 Euro - 1 Semilla."
 
-#: landing/templates/landing/product_and_code.html:121
+#: landing/templates/landing/product_and_code.html:125
 msgid "Local y Global"
 msgstr "Local and Global"
 
-#: landing/templates/landing/product_and_code.html:122
+#: landing/templates/landing/product_and_code.html:126
 msgid "El orden de las ofertas será por proximidad"
 msgstr "Offers will be sorted by proximity"
 
-#: landing/templates/landing/product_and_code.html:124
+#: landing/templates/landing/product_and_code.html:128
 msgid ""
 "La proximidad hará que se favorezca al mercado local. Sin embargo, queremos "
 "dar una posibilidad tecnológica para poder obtener, a cambio de tus "
@@ -473,34 +499,40 @@ msgstr ""
 "overseas"
 
 #: landing/templates/landing/who_we_are.html:8
-msgid "¿Quiénes somos?"
-msgstr "Who are we?"
-
-#: landing/templates/landing/who_we_are.html:9
 msgid "Conoce por qué nos une Semilla Social"
 msgstr "Know why we are drawn together by Semilla Social"
 
+#: landing/templates/landing/who_we_are.html:10
+msgid ""
+"Semillas es una plataforma transparente y sin ánimo de lucro de intercambio "
+"de bienes y servicios donde se puede participar sin moneda de curso legal. "
+"Somos un grupo de hacktivistas, no hacemos esto por dinero. "
+msgstr ""
+
 #: landing/templates/landing/who_we_are.html:11
 msgid ""
-"Pensamos que otra forma de economía es posible. Pensamos que toda persona "
-"puede ofrecer algo y que eso debería ser suficiente para cubrir los mínimos "
-"de una vida digna. Diseñamos esta plataforma para ofrecer un medio, un "
-"soporte para un fin. Somos un grupo de hacktivistas, no hacemos esto por "
-"dinero. Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, "
-"diseño, frontend... "
+"Nos organizamos a través del modelo cooperativo y como comunidad de software"
+" libre para dar soporte a las personas, a los grupos, empresas del sector "
+"público y/o privado que quieran como nosotros fomentar valores de igualdad y"
+" solidaridad en una red de intercambios recíprocos. "
 msgstr ""
-"We believe that another way of economy is possible. We think that each and "
-"every person has something to offer and that should be enough to cover the "
-"bare minimum to make a decent livelihood. We designed this platform to act "
-"as facilitators to make this possible. We are a group of hacktivists and we "
-"do not do this for money. We welcome any kind of help. Right now we are in "
-"need of Android, iOS, design, front-end..."
+"We organize ourselves according to a cooperative model, and as a freeware "
+"community, to give support to the people, groups, companies of the public or"
+" private sector who want, like us, to strengthen their values of equality "
+"and solidarity through a network of reciprocity"
 
-#: landing/templates/landing/who_we_are.html:15
+#: landing/templates/landing/who_we_are.html:12
+msgid ""
+"Buscamos todo tipo de ayuda. Ahora especialmente diseñadores, Programadores "
+"(Javascript y Python), divulgadores, economistas, abogados, traductores, "
+"amigos que nos traigan frutos secos y semillas "
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:16
 msgid "Por qué ser parte del proyecto"
 msgstr "Why should you be take part in Semilla Social"
 
-#: landing/templates/landing/who_we_are.html:18
+#: landing/templates/landing/who_we_are.html:19
 msgid ""
 "Porque quieres contribuir al software libre y trabajar con un equipo de "
 "personas muy simpáticas y muy motivadas ayudándote."
@@ -508,7 +540,7 @@ msgstr ""
 "Because you want to contribute to open source and be a part of an easy going"
 " team , motivated in helping each other."
 
-#: landing/templates/landing/who_we_are.html:19
+#: landing/templates/landing/who_we_are.html:20
 msgid ""
 "Porque hacemos esto para aprender, usar las últimas tecnologías, reciclarnos"
 " y disfrutar."
@@ -516,7 +548,7 @@ msgstr ""
 "Because we do this to learn, to use the latest technologies, to recycle "
 "ourselves and enjoy"
 
-#: landing/templates/landing/who_we_are.html:20
+#: landing/templates/landing/who_we_are.html:21
 msgid ""
 "Porque queremos dejar la situación socioeconómica mejor de lo que la hemos "
 "encontrado."
@@ -524,7 +556,7 @@ msgstr ""
 "Because we want to leave the socioeconomical situation better than we found "
 "it."
 
-#: landing/templates/landing/who_we_are.html:21
+#: landing/templates/landing/who_we_are.html:22
 msgid ""
 "Porque vamos a hacer un producto precioso y hecho con amor. Donde se van a "
 "intercambiar las cosas bonitas que fabrican las personas de nuestro "
@@ -533,10 +565,6 @@ msgstr ""
 "Because we are going to make a wonderful product, made with love. Where we "
 "are going to exchange all the nice things that people around us make and "
 "create."
-
-#: landing/templates/landing/who_we_are.html:26
-msgid "El Equipo"
-msgstr "The Team"
 
 #: landing/templates/landing/who_we_are.html:27
 msgid "Personas que colaboran en Semilla Social"
@@ -559,39 +587,41 @@ msgstr ""
 "Technology."
 
 #: landing/templates/landing/who_we_are.html:45
-#: landing/templates/landing/who_we_are.html:91
-msgid "Traducciones"
-msgstr "Translations"
+msgid ""
+"Fullstack developer interested in leveraging technology for Social projects"
+msgstr ""
 
-#: landing/templates/landing/who_we_are.html:52
+#: landing/templates/landing/who_we_are.html:51
+#: landing/templates/landing/who_we_are.html:116
+msgid "Desarrollador Back-end y lo que surja."
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:59
 msgid ""
 "Interesado en encontrar ecoalternativas y asesorar sobre monedas sociales"
 msgstr "Interested in ecoalternatives and advice on social currency "
 
-#: landing/templates/landing/who_we_are.html:59
-msgid ""
-"Front-end. Especializado en web performance, responsive web design y "
-"software libre"
-msgstr ""
-"Front-end. Web performance oriented, responsive web design and open software"
+#: landing/templates/landing/who_we_are.html:67
+msgid "Community Manager"
+msgstr "Community Manager"
 
-#: landing/templates/landing/who_we_are.html:65
+#: landing/templates/landing/who_we_are.html:73
 msgid "Marketing Mentor & Marketing Manager at SkyScanner"
 msgstr "Marketing Mentor & Marketing Manager at SkyScanner"
 
-#: landing/templates/landing/who_we_are.html:66
+#: landing/templates/landing/who_we_are.html:74
 msgid "Edinburgh, (United Kingdom)"
 msgstr "Edinburgh, (United Kingdom)"
 
-#: landing/templates/landing/who_we_are.html:72
+#: landing/templates/landing/who_we_are.html:81
 msgid "Marketing Mentor"
 msgstr "Marketing Mentor"
 
-#: landing/templates/landing/who_we_are.html:73
+#: landing/templates/landing/who_we_are.html:82
 msgid "Barcelona"
 msgstr "Barcelona"
 
-#: landing/templates/landing/who_we_are.html:79
+#: landing/templates/landing/who_we_are.html:88
 msgid ""
 "Desarrollador full stack. Interesado en el software libre, Linux y nuevas "
 "tecnologías"
@@ -599,46 +629,51 @@ msgstr ""
 "Full stack developer. Interested in open software, Linux and new "
 "technologies"
 
-#: landing/templates/landing/who_we_are.html:85
-msgid "Community Manager"
-msgstr "Community Manager"
-
 #: landing/templates/landing/who_we_are.html:97
-msgid "¿Semillas Lab?"
-msgstr "Semillas Lab?"
+msgid ""
+"Front-end. Especializado en web performance, responsive web design y "
+"software libre"
+msgstr ""
+"Front-end. Web performance oriented, responsive web design and open software"
 
-#: landing/templates/landing/who_we_are.html:98
+#: landing/templates/landing/who_we_are.html:104
+#: landing/templates/landing/who_we_are.html:124
+msgid "Traducciones"
+msgstr "Translations"
+
+#: landing/templates/landing/who_we_are.html:109
+msgid ""
+"Translator & Fullstack Developer interested in Open Source projects and new "
+"opportunities to learn"
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:110
+msgid "Madrid"
+msgstr ""
+
+#: landing/templates/landing/who_we_are.html:132
 msgid "Conoce donde nos reunimos"
 msgstr "Where we meet"
 
-#: landing/templates/landing/who_we_are.html:101
+#: landing/templates/landing/who_we_are.html:134
 msgid ""
 "El equipo de Semillas está deslocalizado, sin embargo gran parte de nosotros"
-" estamos en Madrid. "
+" estamos en Madrid. En este "
 msgstr ""
-"Semillas team is spread around the world, however a significant part of us "
-"are located in Madrid"
 
-#: landing/templates/landing/who_we_are.html:102
-msgid ""
-"Cada miércoles nos reunimos en el Semillas Lab, en la Tabacalera de "
-"Lavapiés, Madrid. "
+#: landing/templates/landing/who_we_are.html:134
+msgid "puedes encontrar un video de nuestros primeros pasos como semilleros! "
 msgstr ""
-"We meet in Semillas Lab at Tabacalera de Lavapiés, Madrid each wednesday"
 
-#: landing/templates/landing/who_we_are.html:103
-msgid "Video de Semillas Lab"
-msgstr "Semillas Lab video"
+#: landing/templates/landing/who_we_are.html:135
+msgid "Si estáis interesados en contactarnos podéis escribirnos a "
+msgstr ""
 
-#: landing/templates/landing/who_we_are.html:104
-msgid "También nos puedes escribir a "
-msgstr "You can also contact us at"
+#: landing/templates/landing/who_we_are.html:136
+msgid "O Llamándonos al teléfono "
+msgstr ""
 
-#: landing/templates/landing/who_we_are.html:105
-msgid "Llamadnos al teléfono "
-msgstr "Call us!"
-
-#: landing/templates/landing/who_we_are.html:108
+#: landing/templates/landing/who_we_are.html:140
 msgid ""
 "\n"
 "       Pensamos que otra forma de economía es posible. Pensamos que toda persona\n"
@@ -656,10 +691,6 @@ msgstr ""
 "We are a group of hacktivists and we don't do this for money. \n"
 "We welcome all kinds of help, and right now especially with Android, iOS, design, \n"
 "front-end..."
-
-#: landing/templates/landing/who_we_are.html:121
-msgid "Quiénes somos"
-msgstr "The Team"
 
 #: semillas_backend/templates/account/account_inactive.html:5
 #: semillas_backend/templates/account/account_inactive.html:8
@@ -762,7 +793,7 @@ msgstr ""
 #: semillas_backend/templates/account/login.html:7
 #: semillas_backend/templates/account/login.html:11
 #: semillas_backend/templates/account/login.html:44
-#: semillas_backend/templates/base.html:100
+#: semillas_backend/templates/base.html:111
 msgid "Sign In"
 msgstr "Sign In"
 
@@ -881,7 +912,7 @@ msgstr "Signup"
 
 #: semillas_backend/templates/account/signup.html:9
 #: semillas_backend/templates/account/signup.html:20
-#: semillas_backend/templates/base.html:95
+#: semillas_backend/templates/base.html:106
 msgid "Sign Up"
 msgstr "Sign Up"
 
@@ -957,54 +988,26 @@ msgstr ""
 "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
 "e-mail address</a>."
 
-#: semillas_backend/templates/base.html:79
+#: semillas_backend/templates/base.html:84
+msgid "Por qué usar Semillas"
+msgstr ""
+
+#: semillas_backend/templates/base.html:90
 msgid "Quiénes Somos"
 msgstr "The Team"
 
-#: semillas_backend/templates/base.html:84
+#: semillas_backend/templates/base.html:95
 msgid "My Profile"
 msgstr "My Profile"
 
-#: semillas_backend/templates/base.html:89
+#: semillas_backend/templates/base.html:100
 msgid "Sign out"
 msgstr "Sign out"
 
-#: semillas_backend/templates/base.html:149
-msgid "Hecho con:"
-msgstr "Powered by:"
-
-#: semillas_backend/templates/base.html:152
-msgid "Información oficial de HTML"
-msgstr "Official HTML news"
-
-#: semillas_backend/templates/base.html:155
-msgid "Información oficial de CSSS"
-msgstr "Official CSS news"
-
-#: semillas_backend/templates/base.html:158
-msgid "Información oficial de JavaScript"
-msgstr "Official JavaScript news"
-
-#: semillas_backend/templates/base.html:161
-msgid "Información oficial de Github"
-msgstr "Official Github news"
-
-#: semillas_backend/templates/base.html:164
-msgid "Información oficial de Python"
-msgstr "Official Python news"
-
-#: semillas_backend/templates/base.html:167
-msgid "Información oficial de Django"
-msgstr "Official Django news"
-
-#: semillas_backend/templates/base.html:170
-msgid "Información oficial de Docker"
-msgstr "Official Docker news"
-
-#: semillas_backend/templates/base.html:179
+#: semillas_backend/templates/base.html:181
 msgid "Subir"
 msgstr "Up"
 
-#: semillas_backend/users/models.py:20
+#: semillas_backend/users/models.py:21
 msgid "Name of User"
 msgstr "Name of User"
