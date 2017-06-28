@@ -52,4 +52,9 @@ urlpatterns = [
         view=views.ServiceDelete.as_view(),
         name='delete'
     ),
+    url(
+        regex=r'^photo/delete/(?P<id>[^/]+)/$',
+        view=views.ServicePhotoDelete.as_view(),
+        name='photo_delete'
+    ),
 ]

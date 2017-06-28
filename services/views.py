@@ -107,7 +107,6 @@ class FeedServiceList(generics.ListAPIView):
             return queryset.order_by('date')
 
 
-#class ServicePhotoUpload(views.APIView):
 class ServicePhotoUpload(generics.CreateAPIView):
     """ Test this view with the following Curl Command:
     curl -X POST
@@ -141,3 +140,13 @@ class ServicePhotoUpload(generics.CreateAPIView):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+class ServicePhotoDelete(generics.DestroyAPIView):
+    """ Test this view with the following Curl Command:
+    """
+
+    permission_classes = (permissions.IsAuthenticated,)
+    lookup_field = 'id'
+
+    def get_queryset(self):
+        return ServicePhoto.objects.filter(service__author=self.request.user)
