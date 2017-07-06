@@ -50,6 +50,7 @@ THIRD_PARTY_APPS = (
     'phonenumber_field', # To phone field
     # 'django_filters',
     'webpack_loader',
+    'django_extensions',
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
