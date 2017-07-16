@@ -72,4 +72,4 @@ fake-factory==0.7.2
 django-filters==0.2.1
 
 # Client
-django-webpack-loader==0.4.1
+django-webpack-loader==0.5.0
