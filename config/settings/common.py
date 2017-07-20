@@ -351,3 +351,6 @@ REST_AUTH_SERIALIZERS = {
 #        }
 #    },
 #}
+
+# Phone Numbers
+PHONENUMBER_DB_FORMAT = 'E164'
