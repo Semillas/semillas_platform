@@ -16,7 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login', 'phone')
+        fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login')
 
 class UpdateUserSerializer(serializers.ModelSerializer):
 
@@ -36,4 +36,4 @@ class FullUserSerializer(UserSerializer):
 
     class Meta:
         model = User
-        fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login', 'wallet', 'email')
+        fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login', 'wallet', 'email', 'phone')
