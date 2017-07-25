@@ -24,10 +24,11 @@ class UpdateUserSerializer(serializers.ModelSerializer):
     #phone = PhoneNumberField(required=False)
     email = serializers.CharField(required=False)
     picture = serializers.ImageField(required=False)
+    uuid = serializers.CharField(read_only=True)
 
     class Meta:
         model = User
-        fields = ('name', 'picture', 'phone', 'email')
+        fields = ('name', 'picture', 'phone', 'email', 'uuid')
 
 from wallet.serializers import WalletSerializer
 class FullUserSerializer(UserSerializer):
