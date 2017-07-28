@@ -7,7 +7,7 @@ coverage==4.3.4
 
 django-test-plus==1.0.18
 factory-boy==2.8.1
-flake8==3.3.0
+flake8==3.4.0
 
 # pytest
 pytest-django==3.1.2
