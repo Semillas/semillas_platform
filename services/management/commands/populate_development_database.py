@@ -29,7 +29,7 @@ class Command(BaseCommand):
 
         Category.objects.all().delete()
         for i in range(len(categories)):
-            CategoryFactory(name=categories[i],order=i)
+            CategoryFactory(name=categories[i], name_es=categories[i],order=i)
         ServiceFactory.create_batch(size=50)
 
         # Create transactions
