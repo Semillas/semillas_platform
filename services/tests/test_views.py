@@ -34,8 +34,6 @@ class TestFeedServiceList(BaseServiceTestCase):
 
         # Create self.users, Services & Categories for test cases
         self.users = UserFactory.create_batch(size=5)
-        for i in range(len(categories)):
-            CategoryFactory(name=categories[i],order=i)
         self.services = ServiceFactory.create_batch(
                 size=5,
                 category=Category.objects.first()
