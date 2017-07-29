@@ -73,3 +73,6 @@ django-filters==0.2.1
 
 # Client
 django-webpack-loader==0.5.0
+
+# Django Model Translations
+django-modeltranslation==0.12.1

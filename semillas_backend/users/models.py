@@ -34,7 +34,6 @@ class User(AbstractUser):
         extension = os.path.splitext(filename)[1]
         return "media/users/%s-%s%s" % (str(instance.id), str(randint(0,99)), extension)
 
-
     picture = models.ImageField(
         null=True,
         blank=True,

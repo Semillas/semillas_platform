@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = (
     # 'django_filters',
     'webpack_loader',
     'django_extensions',
+    'modeltranslation',
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
@@ -306,6 +307,8 @@ LANGUAGES = [
   ('en', _('English')),
 ]
 
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('en', 'es')
+
 LOCALE_PATHS = (
     'locale',
 )
@@ -354,3 +357,8 @@ REST_AUTH_SERIALIZERS = {
 
 # Phone Numbers
 PHONENUMBER_DB_FORMAT = 'E164'
+
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'services.translation',
+)
+
