@@ -41,7 +41,7 @@ class ServiceSerializer(serializers.ModelSerializer):
         return getattr(obj.author.location, 'x', 0)
 
     def get_distance(self, obj):
-        if hasattr(obj, 'dist'):
+        if hasattr(obj, 'dist') and (obj.dist != None):
             return round(obj.dist.km, 1)
         else:
             return None
