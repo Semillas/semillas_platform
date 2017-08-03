@@ -10,6 +10,8 @@ from django.views import defaults as default_views
 
 from semillas_backend.users.views import FacebookLogin
 
+import allauth.account.views as allauth_views
+
 urlpatterns = [
 
     # API
@@ -31,6 +33,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login'),
     url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$', allauth_views.confirm_email,
+        name="account_confirm_email"),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
 
     # Your stuff: custom urls includes go here
