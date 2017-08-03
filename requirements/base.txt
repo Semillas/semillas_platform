@@ -49,7 +49,7 @@ redis>=2.10.0
 
 
 # Geo
-geoip2==2.4.2
+geoip2==2.5.0
 
 # Rest Framework
 djangorestframework==3.6.3
