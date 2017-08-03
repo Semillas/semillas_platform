@@ -14,6 +14,7 @@ from rest_auth.registration.views import SocialLoginView
 
 from .models import User
 from .serializers import UserSerializer
+from .serializers import UpdateUserSerializer
 from .permissions import IsOwnerOrReadOnly
 
 
@@ -63,14 +64,30 @@ class UserList(generics.ListAPIView):
     permission_classes = (permissions.IsAdminUser,)
 
 
-class UserDetail(generics.RetrieveUpdateAPIView):
+class UserDetail(generics.RetrieveAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
+    permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'
 
+class UserDetailUpdate(generics.UpdateAPIView):
+    """
+    Usage:
+    curl \
+        -X PATCH \
+        -H "Content-Type:multipart/form-data" \
+        -H "Content-Disposition: attachment; filename*=UTF-8''joaquin.jpg" \
+        -H "Authorization: Token 04601a00e6499ade89b55caf37dba949ec99b082" \
+        -F "picture=@/home/ismael/Downloads/heroquest.jpg" \
+        -F "phone=+34 679 923 555" \
+        http://localhost:8000/api/v1/user/update/e0d21ae6-13c1-4eb5-b216-ba251b83ce67/
+    """
+    queryset = User.objects.all()
+    serializer_class = UpdateUserSerializer
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
+    lookup_field = 'uuid'
 
 class FacebookLogin(SocialLoginView):
     adapter_class = FacebookOAuth2Adapter

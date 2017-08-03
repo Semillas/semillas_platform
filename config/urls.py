@@ -7,11 +7,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-from rest_framework_swagger.views import get_swagger_view
 
 from semillas_backend.users.views import FacebookLogin
 
-schema_view = get_swagger_view(title='Semillas API')
+import allauth.account.views as allauth_views
 
 urlpatterns = [
 
@@ -34,10 +33,13 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login'),
     url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$', allauth_views.confirm_email,
+        name="account_confirm_email"),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
 
     # Your stuff: custom urls includes go here
     url(r'^landing/', include('landing.urls', namespace='landing')),
-    url(r'^docs/', schema_view),
+    url(r'^docs/', include('rest_framework_docs.urls')),
     url(r'^webapp/', include('webapp.urls', namespace='webapp')),
 
 

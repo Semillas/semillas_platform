@@ -8,8 +8,12 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
+from django.dispatch import receiver
+from allauth.account.signals import user_logged_in
 
 from .errors import InsufficientBalance
+
+
 
 @python_2_unicode_compatible
 class Wallet(models.Model):
@@ -146,3 +150,16 @@ class Transaction(models.Model):
 
     def __str__(self):
         return str(self.id)+" - From:"+str(self.wallet_source.owner.id)+" To:"+str(self.wallet_dest.owner.id)
+
+    # place this in models.py
+    from allauth.account.signals import user_logged_in
+    from django.dispatch import receiver
+
+
+@receiver(user_logged_in)
+def login_logger(request, user, **kwargs):
+    if not hasattr(user, 'wallet'):
+        wallet = Wallet.objects.create(
+            owner=user,
+            balance=0
+        )

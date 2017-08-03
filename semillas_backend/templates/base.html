@@ -41,9 +41,11 @@
     <link rel="icon" type="image/png" href="/static/images/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="/static/images/favicon/manifest.json">
     <link rel="mask-icon" href="/static/images/favicon/safari-pinned-tab.svg" color="#ffffff">
-    <link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
+    <link rel="shortcut icon" href="{% static '/images/favicon/favicon.ico' %}">
     <meta name="msapplication-config" content="/static/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -52,12 +54,28 @@
 
   <!-- CSS -->
     {% block css %}
-      <link href="{% static 'css/main.css' %}" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="{% static '/css/main.css' %}" rel="stylesheet">
     {% endblock %}
 
   <!-- JavaScript -->
     {% block javascript %}
       <script type="text/javascript" src="{% static 'js/project.js' %}" defer="defer"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-99309298-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <!--  <script src="{% static "js/jquery-1.11.1.js" %}"></script> -->
+
       {% endblock javascript %}
       {% block javascript_level2 %}
      {% endblock javascript_level2 %}
@@ -67,19 +85,38 @@
     <!-- Header -->
       <header class="page-head--masthead">
         <div class="wrapper">
-          <nav id="nav" class="site-nav  clearfix">
-            <a href="/"><img class="site-nav__logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo"></a>
-            <ul>
-              <li>
-                <a class="{% if request.resolver_match.view_name == "landing:philosophy" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:philosophy' %}">{% trans "Filosofía" %}</a>
-              </li>
-              <li>
-                <a class="{% if request.resolver_match.view_name == "landing:product" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
-              </li>
-              <li>
-                <a class="{% if request.resolver_match.view_name == "landing:people" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
-              </li>
-              {% if request.user.is_authenticated %}
+          <!-- <nav id="nav" class="site-nav  clearfix"> -->
+          <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="border: none; background-color: transparent;">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" style="height:inherit;"><!-- <img class="site-nav__logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo"> -->
+                  <img class="header-logo" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo">
+                </a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <!-- <a class="{% if request.resolver_match.view_name == "landing:porque" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a> -->
+                    <a href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a>
+                  </li>
+                  <li>
+                    <!-- <a class="{% if request.resolver_match.view_name == "landing:product" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a> -->
+                    <a href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
+                  </li>
+                  <li>
+                    <!-- <a class="{% if request.resolver_match.view_name == "landing:people" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a> -->
+                    <a href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+              <!-- {% if request.user.is_authenticated %}
                 <li>
                   {% block nav-user %}
                     <a class="site-nav__home-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
@@ -101,16 +138,16 @@
                     <a class="site-nav__home-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
                 {% endblock %}
                 </li>
-              {% endif %}
-            </ul>
+              {% endif %} -->
+
           </nav>
           <div class="page-head--content">
-            <h2>Semilla Social</h2>
+            <p class="header-text">{% trans "App móvil de compraventa de bienes y servicios con monedas virtuales." %}</p>
           </div>
         </div>
       </header>
 
-<div class="container">
+<div class="container-fluid">
     <!-- Form -->
     <!-- Revisar, da error al hacer click -->
       <div class="flag-form">
@@ -142,46 +179,37 @@
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
       {% block modal %}{% endblock modal %}
+</div>
+    <!-- Footer  class="foo clearfix" -->
+      <footer style="background: #67b26f;background: -webkit-linear-gradient(to right, #67b26f, #4ca2cd);  background: linear-gradient(to right, #67b26f, #4ca2cd); padding-top: 30px; padding-bottom: 35px;">
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <p style="color:white; font-size:20px;">{% trans "Contacta con nosotros" %}</p>
+            <p style="color:white; font-size:13px;">info.semillasocial@gmail.com</p>
+            <p style="color:white; font-size:13px;">Madrid</p>
+          </div>
+          <div class="col-sm-3 text-center">
+            <p style="color:white; font-size:20px;">{% trans "Síguenos" %}</p>
+            <a href="https://twitter.com/semilla_social" style="color:white; font-size:13px;"><p>Twitter</p></a>
+            <a href="https://www.facebook.com/semillasocial" style="color:white; font-size:13px;"><p>Facebook</p></a>
+            <a href="https://github.com/Semillas" style="color:white; font-size:13px;"><p>Github</p></a>
+          </div>
+        </div>
 
-    </div>
-    <!-- Footer -->
-      <footer class="foo clearfix">
-        <p class="whiterly">{%trans "Hecho con:" %}</p>
-        <div>
-          <a class="foo_icon" href="http://validator.w3.org/check?uri=referer" target=_blank>
-            <img src="{% static "images/html.svg" %}" alt="HTML logo" title="{% trans 'HTML5' %}"/>
-          </a>
-          <!--a class="foo_icon" href="https://en.wikipedia.org/wiki/CSS" target=_blank>
-            <img src="{% static "images/css.svg" %}" alt="CSSS logo" title="{% trans 'Información oficial de CSSS' %}"/>
-          </a>
-          <a class="foo_icon" href="https://en.wikipedia.org/wiki/javascript" target=_blank>
-            <img src="{% static "images/javascript.svg" %}" alt="JavaScript logo" title="{% trans 'Información oficial de JavaScript' %}"/>
-          </a-->
-          <a class="foo_icon" href="https://github.com/Semillas" target=_blank>
-            <img src="{% static "images/git.svg" %}" alt="Github logo" title="{% trans 'Código fuente en Github' %}"/>
-          </a>
-          <a class="foo_icon" href="https://www.python.org/" target=_blank>
-            <img src="{% static "images/python.svg" %}" alt="Python logo" title="{% trans 'Python' %}"/>
-          </a>
-          <a class="foo_icon" href="https://www.djangoproject.com/" target=_blank>
-            <img src="{% static "images/django.png" %}" alt="Django logo" title="{% trans 'Django' %}"/>
-          </a>
-          <a class="foo_icon" href="https://www.docker.com/" target=_blank>
-            <img src="{% static "images/docker.svg" %}" alt="Docker logo" title="{% trans 'Docker' %}"/>
-          </a>
-          <p class="whiterly">
-          <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="foo__icon" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>.
-          </p>
-          <p class="whiterly"> Semillas 2016 - 2017</p>
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <img class="logo" style="width:85px; height:85px;border-radius: 100px;background-color: white;padding: 10px;" src="{% static 'images/logo.png' %}" alt="Semilla Social Logo">
+          </div>
+
         </div>
       </footer>
       <!-- Up button v1 TODO-->
       <a class="btn btn--alert" href="#nav">{% trans "Subir" %}</a>
+
       <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
 //]]></script>
 
-pepe
   </body>
 </html>
 

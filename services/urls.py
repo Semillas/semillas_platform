@@ -18,6 +18,11 @@ urlpatterns = [
         view=views.ServiceDetail.as_view(),
         name='detail'
     ),
+    url(
+        regex=r'^edit/(?P<uuid>[^/]+)/$',
+        view=views.UpdateService.as_view(),
+        name='edit'
+    ),
     # URL pattern for the ServiceDetailView --> Get Services by Category
     url(
         regex=r'^feed$',
@@ -35,5 +40,21 @@ urlpatterns = [
         regex=r'^$',
         view=views.CreateService.as_view(),
         name='create'
+    ),
+    # URL pattern for upload service photo
+    url(
+        regex=r'^photo_upload/(?P<uuid>[^/]+)/$',
+        view=views.ServicePhotoUpload.as_view(),
+        name='post_photo'
+    ),
+    url(
+        regex=r'^delete/(?P<uuid>[^/]+)/$',
+        view=views.ServiceDelete.as_view(),
+        name='delete'
+    ),
+    url(
+        regex=r'^photo/delete/(?P<id>[^/]+)/$',
+        view=views.ServicePhotoDelete.as_view(),
+        name='photo_delete'
     ),
 ]

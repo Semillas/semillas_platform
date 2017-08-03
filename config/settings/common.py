@@ -43,12 +43,15 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_auth',
+    'rest_auth.registration',
     'rest_framework',
-    'rest_framework_swagger', # Rest-api web documentation
+    'rest_framework_docs',
     'rest_framework.authtoken',
     'phonenumber_field', # To phone field
     # 'django_filters',
     'webpack_loader',
+    'django_extensions',
+    'modeltranslation',
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
@@ -244,9 +247,10 @@ AUTHENTICATION_BACKENDS = (
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Semillas] "
 ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'semillas_backend.users.adapters.AccountAdapter'
@@ -304,6 +308,8 @@ LANGUAGES = [
   ('en', _('English')),
 ]
 
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('en', 'es')
+
 LOCALE_PATHS = (
     'locale',
 )
@@ -334,6 +340,10 @@ REST_FRAMEWORK = {
 	'PAGE_SIZE': 20,
 }
 
+REST_AUTH_SERIALIZERS = {
+    'TOKEN_SERIALIZER': 'semillas_backend.users.rest_auth_serializers.TokenSerializer'
+}
+
 # In order to visualize every api method on Swagger, need to add SessionAuthentication to DEFAULT_AUTHENTICATION_CLASSES, but it will bring CSRF problems.
 #SWAGGER_SETTINGS = {
 #	'USE_SESSION_AUTH': False,
@@ -345,3 +355,11 @@ REST_FRAMEWORK = {
 #        }
 #    },
 #}
+
+# Phone Numbers
+PHONENUMBER_DB_FORMAT = 'E164'
+
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'services.translation',
+)
+
