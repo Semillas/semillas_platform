@@ -27,4 +27,9 @@ urlpatterns = [
         name='list'
     ),
 
+    url(
+        regex=r'^update/(?P<uuid>[^/]+)/$',
+        view=views.UserDetailUpdate.as_view(),
+        name='update'
+    ),
 ]

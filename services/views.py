@@ -3,6 +3,10 @@ from __future__ import absolute_import, unicode_literals
 
 from rest_framework import generics
 from rest_framework import permissions
+from rest_framework import views
+from rest_framework import parsers
+from rest_framework.response import Response
+from rest_framework import status
 
 from semillas_backend.users.models import User
 
@@ -11,14 +15,7 @@ from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 
 from .models import Service, Category
-from .serializers import ServiceSerializer, CategorySerializer, CreateServiceSerializer
-
-class CreateService(generics.CreateAPIView):
-    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
-    """
-    queryset = Service.objects.all()
-    serializer_class = CreateServiceSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+from .serializers import *
 
 class ServiceList(generics.ListAPIView):
     queryset = Service.objects.all()
@@ -33,14 +30,32 @@ class ServiceDetail(generics.RetrieveAPIView):
     permission_classes = (permissions.AllowAny,)
     lookup_field = 'uuid'
 
-class UpdateService(generics.UpdateAPIView):
+class ServiceDelete(generics.DestroyAPIView):
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
+    """
+    permission_classes = (permissions.IsAuthenticated,)
+    lookup_field = 'uuid'
+
+    def get_queryset(self):
+        return Service.objects.filter(author=self.request.user)
+
+class CreateService(generics.CreateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
     queryset = Service.objects.all()
-    serializer_class = ServiceSerializer
+    serializer_class = CreateServiceSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+
+class UpdateService(generics.UpdateAPIView):
+    """ access: curl http://0.0.0.0:8000/api/v1/user/2/
+    """
+    serializer_class = UpdateServiceSerializer
     # TODO: Make parmission only owner can edit
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'
+    def get_queryset(self):
+        return Service.objects.filter(author=self.request.user)
 
 class CategoryList(generics.ListAPIView):
     queryset = Category.objects.all()
@@ -56,8 +71,7 @@ class UserServiceList(generics.ListAPIView):
             u=User.objects.get(uuid=pk)
             if u:
                 return Service.objects.filter(author=u.id)
-        else:
-            return Service.objects.all()
+        return Response("User not found", status=status.HTTP_400_BAD_REQUEST)
 
 # Filter services by category_id
 class FeedServiceList(generics.ListAPIView):
@@ -91,3 +105,48 @@ class FeedServiceList(generics.ListAPIView):
 
         else:
             return queryset.order_by('date')
+
+
+class ServicePhotoUpload(generics.CreateAPIView):
+    """ Test this view with the following Curl Command:
+    curl -X POST
+    -H "Content-Type:multipart/form-data"
+    -H "Content-Disposition: attachment; filename*=UTF-8''joaquin.jpg"
+    -H "Authorization: Token 04601a00e6499ade89b55caf37dba949ec99b082"
+    -F "file=@/home/ismael/Downloads/heroquest.jpg"
+    http://localhost:8000/api/v1/service/photo_upload/c561b263-06e4-44d6-b72c-7d8ad2b03986/
+
+    and for production:
+
+    curl -X POST
+    -H "Content-Type:multipart/form-data"
+    -H "Content-Disposition: attachment; filename*=UTF-8''heroquest.jpg"
+    -H "Authorization: Token f81422024a991f76d7bc1a11c4974206cb31c481"
+    -F "photo=@/home/ismael/Downloads/heroquest.jpg;type=image/jpg"
+    https://www.semillasocial.org/api/v1/service/photo_upload/da27db5b-09eb-44de-864a-a005d4645af8/
+    """
+
+    # queryset = ServicePhoto.objects.all()
+    serializer_class = ServicePhotoUploadSerializer
+    parser_classes = (parsers.MultiPartParser,)
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def create(self, request, *args, **kwargs):
+        # TODO: Check the service belongs to the user.
+        service_id = Service.objects.get(uuid=kwargs['uuid']).id
+        request.data['service'] = service_id
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+class ServicePhotoDelete(generics.DestroyAPIView):
+    """ Test this view with the following Curl Command:
+    """
+
+    permission_classes = (permissions.IsAuthenticated,)
+    lookup_field = 'id'
+
+    def get_queryset(self):
+        return ServicePhoto.objects.filter(service__author=self.request.user)

@@ -2,6 +2,7 @@
 
 import os
 from uuid import uuid4
+from random import randint
 
 from django.contrib.auth.models import AbstractUser
 from django.core.urlresolvers import reverse
@@ -31,8 +32,7 @@ class User(AbstractUser):
 
     def user_photo_upload(instance, filename):
         extension = os.path.splitext(filename)[1]
-        return "media/users/%s%s" % (str(instance.id), extension)
-
+        return "media/users/%s-%s%s" % (str(instance.id), str(randint(0,99)), extension)
 
     picture = models.ImageField(
         null=True,
