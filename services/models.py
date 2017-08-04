@@ -120,3 +120,6 @@ class ServicePhoto(models.Model):
         help_text="Photos of the service being offered",
         default=None
     )
+
+    date = models.DateTimeField(auto_now_add=True,
+                                help_text="Date of the post.")

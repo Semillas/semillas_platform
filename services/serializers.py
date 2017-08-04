@@ -24,7 +24,7 @@ class ServiceSerializer(serializers.ModelSerializer):
         JSONRenderer().render(UserSerializer(user_instance).data)
     """
     category = CategorySerializer()
-    photos = ServicePhotoSerializer(many=True)
+    photos = serializers.SerializerMethodField('get_photos_list')
     author = UserSerializer()
     lat = serializers.SerializerMethodField()
     lon = serializers.SerializerMethodField()
@@ -33,6 +33,12 @@ class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
         fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price', 'lat', 'lon', 'distance')
+
+    def get_photos_list(self, instance):
+        photos = ServicePhoto.objects\
+            .filter(service__id=instance.id)\
+            .order_by('date')
+        return ServicePhotoSerializer(photos, many=True).data
 
     def get_lat(self, obj):
         return getattr(obj.author.location, 'y', 0)
