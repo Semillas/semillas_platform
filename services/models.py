@@ -3,6 +3,7 @@ from __future__ import unicode_literals, absolute_import
 
 import os
 from uuid import uuid4
+from random import randint
 
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -103,7 +104,7 @@ class ServicePhoto(models.Model):
         extension = os.path.splitext(filename)[1]
         return "media/services/%s_%s%s" % (
             str(instance.service.id),
-            str(instance.service.photos.count() + 1),
+            str(randint(0,99999)),
             extension
         )
 
