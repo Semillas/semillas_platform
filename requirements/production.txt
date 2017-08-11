@@ -17,10 +17,10 @@ django-storages-redux==1.3.2
 
 # Email backends for Mailgun, Postmark, SendGrid and more
 # -------------------------------------------------------
-django-anymail==0.11
+django-anymail==0.11.1
 
 # Raven is the Sentry client
 # --------------------------
 raven==6.1.0
 
-newrelic==2.88.1.73
+newrelic==2.90.0.75
