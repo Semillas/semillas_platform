@@ -3,7 +3,6 @@
 django-coverage-plugin==1.5.0
 coverage==4.3.4
 
-django-extensions==1.8.1
 django-debug-toolbar==1.8
 Sphinx==1.6.3
 Werkzeug==0.12.2

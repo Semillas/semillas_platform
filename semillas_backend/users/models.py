@@ -32,7 +32,7 @@ class User(AbstractUser):
 
     def user_photo_upload(instance, filename):
         extension = os.path.splitext(filename)[1]
-        return "media/users/%s-%s%s" % (str(instance.id), str(randint(0,99)), extension)
+        return "media/users/%s-%s%s" % (str(instance.id), str(randint(0,9999)), extension)
 
     picture = models.ImageField(
         null=True,
