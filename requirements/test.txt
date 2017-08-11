@@ -4,10 +4,10 @@
 
 django-coverage-plugin==1.5.0
 coverage==4.3.4
-
 django-test-plus==1.0.18
-factory-boy==2.8.1
 flake8==3.4.1
+factory-boy==2.9.2
+
 
 # pytest
 pytest-django==3.1.2
