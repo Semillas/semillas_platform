@@ -18,8 +18,8 @@ django-crispy-forms==1.6.1
 django-floppyforms==1.7.0
 
 # Models
+phonenumberslite==8.7.1
 django-model-utils==3.0.0
-phonenumberslite==8.6.0
 django-phonenumber-field==1.3.0
 
 
