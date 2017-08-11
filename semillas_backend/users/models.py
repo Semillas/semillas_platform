@@ -13,6 +13,8 @@ from django.contrib.gis.db.models import PointField
 
 from phonenumber_field.modelfields import PhoneNumberField
 
+from .validators import starts_with_at, is_blockchain_address
+
 @python_2_unicode_compatible
 class User(AbstractUser):
 
@@ -39,6 +41,19 @@ class User(AbstractUser):
         blank=True,
         help_text='Profile Picture',
         upload_to=user_photo_upload,
+    )
+
+    faircoin_address = models.CharField(
+        max_length=36,
+        blank=True,
+        validators=[is_blockchain_address]
+    )
+
+    telegram_id = models.CharField(
+        blank=True,
+        max_length=60,
+        validators=[starts_with_at],
+        help_text="Telegram Id for peer communication. Example: @username"
     )
 
     def __str__(self):
