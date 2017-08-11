@@ -16,8 +16,6 @@ class ServicePhotoSerializer(serializers.ModelSerializer):
         model = ServicePhoto
         fields = ('id', 'photo')
 
-
-
 class ServiceSerializer(serializers.ModelSerializer):
     """ Usage:
         from rest_framework.renderers import JSONRenderer
@@ -26,7 +24,7 @@ class ServiceSerializer(serializers.ModelSerializer):
         JSONRenderer().render(UserSerializer(user_instance).data)
     """
     category = CategorySerializer()
-    photos = ServicePhotoSerializer(many=True)
+    photos = serializers.SerializerMethodField('get_photos_list')
     author = UserSerializer()
     lat = serializers.SerializerMethodField()
     lon = serializers.SerializerMethodField()
@@ -36,6 +34,12 @@ class ServiceSerializer(serializers.ModelSerializer):
         model = Service
         fields = ('uuid', 'title', 'date', 'description', 'author', 'category', 'photos', 'seeds_price', 'lat', 'lon', 'distance')
 
+    def get_photos_list(self, instance):
+        photos = ServicePhoto.objects\
+            .filter(service__id=instance.id)\
+            .order_by('date')
+        return ServicePhotoSerializer(photos, many=True).data
+
     def get_lat(self, obj):
         return getattr(obj.author.location, 'y', 0)
 
@@ -43,7 +47,7 @@ class ServiceSerializer(serializers.ModelSerializer):
         return getattr(obj.author.location, 'x', 0)
 
     def get_distance(self, obj):
-        if hasattr(obj, 'dist'):
+        if hasattr(obj, 'dist') and (obj.dist != None):
             return round(obj.dist.km, 1)
         else:
             return None

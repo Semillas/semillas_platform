@@ -50,6 +50,8 @@ THIRD_PARTY_APPS = (
     'phonenumber_field', # To phone field
     # 'django_filters',
     'webpack_loader',
+    'django_extensions',
+    'modeltranslation',
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
@@ -245,9 +247,10 @@ AUTHENTICATION_BACKENDS = (
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Semillas] "
 ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'semillas_backend.users.adapters.AccountAdapter'
@@ -305,6 +308,8 @@ LANGUAGES = [
   ('en', _('English')),
 ]
 
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('en', 'es')
+
 LOCALE_PATHS = (
     'locale',
 )
@@ -350,3 +355,11 @@ REST_AUTH_SERIALIZERS = {
 #        }
 #    },
 #}
+
+# Phone Numbers
+PHONENUMBER_DB_FORMAT = 'E164'
+
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'services.translation',
+)
+
