@@ -104,7 +104,7 @@ class FeedServiceList(generics.ListAPIView):
                 return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
 
         else:
-            return queryset.order_by('date')
+            return queryset.order_by('-date')
 
 
 class ServicePhotoUpload(generics.CreateAPIView):
