@@ -48,7 +48,7 @@ We have the following main ones:
 * Install docker-compose:
   https://docs.docker.com/compose/install/ from step three
 * Add your user to docker group: `usermod -aG docker ${USER}`
-  
+
 
 #### Mac
   Docker is native in Mac now. Drag and drop and enjoy.
@@ -89,7 +89,7 @@ For convenience, you can keep your normal user logged in on Chrome and your supe
 ### Test coverage
 To run the tests, check your test coverage, and generate an HTML coverage report::
 
-````
+```
 $ docker-compose -f dev.yml run django coverage run manage.py test
 $ docker-compose -f dev.yml run django coverage html
 $ open htmlcov/index.html
