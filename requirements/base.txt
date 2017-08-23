@@ -75,3 +75,5 @@ django-webpack-loader==0.5.0
 
 # Django Model Translations
 django-modeltranslation==0.12.1
+
+channels==1.1.6

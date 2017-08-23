@@ -52,6 +52,7 @@ THIRD_PARTY_APPS = (
     'webpack_loader',
     'django_extensions',
     'modeltranslation',
+    'channels',
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
