@@ -35,10 +35,34 @@ services:
     stdin_open: true
     tty: true
 
+  worker:
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile-dev
+    command: python /app/manage.py runworker --settings config.settings.chat
+    volumes:
+      - .:/app
+    depends_on:
+      - django
+      - redis
+    environment:
+      - POSTGRES_USER=semillas_backend
+      - USE_DOCKER=yes
+    links:
+      - postgres
+      - mailhog
+    stdin_open: true
+    tty: true
+
   mailhog:
     image: mailhog/mailhog
     ports:
       - "8025:8025"
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
 
   webpack:
     build:

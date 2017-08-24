@@ -69,7 +69,7 @@ LOCAL_APPS = (
     'wallet',
     'webapp',
     'rest_framework_word_filter',
-    # Your stuff: custom apps go here
+    'chat',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
