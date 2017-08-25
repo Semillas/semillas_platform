@@ -54,6 +54,27 @@ services:
     stdin_open: true
     tty: true
 
+  daphne:
+    build:
+      context: .
+      dockerfile: ./compose/daphne/Dockerfile-dev
+    command: daphne chat.asgi:channel_layer --port 8888 --bind 0.0.0.0
+    volumes:
+      - .:/app
+    depends_on:
+      - django
+    environment:
+      - POSTGRES_USER=semillas_backend
+      - USE_DOCKER=yes
+    links:
+      - postgres
+      - mailhog
+    ports:
+      - "8888:8888"
+    stdin_open: true
+    tty: true
+
+
   mailhog:
     image: mailhog/mailhog
     ports:
