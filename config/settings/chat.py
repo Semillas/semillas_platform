@@ -28,7 +28,7 @@ CHANNEL_LAYERS = {
         "BACKEND": "asgi_redis.RedisChannelLayer",
         "ROUTING": "chat.routing.channel_routing",
         "CONFIG": {
-            "hosts": [("redis", 6379)],
+            "hosts": ['{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 1)],
         },
     },
 }
