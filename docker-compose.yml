@@ -39,7 +39,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile-dev
-    command: python /app/manage.py runworker --settings config.settings.chat
+    command: python /app/manage.py runworker --settings config.settings.chat_local
     volumes:
       - .:/app
     depends_on:
