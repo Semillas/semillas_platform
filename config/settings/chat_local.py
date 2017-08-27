@@ -42,10 +42,6 @@ CACHES = {
     }
 }
 
-# django-debug-toolbar
-# ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-INSTALLED_APPS += ('debug_toolbar', )
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
 # tricks to have debug toolbar when developing with docker
@@ -59,12 +55,6 @@ if os.environ.get('USE_DOCKER') == 'yes':
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
-
-def custom_show_toolbar(self):
-  return True
-DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
-  }
 
 REST_FRAMEWORK['DEFAULT_PERMISSION_CLASSES'] = 'rest_framework.permissions.AllowAny'
 
