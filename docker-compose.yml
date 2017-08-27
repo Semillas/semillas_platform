@@ -58,7 +58,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/daphne/Dockerfile-dev
-    command: daphne chat.asgi:channel_layer --port 8888 --bind 0.0.0.0
+    command: daphne chat.asgi_local:channel_layer --port 8888 --bind 0.0.0.0
     volumes:
       - .:/app
     depends_on:
