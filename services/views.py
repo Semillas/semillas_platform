@@ -13,6 +13,7 @@ from semillas_backend.users.models import User
 from django.contrib.gis.db.models.functions import Distance
 
 from django.contrib.gis.geos import Point
+from django.contrib.gis.geoip2 import GeoIP2
 
 from .models import Service, Category
 from .serializers import *
@@ -93,18 +94,20 @@ class FeedServiceList(generics.ListAPIView):
         queryset = Service.objects.all()
         #Order all the services by distance to the requester user location
         if 'lat' in self.request.query_params and 'lon' in self.request.query_params:
+            # Brings lat and lon in request parameters
             ref_location = Point(float(self.request.query_params['lon']),float(self.request.query_params['lat']),srid=4326)
             if not self.request.user.is_anonymous():
+                # If user is logged in, save his location
                 self.request.user.location = ref_location
                 self.request.user.save()
-            return queryset.annotate(dist=Distance('author__location', ref_location)).order_by('dist')
         elif not self.request.user.is_anonymous and (self.request.user.location is not None):
+            # User has a location previously saved
             ref_location = self.request.user.location
-            if ref_location:
-                return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
-
         else:
-            return queryset.order_by('-date')
+            # if no location at all
+            geoip = GeoIP2()
+            ref_location = Point(geoip.lon_lat('72.14.207.99'),srid=4326)
+        return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
 
 
 class ServicePhotoUpload(generics.CreateAPIView):
