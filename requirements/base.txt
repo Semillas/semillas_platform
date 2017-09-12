@@ -28,7 +28,7 @@ Pillow==4.2.1
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
-django-allauth==0.32.0
+django-allauth==0.33.0
 django-rest-auth==0.9.1
 
 django-extensions==1.8.1
