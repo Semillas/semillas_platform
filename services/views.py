@@ -107,6 +107,9 @@ class FeedServiceList(generics.ListAPIView):
             # if no location at all
             geoip = GeoIP2()
             ref_location = Point(geoip.lon_lat('72.14.207.99'),srid=4326)
+            if not self.request.user.is_anonymous:
+                self.request.user.location = ref_location
+                self.request.user.save()
         return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
 
 
