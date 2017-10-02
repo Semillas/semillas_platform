@@ -1,6 +1,7 @@
 from test_plus.test import TestCase
 
 from ..views import FeedServiceList
+from ..views import ServiceDetail
 
 from rest_framework.test import force_authenticate
 from rest_framework.test import APIRequestFactory
@@ -287,7 +288,67 @@ class TestFeedServiceList(BaseServiceTestCase):
             len(response.data),
             1
         )
+        self.assertEqual(
+            response.status_code,
+            200
+        )
 
+class TestServiceDetail(BaseServiceTestCase):
+
+    #def tearDown(self):
+    #    Category.objects.all().delete()
+
+    def setUp(self):
+        # call BaseServiceTestCase.setUp()
+        super(TestServiceDetail, self).setUp()
+
+        location_madrid = Point(-3.8196228, 40.4378698) # Madrid 0
+        location_paris = Point(2.3488, 48.8534) # Paris 1
+
+        # Create self.users, Services & Categories for test cases
+        self.user = UserFactory(location=location_madrid)
+        self.owner= UserFactory(location=location_paris)
+        self.service = ServiceFactory(
+            category=Category.objects.first(),
+            author=self.owner,
+            title='1',
+        )
+
+    def test_service_detail_get_with_distance(self):
+        Service.objects.all().update(category=Category.objects.first())
+        serv = Service.objects.first()
+
+        factory = APIRequestFactory()
+        request = factory.get('/api/v1/service/{0}/'.format(serv.uuid))
+        view = ServiceDetail.as_view()
+        force_authenticate(request, user=self.user)
+        response = view(request, uuid=serv.uuid)
+        self.assertEqual(
+            response.data['uuid'],
+            str(serv.uuid)
+        )
+
+        self.assertEqual(
+            response.data['distance'],
+            1043.4
+        )
+
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+
+    def test_service_detail_get_anonymous_user(self):
+        Service.objects.all().update(category=Category.objects.first())
+        serv = Service.objects.first()
+
+        response = self.client.get('/api/v1/service/{0}/'.format(serv.uuid))
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.data['uuid'],
+            str(serv.uuid)
+        )
         self.assertEqual(
             response.status_code,
             200

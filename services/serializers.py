@@ -48,9 +48,14 @@ class ServiceSerializer(serializers.ModelSerializer):
 
     def get_distance(self, obj):
         if hasattr(obj, 'dist') and (obj.dist != None):
-            return round(obj.dist.km, 1)
-        else:
-            return None
+            distance = obj.dist.km
+            return round(distance, 1)
+        elif (not hasattr(obj, 'dist')) \
+                and hasattr(self.context['request'].user, 'location') \
+                and hasattr(obj.author, 'location'):
+            distance = obj.author.location.distance(self.context['request'].user.location) * 100
+            return round(distance,1)
+        return None
 
 class ServicePhotoUploadSerializer(serializers.ModelSerializer):
     """
