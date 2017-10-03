@@ -364,3 +364,5 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'services.translation',
 )
 
+#Uploaded to S3, in root of bucket
+SERVICE_PLACEHOLDER_PHOTO = 'service_placeholder.jpg'

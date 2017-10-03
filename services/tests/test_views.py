@@ -2,11 +2,13 @@ from test_plus.test import TestCase
 
 from ..views import FeedServiceList
 from ..views import ServiceDetail
+from ..serializers import ServiceSerializer
 
 from rest_framework.test import force_authenticate
 from rest_framework.test import APIRequestFactory
 
 from django.contrib.gis.geos import Point
+from django.conf import settings
 
 from semillas_backend.users.factory import UserFactory
 from services.factory import ServiceFactory, CategoryFactory
@@ -354,4 +356,16 @@ class TestServiceDetail(BaseServiceTestCase):
             200
         )
 
+    def test_service_detail_with_no_photos(self):
+        serv= ServiceFactory(
+            category=Category.objects.first(),
+            author=self.owner,
+            title='1',
+        )
+        serv.photos.all().delete()
 
+        photos = ServiceSerializer(serv).data['photos']
+        self.assertEqual(
+            photos[0]['photo'],
+            '/media/' + settings.SERVICE_PLACEHOLDER_PHOTO
+        )
