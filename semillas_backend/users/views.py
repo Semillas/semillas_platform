@@ -8,6 +8,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from rest_framework import generics
 from rest_framework import permissions
+from rest_framework.settings import api_settings
+from rest_framework.response import Response
+from rest_framework import status
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
 
@@ -61,8 +64,14 @@ class UserListView(LoginRequiredMixin, ListView):
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (permissions.IsAdminUser,)
+    permission_classes = (permissions.IsAuthenticated,)
+    word_fields = ('name', 'email', 'phone', 'telegram_id')
 
+    def get(self, request, format=None):
+        if not request.query_params.get(api_settings.SEARCH_PARAM, ''):
+            return Response("User not found", status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return super(UserList, self).get(request, format)
 
 class UserDetail(generics.RetrieveAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
