@@ -25,7 +25,7 @@ class FullWordSearchFilter(BaseFilterBackend):
 
     def filter_queryset(self, request, queryset, view):
         search_fields = getattr(view, 'word_fields', None)
-        
+
         if not search_fields:
             return queryset
 
@@ -36,17 +36,17 @@ class FullWordSearchFilter(BaseFilterBackend):
 
         for ind, field in enumerate(search_fields):
             if ind==0:
-                vector = SearchVector(field)
+                vector = SearchVector(field, config='spanish')
             else:
-                vector = vector + SearchVector(field)
-        
+                vector = vector + SearchVector(field, config='spanish')
+
         for ind, term in enumerate(search_term):
             if ind==0:
-                query = SearchQuery(term)
+                query = SearchQuery(term, config='spanish')
             else:
-                query = query & SearchQuery(term)
+                query = query & SearchQuery(term, config='spanish')
         # [D, C, B, A] --> A = 0.8, B = 0.6
         rank = SearchRank(vector, query, weights=[0.2, 0.4, 0.6, 0.8])
-        
+
         queryset = queryset.annotate(rank=rank).filter(rank__gte=0.1)
         return queryset
