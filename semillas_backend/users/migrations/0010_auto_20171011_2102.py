@@ -12,4 +12,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+            migrations.RunSQL(
+                "CREATE EXTENSION unaccent;"
+                "CREATE TEXT SEARCH CONFIGURATION spanish_unaccent( COPY = spanish );"
+                "ALTER TEXT SEARCH CONFIGURATION spanish_unaccent ALTER MAPPING FOR hword, hword_part, word WITH unaccent, spanish_stem;"
+                )
+
     ]
