@@ -36,15 +36,15 @@ class FullWordSearchFilter(BaseFilterBackend):
 
         for ind, field in enumerate(search_fields):
             if ind==0:
-                vector = SearchVector(field, config='spanish')
+                vector = SearchVector(field, config='spanish_unaccent')
             else:
-                vector = vector + SearchVector(field, config='spanish')
+                vector = vector + SearchVector(field, config='spanish_unaccent')
 
         for ind, term in enumerate(search_term):
             if ind==0:
-                query = SearchQuery(term, config='spanish')
+                query = SearchQuery(term, config='spanish_unaccent')
             else:
-                query = query & SearchQuery(term, config='spanish')
+                query = query & SearchQuery(term, config='spanish_unaccent')
         # [D, C, B, A] --> A = 0.8, B = 0.6
         rank = SearchRank(vector, query, weights=[0.2, 0.4, 0.6, 0.8])
 
