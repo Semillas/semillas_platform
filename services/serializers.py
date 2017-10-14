@@ -61,7 +61,8 @@ class ServiceSerializer(serializers.ModelSerializer):
         elif (not hasattr(obj, 'dist')) \
                 and 'request' in self.context \
                 and hasattr(self.context['request'].user, 'location') \
-                and hasattr(obj.author, 'location'):
+                and hasattr(obj.author, 'location') \
+                and (obj.author.location):
             distance = obj.author.location.distance(self.context['request'].user.location) * 100
             return round(distance,1)
         return None
