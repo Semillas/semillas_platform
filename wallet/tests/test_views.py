@@ -44,8 +44,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
 
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
-            {'user_source': self.user1.id,
-            'user_dest': self.user2.id,
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user2.uuid,
             'value': 5}
         )
 
@@ -73,8 +73,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
     def test_create_transaction_without_balance(self):
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
-            {'user_source': self.user1.id,
-            'user_dest': self.user2.id,
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user2.uuid,
             'value': 25}
         )
 
@@ -91,8 +91,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         # Same wallet on source and destination
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
-            {'user_source': self.user1.id,
-            'user_dest': self.user1.id,
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user1.uuid,
             'value': 1}
         )
 
@@ -109,8 +109,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         # Same wallet on source and destination
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
-            {'user_source': self.user1.id,
-            'user_dest': self.user2.id,
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user2.uuid,
             'value': 1}
         )
 

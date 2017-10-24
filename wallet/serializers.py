@@ -5,8 +5,8 @@ from semillas_backend.users.serializers import UserSerializer
 from .models import Wallet, Transaction
 
 class CreateTransactionSerializer(serializers.Serializer):
-    user_source = serializers.IntegerField()
-    user_dest = serializers.IntegerField()
+    user_source = serializers.UUIDField()
+    user_dest = serializers.UUIDField()
     value = serializers.FloatField()
     class Meta:
         model = Transaction

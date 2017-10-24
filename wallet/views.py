@@ -39,14 +39,13 @@ class CreateTransaction(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request):
-        # import ipdb; ipdb.set_trace()
         if request.data['user_source']!=request.data['user_dest']:
-            if request.user.id != int(request.data['user_source']):
+            if str(request.user.uuid) != request.data['user_source']:
                 return Response("Source wallet needs to be owned by requester", status=status.HTTP_401_UNAUTHORIZED)
             if request.data['value'] == "":
                 return Response("Value can't be empty", status=status.HTTP_400_BAD_REQUEST)
-            wallet_src = Wallet.objects.get(owner__id=int(request.data['user_source']))
-            destination_wallet = Wallet.objects.get(owner__id=int(request.data['user_dest']))
+            wallet_src = Wallet.objects.get(owner__uuid=request.data['user_source'])
+            destination_wallet = Wallet.objects.get(owner__uuid=request.data['user_dest'])
             try:
                 trans = wallet_src.transfer(destination_wallet, float(request.data['value']))
 
