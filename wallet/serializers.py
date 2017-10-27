@@ -17,9 +17,20 @@ class TransactionSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     balance = serializers.SerializerMethodField()
     trans_value = serializers.SerializerMethodField()
+    created_at = serializers.DateTimeField(format='%d %b %Y')
+    user_uuid = serializers.SerializerMethodField()
+
     class Meta:
         model = Transaction
-        fields = ('id', 'trans_value', 'balance', 'user', 'created_at')
+        fields = ('id', 'trans_value', 'balance', 'user', 'created_at', 'user_uuid')
+
+    def get_user_uuid(self, obj):
+        if (
+            'owner_uuid' in self.context and
+            self.context['owner_uuid'] == str(obj.wallet_source.owner.uuid)
+        ):
+            return obj.wallet_dest.owner.uuid
+        return obj.wallet_source.owner.uuid
 
     def get_user(self, obj):
         if (

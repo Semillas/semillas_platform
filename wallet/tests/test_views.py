@@ -70,6 +70,22 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
             self.user2.wallet.balance,
             15
         )
+
+        # Request de wallet and check the transaction is created
+        request = self.factory.get('/api/v1/wallet/owner/')
+        force_authenticate(request, user=self.user1)
+        response = views.UserWalletDetail.as_view()(request, owner_uuid=self.user1.uuid)
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertEqual(
+            response.data['transactions'][0]['user'],
+            self.user1.name
+        )
+
     def test_create_transaction_without_balance(self):
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
