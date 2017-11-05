@@ -366,3 +366,8 @@ MODELTRANSLATION_TRANSLATION_FILES = (
 
 #Uploaded to S3, in root of bucket
 SERVICE_PLACEHOLDER_PHOTO = 'service_placeholder.jpg'
+
+WALLET_MINIMUM_AMOUNT = 0
+WALLET_INITIAL_AMOUNT = 0
+
+
