@@ -366,3 +366,5 @@ MODELTRANSLATION_TRANSLATION_FILES = (
 
 #Uploaded to S3, in root of bucket
 SERVICE_PLACEHOLDER_PHOTO = 'service_placeholder.jpg'
+
+CURRENCY_NAME = 'Semillas' #Plural

@@ -1,5 +1,6 @@
 from django.test import RequestFactory
 from django.test import Client
+from django.core import mail
 
 from test_plus.test import TestCase
 
@@ -69,6 +70,16 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         self.assertEqual(
             self.user2.wallet.balance,
             15
+        )
+
+        self.assertEqual(
+            mail.outbox[0].recipients()[0],
+            self.user2.email
+        )
+
+        self.assertEqual(
+            mail.outbox[1].recipients()[0],
+            self.user1.email
         )
 
         # Request de wallet and check the transaction is created

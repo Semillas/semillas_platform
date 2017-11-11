@@ -9,6 +9,9 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from django.dispatch import receiver
+from django.core.mail import send_mail
+from django.template.loader import get_template
+
 from allauth.account.signals import user_logged_in
 
 from .errors import InsufficientBalance
@@ -78,6 +81,37 @@ class Wallet(models.Model):
         self.balance -= value
         self.save()
 
+    def notify_transaction(self, value, destination_wallet):
+        """ TODO: This should be taken off-line
+        """
+
+        # Send Transaction Email to recipient
+        send_mail(
+            'You just received a transaction',
+             "You just received {amount} {currency} from {sender}".format(
+                amount=str(value),
+                currency=settings.CURRENCY_NAME,
+                sender=self.owner.name,
+
+                ),
+            'noresponse@semillasocial.org',
+            [destination_wallet.owner.email],
+            fail_silently=True
+        )
+
+        # Send Transaction Email to sender
+        send_mail(
+            'You just send a transaction',
+            "You just sent {amount} {currency} to {recipient}".format(
+                amount=str(value),
+                currency=settings.CURRENCY_NAME,
+                recipient=destination_wallet.owner.name,
+                ),
+            'noresponse@semillasocial.org',
+            [self.owner.email],
+            fail_silently=True
+        )
+
     def transfer(self, destination_wallet, value):
         """Transfers an value to another wallet.
         Uses `deposit` and `withdraw` internally.
@@ -95,6 +129,10 @@ class Wallet(models.Model):
         self.__withdraw(value, transaction)
         destination_wallet.__deposit(value, transaction)
         transaction.save()
+
+        # If no exception raised we must have reached here.
+        self.notify_transaction(value, destination_wallet)
+
         return transaction
 
 class Transaction(models.Model):
