@@ -143,12 +143,9 @@
               {% endif %} -->
 
           </nav>
-          <div class="page-head--content">
-            <p class="header-text">{% trans "App móvil de compraventa de bienes y servicios con monedas virtuales." %}</p>
-          </div>
-          <a class="store-buttons" href='https://play.google.com/store/apps/details?id=com.semillasreactnative&utm_source=Semillas Website&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-            <img class="store-buttons-img" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-          </a>
+
+          {% block header-text %}
+          {% endblock header-text %}
 
         </div>
       </header>
