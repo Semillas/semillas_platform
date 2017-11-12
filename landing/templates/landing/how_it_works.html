@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load i18n %}
+
+
+	<div class="container">
+
+		<h4 class="c-heading-sub" style="font-size:32px;">{% trans "Cómo Funciona" %}</h4>
+    <p style="font-size:19px;">{% trans "Tú empiezas con una cuenta de 0 semillas, pero ofreciendo algo (un servicio o un producto). Cuando alguien del lo quiere, te paga con semillas, de forma que tú sumas semillas en tu cuenta y ella se las resta de la suya. Por ejemplo, tú ofreces naranjas a 3 semillas el kg. A Julia, que le encantan las naranjas, le interesa la oferta, y quiere 1 kg. Tú le das las naranjas y te sumas 3 semillas. Julia se restará 3 semillas. Y esta es la forma de conseguir semillas!!"%}</p>
+
+	</div>
+	<div class="container">
+    <h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Entonces, ¿puedo tener negativa la cuenta de semillas?" %}</h3>
+    <p style="font-size:19px;">
+      {% blocktrans with limit=-20 %}
+      Claro que puedes. Hay un límite, actualmente es {{ limit }}, del que ya no podrás pasar. Así que tendrás que ofrecer algo que interese a la gente para poder equilibrar tu cuenta. No te preocupes, seguro que surge algo que tú puedes hacer por ell@s, y poder sumar semillas. La semilla está pensada para que las usuarias vayamos pasando constantemente de saldos negativos a positivos y viceversa. Un saldo positivo indica que hemos aportado a la red más de lo que hemos consumido, mientras que un saldo negativo indica que hemos consumido de la red más de lo que hemos aportado.
+      {% endblocktrans %}
+    </p>
+	</div>
+
+	<div class="container">
+    <h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Redistribución Mensual" %}</h3>
+    <p style="font-size:19px;">
+      {% blocktrans %}
+      Mensualmente se aplicará una redistribución de la Semilla del 5%. A quienes tengan saldo positivo, se les restará un 5% de la cantidad, mientras que si tu saldo es negativo, se tu sumará un 5% de la cantidad negativa que tengas. Con el paso del tiempo todas las cuentas convergen a 0.
+      {% endblocktrans %}
+    </p>
+	</div>
+
+
+	<div class="container">
+    <h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Valores de Referencia" %}</h3>
+    <p style="font-size:19px;">
+      {% blocktrans %}
+      La referencia decidida para los servicios es de 10 Semillas/hora, siempre de manera orientativa. No es que vaya a haber nadie controlando ni que esto no pueda variar algo en cada caso. No obstante, aplicando todas el mismo índice podemos asegurar que el sistema funciona de manera equitativa.
+      {% endblocktrans %}
+    </p>
+	</div>
+
+
+	<div class="container">
+    <h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Precios en Semillas y en Euros" %}</h3>
+    <p style="font-size:19px;">
+      {% blocktrans %}
+        Pueden existir artículos donde puede ser preciso pagar un porcentaje en Semillas y un porcentaje en Euros. Esto es debido a que el prosumidor tiene unos gastos fijos en Euros para poder ofrecer dichos bienes y servicios.
+      {% endblocktrans %}
+    </p>
+	</div>
+
+	<div class="container">
+    <h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Únete a nosotros y ayúdanos a decidir" %}</h3>
+    <p style="font-size:19px;">
+      {% blocktrans %}
+      Somos un equipo deslocalizado. Queremos ser más abiertos y asamblearios, estamos en proceso. Únete a nosotros en este camino. Escribe a info.semillasocial@gmail.com.
+      {% endblocktrans %}
+    </p>
+	</div>
+{% endblock %}
