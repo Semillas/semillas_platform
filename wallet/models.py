@@ -15,7 +15,7 @@ from django.template.loader import get_template
 from allauth.account.signals import user_logged_in
 
 from .errors import InsufficientBalance
-
+from django.conf import settings
 
 
 @python_2_unicode_compatible
@@ -72,7 +72,7 @@ class Wallet(models.Model):
         that it automatically rolls-back during a
         transaction lifecycle.
         """
-        if value > self.balance:
+        if value > (self.balance + settings.WALLET_MINIMUM_AMOUNT):
             raise InsufficientBalance('This wallet has insufficient balance.')
         # Save source values on transaction
         transaction.wallet_source=self
@@ -199,5 +199,5 @@ def login_logger(request, user, **kwargs):
     if not hasattr(user, 'wallet'):
         wallet = Wallet.objects.create(
             owner=user,
-            balance=0
+            balance=settings.WALLET_INITIAL_AMOUNT
         )
