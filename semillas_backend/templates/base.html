@@ -83,7 +83,7 @@
   <body>
 
     <!-- Header -->
-      <header class="page-head--masthead">
+    <header class="page-head--masthead {% if request.resolver_match.view_name != "home" %}header-small{% endif %}">
         <div class="wrapper">
           <!-- <nav id="nav" class="site-nav  clearfix"> -->
           <nav class="navbar navbar-default navbar-static-top">
