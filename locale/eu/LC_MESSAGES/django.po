@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-12 22:51+0000\n"
+"POT-Creation-Date: 2017-11-16 22:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -812,7 +812,7 @@ msgstr ""
 msgid "Síguenos"
 msgstr ""
 
-#: semillas_backend/templates/base.html:213
+#: semillas_backend/templates/base.html:214
 msgid "Subir"
 msgstr ""
 
@@ -835,4 +835,42 @@ msgstr ""
 
 #: semillas_backend/users/validators.py:30
 msgid "Faircoin format not correct"
+msgstr ""
+
+#: wallet/models.py:91
+msgid "You just received a transaction"
+msgstr ""
+
+#: wallet/models.py:92
+#, python-brace-format
+msgid "You just received {amount} {currency} from {sender}"
+msgstr ""
+
+#: wallet/models.py:104
+msgid "You just send a transaction"
+msgstr ""
+
+#: wallet/models.py:105
+#, python-brace-format
+msgid "You just sent {amount} {currency} to {recipient}"
+msgstr ""
+
+#: wallet/views.py:48
+msgid "Value can't be empty"
+msgstr ""
+
+#: wallet/views.py:55
+msgid "Transaction created correctly!"
+msgstr ""
+
+#: wallet/views.py:56
+msgid "The transaction was not created correctly!"
+msgstr ""
+
+#: wallet/views.py:58
+msgid "Not enough balance to make that transaction"
+msgstr ""
+
+#: wallet/views.py:59
+msgid "Source and destination wallets can not be the same!"
 msgstr ""

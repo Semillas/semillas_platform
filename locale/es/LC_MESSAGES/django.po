@@ -2,21 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-12 22:51+0000\n"
+"POT-Creation-Date: 2017-11-16 22:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ismael <ismael.deesteban@gmail.com>, 2016\n"
-"Language-Team: Spanish (https://www.transifex.com/semilla-social/teams/65146/"
-"es/)\n"
-"Language: es\n"
+"Language-Team: Spanish (https://www.transifex.com/semilla-social/teams/65146/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: config/settings/common.py:308
@@ -96,9 +95,9 @@ msgstr ""
 #: landing/templates/landing/how_it_works.html:10
 msgid ""
 "Tú empiezas con una cuenta de 0 semillas, pero ofreciendo algo (un servicio "
-"o un producto). Cuando alguien lo quiere, te paga con semillas, de forma que "
-"tú sumas semillas en tu cuenta y ella se las resta de la suya. Por ejemplo, "
-"tú ofreces naranjas a 3 semillas el kg. A Julia, que le encantan las "
+"o un producto). Cuando alguien lo quiere, te paga con semillas, de forma que"
+" tú sumas semillas en tu cuenta y ella se las resta de la suya. Por ejemplo,"
+" tú ofreces naranjas a 3 semillas el kg. A Julia, que le encantan las "
 "naranjas, le interesa la oferta, y quiere 1 kg. Tú le das las naranjas y te "
 "sumas 3 semillas. Julia se restará 3 semillas. Y esta es la forma de "
 "conseguir semillas!!"
@@ -112,14 +111,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"      Claro que puedes. Hay un límite, actualmente es %(limit)s, del que ya "
-"no podrás pasar. Así que tendrás que ofrecer algo que interese a la gente "
-"para poder equilibrar tu cuenta. No te preocupes, seguro que surge algo que "
-"tú puedes hacer por ell@s, y poder sumar semillas. La semilla está pensada "
-"para que las usuarias vayamos pasando constantemente de saldos negativos a "
-"positivos y viceversa. Un saldo positivo indica que hemos aportado a la red "
-"más de lo que hemos consumido, mientras que un saldo negativo indica que "
-"hemos consumido de la red más de lo que hemos aportado.\n"
+"      Claro que puedes. Hay un límite, actualmente es %(limit)s, del que ya no podrás pasar. Así que tendrás que ofrecer algo que interese a la gente para poder equilibrar tu cuenta. No te preocupes, seguro que surge algo que tú puedes hacer por ell@s, y poder sumar semillas. La semilla está pensada para que las usuarias vayamos pasando constantemente de saldos negativos a positivos y viceversa. Un saldo positivo indica que hemos aportado a la red más de lo que hemos consumido, mientras que un saldo negativo indica que hemos consumido de la red más de lo que hemos aportado.\n"
 "      "
 msgstr ""
 
@@ -131,11 +123,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"      Mensualmente se aplicará una redistribución de la Semilla del 5%%. A "
-"quienes tengan saldo positivo, se les restará un 5%% de la cantidad, "
-"mientras que si tu saldo es negativo, se te sumará un 5%% de la cantidad "
-"negativa que tengas. Con el paso del tiempo todas las cuentas convergen a "
-"0.\n"
+"      Mensualmente se aplicará una redistribución de la Semilla del 5%%. A quienes tengan saldo positivo, se les restará un 5%% de la cantidad, mientras que si tu saldo es negativo, se te sumará un 5%% de la cantidad negativa que tengas. Con el paso del tiempo todas las cuentas convergen a 0.\n"
 "      "
 msgstr ""
 
@@ -146,10 +134,7 @@ msgstr ""
 #: landing/templates/landing/how_it_works.html:35
 msgid ""
 "\n"
-"      La referencia decidida para los servicios es de 10 Semillas/hora, "
-"siempre de manera orientativa. No es que vaya a haber nadie controlando ni "
-"que esto no pueda variar algo en cada caso. No obstante, aplicando todas el "
-"mismo índice podemos asegurar que el sistema funciona de manera equitativa.\n"
+"      La referencia decidida para los servicios es de 10 Semillas/hora, siempre de manera orientativa. No es que vaya a haber nadie controlando ni que esto no pueda variar algo en cada caso. No obstante, aplicando todas el mismo índice podemos asegurar que el sistema funciona de manera equitativa.\n"
 "      "
 msgstr ""
 
@@ -160,10 +145,7 @@ msgstr ""
 #: landing/templates/landing/how_it_works.html:45
 msgid ""
 "\n"
-"        Pueden existir artículos donde puede ser preciso pagar un porcentaje "
-"en Semillas y un porcentaje en Euros. Esto es debido a que el prosumidor "
-"tiene unos gastos fijos en Euros para poder ofrecer dichos bienes y "
-"servicios.\n"
+"        Pueden existir artículos donde puede ser preciso pagar un porcentaje en Semillas y un porcentaje en Euros. Esto es debido a que el prosumidor tiene unos gastos fijos en Euros para poder ofrecer dichos bienes y servicios.\n"
 "      "
 msgstr ""
 
@@ -174,9 +156,7 @@ msgstr ""
 #: landing/templates/landing/how_it_works.html:54
 msgid ""
 "\n"
-"      Somos un equipo deslocalizado. Queremos ser más abiertos y "
-"asamblearios, estamos en proceso. Únete a nosotros en este camino. Escribe a "
-"info.semillasocial@gmail.com.\n"
+"      Somos un equipo deslocalizado. Queremos ser más abiertos y asamblearios, estamos en proceso. Únete a nosotros en este camino. Escribe a info.semillasocial@gmail.com.\n"
 "      "
 msgstr ""
 
@@ -186,8 +166,8 @@ msgstr ""
 
 #: landing/templates/landing/porque.html:8
 msgid ""
-" Semillas es una tecnología abierta y transparente al servicio de lo humano. "
-"Es una herramienta de cambio social por su potencia para construir redes "
+" Semillas es una tecnología abierta y transparente al servicio de lo humano."
+" Es una herramienta de cambio social por su potencia para construir redes "
 "entre iguales por donde circula, se distribuye y se intercambia la "
 "abundancia de recursos, la capacidad creativa, artística, manual e "
 "intelectual de todos sus miembros."
@@ -207,20 +187,14 @@ msgstr ""
 #: landing/templates/landing/porque.html:19
 msgid ""
 "\n"
-"                Porque las personas que la hemos creado queremos visibilizar "
-"la economía de cuidados y empoderar a cada individuo en sus habilidades. A "
-"través de las categorías para crear servicios en la app queremos inferir un "
-"uso social, solidario, sostenible y ecológico.\n"
+"                Porque las personas que la hemos creado queremos visibilizar la economía de cuidados y empoderar a cada individuo en sus habilidades. A través de las categorías para crear servicios en la app queremos inferir un uso social, solidario, sostenible y ecológico.\n"
 "                "
 msgstr ""
 
 #: landing/templates/landing/porque.html:25
 msgid ""
 "\n"
-"                También queremos permitir la creación de moneda para pagar "
-"acciones sociales que beneficien al común. Buscamos organos o asociaciones "
-"que quieran realizar trabajos para el beneficio de todos y retribuirlo en "
-"Semillas (como por ejemplo arreglar su centro social).\n"
+"                También queremos permitir la creación de moneda para pagar acciones sociales que beneficien al común. Buscamos organos o asociaciones que quieran realizar trabajos para el beneficio de todos y retribuirlo en Semillas (como por ejemplo arreglar su centro social).\n"
 "                "
 msgstr ""
 
@@ -270,8 +244,8 @@ msgstr ""
 
 #: landing/templates/landing/porque.html:46
 msgid ""
-" Las Semillas cobran existencia en el mismo momento en el que dos personas o "
-"colectivos aceptan libremente un intercambio: a una se le suma el valor "
+" Las Semillas cobran existencia en el mismo momento en el que dos personas o"
+" colectivos aceptan libremente un intercambio: a una se le suma el valor "
 "convenido en semillas y a otra se le resta esa misma cantidad."
 msgstr ""
 
@@ -291,9 +265,9 @@ msgstr ""
 #: landing/templates/landing/porque.html:53
 msgid ""
 " A pesar de que hay diferentes grupos y experimentos con iniciativas "
-"similares, es muy complicado empezar a formar parte de ellas. Hay que enviar "
-"correos, ir a colectivos el día de asamblea. En Semillas darse de alta va a "
-"ser cuestión de segundos. "
+"similares, es muy complicado empezar a formar parte de ellas. Hay que enviar"
+" correos, ir a colectivos el día de asamblea. En Semillas darse de alta va a"
+" ser cuestión de segundos. "
 msgstr ""
 
 #: landing/templates/landing/porque.html:55
@@ -325,8 +299,8 @@ msgstr ""
 
 #: landing/templates/landing/porque.html:70
 msgid ""
-" Semillas Social promociona el bien común. Retribuyendo en semillas trabajos "
-"a la comunidad o acciones cívicas.Para ello se apoya en los “Bancos de "
+" Semillas Social promociona el bien común. Retribuyendo en semillas trabajos"
+" a la comunidad o acciones cívicas.Para ello se apoya en los “Bancos de "
 "Semillas” "
 msgstr ""
 
@@ -347,8 +321,8 @@ msgstr ""
 
 #: landing/templates/landing/porque.html:76
 msgid ""
-" El siguiente ejemplo muestra ayuntamiento coordinando un banco de semillas. "
-"El ayuntamiento cierra el ciclo monetario aceptando La Semilla en el "
+" El siguiente ejemplo muestra ayuntamiento coordinando un banco de semillas."
+" El ayuntamiento cierra el ciclo monetario aceptando La Semilla en el "
 "alquiler de polideportivos, pago de multas, etc. "
 msgstr ""
 
@@ -365,10 +339,10 @@ msgstr ""
 
 #: landing/templates/landing/who_we_are.html:11
 msgid ""
-"Nos organizamos a través del modelo cooperativo y como comunidad de software "
-"libre para dar soporte a las personas, a los grupos, empresas del sector "
-"público y/o privado que quieran como nosotros fomentar valores de igualdad y "
-"solidaridad en una red de intercambios recíprocos. "
+"Nos organizamos a través del modelo cooperativo y como comunidad de software"
+" libre para dar soporte a las personas, a los grupos, empresas del sector "
+"público y/o privado que quieran como nosotros fomentar valores de igualdad y"
+" solidaridad en una red de intercambios recíprocos. "
 msgstr ""
 
 #: landing/templates/landing/who_we_are.html:12
@@ -390,8 +364,8 @@ msgstr ""
 
 #: landing/templates/landing/who_we_are.html:20
 msgid ""
-"Porque hacemos esto para aprender, usar las últimas tecnologías, reciclarnos "
-"y disfrutar."
+"Porque hacemos esto para aprender, usar las últimas tecnologías, reciclarnos"
+" y disfrutar."
 msgstr ""
 
 #: landing/templates/landing/who_we_are.html:21
@@ -480,7 +454,8 @@ msgid "Madrid"
 msgstr ""
 
 #: landing/templates/landing/who_we_are.html:109
-msgid "Economía Social y Solidaria, Economía Colaborativa y Economía Feminista"
+msgid ""
+"Economía Social y Solidaria, Economía Colaborativa y Economía Feminista"
 msgstr ""
 
 #: landing/templates/landing/who_we_are.html:110
@@ -497,8 +472,8 @@ msgstr ""
 
 #: landing/templates/landing/who_we_are.html:135
 msgid ""
-"El equipo de Semillas está deslocalizado, sin embargo gran parte de nosotros "
-"estamos en Madrid. En este "
+"El equipo de Semillas está deslocalizado, sin embargo gran parte de nosotros"
+" estamos en Madrid. En este "
 msgstr ""
 
 #: landing/templates/landing/who_we_are.html:135
@@ -512,15 +487,11 @@ msgstr ""
 #: landing/templates/landing/who_we_are.html:140
 msgid ""
 "\n"
-"       Pensamos que otra forma de economía es posible. Pensamos que toda "
-"persona\n"
-"       puede ofrecer algo y que eso debería ser suficiente para cubrir los "
-"mínimos de una vida digna.\n"
-"       Diseñamos esta plataforma para ofrecer un medio, un soporte para un "
-"fin.\n"
+"       Pensamos que otra forma de economía es posible. Pensamos que toda persona\n"
+"       puede ofrecer algo y que eso debería ser suficiente para cubrir los mínimos de una vida digna.\n"
+"       Diseñamos esta plataforma para ofrecer un medio, un soporte para un fin.\n"
 "       Somos un grupo de hacktivistas, no hacemos esto por dinero.\n"
-"       Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, "
-"diseño,\n"
+"       Buscamos todo tipo de ayuda. Ahora especialmente Android, iOS, diseño,\n"
 "       frontend...\n"
 "    "
 msgstr ""
@@ -577,7 +548,8 @@ msgstr "Atención:"
 #: semillas_backend/templates/account/email.html:44
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
-"an e-mail address so you can receive notifications, reset your password, etc."
+"an e-mail address so you can receive notifications, reset your password, "
+"etc."
 msgstr ""
 "Actualmente no tienes ninguna cuenta de correo activa. Deberias añadir una "
 "cuenta para que puedas recibir notificaciones, resetear tu contraseña, etc."
@@ -613,8 +585,8 @@ msgstr "Confirmar"
 #: semillas_backend/templates/account/email_confirm.html:27
 #, python-format
 msgid ""
-"This e-mail confirmation link expired or is invalid. Please <a href="
-"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+"This e-mail confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
 
 #: semillas_backend/templates/account/login.html:7
@@ -628,8 +600,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Please sign in with one\n"
-"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
-"up</a>\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign up</a>\n"
 "for a %(site_name)s account and sign in below:"
 msgstr ""
 
@@ -677,8 +648,8 @@ msgstr ""
 
 #: semillas_backend/templates/account/password_reset.html:16
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll send you "
-"an e-mail allowing you to reset it."
+"Forgotten your password? Enter your e-mail address below, and we'll send you"
+" an e-mail allowing you to reset it."
 msgstr ""
 
 #: semillas_backend/templates/account/password_reset.html:21
@@ -703,8 +674,8 @@ msgstr ""
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
-"a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
+"reset</a>."
 msgstr ""
 
 #: semillas_backend/templates/account/password_reset_from_key.html:18
@@ -785,8 +756,8 @@ msgstr ""
 #: semillas_backend/templates/account/verified_email_required.html:20
 #, python-format
 msgid ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
-"mail address</a>."
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
+"e-mail address</a>."
 msgstr ""
 "<strong>Nota:</strong> todavía puedes <a href=\"%(email_url)s\">cambiar tu "
 "dirección de correo</a>."
@@ -817,7 +788,7 @@ msgstr ""
 msgid "Síguenos"
 msgstr ""
 
-#: semillas_backend/templates/base.html:213
+#: semillas_backend/templates/base.html:214
 msgid "Subir"
 msgstr ""
 
@@ -841,3 +812,41 @@ msgstr ""
 #: semillas_backend/users/validators.py:30
 msgid "Faircoin format not correct"
 msgstr ""
+
+#: wallet/models.py:91
+msgid "You just received a transaction"
+msgstr "Acabas de recibir una transacción"
+
+#: wallet/models.py:92
+#, python-brace-format
+msgid "You just received {amount} {currency} from {sender}"
+msgstr "Acabas de recibir {amount} {currency} de {sender}"
+
+#: wallet/models.py:104
+msgid "You just send a transaction"
+msgstr "Acabas de realizar una transacción"
+
+#: wallet/models.py:105
+#, python-brace-format
+msgid "You just sent {amount} {currency} to {recipient}"
+msgstr "Acabas de enviar {amount} {currency} a {recipient}"
+
+#: wallet/views.py:48
+msgid "Value can't be empty"
+msgstr "La cantidad no puede estar vacía"
+
+#: wallet/views.py:55
+msgid "Transaction created correctly!"
+msgstr "Transacción creada correctamente"
+
+#: wallet/views.py:56
+msgid "The transaction was not created correctly!"
+msgstr "La transacción no se pudo realizar"
+
+#: wallet/views.py:58
+msgid "Not enough balance to make that transaction"
+msgstr "No hay suficiente saldo para realizar una transacción"
+
+#: wallet/views.py:59
+msgid "Source and destination wallets can not be the same!"
+msgstr "El ordenante y destinatario deben no ser el mismo usuario"

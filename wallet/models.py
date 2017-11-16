@@ -88,12 +88,11 @@ class Wallet(models.Model):
 
         # Send Transaction Email to recipient
         send_mail(
-            'You just received a transaction',
-             "You just received {amount} {currency} from {sender}".format(
+            _('You just received a transaction'),
+             _("You just received {amount} {currency} from {sender}").format(
                 amount=str(value),
                 currency=settings.CURRENCY_NAME,
                 sender=self.owner.name,
-
                 ),
             'noresponse@semillasocial.org',
             [destination_wallet.owner.email],
@@ -102,8 +101,8 @@ class Wallet(models.Model):
 
         # Send Transaction Email to sender
         send_mail(
-            'You just send a transaction',
-            "You just sent {amount} {currency} to {recipient}".format(
+            _('You just send a transaction'),
+            _("You just sent {amount} {currency} to {recipient}").format(
                 amount=str(value),
                 currency=settings.CURRENCY_NAME,
                 recipient=destination_wallet.owner.name,
