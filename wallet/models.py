@@ -72,8 +72,9 @@ class Wallet(models.Model):
         that it automatically rolls-back during a
         transaction lifecycle.
         """
-        if value > (self.balance + settings.WALLET_MINIMUM_AMOUNT):
-            raise InsufficientBalance('This wallet has insufficient balance.')
+        if (self.balance - value) < settings.WALLET_MINIMUM_AMOUNT:
+            raise InsufficientBalance('The balance cannot go below {minimum}.'.format(
+                minimum=settings.WALLET_MINIMUM_AMOUNT))
         # Save source values on transaction
         transaction.wallet_source=self
         transaction.balance_source = self.balance - value
