@@ -7,7 +7,7 @@ from .models import Wallet, Transaction
 class CreateTransactionSerializer(serializers.Serializer):
     user_source = serializers.UUIDField()
     user_dest = serializers.UUIDField()
-    value = serializers.FloatField()
+    value = serializers.DecimalField(max_digits=6, decimal_places=2)
     class Meta:
         model = Transaction
         fields = ('user_source', 'user_dest', 'value')

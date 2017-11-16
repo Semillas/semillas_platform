@@ -32,7 +32,9 @@ class Wallet(models.Model):
         related_name='wallet',
     )
 
-    balance = models.FloatField(
+    balance = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
         help_text="Available seeds in wallet",
         null=False,
         blank=False,
@@ -155,7 +157,9 @@ class Transaction(models.Model):
     )
 
     # The value of this transaction.
-    value = models.FloatField(
+    value = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
         help_text="Value of the tansaction",
         null=False,
         blank=False,
@@ -164,7 +168,9 @@ class Transaction(models.Model):
     """The balance of the source wallet after the
     transaction. Useful for displaying transaction
     history."""
-    balance_source = models.FloatField(
+    balance_source = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=True,
@@ -174,7 +180,9 @@ class Transaction(models.Model):
     """The balance of the destination wallet after the
     transaction. Useful for displaying transaction
     history."""
-    balance_dest = models.FloatField(
+    balance_dest = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=False,

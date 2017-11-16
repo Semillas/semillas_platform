@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
+from decimal import Decimal
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -49,7 +50,7 @@ class CreateTransaction(APIView):
             wallet_src = Wallet.objects.get(owner__uuid=request.data['user_source'])
             destination_wallet = Wallet.objects.get(owner__uuid=request.data['user_dest'])
             try:
-                trans = wallet_src.transfer(destination_wallet, float(request.data['value']))
+                trans = wallet_src.transfer(destination_wallet, Decimal(request.data['value']))
 
                 if trans:
                     return Response(_("Transaction created correctly!"), status=status.HTTP_201_CREATED)

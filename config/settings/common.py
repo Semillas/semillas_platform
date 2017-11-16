@@ -12,6 +12,8 @@ from __future__ import absolute_import, unicode_literals
 
 import environ
 import os
+from decimal import Decimal
+
 
 ROOT_DIR = environ.Path(__file__) - 3  # (semillas_backend/config/settings/common.py - 3 = semillas_backend/)
 APPS_DIR = ROOT_DIR.path('semillas_backend')
@@ -368,5 +370,5 @@ MODELTRANSLATION_TRANSLATION_FILES = (
 SERVICE_PLACEHOLDER_PHOTO = 'service_placeholder.jpg'
 
 CURRENCY_NAME = 'Semillas' #Plural
-WALLET_MINIMUM_AMOUNT = -20
-WALLET_INITIAL_AMOUNT = 0
+WALLET_MINIMUM_AMOUNT = Decimal(-20)
+WALLET_INITIAL_AMOUNT = Decimal(0)
