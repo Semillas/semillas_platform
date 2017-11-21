@@ -41,7 +41,6 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     url(r'^landing/', include('landing.urls', namespace='landing')),
     url(r'^docs/', include('rest_framework_docs.urls')),
-    url(r'^webapp/', include('webapp.urls', namespace='webapp')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

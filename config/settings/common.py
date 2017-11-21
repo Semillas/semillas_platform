@@ -68,7 +68,6 @@ LOCAL_APPS = (
     'landing',
     'services',
     'wallet',
-    'webapp',
     'rest_framework_word_filter',
     'chat',
 )
