@@ -218,6 +218,5 @@ RAVEN_CONFIG = {
 ADMIN_URL = env('DJANGO_ADMIN_URL')
 
 GEOIP_PATH = 'geoip_db/'
-GDAL_LIBRARY_PATH = env('GDAL_LIBRARY_PATH')
 
 # Your production stuff: Below this line define 3rd party library settings
