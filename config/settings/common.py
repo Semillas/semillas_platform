@@ -51,7 +51,6 @@ THIRD_PARTY_APPS = (
     'rest_framework.authtoken',
     'phonenumber_field', # To phone field
     # 'django_filters',
-    'webpack_loader',
     'django_extensions',
     'modeltranslation',
     'channels',
@@ -215,14 +214,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
-
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
-        'STATS_FILE': os.path.join(os.path.dirname(APPS_DIR), 'webpack-stats.json'),
-    }
-}
 
 
 # MEDIA CONFIGURATION
