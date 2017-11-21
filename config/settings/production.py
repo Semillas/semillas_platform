@@ -217,7 +217,7 @@ RAVEN_CONFIG = {
 # Custom Admin URL, use {% url 'admin:index' %}
 ADMIN_URL = env('DJANGO_ADMIN_URL')
 
-GEOIP_PATH = 'geoip_db/'
-GDAL_LIBRARY_PATH = 'geoip_db/'
+GEOIP_PATH = 'vendor/'
+GDAL_LIBRARY_PATH = 'vendor/'
 
 # Your production stuff: Below this line define 3rd party library settings
