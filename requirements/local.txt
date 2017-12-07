@@ -4,7 +4,7 @@ django-coverage-plugin==1.5.0
 coverage==4.4.2
 
 django-debug-toolbar==1.8
-Werkzeug==0.12.2
+Werkzeug==0.13
 django-test-plus==1.0.18
 
 # improved REPL
