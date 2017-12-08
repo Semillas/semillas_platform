@@ -9,10 +9,13 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from django.dispatch import receiver
+from django.core.mail import send_mail
+from django.template.loader import get_template
+
 from allauth.account.signals import user_logged_in
 
 from .errors import InsufficientBalance
-
+from django.conf import settings
 
 
 @python_2_unicode_compatible
@@ -29,7 +32,9 @@ class Wallet(models.Model):
         related_name='wallet',
     )
 
-    balance = models.FloatField(
+    balance = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
         help_text="Available seeds in wallet",
         null=False,
         blank=False,
@@ -69,14 +74,45 @@ class Wallet(models.Model):
         that it automatically rolls-back during a
         transaction lifecycle.
         """
-        if value > self.balance:
-            raise InsufficientBalance('This wallet has insufficient balance.')
+        if (self.balance - value) < settings.WALLET_MINIMUM_AMOUNT:
+            raise InsufficientBalance('The balance cannot go below {minimum}.'.format(
+                minimum=settings.WALLET_MINIMUM_AMOUNT))
         # Save source values on transaction
         transaction.wallet_source=self
         transaction.balance_source = self.balance - value
         # Save values on wallet
         self.balance -= value
         self.save()
+
+    def notify_transaction(self, value, destination_wallet):
+        """ TODO: This should be taken off-line
+        """
+
+        # Send Transaction Email to recipient
+        send_mail(
+            _('You just received a transaction'),
+             _("You just received {amount} {currency} from {sender}").format(
+                amount=str(value),
+                currency=settings.CURRENCY_NAME,
+                sender=self.owner.name,
+                ),
+            'noresponse@semillasocial.org',
+            [destination_wallet.owner.email],
+            fail_silently=True
+        )
+
+        # Send Transaction Email to sender
+        send_mail(
+            _('You just send a transaction'),
+            _("You just sent {amount} {currency} to {recipient}").format(
+                amount=str(value),
+                currency=settings.CURRENCY_NAME,
+                recipient=destination_wallet.owner.name,
+                ),
+            'noresponse@semillasocial.org',
+            [self.owner.email],
+            fail_silently=True
+        )
 
     def transfer(self, destination_wallet, value):
         """Transfers an value to another wallet.
@@ -95,6 +131,10 @@ class Wallet(models.Model):
         self.__withdraw(value, transaction)
         destination_wallet.__deposit(value, transaction)
         transaction.save()
+
+        # If no exception raised we must have reached here.
+        self.notify_transaction(value, destination_wallet)
+
         return transaction
 
 class Transaction(models.Model):
@@ -117,7 +157,9 @@ class Transaction(models.Model):
     )
 
     # The value of this transaction.
-    value = models.FloatField(
+    value = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
         help_text="Value of the tansaction",
         null=False,
         blank=False,
@@ -126,7 +168,9 @@ class Transaction(models.Model):
     """The balance of the source wallet after the
     transaction. Useful for displaying transaction
     history."""
-    balance_source = models.FloatField(
+    balance_source = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=True,
@@ -136,7 +180,9 @@ class Transaction(models.Model):
     """The balance of the destination wallet after the
     transaction. Useful for displaying transaction
     history."""
-    balance_dest = models.FloatField(
+    balance_dest = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
         help_text="Value of the wallet at the time of this transaction",
         null=False,
         blank=False,
@@ -161,5 +207,5 @@ def login_logger(request, user, **kwargs):
     if not hasattr(user, 'wallet'):
         wallet = Wallet.objects.create(
             owner=user,
-            balance=0
+            balance=settings.WALLET_INITIAL_AMOUNT
         )

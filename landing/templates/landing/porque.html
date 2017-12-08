@@ -3,21 +3,30 @@
 {% load staticfiles %}
 {% load i18n %}
 
-	<div class="container">	
-
-		<h4 class="c-heading-sub" style="font-size:32px;">{% trans "Visión" %}</h4>
-	        <p style="font-size:19px;">{% trans " Semilla Social es una cooperativa que busca promover el capital colectivo de las comunidades a través del intercambio ético de bienes y servicios. "%}</p>
-	</div>
 	<div class="container">
 		<h4 class="c-heading-sub" style="font-size:32px;">{% trans "Misión" %}</h4>
-	    <p style="font-size:19px;">{% trans " Semillas es una tecnología abierta y transparente  al servicio de lo humano y la naturaleza. Es una herramienta de cambio social por su potencia para construir redes entre iguales por donde circula, se distribuye y se intercambia la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros." %}</p>
+	    <p style="font-size:19px;">{% trans " Semillas es una tecnología abierta y transparente al servicio de lo humano. Es una herramienta de cambio social por su potencia para construir redes entre iguales por donde circula, se distribuye y se intercambia la abundancia de recursos, la capacidad creativa, artística, manual e intelectual de todos sus miembros." %}</p>
 		<div class="container-fluid">
 			<div class="row" style="display: flex; flex-wrap:wrap;">
-				
+
 			    <div class="col-sm-7" >
 				    <p style="font-size:19px;">{% trans " La Semilla otorga soberanía local,  está sujeta a los procesos participativos y democráticos de las personas que usan la moneda y sus relaciones locales." %}</p>
-				    <p style="font-size:19px;">{% trans " Ponemos en movimiento los recursos que la economía formal no utiliza." %}</p>
 
+
+				    <h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Social" %}</h3>
+			        <p style="font-size:19px;">
+
+                {% blocktrans %}
+                Porque las personas que la hemos creado queremos visibilizar la economía de cuidados y empoderar a cada individuo en sus habilidades. A través de las categorías para crear servicios en la app queremos inferir un uso social, solidario, sostenible y ecológico.
+                {% endblocktrans %}
+              </p>
+			        <p style="font-size:19px;">
+
+                {% blocktrans %}
+                También queremos permitir la creación de moneda para pagar acciones sociales que beneficien al común. Buscamos organos o asociaciones que quieran realizar trabajos para el beneficio de todos y retribuirlo en Semillas (como por ejemplo arreglar su centro social).
+                {% endblocktrans %}
+                <a href=#bank> {% trans "Ir al Banco de Semillas" %} </a>
+              </p>
 
 				    <h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Software Libre" %}</h3>
 			        <p style="font-size:19px;">{% trans " Todo el código que escribimos lo publicamos instantáneamente en Internet:"%}<a href="https://github.com/semillas"> https://github.com/semillas</a></p>
@@ -25,6 +34,7 @@
 			        <p style="font-size:19px;">{% trans  " Por tanto es 100% redistribuible, copiable y modificable." %}</p>
 			        <p style="font-size:19px;">{% trans  " No se pagan licencias por su uso." %}</p>
 			        <p style="font-size:19px;">{% trans  " Cualquier entidad podría crearse su propia moneda utilizando este software." %}</p>
+
 			    </div>
 			    <div class="col-sm-5">
 			    	<img class="img-responsive" src="{% static 'landing/images/product/feed2.png' %}" alt="">
@@ -57,20 +67,14 @@
 	</div>
 	<div class="container">
     	<h4 class="c-heading-sub" style="font-size:32px;">{% trans "Catalizador de Sobreranía" %}</h4>
-    	<p style="font-size:19px;">{% trans " Semillas Social promociona el bien común. Retribuyendo en semillas trabajos a la comunidad o acciones cívicas.Para ello se apoya en los “Bancos de Semillas” e “Invernaderos” "%}</p>
+    	<p style="font-size:19px;">{% trans " Semillas Social promociona el bien común. Retribuyendo en semillas trabajos a la comunidad o acciones cívicas.Para ello se apoya en los “Bancos de Semillas” "%}</p>
 
-    	<h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Banco de semillas" %}</h3>
+      <a name="bank"></a>
+    	<h3  class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Banco de semillas" %}</h3>
         <p style="font-size:19px;">{% trans " Es un grupo vecinal al cobijo de una institución pública o privada." %}</p>
         <p style="font-size:19px;">{% trans " El Banco de Semillas se encarga de crear y retribuir trabajos a la comunidad (índole social, ecológica, educativa, medioambiental) así como acciones cívicas." %}</p>
         <p style="font-size:19px;">{% trans " El siguiente ejemplo muestra ayuntamiento coordinando un banco de semillas. El ayuntamiento cierra el ciclo monetario aceptando La Semilla en el alquiler de polideportivos, pago de multas, etc. "%}</p>
         <img src="{% static 'landing/images/BancoSemillas.png' %}" style="width: 100%"">
-
-
-        <h3 class="c-heading-sub" style="color:#4ca2cd;font-size:27px;">{% trans "Invernadero" %}</h3>
-        <p style="font-size:19px;">{% trans " Los invernaderos están gestionados por bancos de semillas." %}</p>
-        <p style="font-size:19px;">{% trans " El invernadero se encarga de reutilizar objetos. Ejemplo: Un miembro entrega su motosierra al invernadero a cambio de una cantidad de semillas. El Invernadero alquila esa motosierra a los miembros de la comunidad por semillas." %}</p>
-        <p style="font-size:19px;">{% trans " Es un lugar de reutilización. El invernadero es biblioteca, es espacio de alquiler, reparación y reciclaje de objetos, es espacio de intercambio, es centro de formación y empleo. "%}</p>
-
 	</div>
 
 {% endblock %}

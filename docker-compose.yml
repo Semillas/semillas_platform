@@ -84,14 +84,3 @@ services:
     image: "redis:alpine"
     ports:
       - "6379:6379"
-
-  webpack:
-    build:
-      context: .
-      dockerfile: ./compose/webpack/Dockerfile
-    ports:
-      - "35729:35729"
-    volumes:
-      - .:/app
-      - /app/node_modules
-      - wwwroot:/wwwroot
