@@ -153,3 +153,18 @@ Then run:
 + autoprefixer: add prefixes to the last 4 browser version
 
 ```gulp img```=> This task removes unnecesary image's metadata (lossless compression)
+
+
+### Deploy another instance of Semillas to Heroku
+This is useful in case you are creating your own currency app. Once you have created your own instance of the Client with https://github.com/Semillas/AlternativeCurrencyApp
+
++ `heroku pg:copy postgresql-flexible-86889 fully-qualified-dest-url-db --app semilla` (This is in case you want to copy de DB, remember to copy the media folder in AWS S3 too)
++ `heroku stack:set cedar-14 --app bitcoin-bazaar`
++ `heroku config:add DJANGO_SETTINGS_MODULE=config.settings.production --app  bitcoin-bazaar`
++ `heroku config:add DJANGO_AWS_ACCESS_KEY_ID= --app  bitcoin-bazaar`
++ `heroku config:add DJANGO_AWS_SECRET_ACCESS_KEY= --app  bitcoin-bazaar`
++ `heroku config:add DJANGO_AWS_STORAGE_BUCKET_NAME=bitcoinbazaar --app  bitcoin-bazaar`
++ `heroku config:add DJANGO_SECRET_KEY='' --app  bitcoin-bazaar`
++ `heroku config:add DJANGO_SENTRY_DSN= --app  bitcoin-bazaar`
++ `heroku config:add DJANGO_ADMIN_URL=^admin/ --app  bitcoin-bazaar`
++ `heroku config:add DJANGO_ALLOWED_HOSTS=bitcoin-bazaar.herokuapp.com --app  bitcoin-bazaar`
