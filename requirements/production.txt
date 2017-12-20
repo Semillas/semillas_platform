@@ -22,4 +22,4 @@ django-anymail==1.2
 # --------------------------
 raven==6.3.0
 
-newrelic==2.92.0.78
+newrelic==2.98.0.81
