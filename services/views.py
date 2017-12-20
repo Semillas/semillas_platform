@@ -14,6 +14,7 @@ from django.contrib.gis.db.models.functions import Distance
 
 from django.contrib.gis.geos import Point
 from django.contrib.gis.geoip2 import GeoIP2
+from geoip2.errors import AddressNotFoundError
 
 from .models import Service, Category
 from .serializers import *
@@ -106,7 +107,14 @@ class FeedServiceList(generics.ListAPIView):
         else:
             # if no location at all
             geoip = GeoIP2()
-            ref_location = Point(geoip.lon_lat('72.14.207.99'),srid=4326)
+            ip = self.request.META['REMOTE_ADDR']
+            try:
+                ref_location = Point(geoip.lon_lat(ip),srid=4326)
+            except AddressNotFoundError:
+                ref_location = Point((-3.8196228, 40.4378698), srid=4326) # Madrid
+            if not self.request.user.is_anonymous:
+                self.request.user.location = ref_location
+                self.request.user.save()
         return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
 
 

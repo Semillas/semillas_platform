@@ -83,7 +83,7 @@
   <body>
 
     <!-- Header -->
-      <header class="page-head--masthead">
+    <header class="page-head--masthead {% if request.resolver_match.view_name != "home" %}header-small{% endif %}">
         <div class="wrapper">
           <!-- <nav id="nav" class="site-nav  clearfix"> -->
           <nav class="navbar navbar-default navbar-static-top">
@@ -102,18 +102,21 @@
               <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
                 <ul class="nav navbar-nav">
                   <li>
-                    <!-- <a class="{% if request.resolver_match.view_name == "landing:porque" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a> -->
-                    <a href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a>
+                    <!-- <a class="{% if request.resolver_match.view_name == "landing:how_it_works" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:how_it_works' %}">{% trans "Cómo Funciona" %}</a> -->
+                    <a href="{% url 'landing:how_it_works' %}">{% trans "Cómo Funciona" %}</a>
                   </li>
                   <li>
-                    <!-- <a class="{% if request.resolver_match.view_name == "landing:product" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a> -->
-                    <a href="{% url 'landing:product' %}">{% trans "Producto y Código" %}</a>
+                    <!-- <a class="{% if request.resolver_match.view_name == "landing:porque" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a> -->
+                    <a href="{% url 'landing:porque' %}">{% trans "Por qué usar Semillas" %}</a>
                   </li>
                   <li>
                     <!-- <a class="{% if request.resolver_match.view_name == "landing:people" %}is-active{% endif %} site-nav__home-link" href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a> -->
                     <a href="{% url 'landing:people' %}">{% trans "Quiénes Somos" %}</a>
                   </li>
                   <li class=store-button-bar>
+  <a class="store-buttons" href='https://play.google.com/store/apps/details?id=com.semillasreactnative&utm_source=Semillas Website&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+    <img class="store-buttons-img" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
+  </a>
                   </li>
                 </ul>
               </div>
@@ -143,12 +146,9 @@
               {% endif %} -->
 
           </nav>
-          <div class="page-head--content">
-            <p class="header-text">{% trans "App móvil de compraventa de bienes y servicios con monedas virtuales." %}</p>
-          </div>
-          <a class="store-buttons" href='https://play.google.com/store/apps/details?id=com.semillasreactnative&utm_source=Semillas Website&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-            <img class="store-buttons-img" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-          </a>
+
+          {% block header-text %}
+          {% endblock header-text %}
 
         </div>
       </header>
@@ -199,6 +199,7 @@
             <a href="https://twitter.com/semilla_social" style="color:white; font-size:13px;"><p>Twitter</p></a>
             <a href="https://www.facebook.com/semillasocial" style="color:white; font-size:13px;"><p>Facebook</p></a>
             <a href="https://github.com/Semillas" style="color:white; font-size:13px;"><p>Github</p></a>
+            <a href="https://t.me/joinchat/AOgQyw0R2CE8p-D1UdlZOA" style="color:white; font-size:13px;"><p>Telegram</p></a>
           </div>
         </div>
 

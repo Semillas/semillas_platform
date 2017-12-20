@@ -9,9 +9,9 @@ from . import views
 urlpatterns = [
     # URL pattern for the UserListView
     url(
-        regex=r'^all_users$',
+        regex=r'^$',
         view=views.UserList.as_view(),
-        name='list'
+        name='search'
     ),
 
     # URL pattern for the UserDetailView

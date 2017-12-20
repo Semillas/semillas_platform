@@ -1,5 +1,8 @@
+from datetime import datetime
 from rest_framework import serializers
 from rest_framework import fields
+
+from django.conf import settings
 
 from .models import Service, Category, ServicePhoto
 from semillas_backend.users.serializers import UserSerializer
@@ -38,6 +41,11 @@ class ServiceSerializer(serializers.ModelSerializer):
         photos = ServicePhoto.objects\
             .filter(service__id=instance.id)\
             .order_by('date')
+        if not photos:
+            photos = [ServicePhoto(
+                date=datetime.now(),
+                photo=settings.SERVICE_PLACEHOLDER_PHOTO
+                )]
         return ServicePhotoSerializer(photos, many=True).data
 
     def get_lat(self, obj):
@@ -48,9 +56,16 @@ class ServiceSerializer(serializers.ModelSerializer):
 
     def get_distance(self, obj):
         if hasattr(obj, 'dist') and (obj.dist != None):
-            return round(obj.dist.km, 1)
-        else:
-            return None
+            distance = obj.dist.km
+            return round(distance, 1)
+        elif (not hasattr(obj, 'dist')) \
+                and 'request' in self.context \
+                and hasattr(self.context['request'].user, 'location') \
+                and hasattr(obj.author, 'location') \
+                and (obj.author.location):
+            distance = obj.author.location.distance(self.context['request'].user.location) * 100
+            return round(distance,1)
+        return None
 
 class ServicePhotoUploadSerializer(serializers.ModelSerializer):
     """

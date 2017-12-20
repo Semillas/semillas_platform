@@ -40,7 +40,6 @@
     font-size: 23px;
     color:white;
     bottom: 200;
-    padding: 15px;
     position: absolute;
   }
 
@@ -54,6 +53,7 @@
 
   .store-buttons-img {
     height:65px;
+    margin-top: -25px;
   }
 
   .store-buttons {
@@ -71,7 +71,6 @@
             -webkit-background-size: cover;
                 -moz-background-size: cover;
                   -o-background-size: cover;
-          height: 600px;
         }
         .header-text{
           font-size: 38px;
@@ -87,8 +86,12 @@
           height:85px;
           border-radius: 100px;
           background-color: white;
-          padding: 10px;
         }
+
+        .header-small{
+          height:140px
+        }
+
         .container>.navbar-header {
           margin-right: 75px;
         }
@@ -157,7 +160,6 @@
         height: 560px;
         height: 35em;
         width: 60%;
-        padding-top: 100px;
         padding-left: 84px;
       }
 

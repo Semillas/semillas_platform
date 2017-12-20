@@ -12,6 +12,8 @@ from __future__ import absolute_import, unicode_literals
 
 import environ
 import os
+from decimal import Decimal
+
 
 ROOT_DIR = environ.Path(__file__) - 3  # (semillas_backend/config/settings/common.py - 3 = semillas_backend/)
 APPS_DIR = ROOT_DIR.path('semillas_backend')
@@ -49,7 +51,6 @@ THIRD_PARTY_APPS = (
     'rest_framework.authtoken',
     'phonenumber_field', # To phone field
     # 'django_filters',
-    'webpack_loader',
     'django_extensions',
     'modeltranslation',
     'channels',
@@ -67,7 +68,6 @@ LOCAL_APPS = (
     'landing',
     'services',
     'wallet',
-    'webapp',
     'rest_framework_word_filter',
     'chat',
 )
@@ -204,7 +204,6 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(APPS_DIR), 'webapp/assets'),
     str(APPS_DIR.path('static')),
 )
 
@@ -213,14 +212,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
-
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
-        'STATS_FILE': os.path.join(os.path.dirname(APPS_DIR), 'webpack-stats.json'),
-    }
-}
 
 
 # MEDIA CONFIGURATION
@@ -364,3 +355,9 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'services.translation',
 )
 
+#Uploaded to S3, in root of bucket
+SERVICE_PLACEHOLDER_PHOTO = 'service_placeholder.jpg'
+
+CURRENCY_NAME = 'Semillas' #Plural
+WALLET_MINIMUM_AMOUNT = Decimal(-20)
+WALLET_INITIAL_AMOUNT = Decimal(0)

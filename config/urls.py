@@ -36,11 +36,11 @@ urlpatterns = [
     url(r'^rest-auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$', allauth_views.confirm_email,
         name="account_confirm_email"),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^', include('django.contrib.auth.urls')),
 
     # Your stuff: custom urls includes go here
     url(r'^landing/', include('landing.urls', namespace='landing')),
     url(r'^docs/', include('rest_framework_docs.urls')),
-    url(r'^webapp/', include('webapp.urls', namespace='webapp')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

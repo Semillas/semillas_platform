@@ -4,6 +4,7 @@ import factory
 import faker
 
 from .models import Wallet, Transaction
+from django.conf import settings
 
 faker = faker.Factory.create()
 
@@ -11,7 +12,7 @@ class WalletFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Wallet
 
-    balance = 10
+    balance = settings.WALLET_INITIAL_AMOUNT
 
 class TransactionFactory(factory.django.DjangoModelFactory):
 
