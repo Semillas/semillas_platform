@@ -50,6 +50,7 @@ class Service(models.Model):
     category = models.ForeignKey(
         'Category',
         null=False,
+        on_delete=models.CASCADE,
     )
 
     def __unicode__(self):
@@ -111,6 +112,7 @@ class ServicePhoto(models.Model):
     service = models.ForeignKey(
         Service,
         related_name='photos',
+        on_delete=models.CASCADE,
     )
 
     photo = models.ImageField(

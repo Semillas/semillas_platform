@@ -146,6 +146,7 @@ class Transaction(models.Model):
         related_name='transactions_outbound',
         blank=True,
         default=0,
+        on_delete=models.CASCADE,
     )
 
     """Referes to the wallet owned by the user
@@ -154,6 +155,7 @@ class Transaction(models.Model):
         Wallet,
         related_name='transactions_inbound',
         default=0,
+        on_delete=models.CASCADE,
     )
 
     # The value of this transaction.
