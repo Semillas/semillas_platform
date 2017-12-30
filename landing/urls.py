@@ -7,6 +7,7 @@ from django.views.generic import TemplateView
 
 # place app url patterns here
 
+app_name = 'landing'
 
 urlpatterns = [
     # url pattern for the userlistview

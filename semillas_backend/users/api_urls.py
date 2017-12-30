@@ -1,34 +1,36 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
-from django.conf.urls import url
+from django.urls import re_path
 from services.views import UserServiceList
 
 from . import views
 
+app_name = 'users'
+
 urlpatterns = [
-    # URL pattern for the UserListView
-    url(
-        regex=r'^$',
+    # re_path pattern for the UserListView
+    re_path(
+        route=r'^$',
         view=views.UserList.as_view(),
         name='search'
     ),
 
-    # URL pattern for the UserDetailView
-    url(
-        regex=r'^(?P<uuid>[^/]+)/$',
+    # re_path pattern for the UserDetailView
+    re_path(
+        route=r'^(?P<uuid>[^/]+)/$',
         view=views.UserDetail.as_view(),
         name='detail'
     ),
-    # URL pattern for the UserServiceList
-    url(
-        regex=r'^(?P<user_uuid>[^/]+)/services$',
+    # re_path pattern for the UserServiceList
+    re_path(
+        route=r'^(?P<user_uuid>[^/]+)/services$',
         view=UserServiceList.as_view(),
         name='list'
     ),
 
-    url(
-        regex=r'^update/(?P<uuid>[^/]+)/$',
+    re_path(
+        route=r'^update/(?P<uuid>[^/]+)/$',
         view=views.UserDetailUpdate.as_view(),
         name='update'
     ),
