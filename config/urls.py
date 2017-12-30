@@ -40,7 +40,7 @@ urlpatterns = [
 
     # Your stuff: custom urls includes go here
     re_path(r'^landing/', include('landing.urls', namespace='landing')),
-    re_path(r'^docs/', include('rest_framework_docs.urls')),
+    re_path(r'^docs/', include('drf_openapi.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

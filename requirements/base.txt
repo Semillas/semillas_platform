@@ -53,9 +53,8 @@ geoip2==2.6.0
 
 # Rest Framework
 djangorestframework==3.7.4
-django-rest-swagger==2.1.2
 django-extra-fields==0.9
-drfdocs==0.0.11
+drf-openapi==1.2.0
 
 # Filtering for API
 django-filter==1.1.0

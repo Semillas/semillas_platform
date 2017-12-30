@@ -47,7 +47,6 @@ THIRD_PARTY_APPS = (
     'rest_auth',
     'rest_auth.registration',
     'rest_framework',
-    'rest_framework_docs',
     'rest_framework.authtoken',
     'phonenumber_field', # To phone field
     # 'django_filters',
@@ -78,7 +77,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
