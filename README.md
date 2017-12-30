@@ -20,7 +20,6 @@ We are a community of developers willing to learn. Join us and we will give you 
 
 * **Website:** https://www.semillasocial.org
 * **API Rest Endpoints:** https://www.semillasocial.org/docs (You should be registered and signed-in)
-* **React App**: **https://www.semillasocial.org/webapp** is the ReactJS being executed.
 * **Write us**: info.semillasocial@gmail.com
 
 
@@ -32,7 +31,6 @@ We have the following main ones:
 * **services**: It contains a basic Service entity: Some service being offered or for sale.
 * **semillas_backend/users**: The User's models and views
 * **landing**: Visible landing website. No logic. No models.
-* **webapp**: ReactJS - Redux Web client consuming from the [API](https://www.semillasocial.org/docs/).
 * **swagger**: Preview for every API endpoint. Check it here:  [API](https://www.semillasocial.org/docs/)
 * **wallet**: App responsible of user wallet and movements
 
@@ -97,13 +95,6 @@ $ open htmlcov/index.html
 ### Running tests with py.test
 
  ```$ docker-compose -f dev.yml run django py.test```
-
-
-### Develop the Client Webapp
-
-    $ ./node_modules/.bin/webpack --config webpack.config.js
-
-Add flag --watch for live reload.
 
 
 ### Live reloading and Sass CSS compilation

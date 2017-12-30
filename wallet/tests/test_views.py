@@ -1,5 +1,7 @@
 from django.test import RequestFactory
 from django.test import Client
+from django.core import mail
+from django.conf import settings
 
 from test_plus.test import TestCase
 
@@ -44,8 +46,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
 
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
-            {'user_source': self.user1.id,
-            'user_dest': self.user2.id,
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user2.uuid,
             'value': 5}
         )
 
@@ -63,19 +65,64 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
 
         self.assertEqual(
             self.user1.wallet.balance,
-            5
+            -5
         )
 
         self.assertEqual(
             self.user2.wallet.balance,
-            15
+            5
         )
+
+        self.assertEqual(
+            mail.outbox[0].recipients()[0],
+            self.user2.email
+        )
+
+        self.assertEqual(
+            mail.outbox[1].recipients()[0],
+            self.user1.email
+        )
+
+        # Request de wallet and check the transaction is created
+        request = self.factory.get('/api/v1/wallet/owner/')
+        force_authenticate(request, user=self.user1)
+        response = views.UserWalletDetail.as_view()(request, owner_uuid=self.user1.uuid)
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertEqual(
+            response.data['transactions'][0]['user'],
+            self.user1.name
+        )
+
     def test_create_transaction_without_balance(self):
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
-            {'user_source': self.user1.id,
-            'user_dest': self.user2.id,
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user2.uuid,
             'value': 25}
+        )
+
+        force_authenticate(request, user=self.user1)
+
+        response = views.CreateTransaction.as_view()(request)
+
+        self.assertEqual(
+            response.status_code,
+            400
+        )
+
+    def test_create_transaction_without_balance2(self):
+        self.user1.wallet.balance = settings.WALLET_MINIMUM_AMOUNT + 1
+        self.user1.wallet.save()
+        request = self.factory.post(
+            '/api/v1/wallet/transactions/create/',
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user2.uuid,
+            'value': 5}
         )
 
         force_authenticate(request, user=self.user1)
@@ -91,8 +138,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         # Same wallet on source and destination
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
-            {'user_source': self.user1.id,
-            'user_dest': self.user1.id,
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user1.uuid,
             'value': 1}
         )
 
@@ -109,8 +156,8 @@ class WalletEndpointsTestCase(BaseWalletTestCase):
         # Same wallet on source and destination
         request = self.factory.post(
             '/api/v1/wallet/transactions/create/',
-            {'user_source': self.user1.id,
-            'user_dest': self.user2.id,
+            {'user_source': self.user1.uuid,
+            'user_dest': self.user2.uuid,
             'value': 1}
         )
 

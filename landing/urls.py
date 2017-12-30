@@ -17,9 +17,9 @@ urlpatterns = [
         name='porque'
     ),
     url(
-        regex=r'^product/$',
-        view=TemplateView.as_view(template_name='landing/product_and_code.html'),
-        name='product'
+        regex=r'^how_it_works/$',
+        view=TemplateView.as_view(template_name='landing/how_it_works.html'),
+        name='how_it_works'
     ),
     url(
         regex=r'^people/$',

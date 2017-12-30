@@ -5,9 +5,9 @@ from semillas_backend.users.serializers import UserSerializer
 from .models import Wallet, Transaction
 
 class CreateTransactionSerializer(serializers.Serializer):
-    user_source = serializers.IntegerField()
-    user_dest = serializers.IntegerField()
-    value = serializers.FloatField()
+    user_source = serializers.UUIDField()
+    user_dest = serializers.UUIDField()
+    value = serializers.DecimalField(max_digits=6, decimal_places=2)
     class Meta:
         model = Transaction
         fields = ('user_source', 'user_dest', 'value')
@@ -17,9 +17,20 @@ class TransactionSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     balance = serializers.SerializerMethodField()
     trans_value = serializers.SerializerMethodField()
+    created_at = serializers.DateTimeField(format='%d %b %Y')
+    user_uuid = serializers.SerializerMethodField()
+
     class Meta:
         model = Transaction
-        fields = ('id', 'trans_value', 'balance', 'user', 'created_at')
+        fields = ('id', 'trans_value', 'balance', 'user', 'created_at', 'user_uuid')
+
+    def get_user_uuid(self, obj):
+        if (
+            'owner_uuid' in self.context and
+            self.context['owner_uuid'] == str(obj.wallet_source.owner.uuid)
+        ):
+            return obj.wallet_dest.owner.uuid
+        return obj.wallet_source.owner.uuid
 
     def get_user(self, obj):
         if (
