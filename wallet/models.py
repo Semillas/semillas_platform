@@ -3,7 +3,7 @@ from __future__ import unicode_literals, absolute_import
 
 from uuid import uuid4
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
@@ -146,6 +146,7 @@ class Transaction(models.Model):
         related_name='transactions_outbound',
         blank=True,
         default=0,
+        on_delete=models.CASCADE,
     )
 
     """Referes to the wallet owned by the user
@@ -154,6 +155,7 @@ class Transaction(models.Model):
         Wallet,
         related_name='transactions_inbound',
         default=0,
+        on_delete=models.CASCADE,
     )
 
     # The value of this transaction.

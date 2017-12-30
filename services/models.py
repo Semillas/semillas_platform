@@ -5,7 +5,7 @@ import os
 from uuid import uuid4
 from random import randint
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
@@ -50,6 +50,7 @@ class Service(models.Model):
     category = models.ForeignKey(
         'Category',
         null=False,
+        on_delete=models.CASCADE,
     )
 
     def __unicode__(self):
@@ -111,6 +112,7 @@ class ServicePhoto(models.Model):
     service = models.ForeignKey(
         Service,
         related_name='photos',
+        on_delete=models.CASCADE,
     )
 
     photo = models.ImageField(
