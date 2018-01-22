@@ -158,6 +158,14 @@ Then run:
 ### Deploy another instance of Semillas to Heroku
 This is useful in case you are creating your own currency app. Once you have created your own instance of the Client with https://github.com/Semillas/AlternativeCurrencyApp
 
++ `heroku addons:create heroku-postgresql:hobby-dev --app bitcoin-bazaar`
++ `heroku addons:add heroku-redis:hobby-dev --app bitcoin-bazaar`
++ `heroku addons:add mailgun:starter --app bitcoin-bazaar`
++ `heroku addons:add newrelic:wayne --app bitcoin-bazaar`
++ `heroku buildpacks:add https://github.com/Semillas/heroku-buildpack-geolite.git --app bitcoin-bazaar`
++ `heroku buildpacks:add https://github.com/dschep/heroku-geo-buildpack.git --app bitcoin-bazaar`
++ `heroku buildpacks:add heroku/python --app bitcoin-bazaar`
++ `heroku addons:add papertrail:choklad --app bitcoin-bazaar`
 + `heroku pg:copy postgresql-flexible-86889 fully-qualified-dest-url-db --app semilla` (This is in case you want to copy de DB, remember to copy the media folder in AWS S3 too)
 + `heroku stack:set cedar-14 --app bitcoin-bazaar`
 + `heroku config:add DJANGO_SETTINGS_MODULE=config.settings.production --app  bitcoin-bazaar`
