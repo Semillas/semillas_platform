@@ -358,6 +358,6 @@ MODELTRANSLATION_TRANSLATION_FILES = (
 #Uploaded to S3, in root of bucket
 SERVICE_PLACEHOLDER_PHOTO = 'placeholders/service_placeholder.jpg'
 
-CURRENCY_NAME = 'Semillas' #Plural
+CURRENCY_NAME = env('CURRENCY_NAME', default='Semillas') #Plural
 WALLET_MINIMUM_AMOUNT = Decimal(-20)
 WALLET_INITIAL_AMOUNT = Decimal(0)
