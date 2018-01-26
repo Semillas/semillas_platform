@@ -70,7 +70,7 @@ fake-factory==0.7.2
 django-filters==0.2.1
 
 # Django Model Translations
-django-modeltranslation==0.12.1
+django-modeltranslation==0.12.2
 
 # Django Channels for chat
 channels==1.1.6
