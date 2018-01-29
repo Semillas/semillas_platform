@@ -91,6 +91,7 @@ class UserDetailUpdate(generics.UpdateAPIView):
         -H "Authorization: Token 04601a00e6499ade89b55caf37dba949ec99b082" \
         -F "picture=@/home/ismael/Downloads/heroquest.jpg" \
         -F "phone=+34 679 923 555" \
+        -F "location={'latitude': '40.4378698','longitude': '-3.8196228'}" \
         http://localhost:8000/api/v1/user/update/e0d21ae6-13c1-4eb5-b216-ba251b83ce67/
     """
     queryset = User.objects.all()
