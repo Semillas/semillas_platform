@@ -22,7 +22,7 @@ urlpatterns = [
     ),
     # URL pattern for the UserServiceList
     url(
-        regex=r'^(?P<user_uuid>[^/]+)/services$',
+        regex=r'^(?P<uuid>[^/]+)/services$',
         view=UserServiceList.as_view(),
         name='list'
     ),
