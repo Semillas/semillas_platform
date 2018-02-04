@@ -15,6 +15,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 from .validators import starts_with_at, is_blockchain_address
 
+
 @python_2_unicode_compatible
 class User(AbstractUser):
 
@@ -32,9 +33,14 @@ class User(AbstractUser):
         help_text='User Location, only read in production user admin panel'
     )
 
+    location_manually_set = models.BooleanField(
+        default=False,
+        help_text="Flag indicating whether the user has introduced their location or not"
+    )
+
     def user_photo_upload(instance, filename):
         extension = os.path.splitext(filename)[1]
-        return "media/users/%s-%s%s" % (str(instance.id), str(randint(0,9999)), extension)
+        return "media/users/%s-%s%s" % (str(instance.id), str(randint(0, 9999)), extension)
 
     picture = models.ImageField(
         null=True,

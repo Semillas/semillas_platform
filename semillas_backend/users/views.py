@@ -99,6 +99,12 @@ class UserDetailUpdate(generics.UpdateAPIView):
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
     lookup_field = 'uuid'
 
+    def put(self, request, *args, **kwargs):
+        if 'location' in request.data:
+            request.data['location_manually_set'] = True
+
+        return super().put(request, *args, **kwargs)
+
 
 class FacebookLogin(SocialLoginView):
     adapter_class = FacebookOAuth2Adapter

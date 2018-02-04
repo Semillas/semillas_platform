@@ -97,3 +97,6 @@ class TestUserDetailUpdate(BaseServiceTestCase):
             response.data["location"]["longitude"],
             longitude
         )
+        self.assertTrue(
+            User.objects.get(uuid=response.data['uuid']).location_manually_set
+        )
