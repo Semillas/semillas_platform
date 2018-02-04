@@ -300,7 +300,7 @@ class TestFeedServiceList(BaseServiceTestCase):
         """
         # Generate a request search for "testing" key word
         request = self.factory.get(reverse('api_users:list',
-                                           kwargs={'uuid': self.users[1]}))
+                                           kwargs={'uuid': self.users[1].uuid}))
         # Attach the user to the request
         force_authenticate(request, user=self.users[3])
         #request.user = self.users[3]
