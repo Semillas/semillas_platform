@@ -14,12 +14,10 @@ from rest_framework import status
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
 
-
 from .models import User
 from .serializers import UserSerializer
 from .serializers import UpdateUserSerializer
 from .permissions import IsOwnerOrReadOnly
-
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -73,6 +71,7 @@ class UserList(generics.ListAPIView):
         else:
             return super(UserList, self).get(request, format)
 
+
 class UserDetail(generics.RetrieveAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
@@ -80,6 +79,7 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = UserSerializer
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'
+
 
 class UserDetailUpdate(generics.UpdateAPIView):
     """
@@ -98,6 +98,7 @@ class UserDetailUpdate(generics.UpdateAPIView):
     serializer_class = UpdateUserSerializer
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
     lookup_field = 'uuid'
+
 
 class FacebookLogin(SocialLoginView):
     adapter_class = FacebookOAuth2Adapter
