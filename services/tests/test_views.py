@@ -374,9 +374,6 @@ class TestServiceDetail(BaseServiceTestCase):
 
 class TestUserServicesList(BaseServiceTestCase):
 
-    # def tearDown(self):
-    #    Category.objects.all().delete()
-
     def setUp(self):
         # call BaseServiceTestCase.setUp()
         super(TestUserServicesList, self).setUp()
@@ -393,11 +390,11 @@ class TestUserServicesList(BaseServiceTestCase):
 
         # Assign each service to 1 of the self.users
         self.services[0].author = self.users[0]
-        self.services[0].title = "1"
+        self.services[0].title = "0"
         self.services[0].description = "testing"
         self.services[0].save()
         self.services[1].author = self.users[1]
-        self.services[1].title = "2"
+        self.services[1].title = "1"
         self.services[1].description = "testing"
         self.services[1].save()
 
@@ -405,16 +402,7 @@ class TestUserServicesList(BaseServiceTestCase):
         """ This tests ask for all the services of a user
         """
         # Generate a request search for "testing" key word
-        import ipdb
-        ipdb.set_trace()
-        request = self.factory.get(reverse('api_users:list',
-                                           kwargs={'user_uuid':
-                                                   str(self.users[0].uuid)}))
-        # Attach the user to the request
-        force_authenticate(request, user=self.users[1])
-        #request.user = self.users[3]
-
-        response = self.view(request)
+        response = self.client.get(reverse('api_users:list', kwargs={'user_uuid': str(self.users[0].uuid)}))
 
         # Expect: expect queryset of services ordered by proximity
         #   self.make_user()
@@ -431,4 +419,28 @@ class TestUserServicesList(BaseServiceTestCase):
         self.assertEqual(
             [item["title"] for item in response.data],
             ["0"]
+        )
+
+    def test_user_services_empty(self):
+        """ This tests ask for all the services of a user
+        """
+        # Generate a request search for "testing" key word
+        self.users[0].services.all().delete()
+        response = self.client.get(reverse('api_users:list', kwargs={'user_uuid': str(self.users[0].uuid)}))
+
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+
+        self.assertIsInstance(
+            response.data,
+            list
+        )
+
+        self.assertEqual(
+            [item["title"] for item in response.data],
+            []
         )
