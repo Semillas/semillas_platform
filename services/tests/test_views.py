@@ -36,7 +36,7 @@ class TestFeedServiceList(BaseServiceTestCase):
         super(TestFeedServiceList, self).setUp()
 
         # Instantiate the view directly. Never do this outside a test!
-        self.view = FeedServiceList()
+        self.view = FeedServiceList.as_view()
 
         # Create self.users, Services & Categories for test cases
         self.users = UserFactory.create_batch(size=5)
@@ -295,37 +295,6 @@ class TestFeedServiceList(BaseServiceTestCase):
             200
         )
 
-    def test_user_services(self):
-        """ This tests ask for all the services of a user
-        """
-        # Generate a request search for "testing" key word
-        request = self.factory.get(reverse('api_users:list',
-                                           kwargs={'uuid':
-                                                   str(self.users[1].uuid)}))
-        # Attach the user to the request
-        force_authenticate(request, user=self.users[3])
-        #request.user = self.users[3]
-
-        self.view = UserServiceList.as_view()
-        response = self.view(request)
-
-        # Expect: expect queryset of services ordered by proximity
-        #   self.make_user()
-        self.assertEqual(
-            response.status_code,
-            200
-        )
-
-        self.assertIsInstance(
-            response.data,
-            list
-        )
-
-        self.assertEqual(
-            [item["title"] for item in response.data],
-            ["3"]
-        )
-
 
 class TestServiceDetail(BaseServiceTestCase):
 
@@ -400,4 +369,66 @@ class TestServiceDetail(BaseServiceTestCase):
         self.assertEqual(
             photos[0]['photo'],
             '/media/' + settings.SERVICE_PLACEHOLDER_PHOTO
+        )
+
+
+class TestUserServicesList(BaseServiceTestCase):
+
+    # def tearDown(self):
+    #    Category.objects.all().delete()
+
+    def setUp(self):
+        # call BaseServiceTestCase.setUp()
+        super(TestUserServicesList, self).setUp()
+
+        # Instantiate the view directly. Never do this outside a test!
+        self.view = UserServiceList.as_view()
+
+        # Create self.users, Services & Categories for test cases
+        self.users = UserFactory.create_batch(size=2)
+        self.services = ServiceFactory.create_batch(
+            size=2,
+            category=Category.objects.first()
+        )
+
+        # Assign each service to 1 of the self.users
+        self.services[0].author = self.users[0]
+        self.services[0].title = "1"
+        self.services[0].description = "testing"
+        self.services[0].save()
+        self.services[1].author = self.users[1]
+        self.services[1].title = "2"
+        self.services[1].description = "testing"
+        self.services[1].save()
+
+    def test_user_services(self):
+        """ This tests ask for all the services of a user
+        """
+        # Generate a request search for "testing" key word
+        import ipdb
+        ipdb.set_trace()
+        request = self.factory.get(reverse('api_users:list',
+                                           kwargs={'user_uuid':
+                                                   str(self.users[0].uuid)}))
+        # Attach the user to the request
+        force_authenticate(request, user=self.users[1])
+        #request.user = self.users[3]
+
+        response = self.view(request)
+
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+
+        self.assertIsInstance(
+            response.data,
+            list
+        )
+
+        self.assertEqual(
+            [item["title"] for item in response.data],
+            ["0"]
         )
