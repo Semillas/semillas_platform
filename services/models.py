@@ -25,7 +25,7 @@ class Service(models.Model):
     date = models.DateTimeField(auto_now_add=True,
                                 help_text="Date of the post.")
     description = models.TextField(max_length=2000,
-                            help_text="A description of the service.")
+                                   help_text="A description of the service.")
 
     available = models.BooleanField(default=True)  # user easily can disable it
 
@@ -104,7 +104,7 @@ class ServicePhoto(models.Model):
         extension = os.path.splitext(filename)[1]
         return "media/services/%s_%s%s" % (
             str(instance.service.id),
-            str(randint(0,99999)),
+            str(randint(0, 99999)),
             extension
         )
 
