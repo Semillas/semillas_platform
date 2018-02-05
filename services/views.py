@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
+import logging
+
 from rest_framework import generics
 from rest_framework import permissions
 from rest_framework import views
@@ -18,6 +20,8 @@ from geoip2.errors import AddressNotFoundError
 
 from .models import Service, Category
 from .serializers import *
+
+logger = logging.getLogger(__name__)
 
 
 class ServiceList(generics.ListAPIView):
@@ -105,7 +109,8 @@ class FeedServiceList(generics.ListAPIView):
             # Brings lat and lon in request parameters
             ref_location = Point(float(self.request.query_params['lon']), float(
                 self.request.query_params['lat']), srid=4326)
-            if not self.request.user.is_anonymous():
+            if not self.request.user.is_anonymous() and \
+                    not self.request.user.location_manually_set:
                 # If user is logged in, save his location
                 self.request.user.location = ref_location
                 self.request.user.save()
@@ -119,6 +124,7 @@ class FeedServiceList(generics.ListAPIView):
             try:
                 ref_location = Point(geoip.lon_lat(ip), srid=4326)
             except AddressNotFoundError:
+                logger.warning('Location could not been retrieved by any mean')
                 ref_location = Point((-3.8196228, 40.4378698), srid=4326)  # Madrid
             if not self.request.user.is_anonymous:
                 self.request.user.location = ref_location
