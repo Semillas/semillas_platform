@@ -102,7 +102,11 @@ class UserDetailUpdate(generics.UpdateAPIView):
     def put(self, request, *args, **kwargs):
         if 'location' in request.data:
             request.data['location_manually_set'] = True
+        return super().put(request, *args, **kwargs)
 
+    def patch(self, request, *args, **kwargs):
+        if 'location' in request.data:
+            request.data['location_manually_set'] = True
         return super().put(request, *args, **kwargs)
 
 

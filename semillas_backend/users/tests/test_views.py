@@ -100,3 +100,42 @@ class TestUserDetailUpdate(BaseServiceTestCase):
         self.assertTrue(
             User.objects.get(uuid=response.data['uuid']).location_manually_set
         )
+
+    def test_user_update_location_with_patch(self):
+        """ This tests ask for all the services of a user
+        """
+        # Generate a request search for "testing" key word
+
+        latitude = "40.4378698"
+        longitude = "-3.8196228"
+
+        self.client.default_format = 'json'
+        response = self.client.patch(
+            reverse('api_users:update', kwargs={'uuid':
+                                                str(self.users[0].uuid)}),
+            {"location": {
+                "latitude": latitude,
+                "longitude": longitude
+            }
+            }
+        )
+
+        # Expect: expect queryset of services ordered by proximity
+        #   self.make_user()
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+
+        self.assertIsInstance(
+            response.data,
+            dict
+        )
+
+        self.assertEqual(
+            response.data["location"]["longitude"],
+            longitude
+        )
+        self.assertTrue(
+            User.objects.get(uuid=response.data['uuid']).location_manually_set
+        )
