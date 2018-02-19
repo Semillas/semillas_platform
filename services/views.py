@@ -46,7 +46,10 @@ class ServiceDelete(generics.DestroyAPIView):
     lookup_field = 'uuid'
 
     def get_queryset(self):
-        return Service.objects.filter(author=self.request.user)
+        if self.request.user and self.request.user.is_staff:
+            return Service.objects.all()
+        else:
+            return Service.objects.filter(author=self.request.user)
 
 
 class CreateService(generics.CreateAPIView):

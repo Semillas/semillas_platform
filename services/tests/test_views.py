@@ -505,3 +505,14 @@ class TestUserServicesList(BaseServiceTestCase):
             [item["title"] for item in response.data],
             []
         )
+
+
+class TestDeleteService(TestCase):
+
+    def setUp(self):
+        self.users = UserFactory.create_batch(size=2)
+        self.factory = APIRequestFactory()
+        self.client = APIClient()
+        token = Token(user=self.users[0])
+        token.save()
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
