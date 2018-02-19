@@ -17,7 +17,8 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login',
-                  'email', 'phone', 'faircoin_address', 'telegram_id')
+                  'email', 'phone', 'faircoin_address', 'telegram_id',
+                  'is_staff')
 
 
 class UpdateUserSerializer(serializers.ModelSerializer):
