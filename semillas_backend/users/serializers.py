@@ -17,8 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login',
-                  'email', 'phone', 'faircoin_address', 'telegram_id',
-                  'is_staff')
+                  'email', 'phone', 'faircoin_address', 'telegram_id')
 
 
 class UpdateUserSerializer(serializers.ModelSerializer):
@@ -40,10 +39,11 @@ class UpdateUserSerializer(serializers.ModelSerializer):
 from wallet.serializers import WalletSerializer
 
 
-class FullUserSerializer(UserSerializer):
+class ProfileSerializer(UserSerializer):
 
     wallet = WalletSerializer()
 
     class Meta:
         model = User
-        fields = ('uuid', 'name', 'picture', 'location', 'username', 'last_login', 'wallet', 'email', 'phone')
+        fields = ('uuid', 'name', 'picture', 'location', 'username',
+                  'last_login', 'wallet', 'email', 'phone', 'is_staff')
