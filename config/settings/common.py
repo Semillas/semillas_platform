@@ -48,11 +48,11 @@ THIRD_PARTY_APPS = (
     'rest_auth.registration',
     'rest_framework',
     'rest_framework.authtoken',
-    'phonenumber_field', # To phone field
+    'phonenumber_field',  # To phone field
     # 'django_filters',
     'django_extensions',
     'modeltranslation',
-    'channels',
+    'rest_framework_docs',
 
     # Providers you want to enable:
     'allauth.socialaccount.providers.facebook',
@@ -68,7 +68,6 @@ LOCAL_APPS = (
     'services',
     'wallet',
     'rest_framework_word_filter',
-    'chat',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -257,7 +256,7 @@ LOGIN_URL = 'account_login'
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 
 SOCIALACCOUNT_PROVIDERS = {
-    'openid': { 'SERVERS': [] },
+    'openid': {'SERVERS': []},
     'facebook': {
         'METHOD': 'oauth2',
         'SCOPE': ['email', 'public_profile'],
@@ -275,7 +274,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'gender',
             'updated_time'],
         'EXCHANGE_TOKEN': True,
-#       'LOCALE_FUNC': 'path.to.callable',
+        #       'LOCALE_FUNC': 'path.to.callable',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v2.4'
     }
@@ -295,8 +294,8 @@ ADMIN_URL = r'^admin/'
 from django.utils.translation import ugettext_lazy as _
 
 LANGUAGES = [
-  ('es', _('Spanish')),
-  ('en', _('English')),
+    ('es', _('Spanish')),
+    ('en', _('English')),
 ]
 
 MODELTRANSLATION_FALLBACK_LANGUAGES = ('en', 'es')
@@ -326,9 +325,9 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework_word_filter.FullWordSearchFilter',
     ),
-	'DEFAULT_PAGINATION_CLASS':
-		'semillas_backend.utils.link_header_pagination.LinkHeaderPagination',
-	'PAGE_SIZE': 20,
+    'DEFAULT_PAGINATION_CLASS':
+    'semillas_backend.utils.link_header_pagination.LinkHeaderPagination',
+        'PAGE_SIZE': 20,
 }
 
 REST_AUTH_SERIALIZERS = {
@@ -336,7 +335,7 @@ REST_AUTH_SERIALIZERS = {
 }
 
 # In order to visualize every api method on Swagger, need to add SessionAuthentication to DEFAULT_AUTHENTICATION_CLASSES, but it will bring CSRF problems.
-#SWAGGER_SETTINGS = {
+# SWAGGER_SETTINGS = {
 #	'USE_SESSION_AUTH': False,
 #    'SECURITY_DEFINITIONS': {
 #        'api_key': {
@@ -354,9 +353,9 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'services.translation',
 )
 
-#Uploaded to S3, in root of bucket
+# Uploaded to S3, in root of bucket
 SERVICE_PLACEHOLDER_PHOTO = 'placeholders/service_placeholder.jpg'
 
-CURRENCY_NAME = env('CURRENCY_NAME', default='Semillas') #Plural
+CURRENCY_NAME = env('CURRENCY_NAME', default='Semillas')  # Plural
 WALLET_MINIMUM_AMOUNT = Decimal(-20)
 WALLET_INITIAL_AMOUNT = Decimal(0)

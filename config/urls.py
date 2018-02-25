@@ -34,13 +34,13 @@ urlpatterns = [
     re_path(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login'),
     re_path(r'^rest-auth/', include('rest_auth.urls')),
     re_path(r'^rest-auth/registration/account-confirm-email/(?P<key>[-:\w]+)/$', allauth_views.confirm_email,
-        name="account_confirm_email"),
+            name="account_confirm_email"),
     re_path(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     re_path(r'^', include('django.contrib.auth.urls')),
 
     # Your stuff: custom urls includes go here
     re_path(r'^landing/', include('landing.urls', namespace='landing')),
-    re_path(r'^docs/', include('drf_openapi.urls')),
+    re_path(r'^docs/', include('rest_framework_docs.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
