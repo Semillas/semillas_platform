@@ -76,4 +76,4 @@ git+https://github.com/deschler/django-modeltranslation.git
 # Django Channels for chat
 channels==1.1.6
 asgi-redis==1.4.3
-daphne==1.3.0
+daphne==2.0.4
