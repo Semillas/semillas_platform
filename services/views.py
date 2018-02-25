@@ -112,7 +112,7 @@ class FeedServiceList(generics.ListAPIView):
             # Brings lat and lon in request parameters
             ref_location = Point(float(self.request.query_params['lon']), float(
                 self.request.query_params['lat']), srid=4326)
-            if not self.request.user.is_anonymous() and \
+            if not self.request.user.is_anonymous and \
                     not self.request.user.location_manually_set:
                 # If user is logged in, save his location
                 self.request.user.location = ref_location
