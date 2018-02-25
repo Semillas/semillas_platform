@@ -74,6 +74,6 @@ django-filters==0.2.1
 git+https://github.com/deschler/django-modeltranslation.git
 
 # Django Channels for chat
-channels==1.1.6
+channels==2.0.2
 asgi-redis==1.4.3
 daphne==2.0.4
