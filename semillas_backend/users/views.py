@@ -14,12 +14,10 @@ from rest_framework import status
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
 
-
 from .models import User
 from .serializers import UserSerializer
 from .serializers import UpdateUserSerializer
 from .permissions import IsOwnerOrReadOnly
-
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -73,6 +71,7 @@ class UserList(generics.ListAPIView):
         else:
             return super(UserList, self).get(request, format)
 
+
 class UserDetail(generics.RetrieveAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
@@ -80,6 +79,7 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = UserSerializer
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'
+
 
 class UserDetailUpdate(generics.UpdateAPIView):
     """
@@ -91,12 +91,24 @@ class UserDetailUpdate(generics.UpdateAPIView):
         -H "Authorization: Token 04601a00e6499ade89b55caf37dba949ec99b082" \
         -F "picture=@/home/ismael/Downloads/heroquest.jpg" \
         -F "phone=+34 679 923 555" \
+        -F "location={'latitude': '40.4378698','longitude': '-3.8196228'}" \
         http://localhost:8000/api/v1/user/update/e0d21ae6-13c1-4eb5-b216-ba251b83ce67/
     """
     queryset = User.objects.all()
     serializer_class = UpdateUserSerializer
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
     lookup_field = 'uuid'
+
+    def put(self, request, *args, **kwargs):
+        if 'location' in request.data:
+            request.data['location_manually_set'] = True
+        return super().put(request, *args, **kwargs)
+
+    def patch(self, request, *args, **kwargs):
+        if 'location' in request.data:
+            request.data['location_manually_set'] = True
+        return super().put(request, *args, **kwargs)
+
 
 class FacebookLogin(SocialLoginView):
     adapter_class = FacebookOAuth2Adapter
