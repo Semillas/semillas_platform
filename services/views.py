@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
+import logging
+
 from rest_framework import generics
 from rest_framework import permissions
 from rest_framework import views
@@ -19,10 +21,14 @@ from geoip2.errors import AddressNotFoundError
 from .models import Service, Category
 from .serializers import *
 
+logger = logging.getLogger(__name__)
+
+
 class ServiceList(generics.ListAPIView):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
     permission_classes = (permissions.IsAdminUser,)
+
 
 class ServiceDetail(generics.RetrieveAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
@@ -32,6 +38,7 @@ class ServiceDetail(generics.RetrieveAPIView):
     permission_classes = (permissions.AllowAny,)
     lookup_field = 'uuid'
 
+
 class ServiceDelete(generics.DestroyAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
     """
@@ -39,7 +46,11 @@ class ServiceDelete(generics.DestroyAPIView):
     lookup_field = 'uuid'
 
     def get_queryset(self):
-        return Service.objects.filter(author=self.request.user)
+        if self.request.user and self.request.user.is_staff:
+            return Service.objects.all()
+        else:
+            return Service.objects.filter(author=self.request.user)
+
 
 class CreateService(generics.CreateAPIView):
     """ access: curl http://0.0.0.0:8000/api/v1/user/2/
@@ -56,26 +67,29 @@ class UpdateService(generics.UpdateAPIView):
     # TODO: Make parmission only owner can edit
     permission_classes = (permissions.IsAuthenticated,)
     lookup_field = 'uuid'
+
     def get_queryset(self):
         return Service.objects.filter(author=self.request.user)
+
 
 class CategoryList(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = (permissions.AllowAny,)
 
+
 class UserServiceList(generics.ListAPIView):
     serializer_class = ServiceSerializer
     permission_classes = (permissions.AllowAny,)
+
     def get_queryset(self):
         if 'user_uuid' in self.kwargs:
-            pk = self.kwargs['user_uuid']
-            u=User.objects.get(uuid=pk)
-            if u:
-                return Service.objects.filter(author=u.id)
-        return Response("User not found", status=status.HTTP_400_BAD_REQUEST)
+            return Service.objects.filter(author__uuid=self.kwargs['user_uuid'])
+        return Service.objects.none()
 
 # Filter services by category_id
+
+
 class FeedServiceList(generics.ListAPIView):
     """ Main endpoint. This is the list of services being offered.
         get:
@@ -89,15 +103,17 @@ class FeedServiceList(generics.ListAPIView):
     permission_classes = (permissions.AllowAny,)
     filter_fields = ('category',)
     # columns to search in
-    word_fields = ('title','description',)
+    word_fields = ('title', 'description',)
 
     def get_queryset(self):
         queryset = Service.objects.all()
-        #Order all the services by distance to the requester user location
+        # Order all the services by distance to the requester user location
         if 'lat' in self.request.query_params and 'lon' in self.request.query_params:
             # Brings lat and lon in request parameters
-            ref_location = Point(float(self.request.query_params['lon']),float(self.request.query_params['lat']),srid=4326)
-            if not self.request.user.is_anonymous():
+            ref_location = Point(float(self.request.query_params['lon']), float(
+                self.request.query_params['lat']), srid=4326)
+            if not self.request.user.is_anonymous and \
+                    not self.request.user.location_manually_set:
                 # If user is logged in, save his location
                 self.request.user.location = ref_location
                 self.request.user.save()
@@ -109,13 +125,14 @@ class FeedServiceList(generics.ListAPIView):
             geoip = GeoIP2()
             ip = self.request.META['REMOTE_ADDR']
             try:
-                ref_location = Point(geoip.lon_lat(ip),srid=4326)
+                ref_location = Point(geoip.lon_lat(ip), srid=4326)
             except AddressNotFoundError:
-                ref_location = Point((-3.8196228, 40.4378698), srid=4326) # Madrid
+                logger.warning('Location could not been retrieved by any mean')
+                ref_location = Point((-3.8196228, 40.4378698), srid=4326)  # Madrid
             if not self.request.user.is_anonymous:
                 self.request.user.location = ref_location
                 self.request.user.save()
-        return queryset.annotate(dist = Distance('author__location', ref_location)).order_by('dist')
+        return queryset.annotate(dist=Distance('author__location', ref_location)).order_by('dist')
 
 
 class ServicePhotoUpload(generics.CreateAPIView):
@@ -151,6 +168,7 @@ class ServicePhotoUpload(generics.CreateAPIView):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
 
 class ServicePhotoDelete(generics.DestroyAPIView):
     """ Test this view with the following Curl Command:
