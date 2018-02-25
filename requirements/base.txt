@@ -34,7 +34,7 @@ django-rest-auth==0.9.2
 django-extensions==2.0.0
 
 # Python-PostgreSQL Database Adapter
-psycopg2==2.7.3.2
+psycopg2==2.7.4
 
 # Unicode slugification
 unicode-slugify==0.1.3
