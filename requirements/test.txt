@@ -10,5 +10,5 @@ factory-boy==2.10.0
 
 
 # pytest
-pytest-django==3.1.2
+pytest-django==3.4.6
 pytest-sugar==0.9.1
