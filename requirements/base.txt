@@ -51,7 +51,7 @@ redis>=2.10.0
 geoip2==2.7.0
 
 # Rest Framework
-djangorestframework==3.7.7
+djangorestframework==3.10.1
 django-extra-fields==0.9
 git+https://github.com/iesteban/django-rest-framework-docs.git@master
 
