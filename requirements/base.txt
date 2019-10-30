@@ -52,7 +52,7 @@ geoip2==2.7.0
 
 # Rest Framework
 djangorestframework==3.7.7
-django-extra-fields==0.9
+django-extra-fields==2.0.0
 git+https://github.com/iesteban/django-rest-framework-docs.git@master
 
 # Filtering for API
