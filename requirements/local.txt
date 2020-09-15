@@ -11,5 +11,5 @@ django-test-plus==1.0.22
 # improved REPL
 ipdb==0.11
 
-pytest-django==3.1.2
+pytest-django==3.10.0
 pytest-sugar==0.9.1
