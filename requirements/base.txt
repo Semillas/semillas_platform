@@ -62,7 +62,7 @@ django-filter==1.1.0
 
 #Factory libs. For making up some data.
 # Should be removed from production in the future
-factory-boy==2.10.0
+factory-boy==3.2.0
 fake-factory==0.7.2
 
 # For filtering API requests
