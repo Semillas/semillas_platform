@@ -9,7 +9,7 @@ Werkzeug==0.14.1
 django-test-plus==1.0.22
 
 # improved REPL
-ipdb==0.11
+ipdb==0.13.5
 
 pytest-django==3.1.2
 pytest-sugar==0.9.1
