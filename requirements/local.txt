@@ -1,7 +1,7 @@
 # Local development dependencies go here
 -r base.txt
 django-coverage-plugin==1.5.0
-coverage==4.5.1
+coverage==6.1.1
 
 Sphinx==1.7.1
 django-debug-toolbar==1.9.1
