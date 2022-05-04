@@ -2,7 +2,7 @@
 -r base.txt
 
 
-django-coverage-plugin==1.5.0
+django-coverage-plugin==2.0.3
 django-test-plus==1.0.22
 coverage==4.5.1
 flake8==3.5.0
