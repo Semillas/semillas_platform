@@ -23,7 +23,7 @@ django-model-utils==3.1.1
 phonenumberslite==8.9.0
 
 # Images
-Pillow==5.0.0
+Pillow==9.2.0
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
