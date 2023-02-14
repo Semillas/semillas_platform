@@ -5,7 +5,7 @@ coverage==4.5.1
 
 Sphinx==1.7.1
 django-debug-toolbar==1.9.1
-Werkzeug==0.14.1
+Werkzeug==2.2.3
 django-test-plus==1.0.22
 
 # improved REPL
