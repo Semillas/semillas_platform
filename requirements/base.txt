@@ -56,7 +56,7 @@ django-extra-fields==0.9
 git+https://github.com/iesteban/django-rest-framework-docs.git@master
 
 # Filtering for API
-django-filter==1.1.0
+django-filter==23.5
 
 # Your custom requirements go here
 
