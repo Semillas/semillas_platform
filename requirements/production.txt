@@ -15,7 +15,7 @@ boto==2.48.0
 
 # Email backends for Mailgun, Postmark, SendGrid and more
 # -------------------------------------------------------
-django-anymail==1.4
+django-anymail==11.1
 
 # Raven is the Sentry client
 # --------------------------
